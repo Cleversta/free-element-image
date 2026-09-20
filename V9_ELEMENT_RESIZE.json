@@ -1,0 +1,12 @@
+{
+  "version": 9,
+  "feature": "Per-element resizing",
+  "behavior": [
+    "Click any placed element to select it",
+    "Use minus/plus buttons or size slider",
+    "Quick sizes: 50%, 75%, 100%, 125%, 150%, 200%",
+    "Continuous range: 15% to 400%",
+    "Each element stores its own scale independently",
+    "Dragging, rotation, flip, layering and PNG export continue using the element scale"
+  ]
+}

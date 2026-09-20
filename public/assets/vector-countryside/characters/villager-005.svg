@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 310"><defs>
+<linearGradient id="v4g0" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#a27955"/><stop offset=".48" stop-color="#8c6849"/><stop offset="1" stop-color="#654b35"/></linearGradient>
+<linearGradient id="v4g1" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#f9c598"/><stop offset=".48" stop-color="#d7aa83"/><stop offset="1" stop-color="#9b7a5e"/></linearGradient>
+<linearGradient id="v4g2" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#dfa867"/><stop offset=".48" stop-color="#c09159"/><stop offset="1" stop-color="#8a6840"/></linearGradient>
+<filter id="v5Material" x="-22%" y="-22%" width="144%" height="150%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency=".018 .042" numOctaves="3" seed="37" result="micro"/>
+  <feColorMatrix in="micro" type="saturate" values=".35" result="microColor"/>
+  <feComponentTransfer in="microColor" result="microSoft">
+    <feFuncA type="table" tableValues="0 .050"/>
+  </feComponentTransfer>
+
+  <feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="2" seed="11" result="macro"/>
+  <feColorMatrix in="macro" type="saturate" values=".15" result="macroGray"/>
+  <feComponentTransfer in="macroGray" result="macroSoft">
+    <feFuncA type="table" tableValues="0 .035"/>
+  </feComponentTransfer>
+
+  <feBlend in="SourceGraphic" in2="macroSoft" mode="multiply" result="materialBase"/>
+  <feBlend in="materialBase" in2="microSoft" mode="soft-light" result="material"/>
+
+  <feGaussianBlur in="SourceAlpha" stdDeviation="1.0" result="shapeBlur"/>
+  <feSpecularLighting in="shapeBlur" surfaceScale="3.1" specularConstant=".16"
+      specularExponent="25" lighting-color="#fff8e8" result="specLight">
+    <feDistantLight azimuth="228" elevation="54"/>
+  </feSpecularLighting>
+  <feComposite in="specLight" in2="SourceAlpha" operator="in" result="specClip"/>
+  <feBlend in="material" in2="specClip" mode="screen" result="lit"/>
+
+  <feMorphology in="SourceAlpha" operator="erode" radius=".55" result="innerAlpha"/>
+  <feComposite in="SourceAlpha" in2="innerAlpha" operator="out" result="edge"/>
+  <feFlood flood-color="#ffffff" flood-opacity=".09" result="edgeLight"/>
+  <feComposite in="edgeLight" in2="edge" operator="in" result="edgeClip"/>
+  <feBlend in="lit" in2="edgeClip" mode="screen" result="edged"/>
+
+  <feDropShadow dx="1.2" dy="2.2" stdDeviation="1.8" flood-color="#141b16" flood-opacity=".24"/>
+  <feBlend in="edged" result="v5Combined"/>
+  <feComposite in="v5Combined" in2="SourceAlpha" operator="in" result="v5AlphaClipped"/>
+</filter>
+</defs>
+<g filter="url(#v5Material)">
+
+
+<path d="M135 72h90l-16-28h-58z" fill="url(#v4g0)" stroke="#4f443c" stroke-width="5"/><circle cx="180" cy="95" r="35" fill="url(#v4g1)" stroke="#51443b" stroke-width="5"/><path d="M125 245l18-112h74l18 112z" fill="url(#v4g2)" stroke="#51443b" stroke-width="5"/><path d="M145 242l-10 48M215 242l10 48M142 155l-45 60M218 155l45 60" stroke="#51443b" stroke-width="12" stroke-linecap="round"/>
+
+
+</g>
+</svg>

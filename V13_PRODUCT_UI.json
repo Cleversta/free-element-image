@@ -1,0 +1,36 @@
+{
+  "version": 13,
+  "name": "Product UI + Unified Backgrounds",
+  "backgroundSystem": {
+    "normalBackgroundElementsRemoved": true,
+    "mergedIntoSceneBackgrounds": [
+      "Distant Forest",
+      "Village Silhouette",
+      "Cliffs",
+      "Low Hills",
+      "Mountain Valley",
+      "Open Countryside",
+      "Distant City",
+      "Forest Edge"
+    ],
+    "singleBackgroundLocation": "Scenes > Scene background"
+  },
+  "ui": [
+    "more polished product shell",
+    "clearer Scenes/Objects/Village/More navigation",
+    "undo/redo controls",
+    "improved empty state",
+    "hover/focus states",
+    "better panel/canvas hierarchy"
+  ],
+  "preserved": [
+    "direct resize handles",
+    "delete on selected element",
+    "clickable floating toolbar",
+    "right properties",
+    "save",
+    "random",
+    "PNG export",
+    "V10 village assets"
+  ]
+}

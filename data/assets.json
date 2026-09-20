@@ -1,0 +1,3598 @@
+[
+  {
+    "id": "oak-001",
+    "type": "tree",
+    "variant": "oak",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/oak-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "oak-002",
+    "type": "tree",
+    "variant": "apple-tree",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/oak-002.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "pine-001",
+    "type": "tree",
+    "variant": "pine",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/pine-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "pine-002",
+    "type": "tree",
+    "variant": "pine",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/pine-002.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "willow-001",
+    "type": "tree",
+    "variant": "willow",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/willow-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "birch-001",
+    "type": "tree",
+    "variant": "birch",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/birch-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "maple-001",
+    "type": "tree",
+    "variant": "maple",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/maple-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "cherry-001",
+    "type": "tree",
+    "variant": "cherry-blossom",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/cherry-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "cypress-001",
+    "type": "tree",
+    "variant": "cypress",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/cypress-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "round-tree-001",
+    "type": "tree",
+    "variant": "round-tree",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/trees/round-tree-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.45,
+    "maxScale": 1.35,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "cottage-001",
+    "type": "building",
+    "variant": "cottage",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/cottage-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "cottage-002",
+    "type": "building",
+    "variant": "cottage",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/cottage-002.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "barn-001",
+    "type": "building",
+    "variant": "barn",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/barn-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "barn-002",
+    "type": "building",
+    "variant": "barn",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/barn-002.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "farmhouse-001",
+    "type": "building",
+    "variant": "farmhouse",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/farmhouse-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "windmill-001",
+    "type": "building",
+    "variant": "windmill",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/windmill-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "chapel-001",
+    "type": "building",
+    "variant": "chapel",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/chapel-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "shop-001",
+    "type": "building",
+    "variant": "shop",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/shop-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "tower-001",
+    "type": "building",
+    "variant": "tower",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/tower-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "cabin-001",
+    "type": "building",
+    "variant": "cabin",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/buildings/cabin-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.65,
+    "maxScale": 1.15,
+    "collision": "hard",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "cow-001",
+    "type": "animal",
+    "variant": "cow",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/cow-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "sheep-001",
+    "type": "animal",
+    "variant": "sheep",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/sheep-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "horse-001",
+    "type": "animal",
+    "variant": "horse",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/horse-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "chicken-001",
+    "type": "animal",
+    "variant": "chicken",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/chicken-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "duck-001",
+    "type": "animal",
+    "variant": "duck",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/duck-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "dog-001",
+    "type": "animal",
+    "variant": "dog",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/dog-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "cat-001",
+    "type": "animal",
+    "variant": "cat",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/cat-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "rabbit-001",
+    "type": "animal",
+    "variant": "rabbit",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/rabbit-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "goat-001",
+    "type": "animal",
+    "variant": "goat",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/goat-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "pig-001",
+    "type": "animal",
+    "variant": "pig",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/animals/pig-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.35,
+    "maxScale": 0.9,
+    "collision": "soft",
+    "keepUpright": true,
+    "transparent": true
+  },
+  {
+    "id": "grass-field-001",
+    "type": "terrain",
+    "variant": "grass-field",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/grass-field-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle"
+    ],
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "building",
+      "tree",
+      "animal",
+      "character",
+      "decoration"
+    ]
+  },
+  {
+    "id": "rolling-hills-001",
+    "type": "terrain",
+    "variant": "rolling-hills",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/rolling-hills-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle"
+    ],
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "building",
+      "tree",
+      "animal",
+      "character",
+      "decoration"
+    ]
+  },
+  {
+    "id": "dirt-patch-001",
+    "type": "terrain",
+    "variant": "dirt-patch",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/dirt-patch-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle"
+    ],
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "building",
+      "tree",
+      "animal",
+      "character",
+      "decoration"
+    ]
+  },
+  {
+    "id": "meadow-001",
+    "type": "terrain",
+    "variant": "meadow",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/meadow-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle"
+    ],
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "building",
+      "tree",
+      "animal",
+      "character",
+      "decoration"
+    ]
+  },
+  {
+    "id": "stone-ground-001",
+    "type": "terrain",
+    "variant": "stone-ground",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/stone-ground-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle"
+    ],
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "building",
+      "tree",
+      "animal",
+      "character",
+      "decoration"
+    ]
+  },
+  {
+    "id": "river-001",
+    "type": "water",
+    "variant": "river",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/river-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.55,
+    "maxScale": 1.35,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "boat",
+      "duck"
+    ]
+  },
+  {
+    "id": "pond-001",
+    "type": "water",
+    "variant": "pond",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/pond-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.55,
+    "maxScale": 1.35,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "boat",
+      "duck"
+    ]
+  },
+  {
+    "id": "lake-001",
+    "type": "water",
+    "variant": "lake",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/lake-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.55,
+    "maxScale": 1.35,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "boat",
+      "duck"
+    ]
+  },
+  {
+    "id": "stream-001",
+    "type": "water",
+    "variant": "stream",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/stream-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.55,
+    "maxScale": 1.35,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "boat",
+      "duck"
+    ]
+  },
+  {
+    "id": "waterfall-001",
+    "type": "water",
+    "variant": "waterfall",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/waterfall-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.55,
+    "maxScale": 1.35,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "boat",
+      "duck"
+    ]
+  },
+  {
+    "id": "sun-001",
+    "type": "sky",
+    "variant": "sun",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/sun-001.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "moon-001",
+    "type": "sky",
+    "variant": "moon",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/moon-001.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "cloud-001",
+    "type": "sky",
+    "variant": "cloud",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/cloud-001.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "cloud-002",
+    "type": "sky",
+    "variant": "cloud",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/cloud-002.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "cloud-003",
+    "type": "sky",
+    "variant": "cloud",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/cloud-003.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "rain-cloud-001",
+    "type": "sky",
+    "variant": "rain-cloud",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/rain-cloud-001.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "rainbow-001",
+    "type": "sky",
+    "variant": "rainbow",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/rainbow-001.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "stars-001",
+    "type": "sky",
+    "variant": "stars",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/stars-001.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "mist-001",
+    "type": "sky",
+    "variant": "mist",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/mist-001.svg",
+    "placement": [
+      "sky",
+      "ground"
+    ],
+    "depth": [
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "sun-rays-001",
+    "type": "sky",
+    "variant": "sun-rays",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/sky/sun-rays-001.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "mountains-001",
+    "type": "background",
+    "variant": "mountains",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/mountains-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.8,
+    "maxScale": 1.8,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "mountains-002",
+    "type": "background",
+    "variant": "mountains",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/mountains-002.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.8,
+    "maxScale": 1.8,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "distant-forest-001",
+    "type": "background",
+    "variant": "distant-forest",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/distant-forest-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "village-silhouette-001",
+    "type": "background",
+    "variant": "village-silhouette",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/village-silhouette-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "cliffs-001",
+    "type": "background",
+    "variant": "cliffs",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/cliffs-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "low-hills-001",
+    "type": "background",
+    "variant": "low-hills",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/low-hills-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "farm-fields-001",
+    "type": "background",
+    "variant": "farm-fields",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/farm-fields-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "hedgerow-001",
+    "type": "background",
+    "variant": "hedgerow",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/hedgerow-001.svg",
+    "placement": [
+      "background",
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "rock-ridge-001",
+    "type": "background",
+    "variant": "rock-ridge",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/rock-ridge-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "distant-city-001",
+    "type": "background",
+    "variant": "distant-city",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/distant-city-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "flower-red-001",
+    "type": "plant",
+    "variant": "flower-red",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/flower-red-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-yellow-001",
+    "type": "plant",
+    "variant": "flower-yellow",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/flower-yellow-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-blue-001",
+    "type": "plant",
+    "variant": "flower-blue",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/flower-blue-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-pink-001",
+    "type": "plant",
+    "variant": "flower-pink",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/flower-pink-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "bush-001",
+    "type": "plant",
+    "variant": "bush",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/bush-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "bush-002",
+    "type": "plant",
+    "variant": "bush",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/bush-002.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "reeds-001",
+    "type": "plant",
+    "variant": "reeds",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/reeds-001.svg",
+    "placement": [
+      "ground",
+      "water-edge"
+    ],
+    "depth": [
+      "foreground",
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "wheat-001",
+    "type": "plant",
+    "variant": "wheat",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/wheat-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "mushrooms-001",
+    "type": "plant",
+    "variant": "mushrooms",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/mushrooms-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "grass-tuft-001",
+    "type": "plant",
+    "variant": "grass-tuft",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/plants/grass-tuft-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "wood-fence-001",
+    "type": "structure",
+    "variant": "wood-fence",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/wood-fence-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "stone-wall-001",
+    "type": "structure",
+    "variant": "stone-wall",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/stone-wall-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "wood-bridge-001",
+    "type": "structure",
+    "variant": "wood-bridge",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/wood-bridge-001.svg",
+    "placement": [
+      "water",
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "well-001",
+    "type": "structure",
+    "variant": "well",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/well-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "gate-001",
+    "type": "structure",
+    "variant": "gate",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/gate-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "signpost-001",
+    "type": "structure",
+    "variant": "signpost",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/signpost-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "bench-001",
+    "type": "structure",
+    "variant": "bench",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/bench-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "lamp-post-001",
+    "type": "structure",
+    "variant": "lamp-post",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/lamp-post-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "hay-bale-001",
+    "type": "structure",
+    "variant": "hay-bale",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/hay-bale-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "cart-001",
+    "type": "structure",
+    "variant": "cart",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/structures/cart-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "hard",
+    "transparent": true
+  },
+  {
+    "id": "rock-001",
+    "type": "decoration",
+    "variant": "rock",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/rock-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "rock-002",
+    "type": "decoration",
+    "variant": "rock",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/rock-002.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "log-001",
+    "type": "decoration",
+    "variant": "log",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/log-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "barrel-001",
+    "type": "decoration",
+    "variant": "barrel",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/barrel-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "crate-001",
+    "type": "decoration",
+    "variant": "crate",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/crate-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "basket-001",
+    "type": "decoration",
+    "variant": "basket",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/basket-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-pot-001",
+    "type": "decoration",
+    "variant": "flower-pot",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/flower-pot-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "mailbox-001",
+    "type": "decoration",
+    "variant": "mailbox",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/mailbox-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "birdhouse-001",
+    "type": "decoration",
+    "variant": "birdhouse",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/birdhouse-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "picnic-blanket-001",
+    "type": "decoration",
+    "variant": "picnic-blanket",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/decorations/picnic-blanket-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "villager-001",
+    "type": "character",
+    "variant": "villager",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/characters/villager-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "villager-002",
+    "type": "character",
+    "variant": "villager",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/characters/villager-002.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "villager-003",
+    "type": "character",
+    "variant": "villager",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/characters/villager-003.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "villager-004",
+    "type": "character",
+    "variant": "villager",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/characters/villager-004.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "villager-005",
+    "type": "character",
+    "variant": "villager",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/characters/villager-005.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "villager-006",
+    "type": "character",
+    "variant": "villager",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/characters/villager-006.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "sparkles-001",
+    "type": "effect",
+    "variant": "sparkles",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/effects/sparkles-001.svg",
+    "placement": [
+      "overlay"
+    ],
+    "depth": [
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "falling-leaves-001",
+    "type": "effect",
+    "variant": "falling-leaves",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/effects/falling-leaves-001.svg",
+    "placement": [
+      "overlay"
+    ],
+    "depth": [
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "fireflies-001",
+    "type": "effect",
+    "variant": "fireflies",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/effects/fireflies-001.svg",
+    "placement": [
+      "overlay"
+    ],
+    "depth": [
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "wind-lines-001",
+    "type": "effect",
+    "variant": "wind-lines",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/effects/wind-lines-001.svg",
+    "placement": [
+      "overlay"
+    ],
+    "depth": [
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "path-curved-001",
+    "type": "terrain",
+    "variant": "path-curved",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/path-curved-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true
+  },
+  {
+    "id": "path-straight-001",
+    "type": "terrain",
+    "variant": "path-straight",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/path-straight-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true
+  },
+  {
+    "id": "sand-patch-001",
+    "type": "terrain",
+    "variant": "sand-patch",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/sand-patch-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true
+  },
+  {
+    "id": "snow-patch-001",
+    "type": "terrain",
+    "variant": "snow-patch",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/snow-patch-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true
+  },
+  {
+    "id": "mud-patch-001",
+    "type": "terrain",
+    "variant": "mud-patch",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/terrain/mud-patch-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true
+  },
+  {
+    "id": "puddle-001",
+    "type": "water",
+    "variant": "puddle",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/puddle-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "duck"
+    ]
+  },
+  {
+    "id": "river-bend-001",
+    "type": "water",
+    "variant": "river-bend",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/river-bend-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "boat",
+      "duck"
+    ]
+  },
+  {
+    "id": "creek-001",
+    "type": "water",
+    "variant": "creek",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/creek-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true
+  },
+  {
+    "id": "marsh-001",
+    "type": "water",
+    "variant": "marsh",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/marsh-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true,
+    "canHost": [
+      "duck",
+      "reeds"
+    ]
+  },
+  {
+    "id": "shoreline-001",
+    "type": "water",
+    "variant": "shoreline",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/water/shoreline-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "middle"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "base",
+    "transparent": true
+  },
+  {
+    "id": "meadow-day-full-001",
+    "type": "background",
+    "variant": "meadow-day",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/meadow-day-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "meadow-sunrise-full-001",
+    "type": "background",
+    "variant": "meadow-sunrise",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/meadow-sunrise-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "meadow-sunset-full-001",
+    "type": "background",
+    "variant": "meadow-sunset",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/meadow-sunset-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "meadow-cloudy-full-001",
+    "type": "background",
+    "variant": "meadow-cloudy",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/meadow-cloudy-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "mountain-day-full-001",
+    "type": "background",
+    "variant": "mountain-day",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/mountain-day-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "mountain-sunrise-full-001",
+    "type": "background",
+    "variant": "mountain-sunrise",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/mountain-sunrise-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "mountain-sunset-full-001",
+    "type": "background",
+    "variant": "mountain-sunset",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/mountain-sunset-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "alpine-valley-full-001",
+    "type": "background",
+    "variant": "alpine-valley",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/alpine-valley-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "forest-clearing-full-001",
+    "type": "background",
+    "variant": "forest-clearing",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/forest-clearing-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "pine-valley-full-001",
+    "type": "background",
+    "variant": "pine-valley",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/pine-valley-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "autumn-forest-full-001",
+    "type": "background",
+    "variant": "autumn-forest",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/autumn-forest-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "winter-valley-full-001",
+    "type": "background",
+    "variant": "winter-valley",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/winter-valley-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "snow-mountains-full-001",
+    "type": "background",
+    "variant": "snow-mountains",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/snow-mountains-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "lake-day-full-001",
+    "type": "background",
+    "variant": "lake-day",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/lake-day-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "lake-sunset-full-001",
+    "type": "background",
+    "variant": "lake-sunset",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/lake-sunset-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "river-valley-full-001",
+    "type": "background",
+    "variant": "river-valley",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/river-valley-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "river-mountains-full-001",
+    "type": "background",
+    "variant": "river-mountains",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/river-mountains-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "farm-fields-full-001",
+    "type": "background",
+    "variant": "farm-fields",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/farm-fields-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "wheat-fields-full-001",
+    "type": "background",
+    "variant": "wheat-fields",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/wheat-fields-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "lavender-fields-full-001",
+    "type": "background",
+    "variant": "lavender-fields",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/lavender-fields-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "village-valley-full-001",
+    "type": "background",
+    "variant": "village-valley",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/village-valley-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "village-sunset-full-001",
+    "type": "background",
+    "variant": "village-sunset",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/village-sunset-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "coastal-cliffs-full-001",
+    "type": "background",
+    "variant": "coastal-cliffs",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/coastal-cliffs-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "green-cliffs-full-001",
+    "type": "background",
+    "variant": "green-cliffs",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/green-cliffs-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "rolling-hills-full-001",
+    "type": "background",
+    "variant": "rolling-hills",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/rolling-hills-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "misty-hills-full-001",
+    "type": "background",
+    "variant": "misty-hills",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/misty-hills-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "spring-hills-full-001",
+    "type": "background",
+    "variant": "spring-hills",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/spring-hills-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "summer-hills-full-001",
+    "type": "background",
+    "variant": "summer-hills",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/summer-hills-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "autumn-hills-full-001",
+    "type": "background",
+    "variant": "autumn-hills",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/autumn-hills-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "winter-hills-full-001",
+    "type": "background",
+    "variant": "winter-hills",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/winter-hills-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "desert-valley-full-001",
+    "type": "background",
+    "variant": "desert-valley",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/desert-valley-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "rocky-highlands-full-001",
+    "type": "background",
+    "variant": "rocky-highlands",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/rocky-highlands-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "country-road-full-001",
+    "type": "background",
+    "variant": "country-road",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/country-road-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "flower-meadow-full-001",
+    "type": "background",
+    "variant": "flower-meadow",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/flower-meadow-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "stormy-country-full-001",
+    "type": "background",
+    "variant": "stormy-country",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/stormy-country-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "moonlit-valley-full-001",
+    "type": "background",
+    "variant": "moonlit-valley",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/full/moonlit-valley-full-001.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "flower-rose-red-001",
+    "type": "flower",
+    "variant": "Red Roses",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-rose-red-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-rose-pink-001",
+    "type": "flower",
+    "variant": "Pink Roses",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-rose-pink-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-daisy-white-001",
+    "type": "flower",
+    "variant": "White Daisies",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-daisy-white-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-sunflower-001",
+    "type": "flower",
+    "variant": "Sunflowers",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-sunflower-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-lavender-001",
+    "type": "flower",
+    "variant": "Lavender",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-lavender-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-tulip-red-001",
+    "type": "flower",
+    "variant": "Red Tulips",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-tulip-red-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-tulip-yellow-001",
+    "type": "flower",
+    "variant": "Yellow Tulips",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-tulip-yellow-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-wildflowers-001",
+    "type": "flower",
+    "variant": "Wildflowers",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-wildflowers-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-hydrangea-001",
+    "type": "flower",
+    "variant": "Hydrangea",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-hydrangea-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-marigold-001",
+    "type": "flower",
+    "variant": "Marigolds",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-marigold-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-poppy-001",
+    "type": "flower",
+    "variant": "Poppies",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-poppy-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "flower-bluebell-001",
+    "type": "flower",
+    "variant": "Bluebells",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/flowers/flower-bluebell-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-apple-small-001",
+    "type": "small-tree",
+    "variant": "Small Apple Tree",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-apple-small-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-pear-small-001",
+    "type": "small-tree",
+    "variant": "Small Pear Tree",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-pear-small-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-cherry-small-001",
+    "type": "small-tree",
+    "variant": "Small Cherry Tree",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-cherry-small-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-olive-small-001",
+    "type": "small-tree",
+    "variant": "Small Olive Tree",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-olive-small-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-young-oak-001",
+    "type": "small-tree",
+    "variant": "Young Oak",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-young-oak-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-young-maple-001",
+    "type": "small-tree",
+    "variant": "Young Maple",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-young-maple-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-small-pine-001",
+    "type": "small-tree",
+    "variant": "Small Pine",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-small-pine-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-small-birch-001",
+    "type": "small-tree",
+    "variant": "Small Birch",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-small-birch-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-lemon-small-001",
+    "type": "small-tree",
+    "variant": "Small Lemon Tree",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-lemon-small-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "tree-peach-small-001",
+    "type": "small-tree",
+    "variant": "Small Peach Tree",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/small-trees/tree-peach-small-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-grass-tuft-001",
+    "type": "gras",
+    "variant": "Grass Tuft",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-grass-tuft-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-tall-grass-001",
+    "type": "gras",
+    "variant": "Tall Grass",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-tall-grass-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-reeds-001",
+    "type": "gras",
+    "variant": "Reeds",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-reeds-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-fern-clump-001",
+    "type": "gras",
+    "variant": "Fern Clump",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-fern-clump-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-clover-001",
+    "type": "gras",
+    "variant": "Clover",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-clover-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-herbs-001",
+    "type": "gras",
+    "variant": "Herb Patch",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-herbs-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-ivy-001",
+    "type": "gras",
+    "variant": "Ivy Patch",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-ivy-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-ground-cover-001",
+    "type": "gras",
+    "variant": "Ground Cover",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-ground-cover-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-wheat-clump-001",
+    "type": "gras",
+    "variant": "Wheat Clump",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-wheat-clump-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "plant-bamboo-small-001",
+    "type": "gras",
+    "variant": "Small Bamboo",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/grass/plant-bamboo-small-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "watering-can-001",
+    "type": "garden-equipment",
+    "variant": "Watering Can",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/watering-can-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "wheelbarrow-001",
+    "type": "garden-equipment",
+    "variant": "Wheelbarrow",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/wheelbarrow-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "shovel-001",
+    "type": "garden-equipment",
+    "variant": "Shovel",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/shovel-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "rake-001",
+    "type": "garden-equipment",
+    "variant": "Garden Rake",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/rake-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "garden-fork-001",
+    "type": "garden-equipment",
+    "variant": "Garden Fork",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/garden-fork-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "wood-bucket-001",
+    "type": "garden-equipment",
+    "variant": "Wooden Bucket",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/wood-bucket-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "metal-bucket-001",
+    "type": "garden-equipment",
+    "variant": "Metal Bucket",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/metal-bucket-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "wood-crate-001",
+    "type": "garden-equipment",
+    "variant": "Wooden Crate",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/wood-crate-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "compost-bin-001",
+    "type": "garden-equipment",
+    "variant": "Compost Bin",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/compost-bin-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "garden-hose-001",
+    "type": "garden-equipment",
+    "variant": "Garden Hose",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/garden-hose-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "clay-pots-001",
+    "type": "garden-equipment",
+    "variant": "Clay Pots",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/clay-pots-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "garden-bench-001",
+    "type": "garden-equipment",
+    "variant": "Garden Bench",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/garden-equipment/garden-bench-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "picket-fence-001",
+    "type": "village-prop",
+    "variant": "Picket Fence",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/village-props/picket-fence-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "stone-path-001",
+    "type": "village-prop",
+    "variant": "Stone Path",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/village-props/stone-path-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "wood-sign-001",
+    "type": "village-prop",
+    "variant": "Wood Sign",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/village-props/wood-sign-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "birdhouse-001",
+    "type": "village-prop",
+    "variant": "Birdhouse",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/village-props/birdhouse-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "hay-bale-round-001",
+    "type": "village-prop",
+    "variant": "Round Hay Bale",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/village-props/hay-bale-round-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "barrel-001",
+    "type": "village-prop",
+    "variant": "Wooden Barrel",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/village-props/barrel-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "lantern-post-001",
+    "type": "village-prop",
+    "variant": "Village Lantern",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/village-props/lantern-post-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "wood-cart-001",
+    "type": "village-prop",
+    "variant": "Wood Cart",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/village-props/wood-cart-001.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "foreground",
+      "midground"
+    ],
+    "minScale": 0.25,
+    "maxScale": 3,
+    "collision": "soft",
+    "transparent": true
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "version": 12,
+  "features": [
+    "Delete icon appears directly on selected element",
+    "Four direct corner resize handles",
+    "Selected element can still be dragged",
+    "Floating toolbar buttons are clickable and stop canvas pointer propagation",
+    "Delete, duplicate, rotate left/right, flip, layer and lock actions",
+    "Right property panel remains available",
+    "Color/hue control added with Original/Warm/Green/Blue/Pink shortcuts",
+    "PNG export applies opacity and hue changes"
+  ]
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300"><defs>
+
+<filter id="v5Material" x="-22%" y="-22%" width="144%" height="150%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency=".035 .080" numOctaves="3" seed="37" result="micro"/>
+  <feColorMatrix in="micro" type="saturate" values=".35" result="microColor"/>
+  <feComponentTransfer in="microColor" result="microSoft">
+    <feFuncA type="table" tableValues="0 .060"/>
+  </feComponentTransfer>
+
+  <feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="2" seed="11" result="macro"/>
+  <feColorMatrix in="macro" type="saturate" values=".15" result="macroGray"/>
+  <feComponentTransfer in="macroGray" result="macroSoft">
+    <feFuncA type="table" tableValues="0 .035"/>
+  </feComponentTransfer>
+
+  <feBlend in="SourceGraphic" in2="macroSoft" mode="multiply" result="materialBase"/>
+  <feBlend in="materialBase" in2="microSoft" mode="soft-light" result="material"/>
+
+  <feGaussianBlur in="SourceAlpha" stdDeviation="1.25" result="shapeBlur"/>
+  <feSpecularLighting in="shapeBlur" surfaceScale="3.1" specularConstant=".13"
+      specularExponent="20" lighting-color="#fff8e8" result="specLight">
+    <feDistantLight azimuth="228" elevation="54"/>
+  </feSpecularLighting>
+  <feComposite in="specLight" in2="SourceAlpha" operator="in" result="specClip"/>
+  <feBlend in="material" in2="specClip" mode="screen" result="lit"/>
+
+  <feMorphology in="SourceAlpha" operator="erode" radius=".55" result="innerAlpha"/>
+  <feComposite in="SourceAlpha" in2="innerAlpha" operator="out" result="edge"/>
+  <feFlood flood-color="#ffffff" flood-opacity=".09" result="edgeLight"/>
+  <feComposite in="edgeLight" in2="edge" operator="in" result="edgeClip"/>
+  <feBlend in="lit" in2="edgeClip" mode="screen" result="edged"/>
+
+  <feDropShadow dx="1.0" dy="1.8" stdDeviation="1.8" flood-color="#141b16" flood-opacity=".24"/>
+  <feBlend in="edged" result="v5Combined"/>
+  <feComposite in="v5Combined" in2="SourceAlpha" operator="in" result="v5AlphaClipped"/>
+</filter>
+</defs>
+<g filter="url(#v5Material)">
+
+
+<g fill="none" stroke="#648b51" stroke-width="9" stroke-linecap="round"><path d="M180 255c-10-88-35-125-72-154M180 255c-2-104 3-150 12-192M180 255c25-98 56-133 92-155M180 255c-39-69-67-89-97-99M180 255c42-70 70-88 101-97"/></g>
+
+
+</g>
+</svg>

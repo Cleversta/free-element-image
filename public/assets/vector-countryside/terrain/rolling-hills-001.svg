@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360"><defs>
+<linearGradient id="v4g0" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#98c974"/><stop offset=".48" stop-color="#83ad64"/><stop offset="1" stop-color="#5e7d48"/></linearGradient>
+<linearGradient id="v4g1" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#80b363"/><stop offset=".48" stop-color="#6e9a55"/><stop offset="1" stop-color="#4f6f3d"/></linearGradient>
+<filter id="v5Material" x="-22%" y="-22%" width="144%" height="150%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency=".012 .030" numOctaves="4" seed="37" result="micro"/>
+  <feColorMatrix in="micro" type="saturate" values=".35" result="microColor"/>
+  <feComponentTransfer in="microColor" result="microSoft">
+    <feFuncA type="table" tableValues="0 .060"/>
+  </feComponentTransfer>
+
+  <feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="2" seed="11" result="macro"/>
+  <feColorMatrix in="macro" type="saturate" values=".15" result="macroGray"/>
+  <feComponentTransfer in="macroGray" result="macroSoft">
+    <feFuncA type="table" tableValues="0 .035"/>
+  </feComponentTransfer>
+
+  <feBlend in="SourceGraphic" in2="macroSoft" mode="multiply" result="materialBase"/>
+  <feBlend in="materialBase" in2="microSoft" mode="soft-light" result="material"/>
+
+  <feGaussianBlur in="SourceAlpha" stdDeviation="1.0" result="shapeBlur"/>
+  <feSpecularLighting in="shapeBlur" surfaceScale="3.1" specularConstant=".11"
+      specularExponent="18" lighting-color="#fff8e8" result="specLight">
+    <feDistantLight azimuth="228" elevation="54"/>
+  </feSpecularLighting>
+  <feComposite in="specLight" in2="SourceAlpha" operator="in" result="specClip"/>
+  <feBlend in="material" in2="specClip" mode="screen" result="lit"/>
+
+  <feMorphology in="SourceAlpha" operator="erode" radius=".55" result="innerAlpha"/>
+  <feComposite in="SourceAlpha" in2="innerAlpha" operator="out" result="edge"/>
+  <feFlood flood-color="#ffffff" flood-opacity=".09" result="edgeLight"/>
+  <feComposite in="edgeLight" in2="edge" operator="in" result="edgeClip"/>
+  <feBlend in="lit" in2="edgeClip" mode="screen" result="edged"/>
+
+  <feDropShadow dx=".8" dy="1.5" stdDeviation="1.8" flood-color="#141b16" flood-opacity=".24"/>
+  <feBlend in="edged" result="v5Combined"/>
+  <feComposite in="v5Combined" in2="SourceAlpha" operator="in" result="v5AlphaClipped"/>
+</filter>
+</defs>
+<g filter="url(#v5Material)">
+
+
+<path d="M10 228C143 89 245 111 357 219c119-157 257-132 433 9v122H10z" fill="url(#v4g0)" stroke="#506944" stroke-width="6"/><path d="M10 278c157-78 278-45 385 25 116-65 236-79 395-15v62H10z" fill="url(#v4g1)"/>
+
+
+</g>
+</svg>

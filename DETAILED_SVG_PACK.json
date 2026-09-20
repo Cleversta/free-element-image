@@ -1,0 +1,15 @@
+{
+  "name": "Freelement Images Detailed Countryside SVG",
+  "version": 4,
+  "assetCount": 110,
+  "gradientCount": 222,
+  "improvements": [
+    "Per-color directional gradients replace flat fills",
+    "Subtle organic surface grain",
+    "Directional specular highlights",
+    "Softer depth shadows",
+    "Original filenames and URLs preserved",
+    "Transparent scalable SVG output"
+  ],
+  "limitation": "Detailed/semi-realistic vector rendering; not photographic raster imagery."
+}

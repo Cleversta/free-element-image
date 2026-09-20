@@ -1,0 +1,8 @@
+{
+  "version": 8,
+  "fix": "Clean transparent SVG elements",
+  "svgFilesFixed": 110,
+  "problem": "Texture/filter output was visible outside the original SVG alpha and appeared as rectangular/dirty backgrounds around trees and other elements.",
+  "solution": "Final material-filter output is clipped to SourceAlpha, so only the actual object remains visible.",
+  "baseBackgroundPickerPreserved": true
+}

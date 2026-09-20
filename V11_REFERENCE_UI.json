@@ -1,0 +1,16 @@
+{
+  "version": 11,
+  "name": "Reference-style Village Editor UI",
+  "changes": [
+    "Three-column desktop editor layout",
+    "Top New, Random, Save and Download controls",
+    "Background/Elements/Decorations/Others tabs",
+    "Visual base-background gallery",
+    "Center scene canvas and floating selected-object controls",
+    "Bottom Added Elements strip",
+    "Right-side Element Properties panel",
+    "Size 15\u2013400%, rotation, horizontal/vertical flip, layers, opacity",
+    "Village asset categories from V10 preserved",
+    "Responsive tablet/mobile layout"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": 10,
+  "name": "Village Editor Expansion",
+  "previousAssets": 146,
+  "totalAssets": 198,
+  "added": 52,
+  "newCategories": {
+    "Flowers": 12,
+    "Small Trees": 10,
+    "Grass & Plants": 10,
+    "Garden Equipment": 12,
+    "Village Props": 8
+  },
+  "baseBackgrounds": "V9 base background picker preserved",
+  "resize": "V9 per-element resizing preserved"
+}

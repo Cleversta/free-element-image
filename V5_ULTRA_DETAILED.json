@@ -1,0 +1,16 @@
+{
+  "name": "Freelement Images V5 Ultra Detailed SVG",
+  "version": 5,
+  "assetCount": 110,
+  "format": "SVG",
+  "pathsUnchanged": true,
+  "rendering": [
+    "category-specific material textures",
+    "micro and macro surface variation",
+    "directional specular lighting",
+    "edge highlights",
+    "soft depth/contact shadows",
+    "V4 directional gradients retained"
+  ],
+  "important": "This is the strongest non-raster SVG rendering pass. True photographic realism requires raster photography/rendering or manually redrawn high-complexity vector geometry."
+}

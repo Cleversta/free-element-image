@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 190"><defs>
+<linearGradient id="v4g0" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#ffffe8"/><stop offset=".48" stop-color="#eee2c8"/><stop offset="1" stop-color="#aba390"/></linearGradient>
+<linearGradient id="v4g1" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#f66c55"/><stop offset=".48" stop-color="#d45d49"/><stop offset="1" stop-color="#994335"/></linearGradient>
+<linearGradient id="v4g2" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#fcbd56"/><stop offset=".48" stop-color="#d9a34a"/><stop offset="1" stop-color="#9c7535"/></linearGradient>
+<linearGradient id="v4g3" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#e6ba83"/><stop offset=".48" stop-color="#c6a071"/><stop offset="1" stop-color="#8f7351"/></linearGradient>
+<linearGradient id="v4g4" x1="0" y1="0" x2="0.82" y2="1"><stop offset="0" stop-color="#272727"/><stop offset=".48" stop-color="#222"/><stop offset="1" stop-color="#181818"/></linearGradient>
+<filter id="v5Material" x="-22%" y="-22%" width="144%" height="150%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency=".020 .045" numOctaves="3" seed="37" result="micro"/>
+  <feColorMatrix in="micro" type="saturate" values=".35" result="microColor"/>
+  <feComponentTransfer in="microColor" result="microSoft">
+    <feFuncA type="table" tableValues="0 .055"/>
+  </feComponentTransfer>
+
+  <feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="2" seed="11" result="macro"/>
+  <feColorMatrix in="macro" type="saturate" values=".15" result="macroGray"/>
+  <feComponentTransfer in="macroGray" result="macroSoft">
+    <feFuncA type="table" tableValues="0 .035"/>
+  </feComponentTransfer>
+
+  <feBlend in="SourceGraphic" in2="macroSoft" mode="multiply" result="materialBase"/>
+  <feBlend in="materialBase" in2="microSoft" mode="soft-light" result="material"/>
+
+  <feGaussianBlur in="SourceAlpha" stdDeviation="1.15" result="shapeBlur"/>
+  <feSpecularLighting in="shapeBlur" surfaceScale="3.1" specularConstant=".19"
+      specularExponent="24" lighting-color="#fff8e8" result="specLight">
+    <feDistantLight azimuth="228" elevation="54"/>
+  </feSpecularLighting>
+  <feComposite in="specLight" in2="SourceAlpha" operator="in" result="specClip"/>
+  <feBlend in="material" in2="specClip" mode="screen" result="lit"/>
+
+  <feMorphology in="SourceAlpha" operator="erode" radius=".55" result="innerAlpha"/>
+  <feComposite in="SourceAlpha" in2="innerAlpha" operator="out" result="edge"/>
+  <feFlood flood-color="#ffffff" flood-opacity=".09" result="edgeLight"/>
+  <feComposite in="edgeLight" in2="edge" operator="in" result="edgeClip"/>
+  <feBlend in="lit" in2="edgeClip" mode="screen" result="edged"/>
+
+  <feDropShadow dx="1.5" dy="2.6" stdDeviation="1.8" flood-color="#141b16" flood-opacity=".24"/>
+  <feBlend in="edged" result="v5Combined"/>
+  <feComposite in="v5Combined" in2="SourceAlpha" operator="in" result="v5AlphaClipped"/>
+</filter>
+</defs>
+<g filter="url(#v5Material)">
+
+
+
+<g stroke="#55473d" stroke-width="4" stroke-linejoin="round">
+<ellipse cx="102" cy="105" rx="57" ry="48" fill="url(#v4g0)"/>
+<circle cx="145" cy="70" r="32" fill="url(#v4g0)"/>
+<path fill="url(#v4g1)" d="M132 42c1-19 13-22 18-7 8-16 21-8 16 7 15-5 20 8 8 17z"/>
+<path fill="url(#v4g2)" d="M172 70l27 12-28 10z"/>
+<path fill="url(#v4g3)" d="M55 84L23 61l12 38-27 9 38 16z"/>
+<path d="M91 147v29M119 148v28M80 177h21M108 177h21" fill="none"/>
+<circle cx="153" cy="67" r="4" fill="url(#v4g4)"/>
+</g>
+
+
+</g>
+</svg>
