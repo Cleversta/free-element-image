@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Alpine Mirror Lake",
+    "description": "Snow-capped peaks, turquoise reflections, and a pine-framed meadow.",
+    "sky": "#eef0d7",
+    "ground": "#517957",
+    "src": "/assets/crafted-landscapes/alpine-mirror-lake.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Sunlit Coastal Cove",
+    "description": "Pale limestone cliffs, clear shallows, and a sweeping sandy beach.",
+    "sky": "#e7eee0",
+    "ground": "#6d875e",
+    "src": "/assets/crafted-landscapes/sunlit-coastal-cove.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Emerald Rice Terraces",
+    "description": "Layered rice paddies wind around green hills and a small field shelter.",
+    "sky": "#eee5b5",
+    "ground": "#547b4d",
+    "src": "/assets/crafted-landscapes/emerald-rice-terraces.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Lavender Golden Hour",
+    "description": "Violet flower rows and a stone farmhouse beneath a peach evening sky.",
+    "sky": "#f6d8b8",
+    "ground": "#6c7361",
+    "src": "/assets/crafted-landscapes/lavender-golden-hour.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Silver Birch Clearing",
+    "description": "White birch trunks and soft woodland light frame a quiet winding path.",
+    "sky": "#f3efd1",
+    "ground": "#879f72",
+    "src": "/assets/crafted-landscapes/silver-birch-clearing.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Sandstone Arch Canyon",
+    "description": "A sculpted sandstone arch, distant mesas, and warm desert trails.",
+    "sky": "#f6dec0",
+    "ground": "#d6a478",
+    "src": "/assets/crafted-landscapes/sandstone-arch-canyon.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Northern Lights River",
+    "description": "Flowing green aurora above snowy pines and a winding blue river.",
+    "sky": "#436879",
+    "ground": "#86adbd",
+    "src": "/assets/crafted-landscapes/northern-lights-river.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Cherry Blossom Bridge",
+    "description": "Pink cherry canopies and an arched footbridge over a gentle spring river.",
+    "sky": "#f5e8cd",
+    "ground": "#8da577",
+    "src": "/assets/crafted-landscapes/cherry-blossom-bridge.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Tuscan Vineyard",
+    "description": "Sunlit vineyard rows, cypress trees, and a terracotta-roof hill village.",
+    "sky": "#eee0b8",
+    "ground": "#8c995e",
+    "src": "/assets/crafted-landscapes/tuscan-vineyard.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Hidden Jungle Falls",
+    "description": "A ribbon waterfall and jade pool enclosed by lush tropical forest.",
+    "sky": "#dce8c8",
+    "ground": "#417e66",
+    "src": "/assets/crafted-landscapes/hidden-jungle-falls.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Copperwood Creek",
+    "description": "Amber canopies, scattered leaves, and a small stone bridge beside a creek.",
+    "sky": "#eee0bb",
+    "ground": "#9e9f72",
+    "src": "/assets/crafted-landscapes/copperwood-creek.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Wildflower Trail",
+    "description": "An open spring meadow with a winding trail and delicate floral borders.",
+    "sky": "#f1edd4",
+    "ground": "#789b68",
+    "src": "/assets/crafted-landscapes/wildflower-trail.svg",
+    "kind": "full"
+  }
+]

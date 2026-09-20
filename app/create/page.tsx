@@ -1,2 +1,4 @@
-import Generator from '@/components/Generator';
-export default function CreatePage(){return <Generator/>}
+import Generator from "@/components/Generator";
+export default function CreatePage() {
+  return <Generator />;
+}

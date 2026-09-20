@@ -3057,7 +3057,7 @@
   },
   {
     "id": "plant-grass-tuft-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Grass Tuft",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-grass-tuft-001.svg",
@@ -3075,7 +3075,7 @@
   },
   {
     "id": "plant-tall-grass-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Tall Grass",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-tall-grass-001.svg",
@@ -3093,7 +3093,7 @@
   },
   {
     "id": "plant-reeds-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Reeds",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-reeds-001.svg",
@@ -3111,7 +3111,7 @@
   },
   {
     "id": "plant-fern-clump-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Fern Clump",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-fern-clump-001.svg",
@@ -3129,7 +3129,7 @@
   },
   {
     "id": "plant-clover-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Clover",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-clover-001.svg",
@@ -3147,7 +3147,7 @@
   },
   {
     "id": "plant-herbs-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Herb Patch",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-herbs-001.svg",
@@ -3165,7 +3165,7 @@
   },
   {
     "id": "plant-ivy-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Ivy Patch",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-ivy-001.svg",
@@ -3183,7 +3183,7 @@
   },
   {
     "id": "plant-ground-cover-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Ground Cover",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-ground-cover-001.svg",
@@ -3201,7 +3201,7 @@
   },
   {
     "id": "plant-wheat-clump-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Wheat Clump",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-wheat-clump-001.svg",
@@ -3219,7 +3219,7 @@
   },
   {
     "id": "plant-bamboo-small-001",
-    "type": "gras",
+    "type": "grass",
     "variant": "Small Bamboo",
     "style": "vector-countryside",
     "src": "/assets/vector-countryside/grass/plant-bamboo-small-001.svg",
@@ -3506,7 +3506,7 @@
     "transparent": true
   },
   {
-    "id": "birdhouse-001",
+    "id": "village-prop-birdhouse-001",
     "type": "village-prop",
     "variant": "Birdhouse",
     "style": "vector-countryside",
@@ -3542,7 +3542,7 @@
     "transparent": true
   },
   {
-    "id": "barrel-001",
+    "id": "village-prop-barrel-001",
     "type": "village-prop",
     "variant": "Wooden Barrel",
     "style": "vector-countryside",
@@ -3594,5 +3594,3337 @@
     "maxScale": 3,
     "collision": "soft",
     "transparent": true
+  },
+  {
+    "id": "freeimage-rabbit-sitting",
+    "type": "animal",
+    "variant": "rabbit-sitting",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/rabbit-sitting.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-brown-goat",
+    "type": "animal",
+    "variant": "brown-goat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/brown-goat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-round-sheep",
+    "type": "animal",
+    "variant": "round-sheep",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/round-sheep.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-cream-goat",
+    "type": "animal",
+    "variant": "cream-goat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/cream-goat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-yellow-chick",
+    "type": "animal",
+    "variant": "yellow-chick",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/yellow-chick.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-beagle-puppy",
+    "type": "animal",
+    "variant": "beagle-puppy",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/beagle-puppy.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-mallard-duck",
+    "type": "animal",
+    "variant": "mallard-duck",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/mallard-duck.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-domestic-goat",
+    "type": "animal",
+    "variant": "domestic-goat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/domestic-goat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-grazing-cow",
+    "type": "animal",
+    "variant": "grazing-cow",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/grazing-cow.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-cream-cat",
+    "type": "animal",
+    "variant": "cream-cat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/cream-cat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-clydesdale-horse",
+    "type": "animal",
+    "variant": "clydesdale-horse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/clydesdale-horse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-bunny",
+    "type": "animal",
+    "variant": "bunny",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/bunny.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-sleeping-tabby-cat",
+    "type": "animal",
+    "variant": "sleeping-tabby-cat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/sleeping-tabby-cat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-rust-cow",
+    "type": "animal",
+    "variant": "rust-cow",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/rust-cow.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-blue-eyed-dog",
+    "type": "animal",
+    "variant": "blue-eyed-dog",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/blue-eyed-dog.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-standing-brown-dog",
+    "type": "animal",
+    "variant": "standing-brown-dog",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/standing-brown-dog.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-fluffy-sheep",
+    "type": "animal",
+    "variant": "fluffy-sheep",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/fluffy-sheep.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-green-headed-duck",
+    "type": "animal",
+    "variant": "green-headed-duck",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/green-headed-duck.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-goose-family",
+    "type": "animal",
+    "variant": "goose-family",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/goose-family.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-dachshund",
+    "type": "animal",
+    "variant": "dachshund",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/dachshund.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-copper-beagle",
+    "type": "animal",
+    "variant": "copper-beagle",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/copper-beagle.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-rearing-goat",
+    "type": "animal",
+    "variant": "rearing-goat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/rearing-goat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-great-tit-bird",
+    "type": "animal",
+    "variant": "great-tit-bird",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/great-tit-bird.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-chicken-family",
+    "type": "animal",
+    "variant": "chicken-family",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/chicken-family.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-trotting-horse",
+    "type": "animal",
+    "variant": "trotting-horse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/trotting-horse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-kingfisher",
+    "type": "animal",
+    "variant": "kingfisher",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/kingfisher.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-brown-white-cow",
+    "type": "animal",
+    "variant": "brown-white-cow",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/brown-white-cow.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-black-white-cow",
+    "type": "animal",
+    "variant": "black-white-cow",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/black-white-cow.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ginger-cat",
+    "type": "animal",
+    "variant": "ginger-cat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/ginger-cat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-brown-horse",
+    "type": "animal",
+    "variant": "brown-horse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/brown-horse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-golden-mane-horse",
+    "type": "animal",
+    "variant": "golden-mane-horse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/golden-mane-horse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-standing-pig",
+    "type": "animal",
+    "variant": "standing-pig",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/standing-pig.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-pink-goat",
+    "type": "animal",
+    "variant": "pink-goat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/pink-goat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-resting-rabbit",
+    "type": "animal",
+    "variant": "resting-rabbit",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/resting-rabbit.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-rooster",
+    "type": "animal",
+    "variant": "rooster",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/rooster.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-sitting-brown-dog",
+    "type": "animal",
+    "variant": "sitting-brown-dog",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/sitting-brown-dog.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-happy-pig",
+    "type": "animal",
+    "variant": "happy-pig",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/happy-pig.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-friendly-bull",
+    "type": "animal",
+    "variant": "friendly-bull",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/friendly-bull.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-resting-tabby-cat",
+    "type": "animal",
+    "variant": "resting-tabby-cat",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/resting-tabby-cat.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-black-white-rabbit",
+    "type": "animal",
+    "variant": "black-white-rabbit",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/black-white-rabbit.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-farm-hen",
+    "type": "animal",
+    "variant": "farm-hen",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/farm-hen.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-chickadee",
+    "type": "animal",
+    "variant": "chickadee",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/chickadee.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-hoopoe-bird",
+    "type": "animal",
+    "variant": "hoopoe-bird",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/hoopoe-bird.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-chestnut-horse",
+    "type": "animal",
+    "variant": "chestnut-horse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/chestnut-horse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-golden-rabbit",
+    "type": "animal",
+    "variant": "golden-rabbit",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/golden-rabbit.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-walking-pig",
+    "type": "animal",
+    "variant": "walking-pig",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/walking-pig.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-fluffy-yellow-chick",
+    "type": "animal",
+    "variant": "fluffy-yellow-chick",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/fluffy-yellow-chick.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-blue-hummingbird",
+    "type": "animal",
+    "variant": "blue-hummingbird",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/blue-hummingbird.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-smiling-pig",
+    "type": "animal",
+    "variant": "smiling-pig",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/smiling-pig.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-grazing-pig",
+    "type": "animal",
+    "variant": "grazing-pig",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/grazing-pig.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-red-cardinal",
+    "type": "animal",
+    "variant": "red-cardinal",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/red-cardinal.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-brown-duck",
+    "type": "animal",
+    "variant": "brown-duck",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/brown-duck.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-welsummer-rooster",
+    "type": "animal",
+    "variant": "welsummer-rooster",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/welsummer-rooster.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-potted-seedling",
+    "type": "plant",
+    "variant": "potted-seedling",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/potted-seedling.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-wooden-barrel",
+    "type": "decoration",
+    "variant": "wooden-barrel",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/wooden-barrel.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-wooden-crate",
+    "type": "decoration",
+    "variant": "wooden-crate",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/wooden-crate.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-rock-rubble",
+    "type": "rocks",
+    "variant": "rock-rubble",
+    "style": "freeimage",
+    "src": "/assets/freeimage/rocks/rock-rubble.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-rounded-boulder",
+    "type": "rocks",
+    "variant": "rounded-boulder",
+    "style": "freeimage",
+    "src": "/assets/freeimage/rocks/rounded-boulder.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-colorful-birdhouse",
+    "type": "decoration",
+    "variant": "colorful-birdhouse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/colorful-birdhouse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-vegetable-basket",
+    "type": "decoration",
+    "variant": "vegetable-basket",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/vegetable-basket.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-wicker-basket",
+    "type": "decoration",
+    "variant": "wicker-basket",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/wicker-basket.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-potted-red-roses",
+    "type": "flower",
+    "variant": "potted-red-roses",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/potted-red-roses.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-metal-ore-rock",
+    "type": "rocks",
+    "variant": "metal-ore-rock",
+    "style": "freeimage",
+    "src": "/assets/freeimage/rocks/metal-ore-rock.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-angular-boulder",
+    "type": "rocks",
+    "variant": "angular-boulder",
+    "style": "freeimage",
+    "src": "/assets/freeimage/rocks/angular-boulder.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-picnic-basket",
+    "type": "decoration",
+    "variant": "picnic-basket",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/picnic-basket.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-wood-log",
+    "type": "decoration",
+    "variant": "wood-log",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/wood-log.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-mailbox",
+    "type": "decoration",
+    "variant": "mailbox",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/mailbox.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-shipping-crate",
+    "type": "decoration",
+    "variant": "shipping-crate",
+    "style": "freeimage",
+    "src": "/assets/freeimage/decoration/shipping-crate.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-potted-purple-flowers",
+    "type": "flower",
+    "variant": "potted-purple-flowers",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/potted-purple-flowers.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-potted-white-flowers",
+    "type": "flower",
+    "variant": "potted-white-flowers",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/potted-white-flowers.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-glowing-firefly",
+    "type": "effect",
+    "variant": "glowing-firefly",
+    "style": "freeimage",
+    "src": "/assets/freeimage/effect/glowing-firefly.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-lightning-bug",
+    "type": "effect",
+    "variant": "lightning-bug",
+    "style": "freeimage",
+    "src": "/assets/freeimage/effect/lightning-bug.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-yellow-bucket-and-spade",
+    "type": "garden-equipment",
+    "variant": "yellow-bucket-and-spade",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/yellow-bucket-and-spade.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-round-point-shovel",
+    "type": "garden-equipment",
+    "variant": "round-point-shovel",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/round-point-shovel.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-red-pail",
+    "type": "garden-equipment",
+    "variant": "red-pail",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/red-pail.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-metal-watering-can",
+    "type": "garden-equipment",
+    "variant": "metal-watering-can",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/metal-watering-can.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-green-garden-bench",
+    "type": "garden-equipment",
+    "variant": "green-garden-bench",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/green-garden-bench.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-gray-garden-bench",
+    "type": "garden-equipment",
+    "variant": "gray-garden-bench",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/gray-garden-bench.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-garden-rake",
+    "type": "garden-equipment",
+    "variant": "garden-rake",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/garden-rake.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-earthen-pot",
+    "type": "garden-equipment",
+    "variant": "earthen-pot",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/earthen-pot.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-green-watering-can",
+    "type": "garden-equipment",
+    "variant": "green-watering-can",
+    "style": "freeimage",
+    "src": "/assets/freeimage/garden-equipment/green-watering-can.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-daisy",
+    "type": "flower",
+    "variant": "daisy",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/daisy.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-white-hydrangea",
+    "type": "flower",
+    "variant": "white-hydrangea",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/white-hydrangea.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-rose-stem",
+    "type": "flower",
+    "variant": "rose-stem",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/rose-stem.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-deep-red-rose",
+    "type": "flower",
+    "variant": "deep-red-rose",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/deep-red-rose.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-potted-flowers",
+    "type": "flower",
+    "variant": "potted-flowers",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/potted-flowers.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-pink-tulip",
+    "type": "flower",
+    "variant": "pink-tulip",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/pink-tulip.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-indian-paintbrush",
+    "type": "flower",
+    "variant": "indian-paintbrush",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/indian-paintbrush.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-silverweed-flowers",
+    "type": "flower",
+    "variant": "silverweed-flowers",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/silverweed-flowers.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-yellow-violets",
+    "type": "flower",
+    "variant": "yellow-violets",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/yellow-violets.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-sunflower",
+    "type": "flower",
+    "variant": "sunflower",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/sunflower.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-poppy",
+    "type": "flower",
+    "variant": "poppy",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/poppy.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-shaded-pink-tulip",
+    "type": "flower",
+    "variant": "shaded-pink-tulip",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/shaded-pink-tulip.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-bee-on-flowers",
+    "type": "flower",
+    "variant": "bee-on-flowers",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/bee-on-flowers.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-red-tulip",
+    "type": "flower",
+    "variant": "red-tulip",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/red-tulip.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-dark-grass-clump",
+    "type": "grass",
+    "variant": "dark-grass-clump",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/dark-grass-clump.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-butterfly-and-flowers",
+    "type": "flower",
+    "variant": "butterfly-and-flowers",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/butterfly-and-flowers.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-red-rose",
+    "type": "flower",
+    "variant": "red-rose",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/red-rose.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ladybird-on-grass",
+    "type": "grass",
+    "variant": "ladybird-on-grass",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/ladybird-on-grass.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-tall-grass-blades",
+    "type": "grass",
+    "variant": "tall-grass-blades",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/tall-grass-blades.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-grass-blades",
+    "type": "grass",
+    "variant": "grass-blades",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/grass-blades.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-grass-border",
+    "type": "grass",
+    "variant": "grass-border",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/grass-border.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-shaded-grass-clump",
+    "type": "grass",
+    "variant": "shaded-grass-clump",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/shaded-grass-clump.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-meadow-groundcover",
+    "type": "grass",
+    "variant": "meadow-groundcover",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/meadow-groundcover.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-meadow-groundcover-wide",
+    "type": "grass",
+    "variant": "meadow-groundcover-wide",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/meadow-groundcover-wide.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-curled-fern",
+    "type": "plant",
+    "variant": "curled-fern",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/curled-fern.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-broad-leaf-plant",
+    "type": "plant",
+    "variant": "broad-leaf-plant",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/broad-leaf-plant.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-dark-broad-leaf-plant",
+    "type": "plant",
+    "variant": "dark-broad-leaf-plant",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/dark-broad-leaf-plant.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-scattered-grass-tufts",
+    "type": "grass",
+    "variant": "scattered-grass-tufts",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/scattered-grass-tufts.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-garden-house",
+    "type": "building",
+    "variant": "garden-house",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/garden-house.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-blue-townhouse",
+    "type": "building",
+    "variant": "blue-townhouse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/blue-townhouse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-modern-hospital",
+    "type": "building",
+    "variant": "modern-hospital",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/modern-hospital.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-village-school",
+    "type": "building",
+    "variant": "village-school",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/village-school.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-clock-tower-school",
+    "type": "building",
+    "variant": "clock-tower-school",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/clock-tower-school.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-purple-cottage",
+    "type": "building",
+    "variant": "purple-cottage",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/purple-cottage.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-golden-church",
+    "type": "building",
+    "variant": "golden-church",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/golden-church.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-hospital-and-ambulance",
+    "type": "building",
+    "variant": "hospital-and-ambulance",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/hospital-and-ambulance.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-smoking-chimney-house",
+    "type": "building",
+    "variant": "smoking-chimney-house",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/smoking-chimney-house.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-red-barn",
+    "type": "building",
+    "variant": "red-barn",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/red-barn.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-long-farm-building",
+    "type": "building",
+    "variant": "long-farm-building",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/long-farm-building.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-chinese-pavilion",
+    "type": "building",
+    "variant": "chinese-pavilion",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/chinese-pavilion.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-cream-house",
+    "type": "building",
+    "variant": "cream-house",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/cream-house.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-farm-and-silos",
+    "type": "building",
+    "variant": "farm-and-silos",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/farm-and-silos.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-dark-roof-house",
+    "type": "building",
+    "variant": "dark-roof-house",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/dark-roof-house.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-fenced-farmhouse",
+    "type": "building",
+    "variant": "fenced-farmhouse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/fenced-farmhouse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-porch-house",
+    "type": "building",
+    "variant": "porch-house",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/porch-house.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-red-stable",
+    "type": "building",
+    "variant": "red-stable",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/red-stable.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-brown-village-house",
+    "type": "building",
+    "variant": "brown-village-house",
+    "style": "freeimage",
+    "src": "/assets/freeimage/building/brown-village-house.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-street-lamp",
+    "type": "village-prop",
+    "variant": "street-lamp",
+    "style": "freeimage",
+    "src": "/assets/freeimage/village-prop/street-lamp.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-bicycle",
+    "type": "vehicles",
+    "variant": "bicycle",
+    "style": "freeimage",
+    "src": "/assets/freeimage/vehicles/bicycle.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-school-bus",
+    "type": "vehicles",
+    "variant": "school-bus",
+    "style": "freeimage",
+    "src": "/assets/freeimage/vehicles/school-bus.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-winding-road",
+    "type": "terrain",
+    "variant": "winding-road",
+    "style": "freeimage",
+    "src": "/assets/freeimage/terrain/winding-road.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-young-cedar-tree",
+    "type": "tree",
+    "variant": "young-cedar-tree",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/young-cedar-tree.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-water-lilies",
+    "type": "water",
+    "variant": "water-lilies",
+    "style": "freeimage",
+    "src": "/assets/freeimage/water/water-lilies.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-red-bus",
+    "type": "vehicles",
+    "variant": "red-bus",
+    "style": "freeimage",
+    "src": "/assets/freeimage/vehicles/red-bus.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-marsh-reeds",
+    "type": "water",
+    "variant": "marsh-reeds",
+    "style": "freeimage",
+    "src": "/assets/freeimage/water/marsh-reeds.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-jogger",
+    "type": "character",
+    "variant": "jogger",
+    "style": "freeimage",
+    "src": "/assets/freeimage/character/jogger.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-cyclist",
+    "type": "character",
+    "variant": "cyclist",
+    "style": "freeimage",
+    "src": "/assets/freeimage/character/cyclist.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-green-car",
+    "type": "vehicles",
+    "variant": "green-car",
+    "style": "freeimage",
+    "src": "/assets/freeimage/vehicles/green-car.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-village-farmer",
+    "type": "character",
+    "variant": "village-farmer",
+    "style": "freeimage",
+    "src": "/assets/freeimage/character/village-farmer.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-slender-grass",
+    "type": "grass",
+    "variant": "slender-grass",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/slender-grass.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-cassava-plant",
+    "type": "plant",
+    "variant": "cassava-plant",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/cassava-plant.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-purple-sweetvetch",
+    "type": "flower",
+    "variant": "purple-sweetvetch",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/purple-sweetvetch.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-fireweed",
+    "type": "flower",
+    "variant": "fireweed",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/fireweed.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-pasque-flowers",
+    "type": "flower",
+    "variant": "pasque-flowers",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/pasque-flowers.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-mustard-greens",
+    "type": "plant",
+    "variant": "mustard-greens",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/mustard-greens.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-potted-green-plant",
+    "type": "plant",
+    "variant": "potted-green-plant",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/potted-green-plant.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-flowering-tobacco",
+    "type": "plant",
+    "variant": "flowering-tobacco",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/flowering-tobacco.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-delicate-grass",
+    "type": "grass",
+    "variant": "delicate-grass",
+    "style": "freeimage",
+    "src": "/assets/freeimage/grass/delicate-grass.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-tender-potted-seedling",
+    "type": "plant",
+    "variant": "tender-potted-seedling",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/tender-potted-seedling.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-golden-sun",
+    "type": "sky",
+    "variant": "golden-sun",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/golden-sun.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-rain-cloud",
+    "type": "sky",
+    "variant": "rain-cloud",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/rain-cloud.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-soft-gray-cloud",
+    "type": "sky",
+    "variant": "soft-gray-cloud",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/soft-gray-cloud.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-soft-blue-cloud",
+    "type": "sky",
+    "variant": "soft-blue-cloud",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/soft-blue-cloud.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-rain-shower",
+    "type": "sky",
+    "variant": "rain-shower",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/rain-shower.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-crescent-moon",
+    "type": "sky",
+    "variant": "crescent-moon",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/crescent-moon.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-radiant-sun",
+    "type": "sky",
+    "variant": "radiant-sun",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/radiant-sun.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-tropical-palm",
+    "type": "tree",
+    "variant": "tropical-palm",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/tropical-palm.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-heart-leaf-tree",
+    "type": "tree",
+    "variant": "heart-leaf-tree",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/heart-leaf-tree.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-leafy-tree",
+    "type": "tree",
+    "variant": "leafy-tree",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/leafy-tree.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-slender-palm",
+    "type": "tree",
+    "variant": "slender-palm",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/slender-palm.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-bare-tree",
+    "type": "tree",
+    "variant": "bare-tree",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/bare-tree.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-cartoon-palm",
+    "type": "tree",
+    "variant": "cartoon-palm",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/cartoon-palm.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-treehouse",
+    "type": "tree",
+    "variant": "treehouse",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/treehouse.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "scene-alpine-mirror-lake",
+    "type": "background",
+    "variant": "alpine-mirror-lake",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/alpine-mirror-lake.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-sunlit-coastal-cove",
+    "type": "background",
+    "variant": "sunlit-coastal-cove",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/sunlit-coastal-cove.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-emerald-rice-terraces",
+    "type": "background",
+    "variant": "emerald-rice-terraces",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/emerald-rice-terraces.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-lavender-golden-hour",
+    "type": "background",
+    "variant": "lavender-golden-hour",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/lavender-golden-hour.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-silver-birch-clearing",
+    "type": "background",
+    "variant": "silver-birch-clearing",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/silver-birch-clearing.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-sandstone-arch-canyon",
+    "type": "background",
+    "variant": "sandstone-arch-canyon",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/sandstone-arch-canyon.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-northern-lights-river",
+    "type": "background",
+    "variant": "northern-lights-river",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/northern-lights-river.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-cherry-blossom-bridge",
+    "type": "background",
+    "variant": "cherry-blossom-bridge",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/cherry-blossom-bridge.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-tuscan-vineyard",
+    "type": "background",
+    "variant": "tuscan-vineyard",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/tuscan-vineyard.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-hidden-jungle-falls",
+    "type": "background",
+    "variant": "hidden-jungle-falls",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/hidden-jungle-falls.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-copperwood-creek",
+    "type": "background",
+    "variant": "copperwood-creek",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/copperwood-creek.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
+  },
+  {
+    "id": "scene-wildflower-trail",
+    "type": "background",
+    "variant": "wildflower-trail",
+    "style": "crafted-landscapes",
+    "src": "/assets/crafted-landscapes/wildflower-trail.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 1,
+    "maxScale": 1,
+    "collision": "none",
+    "transparent": false,
+    "fullCanvas": true
   }
 ]

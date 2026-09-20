@@ -1,6 +1,41 @@
 {
-  "name":"freelement-images","version":"0.1.0","private":true,
-  "scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},
-  "dependencies":{"next":"15.5.3","react":"19.1.0","react-dom":"19.1.0"},
-  "devDependencies":{"typescript":"^5.8.3","@types/node":"^22","@types/react":"^19","@types/react-dom":"^19"}
+  "name": "freelement-images",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node scripts/serve.mjs",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/scene.test.mjs",
+    "test:e2e": "playwright test",
+    "check": "npm run lint && npm run typecheck && npm test",
+    "format": "prettier --write app components lib tests scripts *.config.*"
+  },
+  "dependencies": {
+    "next": "15.5.25",
+    "react": "19.1.9",
+    "react-dom": "19.1.9"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.7",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "9.39.5",
+    "eslint-config-next": "15.5.25",
+    "typescript": "^5.8.3",
+    "sharp": "0.35.4",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "type": "module",
+  "overrides": {
+    "postcss": "8.5.28",
+    "sharp": "$sharp"
+  }
 }

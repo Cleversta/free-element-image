@@ -1,0 +1,1038 @@
+{
+  "sourceDirectory": "/home/marason/freeimage",
+  "sourceFiles": 206,
+  "imported": 164,
+  "totalAssets": 362,
+  "files": [
+    {
+      "source": "animals/1384316344.svg",
+      "status": "imported",
+      "assetId": "freeimage-rabbit-sitting"
+    },
+    {
+      "source": "animals/1409007044.svg",
+      "status": "excluded",
+      "reason": "Rough monochrome hen sketch"
+    },
+    {
+      "source": "animals/1424212947.svg",
+      "status": "imported",
+      "assetId": "freeimage-brown-goat"
+    },
+    {
+      "source": "animals/1452429302.svg",
+      "status": "imported",
+      "assetId": "freeimage-round-sheep"
+    },
+    {
+      "source": "animals/1506614472.svg",
+      "status": "excluded",
+      "reason": "Rubber duck icon rather than scene animal"
+    },
+    {
+      "source": "animals/1506703799.svg",
+      "status": "excluded",
+      "reason": "Solid bird silhouette"
+    },
+    {
+      "source": "animals/1538504947.svg",
+      "status": "excluded",
+      "reason": "Decorative bird symbol"
+    },
+    {
+      "source": "animals/1546722636.svg",
+      "status": "imported",
+      "assetId": "freeimage-cream-goat"
+    },
+    {
+      "source": "animals/1549833776.svg",
+      "status": "imported",
+      "assetId": "freeimage-yellow-chick"
+    },
+    {
+      "source": "animals/1550876077.svg",
+      "status": "excluded",
+      "reason": "Heavy mottled texture inconsistent with other animals"
+    },
+    {
+      "source": "animals/1550951043.svg",
+      "status": "excluded",
+      "reason": "Solid cat silhouette"
+    },
+    {
+      "source": "animals/1575461664black-cat-silhouette-freesvg.org.svg",
+      "status": "excluded",
+      "reason": "Solid cat silhouette"
+    },
+    {
+      "source": "animals/1688292888beagle-dog-breed.svg",
+      "status": "imported",
+      "assetId": "freeimage-beagle-puppy"
+    },
+    {
+      "source": "animals/1706249758Ram1b.svg",
+      "status": "excluded",
+      "reason": "Harsh yellow ram sketch"
+    },
+    {
+      "source": "animals/1712668310Duck1c.svg",
+      "status": "imported",
+      "assetId": "freeimage-mallard-duck"
+    },
+    {
+      "source": "animals/1714407034Domestic-goat.svg",
+      "status": "imported",
+      "assetId": "freeimage-domestic-goat"
+    },
+    {
+      "source": "animals/A-cow-with_1729509184.svg",
+      "status": "imported",
+      "assetId": "freeimage-grazing-cow"
+    },
+    {
+      "source": "animals/Architetto----Gatto-04.svg",
+      "status": "imported",
+      "assetId": "freeimage-cream-cat"
+    },
+    {
+      "source": "animals/BasicClydesdale.svg",
+      "status": "imported",
+      "assetId": "freeimage-clydesdale-horse"
+    },
+    {
+      "source": "animals/Bunny.svg",
+      "status": "imported",
+      "assetId": "freeimage-bunny"
+    },
+    {
+      "source": "animals/Cat-Pose-2015060816.svg",
+      "status": "imported",
+      "assetId": "freeimage-sleeping-tabby-cat"
+    },
+    {
+      "source": "animals/Chick_002_Multiple_Positions_Cartoon.svg",
+      "status": "excluded",
+      "reason": "Sprite sheet containing multiple separate poses"
+    },
+    {
+      "source": "animals/Coloured-Sheep.svg",
+      "status": "excluded",
+      "reason": "Rough sketch with opaque rectangular background"
+    },
+    {
+      "source": "animals/Cow2.svg",
+      "status": "imported",
+      "assetId": "freeimage-rust-cow"
+    },
+    {
+      "source": "animals/Dog-With-Blue-Eyes (Copy).svg",
+      "status": "duplicate",
+      "duplicateOf": "animals/Dog-With-Blue-Eyes.svg"
+    },
+    {
+      "source": "animals/Dog-With-Blue-Eyes.svg",
+      "status": "imported",
+      "assetId": "freeimage-blue-eyed-dog"
+    },
+    {
+      "source": "animals/Dog-in-top-shape_1751023541.svg",
+      "status": "imported",
+      "assetId": "freeimage-standing-brown-dog"
+    },
+    {
+      "source": "animals/Eid-Sheep-colored.svg",
+      "status": "imported",
+      "assetId": "freeimage-fluffy-sheep"
+    },
+    {
+      "source": "animals/Ente-coloured.svg",
+      "status": "imported",
+      "assetId": "freeimage-green-headed-duck"
+    },
+    {
+      "source": "animals/FrigateBird2.svg",
+      "status": "excluded",
+      "reason": "Bird silhouette with heavy outline"
+    },
+    {
+      "source": "animals/Gaes.svg",
+      "status": "imported",
+      "assetId": "freeimage-goose-family"
+    },
+    {
+      "source": "animals/Gerald-G-Dog-Simple-Drawing-6.svg",
+      "status": "imported",
+      "assetId": "freeimage-dachshund"
+    },
+    {
+      "source": "animals/Gerald_G_Copper_the_Beagle.svg",
+      "status": "imported",
+      "assetId": "freeimage-copper-beagle"
+    },
+    {
+      "source": "animals/Goat10_1785730724.svg",
+      "status": "imported",
+      "assetId": "freeimage-rearing-goat"
+    },
+    {
+      "source": "animals/Great-Tit.svg",
+      "status": "imported",
+      "assetId": "freeimage-great-tit-bird"
+    },
+    {
+      "source": "animals/Huehner-coloured (1).svg",
+      "status": "duplicate",
+      "duplicateOf": "animals/Huehner-coloured.svg"
+    },
+    {
+      "source": "animals/Huehner-coloured.svg",
+      "status": "imported",
+      "assetId": "freeimage-chicken-family"
+    },
+    {
+      "source": "animals/Jurgentje-Horse.svg",
+      "status": "imported",
+      "assetId": "freeimage-trotting-horse"
+    },
+    {
+      "source": "animals/KingfisherIsolated.svg",
+      "status": "imported",
+      "assetId": "freeimage-kingfisher"
+    },
+    {
+      "source": "animals/Kuh-coloured.svg",
+      "status": "imported",
+      "assetId": "freeimage-brown-white-cow"
+    },
+    {
+      "source": "animals/Kuh2-coloured.svg",
+      "status": "imported",
+      "assetId": "freeimage-black-white-cow"
+    },
+    {
+      "source": "animals/Machovka-cat.svg",
+      "status": "imported",
+      "assetId": "freeimage-ginger-cat"
+    },
+    {
+      "source": "animals/Machovka_horse.svg",
+      "status": "imported",
+      "assetId": "freeimage-brown-horse"
+    },
+    {
+      "source": "animals/Pferd-coloured.svg",
+      "status": "imported",
+      "assetId": "freeimage-golden-mane-horse"
+    },
+    {
+      "source": "animals/Pig6_1749276615.svg",
+      "status": "imported",
+      "assetId": "freeimage-standing-pig"
+    },
+    {
+      "source": "animals/Shiba-Inu-Dog-Silhouette.svg",
+      "status": "excluded",
+      "reason": "Monochrome dog silhouette"
+    },
+    {
+      "source": "animals/SnowBunting.svg",
+      "status": "excluded",
+      "reason": "Monochrome bird sketch"
+    },
+    {
+      "source": "animals/Ziege-coloured.svg",
+      "status": "imported",
+      "assetId": "freeimage-pink-goat"
+    },
+    {
+      "source": "animals/a-very-discontented-rabbit_1789467991_312a164a.svg",
+      "status": "imported",
+      "assetId": "freeimage-resting-rabbit"
+    },
+    {
+      "source": "animals/ayam-jantan.svg",
+      "status": "imported",
+      "assetId": "freeimage-rooster"
+    },
+    {
+      "source": "animals/browndog.svg",
+      "status": "imported",
+      "assetId": "freeimage-sitting-brown-dog"
+    },
+    {
+      "source": "animals/bugmenot_Happy_Pig.svg",
+      "status": "imported",
+      "assetId": "freeimage-happy-pig"
+    },
+    {
+      "source": "animals/bull-cartoonish_1782068045.svg",
+      "status": "imported",
+      "assetId": "freeimage-friendly-bull"
+    },
+    {
+      "source": "animals/ca.svg",
+      "status": "imported",
+      "assetId": "freeimage-resting-tabby-cat"
+    },
+    {
+      "source": "animals/cat-silhouette-snowshoe.svg",
+      "status": "excluded",
+      "reason": "Solid cat silhouette"
+    },
+    {
+      "source": "animals/danko-Friendly-rabbit.svg",
+      "status": "imported",
+      "assetId": "freeimage-black-white-rabbit"
+    },
+    {
+      "source": "animals/davidone-Chicken.svg",
+      "status": "imported",
+      "assetId": "freeimage-farm-hen"
+    },
+    {
+      "source": "animals/dibujo-16.svg",
+      "status": "imported",
+      "assetId": "freeimage-chickadee"
+    },
+    {
+      "source": "animals/goat.svg",
+      "status": "excluded",
+      "reason": "Flat goat with opaque rectangular background"
+    },
+    {
+      "source": "animals/hoopoe.svg",
+      "status": "imported",
+      "assetId": "freeimage-hoopoe-bird"
+    },
+    {
+      "source": "animals/horse-brown800px.svg",
+      "status": "imported",
+      "assetId": "freeimage-chestnut-horse"
+    },
+    {
+      "source": "animals/jilagan-rabbit.svg",
+      "status": "imported",
+      "assetId": "freeimage-golden-rabbit"
+    },
+    {
+      "source": "animals/johnny-automatic-piggie.svg",
+      "status": "imported",
+      "assetId": "freeimage-walking-pig"
+    },
+    {
+      "source": "animals/newchick.svg",
+      "status": "imported",
+      "assetId": "freeimage-fluffy-yellow-chick"
+    },
+    {
+      "source": "animals/openclipart.svg",
+      "status": "imported",
+      "assetId": "freeimage-blue-hummingbird"
+    },
+    {
+      "source": "animals/pig-remix.svg",
+      "status": "imported",
+      "assetId": "freeimage-smiling-pig"
+    },
+    {
+      "source": "animals/piggy.svg",
+      "status": "imported",
+      "assetId": "freeimage-grazing-pig"
+    },
+    {
+      "source": "animals/pitr_Chicken_icon.svg",
+      "status": "excluded",
+      "reason": "Heavy outline chick icon"
+    },
+    {
+      "source": "animals/polygon_origami.svg",
+      "status": "excluded",
+      "reason": "Origami symbol rather than scene animal"
+    },
+    {
+      "source": "animals/redcardinal.svg",
+      "status": "imported",
+      "assetId": "freeimage-red-cardinal"
+    },
+    {
+      "source": "animals/ryanlerch-Frigate-Bird.svg",
+      "status": "excluded",
+      "reason": "Solid bird silhouette"
+    },
+    {
+      "source": "animals/sutrannu-Duck.svg",
+      "status": "imported",
+      "assetId": "freeimage-brown-duck"
+    },
+    {
+      "source": "animals/welsummer_cockerel.svg",
+      "status": "imported",
+      "assetId": "freeimage-welsummer-rooster"
+    },
+    {
+      "source": "decoration/1396647477.svg",
+      "status": "imported",
+      "assetId": "freeimage-potted-seedling"
+    },
+    {
+      "source": "decoration/1470535524.svg",
+      "status": "excluded",
+      "reason": "Barrel with opaque rectangular background; other barrels retained"
+    },
+    {
+      "source": "decoration/BarrelColour.svg",
+      "status": "imported",
+      "assetId": "freeimage-wooden-barrel"
+    },
+    {
+      "source": "decoration/Kiste.svg",
+      "status": "imported",
+      "assetId": "freeimage-wooden-crate"
+    },
+    {
+      "source": "decoration/Mailbox.svg",
+      "status": "excluded",
+      "reason": "Very low contrast mailbox; clearer mailbox retained"
+    },
+    {
+      "source": "decoration/alpine-landscape-rock-rubble-01c-al1.svg",
+      "status": "imported",
+      "assetId": "freeimage-rock-rubble"
+    },
+    {
+      "source": "decoration/alpine-landscape-rock-rubble-01g-al1.svg",
+      "status": "imported",
+      "assetId": "freeimage-rounded-boulder"
+    },
+    {
+      "source": "decoration/birdhouse-svgrepo-com.svg",
+      "status": "imported",
+      "assetId": "freeimage-colorful-birdhouse"
+    },
+    {
+      "source": "decoration/cesta-llena (1).svg",
+      "status": "duplicate",
+      "duplicateOf": "decoration/cesta-llena.svg"
+    },
+    {
+      "source": "decoration/cesta-llena.svg",
+      "status": "imported",
+      "assetId": "freeimage-vegetable-basket"
+    },
+    {
+      "source": "decoration/cesta.svg",
+      "status": "imported",
+      "assetId": "freeimage-wicker-basket"
+    },
+    {
+      "source": "decoration/flower_34.svg",
+      "status": "imported",
+      "assetId": "freeimage-potted-red-roses"
+    },
+    {
+      "source": "decoration/harvestable-resources-rock-metal-3.svg",
+      "status": "imported",
+      "assetId": "freeimage-metal-ore-rock"
+    },
+    {
+      "source": "decoration/harvestable-resources-rock.svg",
+      "status": "imported",
+      "assetId": "freeimage-angular-boulder"
+    },
+    {
+      "source": "decoration/johnny_automatic_picnic_basket.svg",
+      "status": "imported",
+      "assetId": "freeimage-picnic-basket"
+    },
+    {
+      "source": "decoration/log-clip-art-log.svg",
+      "status": "imported",
+      "assetId": "freeimage-wood-log"
+    },
+    {
+      "source": "decoration/mailbox-remix.svg",
+      "status": "imported",
+      "assetId": "freeimage-mailbox"
+    },
+    {
+      "source": "decoration/perspective-wooden-crate.svg",
+      "status": "imported",
+      "assetId": "freeimage-shipping-crate"
+    },
+    {
+      "source": "decoration/purple-flower-pot.svg",
+      "status": "imported",
+      "assetId": "freeimage-potted-purple-flowers"
+    },
+    {
+      "source": "decoration/white-flower-pot.svg",
+      "status": "imported",
+      "assetId": "freeimage-potted-white-flowers"
+    },
+    {
+      "source": "effect/1291240364.svg",
+      "status": "excluded",
+      "reason": "Heart burst symbol unrelated to scenery"
+    },
+    {
+      "source": "effect/firefly.svg",
+      "status": "imported",
+      "assetId": "freeimage-glowing-firefly"
+    },
+    {
+      "source": "effect/lightningbug-vector.svg",
+      "status": "imported",
+      "assetId": "freeimage-lightning-bug"
+    },
+    {
+      "source": "effect/tree-leave-svgrepo-com.svg",
+      "status": "excluded",
+      "reason": "Outline leaf icon"
+    },
+    {
+      "source": "equipment/1357395989.svg",
+      "status": "imported",
+      "assetId": "freeimage-yellow-bucket-and-spade"
+    },
+    {
+      "source": "equipment/Machovka_Shovel.svg",
+      "status": "excluded",
+      "reason": "Shovel with opaque rectangular background; other shovel retained"
+    },
+    {
+      "source": "equipment/Round-point-shovel.svg",
+      "status": "imported",
+      "assetId": "freeimage-round-point-shovel"
+    },
+    {
+      "source": "equipment/Summer_2010_ClipArt_1_Pail.svg",
+      "status": "imported",
+      "assetId": "freeimage-red-pail"
+    },
+    {
+      "source": "equipment/Watering_Can.svg",
+      "status": "imported",
+      "assetId": "freeimage-metal-watering-can"
+    },
+    {
+      "source": "equipment/bench.svg",
+      "status": "imported",
+      "assetId": "freeimage-green-garden-bench"
+    },
+    {
+      "source": "equipment/bench1.svg",
+      "status": "imported",
+      "assetId": "freeimage-gray-garden-bench"
+    },
+    {
+      "source": "equipment/bench2.svg",
+      "status": "excluded",
+      "reason": "Solid black bench; two shaded benches retained"
+    },
+    {
+      "source": "equipment/cybercooty-rateau.svg",
+      "status": "imported",
+      "assetId": "freeimage-garden-rake"
+    },
+    {
+      "source": "equipment/earthen-pot-icon.svg",
+      "status": "imported",
+      "assetId": "freeimage-earthen-pot"
+    },
+    {
+      "source": "equipment/watering-can.svg",
+      "status": "imported",
+      "assetId": "freeimage-green-watering-can"
+    },
+    {
+      "source": "equipment/white-flower-pot.svg",
+      "status": "duplicate",
+      "duplicateOf": "decoration/white-flower-pot.svg"
+    },
+    {
+      "source": "flower/1343590428.svg",
+      "status": "imported",
+      "assetId": "freeimage-daisy"
+    },
+    {
+      "source": "flower/1362400207_1.svg",
+      "status": "imported",
+      "assetId": "freeimage-white-hydrangea"
+    },
+    {
+      "source": "flower/Colored-Rose.svg",
+      "status": "imported",
+      "assetId": "freeimage-rose-stem"
+    },
+    {
+      "source": "flower/Flower.svg",
+      "status": "imported",
+      "assetId": "freeimage-deep-red-rose"
+    },
+    {
+      "source": "flower/Flower82.svg",
+      "status": "imported",
+      "assetId": "freeimage-potted-flowers"
+    },
+    {
+      "source": "flower/Flower_Arvin61r58.svg",
+      "status": "imported",
+      "assetId": "freeimage-pink-tulip"
+    },
+    {
+      "source": "flower/Gerald-G-KU-castilleja-miniata.svg",
+      "status": "imported",
+      "assetId": "freeimage-indian-paintbrush"
+    },
+    {
+      "source": "flower/Gerald_G_GG_Potentilla_anserina.svg",
+      "status": "imported",
+      "assetId": "freeimage-silverweed-flowers"
+    },
+    {
+      "source": "flower/Gerald_G_KU_viola_glabella.svg",
+      "status": "imported",
+      "assetId": "freeimage-yellow-violets"
+    },
+    {
+      "source": "flower/HakanL_Simple_Flower.svg",
+      "status": "excluded",
+      "reason": "Basic flower icon; detailed flowers retained"
+    },
+    {
+      "source": "flower/Machovka_sunflower.svg",
+      "status": "imported",
+      "assetId": "freeimage-sunflower"
+    },
+    {
+      "source": "flower/OpiumPoppy4.svg",
+      "status": "imported",
+      "assetId": "freeimage-poppy"
+    },
+    {
+      "source": "flower/TrinitySquare_Tulip.svg",
+      "status": "imported",
+      "assetId": "freeimage-shaded-pink-tulip"
+    },
+    {
+      "source": "flower/biswajyotim_Bee.svg",
+      "status": "imported",
+      "assetId": "freeimage-bee-on-flowers"
+    },
+    {
+      "source": "flower/genma_tulipa.svg",
+      "status": "imported",
+      "assetId": "freeimage-red-tulip"
+    },
+    {
+      "source": "flower/grasswip2.svg",
+      "status": "imported",
+      "assetId": "freeimage-dark-grass-clump"
+    },
+    {
+      "source": "flower/papillon_b_dor.svg",
+      "status": "imported",
+      "assetId": "freeimage-butterfly-and-flowers"
+    },
+    {
+      "source": "flower/rose-red.svg",
+      "status": "imported",
+      "assetId": "freeimage-red-rose"
+    },
+    {
+      "source": "grass/Coccinelle-sur-brin-d-herbe-Ladybird-on-blade-of-grass.svg",
+      "status": "imported",
+      "assetId": "freeimage-ladybird-on-grass"
+    },
+    {
+      "source": "grass/eady-Grass-Blades-and-Clumps-1.svg",
+      "status": "imported",
+      "assetId": "freeimage-tall-grass-blades"
+    },
+    {
+      "source": "grass/eady-Grass-Blades-and-Clumps-3.svg",
+      "status": "imported",
+      "assetId": "freeimage-grass-blades"
+    },
+    {
+      "source": "grass/grass4.svg",
+      "status": "imported",
+      "assetId": "freeimage-grass-border"
+    },
+    {
+      "source": "grass/grasswip3.svg",
+      "status": "imported",
+      "assetId": "freeimage-shaded-grass-clump"
+    },
+    {
+      "source": "grass/ilmenskie-grass-texture-1.svg",
+      "status": "imported",
+      "assetId": "freeimage-meadow-groundcover"
+    },
+    {
+      "source": "grass/ilmenskie-grass-texture-2.svg",
+      "status": "imported",
+      "assetId": "freeimage-meadow-groundcover-wide"
+    },
+    {
+      "source": "grass/ilmenskie-plant-fern-4.svg",
+      "status": "imported",
+      "assetId": "freeimage-curled-fern"
+    },
+    {
+      "source": "grass/ilmenskie-zutto-plant-1.svg",
+      "status": "imported",
+      "assetId": "freeimage-broad-leaf-plant"
+    },
+    {
+      "source": "grass/ilmenskie-zutto-plant-2.svg",
+      "status": "imported",
+      "assetId": "freeimage-dark-broad-leaf-plant"
+    },
+    {
+      "source": "grass/shrubland.svg",
+      "status": "imported",
+      "assetId": "freeimage-scattered-grass-tufts"
+    },
+    {
+      "source": "hourse/1326151460.svg",
+      "status": "imported",
+      "assetId": "freeimage-garden-house"
+    },
+    {
+      "source": "hourse/1397765364.svg",
+      "status": "imported",
+      "assetId": "freeimage-blue-townhouse"
+    },
+    {
+      "source": "hourse/1545429173.svg",
+      "status": "imported",
+      "assetId": "freeimage-modern-hospital"
+    },
+    {
+      "source": "hourse/1554824691.svg",
+      "status": "imported",
+      "assetId": "freeimage-village-school"
+    },
+    {
+      "source": "hourse/17197262269099.svg",
+      "status": "imported",
+      "assetId": "freeimage-clock-tower-school"
+    },
+    {
+      "source": "hourse/BigRedSmile-A-Little-Purple-House.svg",
+      "status": "imported",
+      "assetId": "freeimage-purple-cottage"
+    },
+    {
+      "source": "hourse/BigRedSmile_A_Little_Purple_House.svg",
+      "status": "duplicate",
+      "duplicateOf": "hourse/BigRedSmile-A-Little-Purple-House.svg"
+    },
+    {
+      "source": "hourse/Casa-antigua-dorada.svg",
+      "status": "imported",
+      "assetId": "freeimage-golden-church"
+    },
+    {
+      "source": "hourse/Hospital.svg",
+      "status": "imported",
+      "assetId": "freeimage-hospital-and-ambulance"
+    },
+    {
+      "source": "hourse/House-1.svg",
+      "status": "imported",
+      "assetId": "freeimage-smoking-chimney-house"
+    },
+    {
+      "source": "hourse/Rfc1394_Red_barn.svg",
+      "status": "imported",
+      "assetId": "freeimage-red-barn"
+    },
+    {
+      "source": "hourse/SCH05.svg",
+      "status": "imported",
+      "assetId": "freeimage-long-farm-building"
+    },
+    {
+      "source": "hourse/Yellow-shed-from-the-other-side.svg",
+      "status": "excluded",
+      "reason": "Rough house drawing; clearer houses retained"
+    },
+    {
+      "source": "hourse/chinese-architecture.svg",
+      "status": "imported",
+      "assetId": "freeimage-chinese-pavilion"
+    },
+    {
+      "source": "hourse/egore911-house.svg",
+      "status": "imported",
+      "assetId": "freeimage-cream-house"
+    },
+    {
+      "source": "hourse/ferme-industrielle.svg",
+      "status": "imported",
+      "assetId": "freeimage-farm-and-silos"
+    },
+    {
+      "source": "hourse/nicubunu_House.svg",
+      "status": "imported",
+      "assetId": "freeimage-dark-roof-house"
+    },
+    {
+      "source": "hourse/nicubunu_RPG_map_symbols_Farm.svg",
+      "status": "imported",
+      "assetId": "freeimage-fenced-farmhouse"
+    },
+    {
+      "source": "hourse/residence-home_1748166614.svg",
+      "status": "imported",
+      "assetId": "freeimage-porch-house"
+    },
+    {
+      "source": "hourse/residential-house-zazou.svg",
+      "status": "excluded",
+      "reason": "Rough house drawing; clearer houses retained"
+    },
+    {
+      "source": "hourse/stall.svg",
+      "status": "imported",
+      "assetId": "freeimage-red-stable"
+    },
+    {
+      "source": "hourse/village-house.svg",
+      "status": "imported",
+      "assetId": "freeimage-brown-village-house"
+    },
+    {
+      "source": "others/Angelo_Gemmi_street_lamp.svg",
+      "status": "imported",
+      "assetId": "freeimage-street-lamp"
+    },
+    {
+      "source": "others/Bike.svg",
+      "status": "imported",
+      "assetId": "freeimage-bicycle"
+    },
+    {
+      "source": "others/Bus-school-2.svg",
+      "status": "imported",
+      "assetId": "freeimage-school-bus"
+    },
+    {
+      "source": "others/Machovka_Red_bus.svg",
+      "status": "excluded",
+      "reason": "Very basic bus drawing; detailed buses retained"
+    },
+    {
+      "source": "others/Road.svg",
+      "status": "imported",
+      "assetId": "freeimage-winding-road"
+    },
+    {
+      "source": "others/Young-Cedar-Tree-2015080315.svg",
+      "status": "imported",
+      "assetId": "freeimage-young-cedar-tree"
+    },
+    {
+      "source": "others/aguape.svg",
+      "status": "imported",
+      "assetId": "freeimage-water-lilies"
+    },
+    {
+      "source": "others/bus-red400px.svg",
+      "status": "imported",
+      "assetId": "freeimage-red-bus"
+    },
+    {
+      "source": "others/nicubunu_RPG_map_symbols_Marsh.svg",
+      "status": "imported",
+      "assetId": "freeimage-marsh-reeds"
+    },
+    {
+      "source": "others/nonno-sport-architetto-f-01.svg",
+      "status": "imported",
+      "assetId": "freeimage-jogger"
+    },
+    {
+      "source": "others/onbicycle.svg",
+      "status": "imported",
+      "assetId": "freeimage-cyclist"
+    },
+    {
+      "source": "others/river-2-svgrepo-com.svg",
+      "status": "excluded",
+      "reason": "Solid black river symbol"
+    },
+    {
+      "source": "others/river-6-svgrepo-com.svg",
+      "status": "excluded",
+      "reason": "Solid black river and tree symbol"
+    },
+    {
+      "source": "others/travel-car.svg",
+      "status": "imported",
+      "assetId": "freeimage-green-car"
+    },
+    {
+      "source": "others/villager-m2-farmer.svg",
+      "status": "imported",
+      "assetId": "freeimage-village-farmer"
+    },
+    {
+      "source": "plant/1396647477.svg",
+      "status": "duplicate",
+      "duplicateOf": "decoration/1396647477.svg"
+    },
+    {
+      "source": "plant/1398247860.svg",
+      "status": "imported",
+      "assetId": "freeimage-slender-grass"
+    },
+    {
+      "source": "plant/CassavaPlant.svg",
+      "status": "imported",
+      "assetId": "freeimage-cassava-plant"
+    },
+    {
+      "source": "plant/Gerald-G-KU-Hedysarum-boreale.svg",
+      "status": "imported",
+      "assetId": "freeimage-purple-sweetvetch"
+    },
+    {
+      "source": "plant/Gerald-G-KU-castilleja-miniata.svg",
+      "status": "duplicate",
+      "duplicateOf": "flower/Gerald-G-KU-castilleja-miniata.svg"
+    },
+    {
+      "source": "plant/Gerald-G-KU-epilobium-angustifolium.svg",
+      "status": "imported",
+      "assetId": "freeimage-fireweed"
+    },
+    {
+      "source": "plant/Gerald_G_Anemone_Patens.svg",
+      "status": "imported",
+      "assetId": "freeimage-pasque-flowers"
+    },
+    {
+      "source": "plant/MustardGreensHires.svg",
+      "status": "imported",
+      "assetId": "freeimage-mustard-greens"
+    },
+    {
+      "source": "plant/Pot.svg",
+      "status": "imported",
+      "assetId": "freeimage-potted-green-plant"
+    },
+    {
+      "source": "plant/Tobacco.svg",
+      "status": "imported",
+      "assetId": "freeimage-flowering-tobacco"
+    },
+    {
+      "source": "plant/eco_plant_green_icon.svg",
+      "status": "excluded",
+      "reason": "Flat seedling icon; detailed plants retained"
+    },
+    {
+      "source": "plant/floral.svg",
+      "status": "imported",
+      "assetId": "freeimage-delicate-grass"
+    },
+    {
+      "source": "plant/tender-Plant.svg",
+      "status": "imported",
+      "assetId": "freeimage-tender-potted-seedling"
+    },
+    {
+      "source": "sky/1364063978.svg",
+      "status": "imported",
+      "assetId": "freeimage-golden-sun"
+    },
+    {
+      "source": "sky/Regen.svg",
+      "status": "imported",
+      "assetId": "freeimage-rain-cloud"
+    },
+    {
+      "source": "sky/circle-15.svg",
+      "status": "excluded",
+      "reason": "Plain black circle"
+    },
+    {
+      "source": "sky/cloud_jon_phillips_01.svg",
+      "status": "excluded",
+      "reason": "Heavy outline cloud icon"
+    },
+    {
+      "source": "sky/internet-cloud.svg",
+      "status": "imported",
+      "assetId": "freeimage-soft-gray-cloud"
+    },
+    {
+      "source": "sky/nicubunu_Weather_Symbols_Cloud.svg",
+      "status": "excluded",
+      "reason": "Outline weather icon; shaded clouds retained"
+    },
+    {
+      "source": "sky/rgtaylor_csc_net_wan_cloud.svg",
+      "status": "imported",
+      "assetId": "freeimage-soft-blue-cloud"
+    },
+    {
+      "source": "sky/showers.svg",
+      "status": "imported",
+      "assetId": "freeimage-rain-shower"
+    },
+    {
+      "source": "sky/spite_moon.svg",
+      "status": "imported",
+      "assetId": "freeimage-crescent-moon"
+    },
+    {
+      "source": "sky/sun-abstract-design.svg",
+      "status": "imported",
+      "assetId": "freeimage-radiant-sun"
+    },
+    {
+      "source": "tree/PalmTree4.svg",
+      "status": "imported",
+      "assetId": "freeimage-tropical-palm"
+    },
+    {
+      "source": "tree/Simple-Hearts-Tree-2.svg",
+      "status": "imported",
+      "assetId": "freeimage-heart-leaf-tree"
+    },
+    {
+      "source": "tree/Trace-Tree.svg",
+      "status": "imported",
+      "assetId": "freeimage-leafy-tree"
+    },
+    {
+      "source": "tree/Young-Cedar-Tree-2015080315 (1).svg",
+      "status": "duplicate",
+      "duplicateOf": "others/Young-Cedar-Tree-2015080315.svg"
+    },
+    {
+      "source": "tree/gbig95_palm_tree.svg.svg",
+      "status": "imported",
+      "assetId": "freeimage-slender-palm"
+    },
+    {
+      "source": "tree/harvestable-resources-paper-tree.svg",
+      "status": "imported",
+      "assetId": "freeimage-bare-tree"
+    },
+    {
+      "source": "tree/lightjungle.svg",
+      "status": "imported",
+      "assetId": "freeimage-cartoon-palm"
+    },
+    {
+      "source": "tree/treehouse.svg",
+      "status": "imported",
+      "assetId": "freeimage-treehouse"
+    }
+  ]
+}
