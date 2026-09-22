@@ -7,6 +7,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: origin },
     { url: `${origin}/create` },
     { url: `${origin}/gallery` },
+    ...["about", "contact", "privacy", "terms", "image-use"].map((path) => ({
+      url: `${origin}/${path}`,
+    })),
   ];
   // Start with the latest 1000 public images. Split into sitemap files as the catalog grows.
   const { data, error } = await createSupabaseAdmin()
