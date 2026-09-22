@@ -34,10 +34,12 @@ export default function Terms() {
       </p>
       <h2>Review and removal</h2>
       <p>
-        Eligible submissions may publish automatically. Other submissions wait
-        for review. We may hold, reject, or remove content because of permission
-        concerns, abuse reports, technical problems, or these rules. Publication
-        is not a guarantee that every possible use of an image is permitted.
+        Valid editor submissions publish automatically when automatic publishing
+        is enabled. Submissions may remain private if publishing is disabled or
+        unavailable. We may hold, reject, or remove content because of
+        permission concerns, abuse reports, technical problems, or these rules.
+        Publication is not a guarantee that every possible use of an image is
+        permitted.
       </p>
       <p>
         Keep your private management link secure: anyone holding it can manage

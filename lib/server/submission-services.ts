@@ -92,7 +92,7 @@ export function submissionServices(requirePublish = false) {
     render: renderSubmission,
     textNeedsReview,
     async autoPublish(id) {
-      // Mixed publication remains off until reporting and owner removal are ready.
+      // Automatic publication requires reporting and owner removal to be ready.
       if (process.env.AUTO_PUBLISH !== "true") throw new Error("Manual mode");
       const { error } = await db
         .from("image_reports")

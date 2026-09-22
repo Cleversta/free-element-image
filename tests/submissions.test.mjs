@@ -56,7 +56,9 @@ function fixture(overrides = {}) {
       verified: false,
     }),
     textNeedsReview: () => false,
-    autoPublish: async () => ({ status: "published", slug: "test" }),
+    autoPublish: async () => {
+      throw new Error("Manual mode");
+    },
     find: async (hash) =>
       row?.management_token_hash === hash ? { ...row } : null,
     reserve: async () => {
@@ -342,11 +344,11 @@ test("persistent submission limits enforce both quotas and deny browser access",
   }
 });
 
-test("mixed publishing only approves verified scenes with unflagged text and retains failed approvals", async () => {
+test("automatic publishing includes all valid catalog scenes and retains failed publications", async () => {
   for (const [verified, flagged, fails, expected] of [
     [true, false, false, "published"],
-    [false, false, false, "pending"],
-    [true, true, false, "pending"],
+    [false, false, false, "published"],
+    [true, true, false, "published"],
     [true, false, true, "pending"],
   ]) {
     let calls = 0;
@@ -364,7 +366,7 @@ test("mixed publishing only approves verified scenes with unflagged text and ret
       },
     });
     assert.equal((await submit(request(), f.deps)).status, expected);
-    assert.equal(calls, verified && !flagged ? 1 : 0);
+    assert.equal(calls, 1);
   }
   const f = fixture();
   await assert.rejects(

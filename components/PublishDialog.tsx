@@ -182,8 +182,8 @@ export default function PublishDialog({
       ) : (
         <>
           <p>
-            Publish a scene for everyone to view and download. Eligible scenes
-            appear automatically; others wait for review. Editing and
+            Publish a scene for everyone to view, download, and edit. Scenes
+            publish automatically when publishing is enabled. Editing and
             downloading are always free.
           </p>
           {settings?.enabled === false && (

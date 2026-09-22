@@ -27,9 +27,7 @@ export type SubmissionDependencies = {
   netlify: boolean;
   development: boolean;
   verify: (token: string) => Promise<boolean>;
-  render: (
-    scene: unknown,
-  ) => Promise<{
+  render: (scene: unknown) => Promise<{
     png: Buffer;
     thumbnail: Buffer;
     verified: boolean;
@@ -206,10 +204,8 @@ export async function submit(request: Request, deps: SubmissionDependencies) {
       400,
       "Image uploads are no longer accepted. Refresh the editor and submit the scene.",
     );
-  const { png, thumbnail, verified, editableScene } = await deps.render(
-    body.scene,
-  );
-  const automatic = verified && !deps.textNeedsReview(title, description);
+  const { png, thumbnail, editableScene } = await deps.render(body.scene);
+  // Every validated catalog scene is eligible; AUTO_PUBLISH is enforced by the service.
   const id = randomUUID();
   const prefix = `submissions/${id}`;
   await deps.insert({
@@ -257,7 +253,7 @@ export async function submit(request: Request, deps: SubmissionDependencies) {
       "The upload could not finish. Use your private management link to check its status or remove it.",
     );
   }
-  if (automatic) {
+  {
     try {
       return { id, ...(await deps.autoPublish(id)) };
     } catch {
