@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Netlify detects Next.js and supplies its current adapter automatically.
+# Set cloud credentials in Netlify's environment-variable settings, not here.

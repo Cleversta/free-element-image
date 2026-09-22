@@ -1,7 +1,7 @@
-import assets from "@/data/assets.json";
-import type { Background } from "./scene";
-import { backgroundKey } from "./scene";
-import craftedScenes from "@/data/scene-backgrounds.json";
+import assets from "../data/assets.json" with { type: "json" };
+import type { Background } from "./scene.ts";
+import { backgroundKey } from "./scene.ts";
+import craftedScenes from "../data/scene-backgrounds.json" with { type: "json" };
 
 const BASE_BACKGROUNDS = [
   ["Meadow", "#bfe0ef", "#9fbd79"],

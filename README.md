@@ -2,7 +2,8 @@
 
 A countryside scene editor built with Next.js 15, React 19, and TypeScript.
 Create scenes from bundled SVG artwork, arrange each element, and download a PNG.
-Everything runs in the browser; no API key, account, or database is needed.
+Editing and downloading run in the browser; no visitor account or cloud configuration is needed.
+Optional anonymous submissions store scenes privately for review and provide a private management link.
 
 ## Start developing
 
@@ -24,10 +25,11 @@ npm run build
 npm start
 ```
 
-`npm start` serves the built site at http://127.0.0.1:3000, including direct links to `/create`.
+`npm start` runs the built Next.js site at http://localhost:3000, including direct links to `/create`.
 Use `npm start -- --port 3001` for another port.
-The deployable static files are in `out/`; publish that folder to a static host.
-The included server is a local preview server.
+Netlify uses `netlify.toml` and the `.next/` build output. Do not deploy the old `out/` folder.
+See [cloud setup](docs/CLOUD_SETUP.md) for Supabase, R2, environment variables, and hosting.
+The editor builds without credentials. Submissions require the cloud setup and Turnstile. Owners review at `/admin`; approved images appear at `/gallery` with public download pages.
 
 ## Editor features
 
@@ -71,8 +73,8 @@ npm run test:e2e
 npm audit
 ```
 
-`check` runs ESLint, TypeScript, and the scene model/asset regression tests.
-Browser tests run against the built static site on port 4173. They cover desktop/mobile editing,
+`check` runs ESLint, TypeScript, and the scene, asset, backend configuration, and database permission regression tests.
+Browser tests run against the production Next.js site on port 4173. They cover desktop/mobile editing,
 save recovery, errors, and pixel comparison of the scene preview with its downloaded PNG.
 Run `npm run format` to format the source.
 
@@ -106,3 +108,6 @@ Artwork lives in `public/assets/crafted-landscapes/`, with scene metadata in
 `data/scene-backgrounds.json`. Run `python3 scripts/create-backgrounds.py` to regenerate
 these deterministic, editable SVG files and their catalog entries. Python is only needed
 when regenerating artwork, not for running or building the app.
+
+Owner review uses `ADMIN_ACCESS_KEY` in `.env.local` (and Netlify Functions settings).
+See [cloud setup](docs/CLOUD_SETUP.md#6-owner-review-and-public-gallery) for review, sharing terms, and recovery of interrupted approvals.

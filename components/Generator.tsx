@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import PublishDialog from "./PublishDialog";
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import assets from "@/data/assets.json";
 import { backgrounds, savedBackgrounds } from "@/lib/backgrounds";
@@ -117,6 +118,7 @@ export default function Generator() {
   const [saved, setSaved] = useState(serializeScene(defaultScene));
   const [ready, setReady] = useState(false);
   const [exporting, setExporting] = useState(false);
+  const [publishScene, setPublishScene] = useState<Scene | null>(null);
   const exportingRef = useRef(false);
   const board = useRef<HTMLDivElement>(null);
   const pointerCleanup = useRef<(() => void) | null>(null);
@@ -463,6 +465,7 @@ export default function Generator() {
 
   useEffect(() => {
     const key = (event: KeyboardEvent) => {
+      if (document.querySelector("dialog[open]")) return;
       if (
         event.target instanceof HTMLElement &&
         (event.target.closest("input, select, textarea") ||
@@ -554,6 +557,12 @@ export default function Generator() {
   };
   return (
     <main className="villageStudio">
+      {publishScene && (
+        <PublishDialog
+          scene={publishScene}
+          onClose={() => setPublishScene(null)}
+        />
+      )}
       <header className="vTop">
         <Link href="/" className="vBrand">
           <span className="leaf">◒</span>
@@ -581,6 +590,12 @@ export default function Generator() {
           </button>
           <button onClick={newScene}>⊕ New</button>
           <button onClick={randomScene}>⟳ Random</button>
+          <button
+            disabled={!ready}
+            onClick={() => setPublishScene(state.present)}
+          >
+            Publish
+          </button>
           <button disabled={!ready} onClick={save}>
             ▣ Save
           </button>

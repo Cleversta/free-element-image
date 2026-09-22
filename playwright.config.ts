@@ -15,7 +15,7 @@ export default defineConfig({
   webServer: externalURL
     ? undefined
     : {
-        command: "node scripts/serve.mjs --port 4173",
+        command: "npm run start -- --hostname 127.0.0.1 --port 4173",
         url: "http://127.0.0.1:4173",
         reuseExistingServer: false,
       },

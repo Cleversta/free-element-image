@@ -4,6 +4,8 @@ const config = [
   {
     ignores: [
       ".next/**",
+      ".next-dev/**",
+      ".netlify/**",
       "out/**",
       "node_modules/**",
       ".kilo/**",

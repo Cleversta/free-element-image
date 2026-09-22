@@ -1,5 +1,7 @@
 node_modules/
 .next/
+.next-dev/
+.netlify/
 out/
 .kilo/
 *.tsbuildinfo
@@ -7,3 +9,4 @@ playwright-report/
 test-results/
 .env*
 !.env.example
+local.env

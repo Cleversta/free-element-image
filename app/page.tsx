@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { Suspense } from "react";
+import HomePublicImages from "@/components/HomePublicImages";
+export const dynamic = "force-dynamic";
 export default function Home() {
   return (
     <main className="home">
       <nav>
         <b>Freelement Images</b>
         <Link href="/create">Create</Link>
+        <Link href="/gallery">Gallery</Link>
       </nav>
       <section className="hero">
         <span className="pill">NO PROMPTS • INSTANT • EDITABLE</span>
@@ -20,6 +24,23 @@ export default function Home() {
         <Link className="primary" href="/create">
           Start creating →
         </Link>
+      </section>
+      <section
+        className="homePublicImages"
+        aria-labelledby="public-images-title"
+      >
+        <div className="homeGalleryHeading">
+          <div>
+            <h2 id="public-images-title">Latest public images</h2>
+            <p>
+              Scenes shared by the community. Find one you love and download it.
+            </p>
+          </div>
+          <Link href="/gallery">Browse all images →</Link>
+        </div>
+        <Suspense fallback={<p role="status">Loading public images…</p>}>
+          <HomePublicImages />
+        </Suspense>
       </section>
       <section className="features">
         <article>
