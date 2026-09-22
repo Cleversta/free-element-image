@@ -11,6 +11,7 @@ import {
 import { withdrawImage } from "../lib/server/review.ts";
 import { savedBackgrounds } from "../lib/backgrounds.ts";
 import assets from "../data/assets.json" with { type: "json" };
+import { restoreScene, serializeScene } from "../lib/scene.ts";
 const background = savedBackgrounds[0];
 const raw = (items = [], baseBg = background) =>
   JSON.stringify({ version: 2, baseBg, items });
@@ -53,6 +54,10 @@ test("catalog elements are rendered by ID and unverified imports wait for review
   };
   const result = await renderSubmission(raw([item]));
   assert.equal(result.verified, false);
+  const restored = restoreScene(result.editableScene, assets, savedBackgrounds);
+  assert.equal(restored.items[0].rotation, 15);
+  assert.equal(restored.items[0].flipX, true);
+  assert.equal(serializeScene(restored), result.editableScene);
   await assert.rejects(
     renderSubmission(
       raw([{ ...item, assetId: "https://attacker.example/a.svg" }]),

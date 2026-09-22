@@ -6,7 +6,7 @@ import sharp from "sharp";
 import assets from "../../data/assets.json" with { type: "json" };
 import rights from "../../data/publishing-rights.json" with { type: "json" };
 import { savedBackgrounds } from "../backgrounds.ts";
-import { restoreScene } from "../scene.ts";
+import { restoreScene, serializeScene } from "../scene.ts";
 import { SubmissionError } from "./submissions.ts";
 const registry: Record<string, { sha256: string; evidence: string }> = rights;
 export function textNeedsReview(title: string, description: string) {
@@ -112,5 +112,5 @@ export async function renderSubmission(raw: unknown) {
     .resize(480, 320)
     .webp({ quality: 80 })
     .toBuffer();
-  return { png, thumbnail, verified };
+  return { png, thumbnail, verified, editableScene: serializeScene(scene) };
 }

@@ -100,7 +100,7 @@ const STORAGE_KEY = "freelement-scene";
 const defaultScene: Scene = { baseBg: backgrounds[0], items: [] };
 type Section = "backgrounds" | "elements" | "decorations" | "others";
 
-export default function Generator() {
+export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const [state, dispatch] = useReducer(
     sceneReducer,
     defaultScene,
@@ -421,12 +421,16 @@ export default function Generator() {
   };
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = sharedScene || localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const scene = restoreScene(raw, assets, savedBackgrounds);
         dispatch({ type: "load", scene });
         setSaved(serializeScene(scene));
-        setNotice("Your saved scene is ready.");
+        setNotice(
+          sharedScene
+            ? "Editing a copy. Your saved scene stays unchanged until you save."
+            : "Your saved scene is ready.",
+        );
       }
     } catch {
       setNotice(
@@ -434,7 +438,7 @@ export default function Generator() {
       );
     }
     setReady(true);
-  }, []);
+  }, [sharedScene]);
   const download = async () => {
     if (exportingRef.current) return;
     exportingRef.current = true;

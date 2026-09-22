@@ -20,8 +20,9 @@ export default function Terms() {
       <p>
         By choosing to publish and confirming sharing, you permit Freelement
         Images to store and process the submission, generate its image and
-        thumbnail, display it publicly, and make it available for download. You
-        retain any rights you hold in your contribution. Sharing does not
+        thumbnail, display it publicly, and make it available for download. New
+        submissions also allow visitors to open and edit a copy in our editor.
+        You retain any rights you hold in your contribution. Sharing does not
         transfer ownership or grant rights you do not have in underlying
         artwork.
       </p>

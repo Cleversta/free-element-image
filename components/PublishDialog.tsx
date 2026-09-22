@@ -225,8 +225,9 @@ export default function PublishDialog({
                   onChange={(e) => setConsent(e.target.checked)}
                 />
                 <span>
-                  I agree to public display and download of this scene. It may
-                  publish automatically or be held for review.
+                  I agree to public display, download, and editing of a copy of
+                  this scene. It may publish automatically or be held for
+                  review.
                 </span>
               </label>
               <div ref={widget} />

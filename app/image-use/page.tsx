@@ -8,6 +8,13 @@ export const metadata = {
 export default function ImageUse() {
   return (
     <InformationPage title="Image use and permissions">
+      <h2>Edit a copy</h2>
+      <p>
+        Images with an “Edit this image” button include permission to open and
+        modify a copy in our editor. Older images without saved scene data are
+        download-only. This does not grant unrestricted rights to the underlying
+        artwork.
+      </p>
       <h2>Free to download</h2>
       <p>
         The editor and public gallery offer PNG downloads without a payment or

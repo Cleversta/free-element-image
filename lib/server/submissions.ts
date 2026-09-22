@@ -29,7 +29,12 @@ export type SubmissionDependencies = {
   verify: (token: string) => Promise<boolean>;
   render: (
     scene: unknown,
-  ) => Promise<{ png: Buffer; thumbnail: Buffer; verified: boolean }>;
+  ) => Promise<{
+    png: Buffer;
+    thumbnail: Buffer;
+    verified: boolean;
+    editableScene?: string;
+  }>;
   autoPublish: (id: string) => Promise<{ status: string; slug: string }>;
   textNeedsReview: (title: string, description: string) => boolean;
   find: (hash: string) => Promise<Submission | null>;
@@ -201,7 +206,9 @@ export async function submit(request: Request, deps: SubmissionDependencies) {
       400,
       "Image uploads are no longer accepted. Refresh the editor and submit the scene.",
     );
-  const { png, thumbnail, verified } = await deps.render(body.scene);
+  const { png, thumbnail, verified, editableScene } = await deps.render(
+    body.scene,
+  );
   const automatic = verified && !deps.textNeedsReview(title, description);
   const id = randomUUID();
   const prefix = `submissions/${id}`;
@@ -213,6 +220,7 @@ export async function submit(request: Request, deps: SubmissionDependencies) {
     management_token_hash: hash,
     private_object_prefix: prefix,
     sharing_consent_at: new Date().toISOString(),
+    ...(editableScene ? { editable_scene: editableScene } : {}),
     expires_at: new Date(Date.now() + 60 * 60 * 1000).toISOString(),
   });
   try {
@@ -297,6 +305,7 @@ export async function manage(request: Request, deps: SubmissionDependencies) {
     if (
       !(await deps.transition(row.id, ["deleting"], {
         status: "deleted",
+        editable_scene: null,
         deleted_at: new Date().toISOString(),
       }))
     )

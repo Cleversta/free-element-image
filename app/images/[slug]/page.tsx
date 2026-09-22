@@ -2,6 +2,7 @@ import Link from "next/link";
 import ReportImage from "@/components/ReportImage";
 import { notFound } from "next/navigation";
 import { publicImage } from "@/lib/server/gallery";
+import { publishedScene } from "@/lib/server/editable-scene";
 export const dynamic = "force-dynamic";
 export async function generateMetadata({
   params,
@@ -39,6 +40,7 @@ export default async function ImagePage({
   const { slug } = await params;
   const image = await publicImage(slug);
   if (!image) notFound();
+  const editable = !!(await publishedScene(slug).catch(() => null));
   return (
     <main className="galleryPage imageDetail">
       <nav>
@@ -60,9 +62,17 @@ export default async function ImagePage({
       <a className="primary" href={`/api/images/${slug}/download`} download>
         Download PNG
       </a>
+      {editable && (
+        <p>
+          <Link className="primary" href={`/create?scene=${slug}`}>
+            Edit this image
+          </Link>
+        </p>
+      )}
       <p className="usageNote">
-        Shared for public display and download. No broader reuse license is
-        specified. Do not assume the artwork is public domain.
+        Shared for public display and download.{" "}
+        {editable && "You may also edit a copy in the editor. "}No broader reuse
+        license is specified. Do not assume the artwork is public domain.
       </p>
       <ReportImage slug={slug} />
     </main>

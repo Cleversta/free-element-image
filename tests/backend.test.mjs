@@ -63,6 +63,15 @@ test("database migration blocks browser access and incomplete publication", asyn
         "utf8",
       ),
     );
+    const editableMigration = await readFile(
+      new URL(
+        "../supabase/migrations/004_editable_scenes.sql",
+        import.meta.url,
+      ),
+      "utf8",
+    );
+    await db.exec(editableMigration);
+    await db.exec(editableMigration);
     for (const role of ["anon", "authenticated"]) {
       await db.exec(`set role ${role}`);
       await assert.rejects(
@@ -75,6 +84,20 @@ test("database migration blocks browser access and incomplete publication", asyn
     await db.query(
       "insert into public.images (slug,title,management_token_hash,private_object_prefix,sharing_consent_at) values ($1,$2,$3,$4,now())",
       ["test-scene", "Test Scene", "a".repeat(64), "test-prefix"],
+    );
+    assert.equal(
+      (await db.query("select editable_scene from public.images")).rows[0]
+        .editable_scene,
+      null,
+    );
+    await db.query("update public.images set editable_scene=$1", [
+      JSON.stringify({ version: 2, items: [] }),
+    ]);
+    await assert.rejects(
+      db.query("update public.images set editable_scene=$1", [
+        "x".repeat(200001),
+      ]),
+      /check constraint/,
     );
     assert.equal(
       (await db.query("select status from public.images")).rows[0].status,

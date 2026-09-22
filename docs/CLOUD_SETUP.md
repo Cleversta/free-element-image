@@ -206,3 +206,14 @@ objects and an ordinary title. It should show **Your scene is published**. A sce
 an unverified imported element should show **Submitted for review**. Test reports on a public
 image, then use the owner queue to dismiss the test report. Owner publication still requires
 checking artwork permissions; automatic publication does not grant a broader reuse license.
+
+## Editable public scenes
+
+Before deploying the Edit this image feature, run
+`supabase/migrations/004_editable_scenes.sql` in the Supabase SQL Editor.
+New submissions store a validated scene in the private images table. Only
+published scenes are exposed through the editor's server-rendered page.
+The sharing checkbox includes permission to edit a copy. Existing images have
+no saved scene and remain download-only; do not reconstruct or opt them in.
+Removing a submission clears its editable scene. Opening a shared scene does
+not overwrite the visitor's browser save until they explicitly save it.

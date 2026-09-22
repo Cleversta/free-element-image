@@ -36,10 +36,11 @@ export default function Privacy() {
       </p>
       <p>
         Published images, titles, descriptions, dimensions, and publication
-        dates are public. Search engines and other visitors may copy or download
-        them. Pending submissions remain private to the service and its owner.
-        Do not include private personal information in your title or
-        description.
+        dates are public. For new submissions, the editable scene data is also
+        available to visitors while the image is published. Search engines and
+        other visitors may copy or download them. Pending submissions remain
+        private to the service and its owner. Do not include private personal
+        information in your title or description.
       </p>
       <h2>Reports and abuse prevention</h2>
       <p>
