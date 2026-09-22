@@ -160,7 +160,7 @@ export async function normalizePng(value: unknown) {
 }
 export async function submit(request: Request, deps: SubmissionDependencies) {
   checkOrigin(request, deps.siteUrl);
-  const actor = actorHash(request, deps);
+  actorHash(request, deps);
   const body = await readBody(request, 130000);
   const hash = tokenHash(body.managementToken);
   const title = typeof body.title === "string" ? body.title.trim() : "";
@@ -194,18 +194,13 @@ export async function submit(request: Request, deps: SubmissionDependencies) {
       "This submission is still processing or has been removed. Check your private management link.",
     );
   }
-  if (!(await deps.reserve(actor)))
-    throw new SubmissionError(
-      429,
-      "The submission limit has been reached. Please try again later; editing and downloads remain available.",
-    );
   if (body.png !== undefined)
     throw new SubmissionError(
       400,
       "Image uploads are no longer accepted. Refresh the editor and submit the scene.",
     );
   const { png, thumbnail, editableScene } = await deps.render(body.scene);
-  // Every validated catalog scene is eligible; AUTO_PUBLISH is enforced by the service.
+  // New submissions always wait for owner approval.
   const id = randomUUID();
   const prefix = `submissions/${id}`;
   await deps.insert({
@@ -252,21 +247,6 @@ export async function submit(request: Request, deps: SubmissionDependencies) {
       503,
       "The upload could not finish. Use your private management link to check its status or remove it.",
     );
-  }
-  {
-    try {
-      return { id, ...(await deps.autoPublish(id)) };
-    } catch {
-      // A lost publication response must not claim a public image is still private.
-      const current = await deps.find(hash);
-      if (current?.status === "published")
-        return { id, status: "published", slug: `scene-${id}` };
-      if (current?.status !== "pending")
-        throw new SubmissionError(
-          503,
-          "The submission status changed. Check your private management link before retrying.",
-        );
-    }
   }
   return { id, status: "pending" };
 }

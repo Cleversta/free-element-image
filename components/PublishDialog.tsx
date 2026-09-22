@@ -182,9 +182,9 @@ export default function PublishDialog({
       ) : (
         <>
           <p>
-            Publish a scene for everyone to view, download, and edit. Scenes
-            publish automatically when publishing is enabled. Editing and
-            downloading are always free.
+            Submit a scene for public display, download, and editing. Every
+            scene is reviewed before publication. Editing and downloading are
+            always free.
           </p>
           {settings?.enabled === false && (
             <p role="status">
@@ -226,8 +226,7 @@ export default function PublishDialog({
                 />
                 <span>
                   I agree to public display, download, and editing of a copy of
-                  this scene. It may publish automatically or be held for
-                  review.
+                  this scene after owner approval.
                 </span>
               </label>
               <div ref={widget} />
@@ -245,7 +244,7 @@ export default function PublishDialog({
                 type="submit"
                 disabled={busy || !challenge || !consent}
               >
-                {busy ? "Submitting…" : "Publish scene"}
+                {busy ? "Submitting…" : "Submit for review"}
               </button>
             </form>
           )}

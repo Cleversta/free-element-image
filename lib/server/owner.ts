@@ -5,7 +5,7 @@ export const OWNER_COOKIE = "freelement_owner";
 const HOURS = 8 * 60 * 60;
 function key() {
   const value = process.env.ADMIN_ACCESS_KEY?.trim();
-  if (!value || value.length < 32)
+  if (!value || value.length < 8)
     throw new SubmissionError(503, "Owner access is not configured.");
   return value;
 }

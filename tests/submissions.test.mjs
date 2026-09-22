@@ -96,7 +96,7 @@ test("submission uploads normalized private images, hashes tokens, retries once 
   assert.ok(!JSON.stringify(f.row()).includes(token));
   assert.equal(f.row().license_code, undefined);
   assert.deepEqual(await submit(request(), f.deps), result);
-  assert.equal(f.reserved(), 1);
+  assert.equal(f.reserved(), 0);
   const status = await manage(
     request({ managementToken: token, action: "status" }),
     f.deps,
@@ -140,7 +140,6 @@ test("origin, consent, verification, quotas and trusted host checks fail before 
     [body, "https://attacker.example", {}, 403],
     [{ ...body, consent: false }, undefined, {}, 400],
     [body, undefined, { verify: async () => false }, 403],
-    [body, undefined, { reserve: async () => false }, 429],
     [body, undefined, { netlify: false }, 503],
   ]) {
     const f = fixture(overrides);
@@ -257,6 +256,14 @@ test("persistent submission limits enforce both quotas and deny browser access",
         "utf8",
       ),
     );
+    const dailyMigration = await readFile(
+      new URL(
+        "../supabase/migrations/005_daily_submission_limit.sql",
+        import.meta.url,
+      ),
+      "utf8",
+    );
+    await db.exec(dailyMigration);
     for (const role of ["anon", "authenticated"]) {
       await db.exec(`set role ${role}`);
       await assert.rejects(
@@ -290,6 +297,7 @@ test("persistent submission limits enforce both quotas and deny browser access",
       ).rows[0].attempts,
       3,
     );
+    await db.exec(dailyMigration);
     await db.exec("set role service_role");
     await assert.rejects(
       db.query("select public.reserve_submission($1)", [
@@ -305,7 +313,7 @@ test("persistent submission limits enforce both quotas and deny browser access",
       ).rows[0].count,
       1,
     );
-    for (let i = 0; i < 5; i++)
+    for (let i = 0; i < 1; i++)
       assert.equal(
         (
           await db.query("select public.reserve_submission($1) as allowed", [
@@ -322,7 +330,7 @@ test("persistent submission limits enforce both quotas and deny browser access",
       ).rows[0].allowed,
       false,
     );
-    for (let i = 0; i < 95; i++)
+    for (let i = 0; i < 99; i++)
       assert.equal(
         (
           await db.query("select public.reserve_submission($1) as allowed", [
@@ -344,49 +352,15 @@ test("persistent submission limits enforce both quotas and deny browser access",
   }
 });
 
-test("automatic publishing includes all valid catalog scenes and retains failed publications", async () => {
-  for (const [verified, flagged, fails, expected] of [
-    [true, false, false, "published"],
-    [false, false, false, "published"],
-    [true, true, false, "published"],
-    [true, false, true, "pending"],
-  ]) {
-    let calls = 0;
-    const f = fixture({
-      render: async () => ({
-        png: Buffer.from(png, "base64"),
-        thumbnail: Buffer.from("thumb"),
-        verified,
-      }),
-      textNeedsReview: () => flagged,
-      autoPublish: async () => {
-        calls++;
-        if (fails) throw new Error("Storage unavailable");
-        return { status: "published", slug: "scene-test" };
-      },
-    });
-    assert.equal((await submit(request(), f.deps)).status, expected);
-    assert.equal(calls, 1);
-  }
-  const f = fixture();
-  await assert.rejects(
-    submit(request({ ...body, png }), f.deps),
-    (e) => e.status === 400,
-  );
-  assert.equal(f.objects.size, 0);
-});
-
-test("uncertain automatic publication never reports a published image as private", async () => {
+test("submissions ignore quotas and automatic publication and always wait for review", async () => {
   const f = fixture({
-    render: async () => ({
-      png: Buffer.from(png, "base64"),
-      thumbnail: Buffer.from("thumb"),
-      verified: true,
-    }),
+    reserve: async () => {
+      throw new Error("Quota must not be called");
+    },
+    autoPublish: async () => {
+      throw new Error("Automatic publication must not be called");
+    },
   });
-  f.deps.autoPublish = async () => {
-    f.row().status = "published";
-    throw new Error("Response lost");
-  };
-  assert.equal((await submit(request(), f.deps)).status, "published");
+  assert.equal((await submit(request(), f.deps)).status, "pending");
+  assert.equal(f.row().status, "pending");
 });

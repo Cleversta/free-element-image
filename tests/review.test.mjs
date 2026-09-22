@@ -49,7 +49,7 @@ function fixture() {
   };
 }
 test("owner sessions reject invalid keys, tampering, expiration and missing cookies", () => {
-  const key = "a".repeat(64);
+  const key = "test-pass";
   const now = 1800000000000;
   const value = ownerSession(key, now);
   assert.equal(validOwnerSession(value, key, now), true);

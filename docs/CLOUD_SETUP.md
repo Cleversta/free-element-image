@@ -99,7 +99,7 @@ ID and renders a 1200 × 800 PNG plus a 480 × 320 WebP thumbnail. At most 60 el
 Nothing uploads when visitors edit, save in the browser, or download.
 
 Turnstile verifies the expected hostname and action on the server. A database transaction
-limits attempts to 5 per IP per hour and 100 site-wide per UTC day. Only an HMAC of the
+limits attempts to one per IP per UTC day (after migration 005) and 100 site-wide per UTC day. Only an HMAC of the
 IP is stored; counters expire after two days when another submission is attempted. Failed
 attempts after verification can consume quota. Production IP detection uses Netlify's
 `x-nf-client-connection-ip`; other hosts need their own trusted IP integration before publishing.
@@ -213,3 +213,14 @@ The sharing checkbox includes permission to edit a copy. Existing images have
 no saved scene and remain download-only; do not reconstruct or opt them in.
 Removing a submission clears its editable scene. Opening a shared scene does
 not overwrite the visitor's browser save until they explicitly save it.
+
+Run `supabase/migrations/005_daily_submission_limit.sql` to enable the daily limit.
+It resets at midnight UTC. Shared networks share the quota; changing IP can bypass it.
+A failed upload after reserving the quota still consumes that day’s attempt.
+
+## Current publishing policy: manual approval only
+
+New submissions always remain pending until owner approval. The application no longer
+calls reserve_submission, so migration 005 does not restrict submissions and does not
+need to be reversed. AUTO_PUBLISH no longer enables automatic publication. Turnstile,
+scene validation, and report limits remain active.

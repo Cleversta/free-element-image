@@ -50,10 +50,10 @@ test("anonymous publish requires consent, sends scene data and keeps a private r
   await page.getByRole("button", { name: "Publish", exact: true }).click();
   await page.getByLabel("Image title").fill("Quiet mountain lake");
   await expect(
-    page.getByRole("button", { name: "Publish scene" }),
+    page.getByRole("button", { name: "Submit for review" }),
   ).toBeDisabled();
   await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: "Publish scene" }).click();
+  await page.getByRole("button", { name: "Submit for review" }).click();
   await expect(
     page.getByRole("heading", { name: "Submitted for review" }),
   ).toBeVisible();
@@ -101,12 +101,12 @@ test("failed submission preserves its management link and permits retry", async 
   await page.getByRole("button", { name: "Publish", exact: true }).click();
   await page.getByLabel("Image title").fill("Retry scene");
   await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: "Publish scene" }).click();
+  await page.getByRole("button", { name: "Submit for review" }).click();
   await expect(page.getByRole("dialog").getByRole("alert")).toContainText(
     "Temporary upload failure",
   );
   await expect(page.getByLabel("Private management link")).toBeVisible();
-  await page.getByRole("button", { name: "Publish scene" }).click();
+  await page.getByRole("button", { name: "Submit for review" }).click();
   await expect(
     page.getByRole("heading", { name: "Submitted for review" }),
   ).toBeVisible();
@@ -165,7 +165,7 @@ test("automatically published scenes show the public page link", async ({
   await page.getByLabel("Image title").fill("Mountain lake");
   await page.getByRole("checkbox").check();
   await page
-    .getByRole("button", { name: "Publish scene", exact: true })
+    .getByRole("button", { name: "Submit for review", exact: true })
     .click();
   await expect(
     page.getByRole("heading", { name: "Your scene is published" }),
