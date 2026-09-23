@@ -1,4 +1,5 @@
 import "server-only";
+import { sceneCategories } from "../gallery-filters.ts";
 import { createHash, createHmac, randomUUID } from "node:crypto";
 import { isIP } from "node:net";
 import sharp from "sharp";
@@ -163,6 +164,9 @@ export async function submit(request: Request, deps: SubmissionDependencies) {
   actorHash(request, deps);
   const body = await readBody(request, 130000);
   const hash = tokenHash(body.managementToken);
+  const category = body.category ?? "nature";
+  if (!sceneCategories.some((c) => c === category))
+    throw new SubmissionError(400, "Choose a valid category.");
   const title = typeof body.title === "string" ? body.title.trim() : "";
   const description =
     typeof body.description === "string" ? body.description.trim() : "";
@@ -208,6 +212,7 @@ export async function submit(request: Request, deps: SubmissionDependencies) {
     slug: `scene-${id}`,
     title,
     description,
+    category,
     management_token_hash: hash,
     private_object_prefix: prefix,
     sharing_consent_at: new Date().toISOString(),

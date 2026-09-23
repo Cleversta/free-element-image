@@ -1,4 +1,5 @@
 import "server-only";
+import { galleryFilters } from "../gallery-filters.ts";
 import { createSupabaseAdmin, createR2Client } from "./clients.ts";
 import { readR2Config } from "./config.ts";
 import {
@@ -20,13 +21,20 @@ export type PublicImage = {
   image_height: number;
   published_at: string;
 };
-export async function listPublished(page = 1, pageSize = 24) {
+export async function listPublished(
+  page = 1,
+  pageSize = 24,
+  search = "",
+  category = "",
+) {
   const size = Math.max(1, Math.min(24, Math.floor(pageSize)));
   const db = createSupabaseAdmin();
-  const { data, error } = await db
-    .from("images")
-    .select(publicFields)
-    .eq("status", "published")
+  const filters = galleryFilters(search, category);
+  let query = db.from("images").select(publicFields).eq("status", "published");
+  if (filters.q)
+    query = query.ilike("title", `%${filters.q.replace(/[\\%_]/g, "\\$&")}%`);
+  if (filters.category) query = query.eq("category", filters.category);
+  const { data, error } = await query
     .order("published_at", { ascending: false })
     .order("id")
     .range((page - 1) * size, page * size);

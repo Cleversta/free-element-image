@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { sceneCategories } from "@/lib/gallery-filters";
 import Script from "next/script";
 import type { Scene } from "@/lib/scene";
 import { serializeScene } from "@/lib/scene";
@@ -33,6 +34,7 @@ export default function PublishDialog({
   const [scriptReady, setScriptReady] = useState(false);
   const [challenge, setChallenge] = useState("");
   const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("nature");
   const [description, setDescription] = useState("");
   const [consent, setConsent] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -111,6 +113,7 @@ export default function PublishDialog({
         body: JSON.stringify({
           title,
           description,
+          category,
           consent,
           managementToken: token.current,
           challenge,
@@ -206,6 +209,21 @@ export default function PublishDialog({
                   disabled={busy}
                   onChange={(e) => setTitle(e.target.value)}
                 />
+              </label>
+              <label>
+                Category
+                <select
+                  aria-label="Category"
+                  value={category}
+                  disabled={busy}
+                  onChange={(e) => setCategory(e.target.value)}
+                >
+                  {sceneCategories.map((c) => (
+                    <option key={c} value={c}>
+                      {c[0].toUpperCase() + c.slice(1)}
+                    </option>
+                  ))}
+                </select>
               </label>
               <label>
                 Description (optional)

@@ -1017,6 +1017,7 @@ a {
   margin: 18px 0;
 }
 .publishDialog input:not([type="checkbox"]),
+.publishDialog select,
 .publishDialog textarea {
   width: 100%;
   padding: 11px;
@@ -1283,4 +1284,26 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 14px 22px;
+}
+
+.galleryFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: end;
+  margin: 24px 0;
+}
+.galleryFilters label {
+  display: grid;
+  gap: 8px;
+  flex: 1 1 200px;
+}
+.galleryFilters input,
+.galleryFilters select {
+  font: inherit;
+  padding: 12px;
+  border: 1px solid #b8c9be;
+  border-radius: 8px;
+  min-width: 0;
+  width: 100%;
 }

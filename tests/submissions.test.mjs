@@ -91,6 +91,7 @@ test("submission uploads normalized private images, hashes tokens, retries once 
   const f = fixture();
   const result = await submit(request(), f.deps);
   assert.equal(result.status, "pending");
+  assert.equal(f.row().category, "nature");
   assert.equal(f.objects.size, 2);
   assert.equal(f.row().management_token_hash, tokenHash(token));
   assert.ok(!JSON.stringify(f.row()).includes(token));
@@ -139,6 +140,7 @@ test("origin, consent, verification, quotas and trusted host checks fail before 
   for (const [data, origin, overrides, expected] of [
     [body, "https://attacker.example", {}, 403],
     [{ ...body, consent: false }, undefined, {}, 400],
+    [{ ...body, category: "invalid" }, undefined, {}, 400],
     [body, undefined, { verify: async () => false }, 403],
     [body, undefined, { netlify: false }, 503],
   ]) {
@@ -362,5 +364,12 @@ test("submissions ignore quotas and automatic publication and always wait for re
     },
   });
   assert.equal((await submit(request(), f.deps)).status, "pending");
+  assert.equal(f.row().status, "pending");
+});
+
+test("chosen category is retained for manual review", async () => {
+  const f = fixture();
+  await submit(request({ ...body, category: "beach" }), f.deps);
+  assert.equal(f.row().category, "beach");
   assert.equal(f.row().status, "pending");
 });
