@@ -6,9 +6,14 @@ export default function Home() {
   return (
     <main className="home">
       <nav>
-        <b>Freelement Images</b>
-        <Link href="/create">Create</Link>
-        <Link href="/gallery">Gallery</Link>
+        <Link href="/" className="brandWrap" aria-label="Freelement Images home">
+          <img src="/logo.png" alt="Freelement Images logo" className="brandLogo" />
+          <b>Freelement Images</b>
+        </Link>
+        <div className="headerLinks">
+          <Link href="/create">Create</Link>
+          <Link href="/gallery">Gallery</Link>
+        </div>
       </nav>
       <section className="hero">
         <span className="pill">NO PROMPTS • INSTANT • EDITABLE</span>

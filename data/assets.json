@@ -6926,5 +6926,894 @@
     "collision": "none",
     "transparent": false,
     "fullCanvas": true
+  },
+  {
+    "id": "freeimage-anonymous-architetto-anatra",
+    "type": "animal",
+    "variant": "anonymous-architetto-anatra",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/Anonymous-Architetto----Anatra.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-reedabadeeda-sea-bird-1",
+    "type": "animal",
+    "variant": "reedabadeeda-sea-bird-1",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/Reedabadeeda-Sea-Bird-1.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-robgtx-cardinal-remix-2-plain",
+    "type": "animal",
+    "variant": "robGTX-cardinal-remix-2-plain",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/RobGTX-Cardinal-remix-2-plain.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-chlopaya-bird",
+    "type": "animal",
+    "variant": "chlopaya-bird",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/chlopaya_Bird.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-monarch",
+    "type": "animal",
+    "variant": "monarch",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/monarch.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-openclipart",
+    "type": "animal",
+    "variant": "openclipart",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/openclipart.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ryanlerch-frigate-bird",
+    "type": "animal",
+    "variant": "ryanlerch-frigate-bird",
+    "style": "freeimage",
+    "src": "/assets/freeimage/animal/ryanlerch-Frigate-Bird.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-man-reads-a-newspaper-1776010295",
+    "type": "character",
+    "variant": "man-reads-a-newspaper-1776010295",
+    "style": "freeimage",
+    "src": "/assets/freeimage/character/man-reads-a-newspaper_1776010295.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-man41-1728038482",
+    "type": "character",
+    "variant": "man41-1728038482",
+    "style": "freeimage",
+    "src": "/assets/freeimage/character/man41_1728038482.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-100710-red-maple-leaf",
+    "type": "effect",
+    "variant": "100710-red-maple-leaf",
+    "style": "freeimage",
+    "src": "/assets/freeimage/effect/100710_red_maple_leaf.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-butterfly-xviii-1783226787",
+    "type": "effect",
+    "variant": "butterfly-xVIII-1783226787",
+    "style": "freeimage",
+    "src": "/assets/freeimage/effect/Butterfly_XVIII_1783226787.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-monarch",
+    "type": "effect",
+    "variant": "monarch",
+    "style": "freeimage",
+    "src": "/assets/freeimage/effect/monarch.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ryanlerch-frigate-bird",
+    "type": "effect",
+    "variant": "ryanlerch-frigate-bird",
+    "style": "freeimage",
+    "src": "/assets/freeimage/effect/ryanlerch-Frigate-Bird.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-100710-red-maple-leaf",
+    "type": "flower",
+    "variant": "100710-red-maple-leaf",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/100710_red_maple_leaf.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-flowers28-1774523985",
+    "type": "flower",
+    "variant": "flowers28-1774523985",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/Flowers28_1774523985.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-flowers53-1779857999",
+    "type": "flower",
+    "variant": "flowers53-1779857999",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/Flowers53_1779857999.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-flowers63-1782801812",
+    "type": "flower",
+    "variant": "flowers63-1782801812",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/Flowers63_1782801812.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-flowers64-1782908226",
+    "type": "flower",
+    "variant": "flowers64-1782908226",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/Flowers64_1782908226.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-potted-grass",
+    "type": "flower",
+    "variant": "potted-grass",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/Potted-Grass.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-lotus-fleur",
+    "type": "flower",
+    "variant": "lotus-fleur",
+    "style": "freeimage",
+    "src": "/assets/freeimage/flower/lotus_fleur.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-butterfly-xviii-1783226787",
+    "type": "plant",
+    "variant": "butterfly-xVIII-1783226787",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/Butterfly_XVIII_1783226787.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-harvestable-resources-garden-new",
+    "type": "plant",
+    "variant": "harvestable-resources-garden-new",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/harvestable-resources-garden-new.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-misc-proto-herb-garden-medium",
+    "type": "plant",
+    "variant": "misc-proto-herb-garden-medium",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/misc-proto-herb-garden-medium.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-white-flower-pot",
+    "type": "plant",
+    "variant": "white-flower-pot",
+    "style": "freeimage",
+    "src": "/assets/freeimage/plant/white-flower-pot.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-1474979417",
+    "type": "sky",
+    "variant": "1474979417",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/1474979417.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-egonpin-sol-1",
+    "type": "sky",
+    "variant": "egonpin-sol-1",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/egonpin-Sol-1.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ernes-sun-sole",
+    "type": "sky",
+    "variant": "ernes-sun-sole",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/ernes-Sun-Sole.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-nicubunu-weather-symbols-cloudy-night",
+    "type": "sky",
+    "variant": "nicubunu-weather-symbols-cloudy-night",
+    "style": "freeimage",
+    "src": "/assets/freeimage/sky/nicubunu-Weather-Symbols-Cloudy-Night.svg",
+    "placement": [
+      "sky"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-1423333804",
+    "type": "tree",
+    "variant": "1423333804",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/1423333804.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-1549628824",
+    "type": "tree",
+    "variant": "1549628824",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/1549628824.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-palmtree8",
+    "type": "tree",
+    "variant": "palmTree8",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/PalmTree8.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-bobocal-simple-vector-tree",
+    "type": "tree",
+    "variant": "bobocal-simple-vector-tree",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/bobocal-simple-vector-tree.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-cocoku",
+    "type": "tree",
+    "variant": "cocoku",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/cocoku.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ilmenskie-tree-10",
+    "type": "tree",
+    "variant": "ilmenskie-tree-10",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/ilmenskie-tree-10.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ilmenskie-tree-11",
+    "type": "tree",
+    "variant": "ilmenskie-tree-11",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/ilmenskie-tree-11.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ilmenskie-tree-14",
+    "type": "tree",
+    "variant": "ilmenskie-tree-14",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/ilmenskie-tree-14.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-ilmenskie-tree-int-stump-1",
+    "type": "tree",
+    "variant": "ilmenskie-tree-int-stump-1",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/ilmenskie-tree-int-stump-1.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-palm-colour",
+    "type": "tree",
+    "variant": "palm-colour",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/palm-colour.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-red-aiflowers-tree",
+    "type": "tree",
+    "variant": "red-aiflowers-tree",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/red-aiflowers-tree.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-simple-tree",
+    "type": "tree",
+    "variant": "simple-tree",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/simple-tree.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-tree-21",
+    "type": "tree",
+    "variant": "tree-21",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/tree-21.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-tree-15042015-3",
+    "type": "tree",
+    "variant": "tree-15042015-3",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/tree_15042015_3.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-tree-21102016",
+    "type": "tree",
+    "variant": "tree-21102016",
+    "style": "freeimage",
+    "src": "/assets/freeimage/tree/tree_21102016.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-fisherman",
+    "type": "water",
+    "variant": "fisherman",
+    "style": "freeimage",
+    "src": "/assets/freeimage/water/fisherman.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "freeimage-nicubunu-rpg-map-symbols-wishing-well",
+    "type": "water",
+    "variant": "nicubunu-rPG-map-symbols-wishing-well",
+    "style": "freeimage",
+    "src": "/assets/freeimage/water/nicubunu_RPG_map_symbols_Wishing_Well.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background",
+      "middle",
+      "foreground"
+    ],
+    "minScale": 0.15,
+    "maxScale": 4,
+    "collision": "soft",
+    "transparent": true
+  },
+  {
+    "id": "vector-bg-1435942396",
+    "type": "background",
+    "variant": "1435942396",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/1435942396.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "vector-bg-mountain",
+    "type": "background",
+    "variant": "mountain",
+    "style": "vector-countryside",
+    "src": "/assets/vector-countryside/backgrounds/mountain.svg",
+    "placement": [
+      "background"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 1.2,
+    "collision": "none",
+    "transparent": true
   }
 ]

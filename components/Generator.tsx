@@ -68,8 +68,12 @@ const cats = CAT_ORDER.filter((category) =>
 );
 const pretty = (value: string) =>
   value
-    .replace(/-\d+$/, "")
-    .replaceAll("-", " ")
+    .replace(/\.svg$/i, "")
+    .replace(/[_]+/g, "-")
+    .replace(/[-_]+\d+$/g, "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
     .replace(/\b\w/g, (char) => char.toUpperCase());
 const icon = (category: string) =>
   (
@@ -270,6 +274,18 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           })
         : scene;
     });
+  const setNumericValue = (
+    uid: string,
+    key: "scale" | "rotation" | "opacity" | "hue",
+    rawValue: number,
+    min: number,
+    max: number,
+  ) => {
+    const nextValue = Number(rawValue);
+    if (!Number.isFinite(nextValue)) return;
+    const clamped = clamp(nextValue, min, max);
+    update(uid, { [key]: clamped } as Partial<Item>);
+  };
 
   const beginPointer = (
     event: React.PointerEvent,
@@ -1016,6 +1032,28 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                       update(current.uid, { scale: +e.target.value / 100 })
                     }
                   />
+                  <div className="numberRow">
+                    <label className="numberFieldWrap">
+                      <span>Size</span>
+                      <input
+                        type="number"
+                        min="15"
+                        max="400"
+                        step="1"
+                        value={Math.round(current.scale * 100)}
+                        onChange={(e) =>
+                          setNumericValue(
+                            current.uid,
+                            "scale",
+                            +e.target.value / 100,
+                            0.15,
+                            4,
+                          )
+                        }
+                      />
+                    </label>
+                    <span className="numberSuffix">%</span>
+                  </div>
                   <div className="quick">
                     {[50, 75, 100, 125, 150, 200].map((n) => (
                       <button
@@ -1040,6 +1078,28 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                       update(current.uid, { rotation: +e.target.value })
                     }
                   />
+                  <div className="numberRow">
+                    <label className="numberFieldWrap">
+                      <span>Rotation</span>
+                      <input
+                        type="number"
+                        min="-180"
+                        max="180"
+                        step="1"
+                        value={Math.round(current.rotation)}
+                        onChange={(e) =>
+                          setNumericValue(
+                            current.uid,
+                            "rotation",
+                            +e.target.value,
+                            -180,
+                            180,
+                          )
+                        }
+                      />
+                    </label>
+                    <span className="numberSuffix">°</span>
+                  </div>
                 </Prop>
                 <Prop label="Flip">
                   <div className="twoBtns">
@@ -1092,6 +1152,28 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                       update(current.uid, { opacity: +e.target.value / 100 })
                     }
                   />
+                  <div className="numberRow">
+                    <label className="numberFieldWrap">
+                      <span>Opacity</span>
+                      <input
+                        type="number"
+                        min="10"
+                        max="100"
+                        step="1"
+                        value={Math.round(current.opacity * 100)}
+                        onChange={(e) =>
+                          setNumericValue(
+                            current.uid,
+                            "opacity",
+                            +e.target.value / 100,
+                            0.1,
+                            1,
+                          )
+                        }
+                      />
+                    </label>
+                    <span className="numberSuffix">%</span>
+                  </div>
                 </Prop>
                 <Prop label="Color" value={`${current.hue || 0}°`}>
                   <input
