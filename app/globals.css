@@ -1423,4 +1423,10 @@ a {
   border-radius: 8px;
   min-width: 0;
   width: 100%;
+  background: #fff; /* ensure readable background */
+  color: #1f2f2a; /* dark text for contrast */
+}
+
+.galleryFilters input::placeholder {
+  color: #65796f; /* readable placeholder color */
 }

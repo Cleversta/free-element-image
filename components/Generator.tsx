@@ -137,6 +137,9 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     [],
   );
   const current = items.find((item) => item.uid === active) || null;
+  const [sizeInput, setSizeInput] = useState<string>("");
+  const [rotationInput, setRotationInput] = useState<string>("");
+  const [opacityInput, setOpacityInput] = useState<string>("");
   const filtered = useMemo(
     () =>
       (groups[pickerCat] || []).filter(
@@ -157,6 +160,18 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     setNotice("");
     dispatch({ type: "change", apply });
   };
+
+  useEffect(() => {
+    if (!current) {
+      setSizeInput("");
+      setRotationInput("");
+      setOpacityInput("");
+      return;
+    }
+    setSizeInput(String(Math.round(current.scale * 100)));
+    setRotationInput(String(Math.round(current.rotation)));
+    setOpacityInput(String(Math.round(current.opacity * 100)));
+  }, [current]);
   const update = (uid: string, patch: Partial<Item>) =>
     change((scene) => updateItem(scene, uid, patch));
   const undo = () => {
@@ -285,6 +300,10 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     if (!Number.isFinite(nextValue)) return;
     const clamped = clamp(nextValue, min, max);
     update(uid, { [key]: clamped } as Partial<Item>);
+    // keep local inputs in sync after committing
+    if (key === "scale") setSizeInput(String(Math.round((clamped as number) * 100)));
+    if (key === "rotation") setRotationInput(String(Math.round(clamped as number)));
+    if (key === "opacity") setOpacityInput(String(Math.round((clamped as number) * 100)));
   };
 
   const beginPointer = (
@@ -1040,16 +1059,34 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                         min="15"
                         max="400"
                         step="1"
-                        value={Math.round(current.scale * 100)}
-                        onChange={(e) =>
-                          setNumericValue(
-                            current.uid,
-                            "scale",
-                            +e.target.value / 100,
-                            0.15,
-                            4,
-                          )
-                        }
+                          value={sizeInput}
+                          onChange={(e) => setSizeInput(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              setNumericValue(
+                                current.uid,
+                                "scale",
+                                Number(e.currentTarget.value) / 100,
+                                0.15,
+                                4,
+                              );
+                            }
+                          }}
+                          onBlur={(e) => {
+                            const v = e.currentTarget.value.trim();
+                            if (v === "") {
+                              // restore previous value
+                              setSizeInput(String(Math.round(current.scale * 100)));
+                              return;
+                            }
+                            setNumericValue(
+                              current.uid,
+                              "scale",
+                              Number(v) / 100,
+                              0.15,
+                              4,
+                            );
+                          }}
                       />
                     </label>
                     <span className="numberSuffix">%</span>
@@ -1086,16 +1123,33 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                         min="-180"
                         max="180"
                         step="1"
-                        value={Math.round(current.rotation)}
-                        onChange={(e) =>
+                        value={rotationInput}
+                        onChange={(e) => setRotationInput(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
+                            setNumericValue(
+                              current.uid,
+                              "rotation",
+                              Number(e.currentTarget.value),
+                              -180,
+                              180,
+                            );
+                          }
+                        }}
+                        onBlur={(e) => {
+                          const v = e.currentTarget.value.trim();
+                          if (v === "") {
+                            setRotationInput(String(Math.round(current.rotation)));
+                            return;
+                          }
                           setNumericValue(
                             current.uid,
                             "rotation",
-                            +e.target.value,
+                            Number(v),
                             -180,
                             180,
-                          )
-                        }
+                          );
+                        }}
                       />
                     </label>
                     <span className="numberSuffix">°</span>
@@ -1160,16 +1214,33 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                         min="10"
                         max="100"
                         step="1"
-                        value={Math.round(current.opacity * 100)}
-                        onChange={(e) =>
+                        value={opacityInput}
+                        onChange={(e) => setOpacityInput(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
+                            setNumericValue(
+                              current.uid,
+                              "opacity",
+                              Number(e.currentTarget.value) / 100,
+                              0.1,
+                              1,
+                            );
+                          }
+                        }}
+                        onBlur={(e) => {
+                          const v = e.currentTarget.value.trim();
+                          if (v === "") {
+                            setOpacityInput(String(Math.round(current.opacity * 100)));
+                            return;
+                          }
                           setNumericValue(
                             current.uid,
                             "opacity",
-                            +e.target.value / 100,
+                            Number(v) / 100,
                             0.1,
                             1,
-                          )
-                        }
+                          );
+                        }}
                       />
                     </label>
                     <span className="numberSuffix">%</span>
