@@ -208,10 +208,28 @@ a {
   transform: translateY(-1px);
 }
 
-/* Force popup buttons to remain fully opaque and visible even if other rules apply */
-.popupMenu button {
+/* Download popup buttons */
+
+.vActions .popupMenu .popupActions button.btnPrimary {
+  background-color: #315f4b !important;
+  color: #ffffff !important;
+  border: 1px solid #315f4b !important;
   opacity: 1 !important;
-  color: inherit !important;
+  visibility: visible !important;
+  cursor: pointer;
+}
+
+.vActions .popupMenu .popupActions button.btnPrimary:hover {
+  background-color: #244b3b !important;
+  color: #ffffff !important;
+  border-color: #244b3b !important;
+}
+
+.vActions .popupMenu .popupActions button.btnAlt {
+  background-color: #ffffff !important;
+  color: #25352e !important;
+  border: 1px solid #dedbd2 !important;
+  opacity: 1 !important;
 }
 .downloadWrap { position: relative; }
 
@@ -1624,4 +1642,30 @@ a {
 
 .galleryFilters input::placeholder {
   color: #65796f; /* readable placeholder color */
+}
+
+/* Fix Download button visibility */
+
+.vActions .popupMenu .popupActions .btnPrimary {
+  background: #315f4b !important;
+  color: #ffffff !important;
+  border: 1px solid #315f4b !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Download button hover */
+
+.vActions .popupMenu .popupActions .btnPrimary:hover {
+  background: #244b3b !important;
+  color: #ffffff !important;
+  border-color: #244b3b !important;
+}
+
+/* Cancel button */
+
+.vActions .popupMenu .popupActions .btnAlt {
+  background: #ffffff !important;
+  color: #25352e !important;
+  border: 1px solid #dedbd2 !important;
 }
