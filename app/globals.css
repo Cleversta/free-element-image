@@ -300,6 +300,21 @@ a {
 .vActions .download:hover:not(:disabled) {
   background: var(--brand-dark);
 }
+.vActions .popupMenu .btnAlt {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #1f2f2a;
+}
+.vActions .popupMenu .btnAlt:hover {
+  background: #f6f7f5;
+}
+.vActions .popupMenu .btnPrimary {
+  background: var(--brand);
+  color: #fff;
+}
+.vActions .popupMenu .btnPrimary:hover {
+  background: var(--brand-dark);
+}
 .vActions .iconAction {
   width: 40px;
   padding: 8px 0;
