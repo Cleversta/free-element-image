@@ -118,6 +118,8 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const [collection, setCollection] = useState<
     "all" | "freeimage" | "original"
   >("all");
+  const [downloadFormat, setDownloadFormat] = useState<"png" | "jpeg" | "webp">("png");
+  const [downloadQuality, setDownloadQuality] = useState<number>(0.92);
   const [notice, setNotice] = useState("");
   const [saved, setSaved] = useState(serializeScene(defaultScene));
   const [ready, setReady] = useState(false);
@@ -480,10 +482,18 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     setExporting(true);
     setNotice("Preparing your PNG…");
     try {
-      const blob = await renderScene(state.present);
+      const blob = await renderScene(
+        state.present,
+        downloadFormat === "png"
+          ? "image/png"
+          : downloadFormat === "jpeg"
+          ? "image/jpeg"
+          : "image/webp",
+        downloadQuality,
+      );
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
-      link.download = "freelement-village.png";
+      link.download = `freelement-village.${downloadFormat === "png" ? "png" : downloadFormat === "jpeg" ? "jpg" : "webp"}`;
       link.href = url;
       document.body.appendChild(link);
       link.click();
@@ -638,13 +648,28 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           <button disabled={!ready} onClick={save}>
             ▣ Save
           </button>
-          <button
-            className="download"
-            disabled={exporting || !ready}
-            onClick={download}
-          >
-            {exporting ? "Exporting…" : "⇩ Download PNG"}
-          </button>
+          <div className="downloadWrap">
+            <label>
+              <select
+                value={downloadFormat}
+                onChange={(e) => setDownloadFormat(e.target.value as any)}
+                aria-label="Download format"
+              >
+                <option value="png">PNG</option>
+                <option value="jpeg">JPEG</option>
+                <option value="webp">WebP</option>
+              </select>
+            </label>
+            <button
+              className="download"
+              disabled={exporting || !ready}
+              onClick={download}
+            >
+              {exporting
+                ? "Exporting…"
+                : `⇩ Download ${downloadFormat.toUpperCase()}`}
+            </button>
+          </div>
         </div>
       </header>
       <div className="sceneStatus">

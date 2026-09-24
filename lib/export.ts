@@ -1,8 +1,58 @@
 import { HEIGHT, ITEM_HEIGHT, ITEM_WIDTH, WIDTH } from "./scene";
 import type { Scene } from "./scene";
 
-function loadImage(src: string): Promise<HTMLImageElement> {
-  return new Promise((resolve, reject) => {
+async function loadImage(src: string): Promise<HTMLImageElement> {
+  // Try to load with an <img> element with CORS enabled first.
+  // If the resource doesn't permit cross-origin use, fallback to fetch and
+  // convert to a blob URL (same-origin) so the canvas won't become tainted.
+  const tryImg = () =>
+    new Promise<HTMLImageElement>((resolve, reject) => {
+      const image = new Image();
+      image.crossOrigin = "anonymous";
+      const timeout = window.setTimeout(
+        () => reject(new Error("An image took too long to load. Try again.")),
+        15000,
+      );
+      image.onload = () => {
+        clearTimeout(timeout);
+        resolve(image);
+      };
+      image.onerror = () => {
+        clearTimeout(timeout);
+        reject(new Error("Image load failed"));
+      };
+      image.src = src;
+    });
+
+  try {
+    return await tryImg();
+  } catch {
+    // Fallback: fetch the resource and build an object URL so the image is
+    // treated as same-origin (avoids tainting the canvas). This works for
+    // any asset that the server will serve to the client (public assets).
+    try {
+      const resp = await fetch(src);
+      if (!resp.ok) throw new Error("Fetch failed");
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      try {
+        const img = await tryImgWithSrc(url);
+        URL.revokeObjectURL(url);
+        return img;
+      } catch (err) {
+        URL.revokeObjectURL(url);
+        throw err;
+      }
+    } catch (err) {
+      throw new Error(
+        "An image could not be loaded. Your scene has not been exported.",
+      );
+    }
+  }
+}
+
+function tryImgWithSrc(src: string) {
+  return new Promise<HTMLImageElement>((resolve, reject) => {
     const image = new Image();
     const timeout = window.setTimeout(
       () => reject(new Error("An image took too long to load. Try again.")),
@@ -14,17 +64,17 @@ function loadImage(src: string): Promise<HTMLImageElement> {
     };
     image.onerror = () => {
       clearTimeout(timeout);
-      reject(
-        new Error(
-          "An image could not be loaded. Your scene has not been exported.",
-        ),
-      );
+      reject(new Error("Image load failed"));
     };
     image.src = src;
   });
 }
 
-export async function renderScene(scene: Scene): Promise<Blob> {
+export async function renderScene(
+  scene: Scene,
+  format: "image/png" | "image/jpeg" | "image/webp" = "image/png",
+  quality = 0.92,
+): Promise<Blob> {
   const canvas = document.createElement("canvas");
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
@@ -67,8 +117,11 @@ export async function renderScene(scene: Scene): Promise<Blob> {
   return new Promise((resolve, reject) =>
     canvas.toBlob(
       (blob) =>
-        blob ? resolve(blob) : reject(new Error("Unable to create the PNG.")),
-      "image/png",
+        blob
+          ? resolve(blob)
+          : reject(new Error("Unable to create the image blob.")),
+      format,
+      format === "image/png" ? undefined : quality,
     ),
   );
 }

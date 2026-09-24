@@ -109,6 +109,18 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
 }
+.downloadWrap select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #1f2f2a;
+}
+.downloadWrap {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
 .vActions button {
   border: 1px solid #dedbd2;
   background: #fff;
