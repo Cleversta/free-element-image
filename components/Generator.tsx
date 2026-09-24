@@ -121,6 +121,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const [downloadFormat, setDownloadFormat] = useState<"png" | "jpeg" | "webp">("png");
   const [downloadQuality, setDownloadQuality] = useState<number>(0.92);
   const [downloadDialogOpen, setDownloadDialogOpen] = useState<boolean>(false);
+  const downloadRef = useRef<HTMLDivElement | null>(null);
   const [notice, setNotice] = useState("");
   const [saved, setSaved] = useState(serializeScene(defaultScene));
   const [ready, setReady] = useState(false);
@@ -654,14 +655,46 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           <button disabled={!ready} onClick={save}>
             ▣ Save
           </button>
-          <div className="downloadWrap">
+          <div className="downloadWrap" ref={downloadRef}>
             <button
               className="download"
               disabled={exporting || !ready}
-              onClick={() => setDownloadDialogOpen(true)}
+              onClick={() => setDownloadDialogOpen((s) => !s)}
             >
               {exporting ? "Exporting…" : "⇩ Download"}
             </button>
+            {downloadDialogOpen && (
+              <div className="popupMenu" role="menu" aria-label="Download options">
+                <div className="popupRow">
+                  <label>Format</label>
+                  <select
+                    value={downloadFormat}
+                    onChange={(e) => setDownloadFormat(e.target.value as "png" | "jpeg" | "webp")}
+                  >
+                    <option value="png">PNG</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="webp">WebP</option>
+                  </select>
+                </div>
+                {downloadFormat !== "png" && (
+                  <div className="popupRow">
+                    <label>Quality</label>
+                    <input
+                      type="range"
+                      min={0.1}
+                      max={1}
+                      step={0.01}
+                      value={downloadQuality}
+                      onChange={(e) => setDownloadQuality(Number(e.target.value))}
+                    />
+                  </div>
+                )}
+                <div className="popupActions">
+                  <button className="btnAlt" onClick={() => setDownloadDialogOpen(false)}>Cancel</button>
+                  <button className="btnPrimary" onClick={confirmDownload}>Download</button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </header>
@@ -1300,58 +1333,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           )}
         </aside>
       </div>
-      {downloadDialogOpen && (
-        <div className="dialogBack" role="dialog" aria-modal="true">
-              <div className="dialog">
-                <header className="dialogHeader">
-                  <h3>Download image</h3>
-                  <button
-                    className="dialogClose"
-                    aria-label="Close"
-                    onClick={() => setDownloadDialogOpen(false)}
-                  >
-                    ×
-                  </button>
-                </header>
-                <div className="dialogBody">
-                  <p className="muted">Choose a format and quality, then download.</p>
-                  <div className="fieldRow">
-                    <label>Format</label>
-                    <div>
-                      <select
-                        value={downloadFormat}
-                        onChange={(e) => setDownloadFormat(e.target.value as "png" | "jpeg" | "webp")}
-                      >
-                        <option value="png">PNG (lossless)</option>
-                        <option value="jpeg">JPEG (smaller, lossy)</option>
-                        <option value="webp">WebP (modern)</option>
-                      </select>
-                    </div>
-                  </div>
-                  {downloadFormat !== "png" && (
-                    <div className="fieldRow">
-                      <label>Quality</label>
-                      <div className="qualityRow">
-                        <input
-                          type="range"
-                          min={0.1}
-                          max={1}
-                          step={0.01}
-                          value={downloadQuality}
-                          onChange={(e) => setDownloadQuality(Number(e.target.value))}
-                        />
-                        <output className="qualityValue">{Math.round(downloadQuality * 100)}%</output>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <footer className="dialogActions">
-                  <button className="btnAlt" onClick={() => setDownloadDialogOpen(false)}>Cancel</button>
-                  <button className="btnPrimary" onClick={confirmDownload}>Download</button>
-                </footer>
-              </div>
-        </div>
-      )}
+      {/* download popup menu is rendered adjacent to header button */}
       <footer className="vFoot">
         <span>Freelement Images</span>
         <span>Create • Arrange • Customize • Download</span>

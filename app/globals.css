@@ -122,6 +122,36 @@ a {
   align-items: center;
 }
 
+.popupMenu {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  width: 260px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  z-index: 20;
+}
+.popupRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.popupRow label {
+  min-width: 66px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.popupActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
 .dialogBack {
   position: fixed;
   inset: 0;
