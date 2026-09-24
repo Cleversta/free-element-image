@@ -122,6 +122,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const [downloadQuality, setDownloadQuality] = useState<number>(0.92);
   const [downloadDialogOpen, setDownloadDialogOpen] = useState<boolean>(false);
   const downloadRef = useRef<HTMLDivElement | null>(null);
+  const popupRef = useRef<HTMLDivElement | null>(null);
   const [notice, setNotice] = useState("");
   const [saved, setSaved] = useState(serializeScene(defaultScene));
   const [ready, setReady] = useState(false);
@@ -169,6 +170,32 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     setDownloadDialogOpen(false);
     await download();
   };
+
+  // Close popup on outside click or Escape
+  useEffect(() => {
+    if (!downloadDialogOpen) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setDownloadDialogOpen(false);
+    }
+    function onClick(e: MouseEvent) {
+      const target = e.target as Node | null;
+      if (
+        popupRef.current &&
+        downloadRef.current &&
+        target &&
+        !popupRef.current.contains(target) &&
+        !downloadRef.current.contains(target)
+      ) {
+        setDownloadDialogOpen(false);
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("pointerdown", onClick);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("pointerdown", onClick);
+    };
+  }, [downloadDialogOpen]);
 
   useEffect(() => {
     if (!current) {
@@ -664,7 +691,12 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               {exporting ? "Exporting…" : "⇩ Download"}
             </button>
             {downloadDialogOpen && (
-              <div className="popupMenu" role="menu" aria-label="Download options">
+              <div
+                className="popupMenu"
+                role="menu"
+                aria-label="Download options"
+                ref={popupRef}
+              >
                 <div className="popupRow">
                   <label>Format</label>
                   <select

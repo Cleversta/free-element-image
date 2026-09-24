@@ -124,7 +124,7 @@ a {
 
 .popupMenu {
   position: absolute;
-  top: 52px;
+  top: 46px;
   right: 0;
   background: #fff;
   border: 1px solid var(--line);
@@ -133,6 +133,13 @@ a {
   width: 260px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
   z-index: 20;
+  transform-origin: top right;
+  animation: popupIn .12s ease;
+}
+
+@keyframes popupIn {
+  from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 .popupRow {
   display: flex;
@@ -151,6 +158,7 @@ a {
   gap: 8px;
   margin-top: 8px;
 }
+.downloadWrap { position: relative; }
 
 .dialogBack {
   position: fixed;
