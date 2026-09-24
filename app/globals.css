@@ -121,6 +121,33 @@ a {
   gap: 8px;
   align-items: center;
 }
+
+.dialogBack {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,0.35);
+  z-index: 9999;
+}
+.dialog {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.dialog label {
+  display: block;
+  margin: 10px 0;
+  font-size: 13px;
+}
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
 .vActions button {
   border: 1px solid #dedbd2;
   background: #fff;

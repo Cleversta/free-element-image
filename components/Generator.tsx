@@ -120,6 +120,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   >("all");
   const [downloadFormat, setDownloadFormat] = useState<"png" | "jpeg" | "webp">("png");
   const [downloadQuality, setDownloadQuality] = useState<number>(0.92);
+  const [downloadDialogOpen, setDownloadDialogOpen] = useState<boolean>(false);
   const [notice, setNotice] = useState("");
   const [saved, setSaved] = useState(serializeScene(defaultScene));
   const [ready, setReady] = useState(false);
@@ -161,6 +162,11 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const change = (apply: (scene: Scene) => Scene) => {
     setNotice("");
     dispatch({ type: "change", apply });
+  };
+
+  const confirmDownload = async () => {
+    setDownloadDialogOpen(false);
+    await download();
   };
 
   useEffect(() => {
@@ -649,25 +655,12 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
             ▣ Save
           </button>
           <div className="downloadWrap">
-            <label>
-              <select
-                value={downloadFormat}
-                onChange={(e) => setDownloadFormat(e.target.value as any)}
-                aria-label="Download format"
-              >
-                <option value="png">PNG</option>
-                <option value="jpeg">JPEG</option>
-                <option value="webp">WebP</option>
-              </select>
-            </label>
             <button
               className="download"
               disabled={exporting || !ready}
-              onClick={download}
+              onClick={() => setDownloadDialogOpen(true)}
             >
-              {exporting
-                ? "Exporting…"
-                : `⇩ Download ${downloadFormat.toUpperCase()}`}
+              {exporting ? "Exporting…" : "⇩ Download"}
             </button>
           </div>
         </div>
@@ -1307,6 +1300,41 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           )}
         </aside>
       </div>
+      {downloadDialogOpen && (
+        <div className="dialogBack" role="dialog" aria-modal="true">
+          <div className="dialog">
+            <h3>Download image</h3>
+            <label>
+              Format
+              <select
+                value={downloadFormat}
+                onChange={(e) => setDownloadFormat(e.target.value as any)}
+              >
+                <option value="png">PNG (lossless)</option>
+                <option value="jpeg">JPEG (smaller, lossy)</option>
+                <option value="webp">WebP (modern)</option>
+              </select>
+            </label>
+            {downloadFormat !== "png" && (
+              <label>
+                Quality
+                <input
+                  type="range"
+                  min={0.1}
+                  max={1}
+                  step={0.01}
+                  value={downloadQuality}
+                  onChange={(e) => setDownloadQuality(Number(e.target.value))}
+                />
+              </label>
+            )}
+            <div className="dialogActions">
+              <button onClick={() => setDownloadDialogOpen(false)}>Cancel</button>
+              <button onClick={confirmDownload}>Download</button>
+            </div>
+          </div>
+        </div>
+      )}
       <footer className="vFoot">
         <span>Freelement Images</span>
         <span>Create • Arrange • Customize • Download</span>
