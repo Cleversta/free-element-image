@@ -158,6 +158,14 @@ a {
   gap: 8px;
   margin-top: 8px;
 }
+.popupActions .btnPrimary, .popupActions .btnAlt {
+  min-width: 80px;
+}
+.popupActions .btnPrimary {
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+}
 .downloadWrap { position: relative; }
 
 .dialogBack {
