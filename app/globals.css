@@ -152,6 +152,17 @@ a {
   color: var(--muted);
   font-size: 13px;
 }
+.popupRow select {
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #1f2f2a;
+}
+.popupRow select option {
+  font-size: 13px;
+}
 .popupActions {
   display: flex;
   justify-content: flex-end;
