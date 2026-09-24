@@ -166,6 +166,32 @@ a {
   color: #fff;
   border: 0;
 }
+
+/* Ensure popup buttons keep their styles on hover (override .vActions button:hover) */
+.popupMenu button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+}
+.popupMenu .btnAlt {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #1f2f2a;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.popupMenu .btnAlt:hover {
+  background: #f6f7f5;
+}
+.popupMenu .btnPrimary {
+  background: var(--brand);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.popupMenu .btnPrimary:hover {
+  background: var(--brand-dark);
+}
 .downloadWrap { position: relative; }
 
 .dialogBack {
