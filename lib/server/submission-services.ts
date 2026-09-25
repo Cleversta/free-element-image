@@ -14,10 +14,10 @@ export function publishSettings() {
   const siteUrl = process.env.SITE_URL?.trim();
 
   if (!siteKey || !secret || !siteUrl) {
-    console.error("Missing publishing environment variable:", {
-      TURNSTILE_SITE_KEY: !!siteKey,
-      TURNSTILE_SECRET_KEY: !!secret,
-      SITE_URL: !!siteUrl,
+    console.error("PUBLISH CONFIG: missing variable", {
+      TURNSTILE_SITE_KEY: Boolean(siteKey),
+      TURNSTILE_SECRET_KEY: Boolean(secret),
+      SITE_URL: Boolean(siteUrl),
     });
 
     return null;
@@ -38,12 +38,34 @@ export function publishSettings() {
       url.hash ||
       url.pathname !== "/"
     ) {
-      console.error("Invalid SITE_URL:", siteUrl);
+      console.error("PUBLISH CONFIG: invalid SITE_URL", {
+        protocol: url.protocol,
+        hostname: url.hostname,
+        pathname: url.pathname,
+        hasUsername: Boolean(url.username),
+        hasPassword: Boolean(url.password),
+        hasSearch: Boolean(url.search),
+        hasHash: Boolean(url.hash),
+      });
+
       return null;
     }
 
-    readR2Config();
-    readSupabaseConfig();
+    try {
+      readR2Config();
+    } catch (error) {
+      console.error("PUBLISH CONFIG: R2 failed:", error);
+      return null;
+    }
+
+    try {
+      readSupabaseConfig();
+    } catch (error) {
+      console.error("PUBLISH CONFIG: Supabase failed:", error);
+      return null;
+    }
+
+    console.log("PUBLISH CONFIG: ready");
 
     return {
       siteKey,
@@ -51,7 +73,7 @@ export function publishSettings() {
       siteUrl: url.origin,
     };
   } catch (error) {
-    console.error("publishSettings configuration error:", error);
+    console.error("PUBLISH CONFIG: unexpected failure:", error);
     return null;
   }
 }
