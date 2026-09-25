@@ -3,77 +3,215 @@ import ReportImage from "@/components/ReportImage";
 import { notFound } from "next/navigation";
 import { publicImage } from "@/lib/server/gallery";
 import { publishedScene } from "@/lib/server/editable-scene";
+import type { Metadata } from "next";
+
 export const dynamic = "force-dynamic";
+
+const SITE_URL =
+  process.env.SITE_URL?.replace(/\/$/, "") ||
+  "https://freelementimages.site";
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
+
   const image = await publicImage(slug);
-  if (!image) return { title: "Image not found", robots: { index: false } };
-  const origin = process.env.SITE_URL || "http://localhost:3000";
+
+  if (!image) {
+    return {
+      title: "Image not found",
+
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const encodedSlug = encodeURIComponent(slug);
+
+  const pageUrl =
+    `${SITE_URL}/images/${encodedSlug}`;
+
+  const imageUrl =
+    `${SITE_URL}/api/images/${encodedSlug}/image`;
+
+  const description =
+    image.description ||
+    `View and download ${image.title}, a community-created scene made with Freelement Images.`;
+
   return {
-    title: `${image.title} | Freelement Images`,
-    description:
-      image.description ||
-      `View and download ${image.title}, a community scene made with Freelement Images.`,
-    alternates: { canonical: `${origin}/images/${slug}` },
+    title: image.title,
+
+    description,
+
+    alternates: {
+      canonical: pageUrl,
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+
     openGraph: {
       title: image.title,
+      description,
+      url: pageUrl,
+      siteName: "Freelement Images",
+      type: "website",
+
       images: [
         {
-          url: `${origin}/api/images/${slug}/image`,
+          url: imageUrl,
           width: image.image_width,
           height: image.image_height,
           alt: image.title,
         },
       ],
     },
+
+    twitter: {
+      card: "summary_large_image",
+      title: image.title,
+      description,
+      images: [imageUrl],
+    },
   };
 }
+
 export default async function ImagePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
   const image = await publicImage(slug);
-  if (!image) notFound();
-  const editable = !!(await publishedScene(slug).catch(() => null));
+
+  if (!image) {
+    notFound();
+  }
+
+  const editable = !!(
+    await publishedScene(slug).catch(() => null)
+  );
+
+  const encodedSlug = encodeURIComponent(slug);
+
+  const pageUrl =
+    `${SITE_URL}/images/${encodedSlug}`;
+
+  const imageUrl =
+    `${SITE_URL}/api/images/${encodedSlug}/image`;
+
+  const description =
+    image.description ||
+    `Community-created scene made with Freelement Images.`;
+
+  const imageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+
+    name: image.title,
+    caption: description,
+    description,
+
+    contentUrl: imageUrl,
+    url: pageUrl,
+
+    width: image.image_width,
+    height: image.image_height,
+
+    encodingFormat: "image/png",
+
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Freelement Images",
+      url: SITE_URL,
+    },
+  };
+
   return (
     <main className="galleryPage imageDetail">
+      {/* Image structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(imageSchema),
+        }}
+      />
+
       <nav>
-        <Link href="/gallery">← Gallery</Link>
-        <Link href="/create">Create your own</Link>
+        <Link href="/gallery">
+          ← Gallery
+        </Link>
+
+        <Link href="/create">
+          Create your own
+        </Link>
       </nav>
+
       <h1>{image.title}</h1>
+
       <img
         className="publicOriginal"
-        src={`/api/images/${slug}/image`}
+        src={`/api/images/${encodedSlug}/image`}
         alt={image.title}
         width={image.image_width}
         height={image.image_height}
       />
-      <p className="imageDescription">{image.description}</p>
+
+      {image.description && (
+        <p className="imageDescription">
+          {image.description}
+        </p>
+      )}
+
       <p>
         {image.image_width} × {image.image_height} · PNG
       </p>
-      <a className="primary" href={`/api/images/${slug}/download`} download>
+
+      <a
+        className="primary"
+        href={`/api/images/${encodedSlug}/download`}
+        download
+      >
         Download PNG
       </a>
+
       {editable && (
         <p>
-          <Link className="primary" href={`/create?scene=${slug}`}>
+          <Link
+            className="primary"
+            href={`/create?scene=${encodedSlug}`}
+          >
             Edit this image
           </Link>
         </p>
       )}
+
       <p className="usageNote">
         Shared for public display and download.{" "}
-        {editable && "You may also edit a copy in the editor. "}No broader reuse
-        license is specified. Do not assume the artwork is public domain.
+
+        {editable &&
+          "You may also edit a copy in the editor. "}
+
+        No broader reuse license is specified.
+        Do not assume the artwork is public domain.
       </p>
+
       <ReportImage slug={slug} />
     </main>
   );

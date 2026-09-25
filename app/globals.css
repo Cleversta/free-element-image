@@ -915,7 +915,7 @@ a {
 }
 .numberRow {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   gap: 8px;
   margin-top: 10px;
 }
@@ -1508,7 +1508,7 @@ a {
 .homeGalleryHeading {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   gap: 20px;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -1620,7 +1620,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  align-items: end;
+  align-items: flex-end;
   margin: 24px 0;
 }
 .galleryFilters label {
