@@ -226,7 +226,6 @@ export function checkOrigin(
 
 // ============================================================
 // NETLIFY CLIENT IP
-// FIXED VERSION
 // ============================================================
 
 function isLocalHostname(hostname: string): boolean {
@@ -243,18 +242,12 @@ function isNetlifyRuntime(
     "netlify" | "development"
   >,
 ): boolean {
-  // Netlify sets NETLIFY=true in its build environment.
-  // When this value is available at runtime, use it to
-  // recognize Netlify even if deps.netlify was set incorrectly.
-  //
-  // The deployment must also ensure that this value cannot
-  // be controlled by an incoming HTTP request.
-
+  // Netlify sets NETLIFY=true in its environment.
   if (process.env.NETLIFY === "true") {
     return true;
   }
 
-  // Preserve the existing trusted deployment configuration.
+  // Preserve the configured deployment value.
   return deps.netlify;
 }
 
@@ -271,9 +264,8 @@ function getClientIp(
     deps.siteUrl,
   ).hostname;
 
-  // Local development is allowed only when both the
-  // request and configured website use local hostnames.
-
+  // Local development is allowed only when both
+  // the request and configured site use local hostnames.
   const local =
     deps.development &&
     isLocalHostname(hostname) &&
@@ -283,31 +275,39 @@ function getClientIp(
     return "127.0.0.1";
   }
 
-  // Never trust client-supplied IP headers unless the
-  // request has passed through the trusted Netlify runtime.
-
+  // Only trust proxy-provided IP headers when the app
+  // is running inside the trusted Netlify environment.
   if (!isNetlifyRuntime(deps)) {
     return null;
   }
 
-  // Netlify's platform-provided client connection IP.
-  //
-  // Do not replace this with an arbitrary X-Forwarded-For
-  // header supplied by the browser.
-
-  const clientIp = request.headers
+  // First try Netlify's client connection IP.
+  const netlifyIp = request.headers
     .get("x-nf-client-connection-ip")
     ?.trim();
 
-  if (!clientIp) {
-    return null;
+  if (netlifyIp && isIP(netlifyIp)) {
+    return netlifyIp;
   }
 
-  if (!isIP(clientIp)) {
-    return null;
+  // Netlify/Next.js may expose the original client
+  // through X-Forwarded-For instead.
+  //
+  // A forwarded chain can look like:
+  //
+  //   client-ip, proxy-ip, proxy-ip
+  //
+  // We want the first address.
+  const forwardedIp = request.headers
+    .get("x-forwarded-for")
+    ?.split(",")[0]
+    ?.trim();
+
+  if (forwardedIp && isIP(forwardedIp)) {
+    return forwardedIp;
   }
 
-  return clientIp;
+  return null;
 }
 
 // ============================================================
