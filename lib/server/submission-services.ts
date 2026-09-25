@@ -12,12 +12,24 @@ export function publishSettings() {
   const siteKey = process.env.TURNSTILE_SITE_KEY?.trim();
   const secret = process.env.TURNSTILE_SECRET_KEY?.trim();
   const siteUrl = process.env.SITE_URL?.trim();
-  if (!siteKey || !secret || !siteUrl) return null;
+
+  if (!siteKey || !secret || !siteUrl) {
+    console.error("Missing publishing environment variable:", {
+      TURNSTILE_SITE_KEY: !!siteKey,
+      TURNSTILE_SECRET_KEY: !!secret,
+      SITE_URL: !!siteUrl,
+    });
+
+    return null;
+  }
+
   try {
     const url = new URL(siteUrl);
+
     const local =
       process.env.NODE_ENV === "development" &&
       ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname);
+
     if (
       (!local && url.protocol !== "https:") ||
       url.username ||
@@ -25,12 +37,21 @@ export function publishSettings() {
       url.search ||
       url.hash ||
       url.pathname !== "/"
-    )
+    ) {
+      console.error("Invalid SITE_URL:", siteUrl);
       return null;
+    }
+
     readR2Config();
     readSupabaseConfig();
-    return { siteKey, secret, siteUrl: url.origin };
-  } catch {
+
+    return {
+      siteKey,
+      secret,
+      siteUrl: url.origin,
+    };
+  } catch (error) {
+    console.error("publishSettings configuration error:", error);
     return null;
   }
 }
