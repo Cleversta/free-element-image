@@ -103,6 +103,15 @@ export async function verifyChallenge(
   );
 }
 
+// NETLIFY is a build-time flag. Netlify also supplies these three read-only
+// variables to Functions at runtime. Never infer proxy trust from request headers.
+export function isNetlifyEnvironment(env = process.env): boolean {
+  return (
+    env.NETLIFY === "true" ||
+    Boolean(env.SITE_ID?.trim() && env.SITE_NAME?.trim() && env.URL?.trim())
+  );
+}
+
 export function submissionServices(requirePublish = false) {
   const settings = publishSettings();
   if (requirePublish && !settings)
@@ -122,7 +131,7 @@ export function submissionServices(requirePublish = false) {
   const deps: SubmissionDependencies = {
     siteUrl,
     hashKey: readSupabaseConfig().secretKey,
-    netlify: process.env.NETLIFY === "true",
+    netlify: isNetlifyEnvironment(),
     development: process.env.NODE_ENV === "development",
     verify: (token) =>
       settings

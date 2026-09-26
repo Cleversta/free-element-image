@@ -67,6 +67,14 @@ The project now uses a Next.js server build so future API routes can run on Netl
 publish the old `out/` folder or add a catch-all SPA redirect. Local development uses `.next-dev/`
 and production builds use `.next/` so they do not overwrite each other's generated files.
 
+If publishing reports “Publishing is not configured for this host yet”, the API could not
+identify a trusted Netlify client IP. The app recognizes Netlify Functions using its
+read-only runtime variables (`SITE_ID`, `SITE_NAME`, and `URL`); the `NETLIFY` build flag
+alone is not guaranteed at runtime. Deploy the updated server code and keep `SITE_URL`
+set to `https://freelementimages.site` for this production domain. The request must include
+Netlify's `x-nf-client-connection-ip` header; generic forwarded headers are not trusted.
+See [Netlify runtime environment variables](https://docs.netlify.com/build/functions/environment-variables/).
+
 ## 5. Enable anonymous submissions
 
 1. Run `supabase/migrations/002_submission_limits.sql` in the Supabase SQL editor.

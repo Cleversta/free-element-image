@@ -236,21 +236,6 @@ function isLocalHostname(hostname: string): boolean {
   ].includes(hostname);
 }
 
-function isNetlifyRuntime(
-  deps: Pick<
-    SubmissionDependencies,
-    "netlify" | "development"
-  >,
-): boolean {
-  // Netlify sets NETLIFY=true in its environment.
-  if (process.env.NETLIFY === "true") {
-    return true;
-  }
-
-  // Preserve the configured deployment value.
-  return deps.netlify;
-}
-
 function getClientIp(
   request: Request,
   deps: Pick<
@@ -277,7 +262,7 @@ function getClientIp(
 
   // Only trust proxy-provided IP headers when the app
   // is running inside the trusted Netlify environment.
-  if (!isNetlifyRuntime(deps)) {
+  if (!deps.netlify) {
     return null;
   }
 
@@ -288,23 +273,6 @@ function getClientIp(
 
   if (netlifyIp && isIP(netlifyIp)) {
     return netlifyIp;
-  }
-
-  // Netlify/Next.js may expose the original client
-  // through X-Forwarded-For instead.
-  //
-  // A forwarded chain can look like:
-  //
-  //   client-ip, proxy-ip, proxy-ip
-  //
-  // We want the first address.
-  const forwardedIp = request.headers
-    .get("x-forwarded-for")
-    ?.split(",")[0]
-    ?.trim();
-
-  if (forwardedIp && isIP(forwardedIp)) {
-    return forwardedIp;
   }
 
   return null;
@@ -445,10 +413,7 @@ export async function submit(
     deps.siteUrl,
   );
 
-  const actor = actorHash(
-    request,
-    deps,
-  );
+  actorHash(request, deps);
 
   const body = await readBody(
     request,

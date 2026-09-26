@@ -12,7 +12,7 @@ import {
   actorHash,
   submissionFailure,
 } from "../lib/server/submissions.ts";
-import { verifyChallenge } from "../lib/server/submission-services.ts";
+import { isNetlifyEnvironment, verifyChallenge } from "../lib/server/submission-services.ts";
 const token = "a".repeat(64);
 const png = (
   await sharp({
@@ -372,4 +372,25 @@ test("chosen category is retained for manual review", async () => {
   await submit(request({ ...body, category: "beach" }), f.deps);
   assert.equal(f.row().category, "beach");
   assert.equal(f.row().status, "pending");
+});
+
+
+test("Netlify Functions are recognized without the build-only NETLIFY flag", () => {
+  assert.equal(isNetlifyEnvironment({}), false);
+  assert.equal(isNetlifyEnvironment({ NETLIFY: "false" }), false);
+  assert.equal(isNetlifyEnvironment({ NETLIFY: "true" }), true);
+  assert.equal(isNetlifyEnvironment({ URL: "https://freelementimages.site" }), false);
+  const runtime = {
+    SITE_ID: "netlify-site-id",
+    SITE_NAME: "freelement-images",
+    URL: "https://freelementimages.site",
+  };
+  assert.equal(isNetlifyEnvironment(runtime), true);
+  const f = fixture({ netlify: isNetlifyEnvironment(runtime) });
+  assert.match(actorHash(request(), f.deps), /^[a-f0-9]{64}$/);
+  for (const value of ["", "not-an-ip", "192.0.2.1, 192.0.2.2"]) {
+    const invalid = request();
+    invalid.headers.set("x-nf-client-connection-ip", value);
+    assert.throws(() => actorHash(invalid, f.deps), (error) => error.status === 503);
+  }
 });
