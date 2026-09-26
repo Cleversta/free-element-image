@@ -52,7 +52,7 @@ export async function renderSubmission(raw: unknown) {
   }
   let verified = true;
   const buffers = new Map<string, Buffer>();
-  async function source(src: string) {
+  async function source(src: string, name: string) {
     if (!buffers.has(src)) {
       if (!src.startsWith("/assets/") || src.includes(".."))
         throw new Error("Invalid catalog path");
@@ -66,7 +66,7 @@ export async function renderSubmission(raw: unknown) {
       )
         throw new SubmissionError(
           400,
-          "This artwork cannot be published. Choose another element.",
+          `The artwork “${name}” cannot be published. Remove it or choose another element.`,
         );
       verified = verified && assetVerified(src, bytes);
       buffers.set(src, bytes);
@@ -79,7 +79,7 @@ export async function renderSubmission(raw: unknown) {
     `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="${scene.baseBg.sky}"/><rect y="360" width="1200" height="440" fill="${scene.baseBg.ground}"/>`,
   ];
   if (scene.baseBg.src) {
-    const image = await sharp(await source(scene.baseBg.src))
+    const image = await sharp(await source(scene.baseBg.src, scene.baseBg.name))
       .resize(1200, 800, { fit: "fill" })
       .png()
       .toBuffer();
@@ -89,7 +89,7 @@ export async function renderSubmission(raw: unknown) {
   for (const item of [...scene.items].sort((a, b) => a.z - b.z)) {
     const width = 320 * item.scale,
       height = 270 * item.scale;
-    const { data, info } = await sharp(await source(item.asset.src))
+    const { data, info } = await sharp(await source(item.asset.src, item.asset.variant.replace(/-/g, " ")))
       .resize({
         width: Math.ceil(width),
         height: Math.ceil(height),

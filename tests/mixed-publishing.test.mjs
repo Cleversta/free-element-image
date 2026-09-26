@@ -183,3 +183,24 @@ test("reporting migration restricts access, deduplicates reports, respects quota
     await db.close();
   }
 });
+
+
+test("imported Illustrator artwork renders for review without editor-only foreign objects", async () => {
+  for (const id of ["freeimage-chlopaya-bird", "freeimage-dachshund", "freeimage-rooster", "freeimage-sitting-brown-dog", "freeimage-slender-palm"]) {
+    const asset = assets.find((entry) => entry.id === id);
+    assert.ok(asset, id);
+    const result = await renderSubmission(raw([{
+      assetId: id, uid: id, x: 30, y: 40, scale: 0.5,
+      rotation: 0, z: 1, flipX: false, flipY: false, opacity: 1, hue: 0,
+    }]));
+    assert.equal(result.verified, false);
+    assert.equal((await sharp(result.png).metadata()).width, 1200);
+  }
+});
+
+test("unsupported artwork errors identify the element to replace", async () => {
+  await assert.rejects(renderSubmission(raw([{
+    assetId: "freeimage-sleeping-tabby-cat", uid: "cat", x: 30, y: 40, scale: 0.5,
+    rotation: 0, z: 1, flipX: false, flipY: false, opacity: 1, hue: 0,
+  }])), (error) => error.status === 400 && error.message.includes("sleeping tabby cat"));
+});
