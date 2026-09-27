@@ -1,11 +1,11 @@
+import { structuredData } from "@/lib/structured-data";
 import "./globals.css";
-import Script from "next/script";
+import Analytics from "@/components/Analytics";
 import SiteFooter from "@/components/SiteFooter";
 import type { Metadata } from "next";
 
 const SITE_URL =
-  process.env.SITE_URL?.replace(/\/$/, "") ||
-  "https://freelementimages.site";
+  process.env.SITE_URL?.replace(/\/$/, "") || "https://freelementimages.site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -17,6 +17,8 @@ export const metadata: Metadata = {
 
   description:
     "Build unique images from free visual elements. Choose backgrounds, trees, flowers, buildings and more, then move, resize, rotate and download your creation.",
+
+  verification: { google: process.env.GOOGLE_SITE_VERIFICATION || undefined },
 
   applicationName: "Freelement Images",
 
@@ -36,10 +38,6 @@ export const metadata: Metadata = {
 
   creator: "Freelement Images",
   publisher: "Freelement Images",
-
-  alternates: {
-    canonical: "/",
-  },
 
   robots: {
     index: true,
@@ -71,8 +69,10 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/logo.png",
-        alt: "Freelement Images",
+        url: "/social-preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "An illustrated alpine lake landscape",
       },
     ],
   },
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     title: "Freelement Images",
     description:
       "Build unique images from free visual elements — no prompts required.",
-    images: ["/logo.png"],
+    images: ["/social-preview.jpg"],
   },
 };
 
@@ -112,17 +112,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {/* Umami Analytics */}
-        <Script
-          src="https://cloud.umami.is/script.js"
-          data-website-id="3fe95ba5-2c12-4bc1-9a65-4e1f9cff06de"
-          strategy="afterInteractive"
-        />
+        <Analytics />
 
         {/* Website structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
+            __html: structuredData(websiteSchema),
           }}
         />
 
@@ -130,7 +126,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: structuredData(organizationSchema),
           }}
         />
 

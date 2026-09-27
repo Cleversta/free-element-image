@@ -12,7 +12,7 @@ import { withdrawImage } from "../lib/server/review.ts";
 import { savedBackgrounds } from "../lib/backgrounds.ts";
 import assets from "../data/assets.json" with { type: "json" };
 import { restoreScene, serializeScene } from "../lib/scene.ts";
-const background = savedBackgrounds[0];
+const background = savedBackgrounds.find(bg => bg.name === "Alpine Mirror Lake");
 const raw = (items = [], baseBg = background) =>
   JSON.stringify({ version: 2, baseBg, items });
 test("server renders verified landscapes and never accepts an arbitrary background URL", async () => {
@@ -184,23 +184,121 @@ test("reporting migration restricts access, deduplicates reports, respects quota
   }
 });
 
-
 test("imported Illustrator artwork renders for review without editor-only foreign objects", async () => {
-  for (const id of ["freeimage-chlopaya-bird", "freeimage-dachshund", "freeimage-rooster", "freeimage-sitting-brown-dog", "freeimage-slender-palm"]) {
+  for (const id of [
+    "freeimage-chlopaya-bird",
+    "freeimage-dachshund",
+    "freeimage-rooster",
+    "freeimage-sitting-brown-dog",
+    "freeimage-slender-palm",
+  ]) {
     const asset = assets.find((entry) => entry.id === id);
     assert.ok(asset, id);
-    const result = await renderSubmission(raw([{
-      assetId: id, uid: id, x: 30, y: 40, scale: 0.5,
-      rotation: 0, z: 1, flipX: false, flipY: false, opacity: 1, hue: 0,
-    }]));
+    const result = await renderSubmission(
+      raw([
+        {
+          assetId: id,
+          uid: id,
+          x: 30,
+          y: 40,
+          scale: 0.5,
+          rotation: 0,
+          z: 1,
+          flipX: false,
+          flipY: false,
+          opacity: 1,
+          hue: 0,
+        },
+      ]),
+    );
     assert.equal(result.verified, false);
     assert.equal((await sharp(result.png).metadata()).width, 1200);
   }
 });
 
 test("unsupported artwork errors identify the element to replace", async () => {
-  await assert.rejects(renderSubmission(raw([{
-    assetId: "freeimage-sleeping-tabby-cat", uid: "cat", x: 30, y: 40, scale: 0.5,
-    rotation: 0, z: 1, flipX: false, flipY: false, opacity: 1, hue: 0,
-  }])), (error) => error.status === 400 && error.message.includes("sleeping tabby cat"));
+  await assert.rejects(
+    renderSubmission(
+      raw([
+        {
+          assetId: "freeimage-sleeping-tabby-cat",
+          uid: "cat",
+          x: 30,
+          y: 40,
+          scale: 0.5,
+          rotation: 0,
+          z: 1,
+          flipX: false,
+          flipY: false,
+          opacity: 1,
+          hue: 0,
+        },
+      ]),
+    ),
+    (error) =>
+      error.status === 400 && error.message.includes("sleeping tabby cat"),
+  );
+});
+
+test("custom text renders safely for review and local photos cannot publish", async () => {
+  const image = await renderSubmission(
+    raw([
+      {
+        assetId: "custom-text",
+        text: { content: "<hello> & village", color: "#123456", bold: true },
+        uid: "caption",
+        x: 20,
+        y: 20,
+        scale: 1,
+        rotation: 0,
+        opacity: 1,
+        hue: 0,
+        z: 1,
+      },
+    ]),
+  );
+  assert.equal(image.verified, false);
+  assert.equal((await sharp(image.png).metadata()).width, 1200);
+  assert.equal(
+    restoreScene(image.editableScene, assets, savedBackgrounds).items[0].asset
+      .text.content,
+    "<hello> & village",
+  );
+  await assert.rejects(
+    renderSubmission(
+      raw([], { photo: true, src: "data:image/jpeg;base64,YWJj" }),
+    ),
+    (error) => error.status === 400,
+  );
+});
+
+test("publishing renders every canvas preset at its declared dimensions", async () => {
+  for (const [size, width, height] of [
+    ["square", 1080, 1080],
+    ["portrait", 1080, 1350],
+    ["wallpaper", 1080, 1920],
+  ]) {
+    const result = await renderSubmission(
+      JSON.stringify({ ...JSON.parse(raw()), size }),
+    );
+    const metadata = await sharp(result.png).metadata();
+    assert.equal(metadata.width, width);
+    assert.equal(metadata.height, height);
+    assert.equal(result.width, width);
+    assert.equal(result.height, height);
+    assert.equal(JSON.parse(result.editableScene).size, size);
+    const thumb = await sharp(result.thumbnail).metadata();
+    assert.ok(Math.abs(thumb.width / thumb.height - width / height) < 0.01);
+  }
+});
+
+test("simple backdrops render for review and remain editable", async () => {
+  const simple = savedBackgrounds.filter(bg => bg.src?.includes('/simple-backgrounds/'));
+  assert.equal(simple.length, 36);
+  for (const bg of simple.filter((_, index) => index % 6 === 0)) {
+    const result = await renderSubmission(raw([], bg));
+    assert.equal(result.verified, false);
+    assert.equal((await sharp(result.png).metadata()).width, 1200);
+    assert.equal(restoreScene(result.editableScene, assets, savedBackgrounds).baseBg.src, bg.src);
+  }
 });

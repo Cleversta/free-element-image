@@ -1,7 +1,8 @@
+import { structuredData } from "@/lib/structured-data";
 import Link from "next/link";
 import ReportImage from "@/components/ReportImage";
 import { notFound } from "next/navigation";
-import { publicImage } from "@/lib/server/gallery";
+import { imagePageData } from "@/lib/server/gallery";
 import { publishedScene } from "@/lib/server/editable-scene";
 import type { Metadata } from "next";
 
@@ -18,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
 
-  const image = await publicImage(slug);
+  const image = await imagePageData(slug);
 
   if (!image) {
     return {
@@ -98,7 +99,7 @@ export default async function ImagePage({
 }) {
   const { slug } = await params;
 
-  const image = await publicImage(slug);
+  const image = await imagePageData(slug);
 
   if (!image) {
     notFound();
@@ -149,7 +150,7 @@ export default async function ImagePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(imageSchema),
+          __html: structuredData(imageSchema),
         }}
       />
 
@@ -212,6 +213,7 @@ export default async function ImagePage({
         Do not assume the artwork is public domain.
       </p>
 
+      <p><Link href="/scenes">Explore starter landscapes</Link> · <Link href="/guides/your-first-landscape">Learn to make a scene</Link> · <Link href="/image-use">Image permissions</Link></p>
       <ReportImage slug={slug} />
     </main>
   );

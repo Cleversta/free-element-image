@@ -1,3 +1,4 @@
+import { cache } from "react";
 import "server-only";
 import { galleryFilters } from "../gallery-filters.ts";
 import { createSupabaseAdmin, createR2Client } from "./clients.ts";
@@ -55,6 +56,10 @@ export async function publicImage(slug: string) {
   if (error) throw new Error("Gallery unavailable");
   return data as PublicImage | null;
 }
+// Reuse the detail lookup for metadata and page rendering only.
+// Storage access continues to use fresh publication checks.
+export const imagePageData = cache(publicImage);
+
 export function galleryServices() {
   const db = createSupabaseAdmin();
   const r2 = createR2Client();

@@ -17,8 +17,10 @@ test("server-rendered scene matches the browser download with transforms", async
   );
   expect(scene).toBeTruthy();
   const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "⇩ Download", exact: true }).click();
   await page
-    .getByRole("button", { name: "Download PNG", exact: false })
+    .getByRole("menu", { name: "Download options" })
+    .getByRole("button", { name: "Download", exact: true })
     .click();
   const download = await downloadPromise;
   const disk = await download.path();

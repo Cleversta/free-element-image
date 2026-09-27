@@ -1,9 +1,10 @@
+import { pageMetadata } from "@/lib/seo";
 import InformationPage from "@/components/InformationPage";
-export const metadata = {
-  title: "Contact | Freelement Images",
-  description:
-    "Contact Freelement Images for help, feedback, privacy requests, or artwork concerns.",
-};
+export const metadata = pageMetadata(
+  "Contact",
+  "Contact Freelement Images for help, feedback, privacy requests, or artwork concerns.",
+  "/contact",
+);
 export default function Contact() {
   return (
     <InformationPage title="Contact">

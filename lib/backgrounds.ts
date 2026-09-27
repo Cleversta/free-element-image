@@ -3,6 +3,8 @@ import type { Background } from "./scene.ts";
 import { backgroundKey } from "./scene.ts";
 import craftedScenes from "../data/scene-backgrounds.json" with { type: "json" };
 
+import simpleBackgrounds from "../data/simple-backgrounds.json" with { type: "json" };
+
 const BASE_BACKGROUNDS = [
   ["Meadow", "#bfe0ef", "#9fbd79"],
   ["Village", "#c5e1eb", "#8faa70"],
@@ -93,8 +95,21 @@ const retainedNames = new Set([
   "Desert Colors",
 ]);
 export const backgrounds: Background[] = [
-  ...craftedScenes.map((scene) => ({ ...scene, kind: "full" as const })),
-  ...legacyBackgrounds.filter((scene) => retainedNames.has(scene.name)),
+  ...simpleBackgrounds.map((scene) => ({
+    ...scene,
+    kind: "landscape" as const,
+  })),
+  ...craftedScenes.map((scene) => ({
+    ...scene,
+    kind: "full" as const,
+    category: "Full scenes",
+  })),
+  ...legacyBackgrounds
+    .filter((scene) => retainedNames.has(scene.name))
+    .map((scene) => ({
+      ...scene,
+      category: scene.src ? "Full scenes" : "Colors",
+    })),
 ];
 const visibleKeys = new Set(backgrounds.map(backgroundKey));
 export const savedBackgrounds: Background[] = [

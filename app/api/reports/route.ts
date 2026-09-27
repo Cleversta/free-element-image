@@ -1,5 +1,6 @@
 import {
   publishSettings,
+  isNetlifyEnvironment,
   verifyChallenge,
 } from "@/lib/server/submission-services";
 import {
@@ -51,7 +52,7 @@ export async function POST(request: Request) {
     const actor = actorHash(request, {
       siteUrl: settings.siteUrl,
       hashKey: readSupabaseConfig().secretKey,
-      netlify: process.env.NETLIFY === "true",
+      netlify: isNetlifyEnvironment(),
       development: process.env.NODE_ENV === "development",
     });
     const { data, error } = await createSupabaseAdmin().rpc("report_image", {

@@ -1,4 +1,9 @@
-import { HEIGHT, ITEM_HEIGHT, ITEM_WIDTH, WIDTH } from "./scene";
+import {
+  sceneDimensions,
+  photoPlacement,
+  ITEM_HEIGHT,
+  ITEM_WIDTH,
+} from "./scene";
 import type { Scene } from "./scene";
 
 async function loadImage(src: string): Promise<HTMLImageElement> {
@@ -43,7 +48,7 @@ async function loadImage(src: string): Promise<HTMLImageElement> {
         URL.revokeObjectURL(url);
         throw err;
       }
-    } catch (err) {
+    } catch {
       throw new Error(
         "An image could not be loaded. Your scene has not been exported.",
       );
@@ -75,6 +80,7 @@ export async function renderScene(
   format: "image/png" | "image/jpeg" | "image/webp" = "image/png",
   quality = 0.92,
 ): Promise<Blob> {
+  const { width: WIDTH, height: HEIGHT } = sceneDimensions(scene);
   const canvas = document.createElement("canvas");
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
@@ -84,8 +90,19 @@ export async function renderScene(
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
   ctx.fillStyle = scene.baseBg.ground;
   ctx.fillRect(0, HEIGHT * 0.45, WIDTH, HEIGHT * 0.55);
-  if (scene.baseBg.src)
-    ctx.drawImage(await loadImage(scene.baseBg.src), 0, 0, WIDTH, HEIGHT);
+  if (scene.baseBg.src) {
+    const background = await loadImage(scene.baseBg.src);
+    if (scene.baseBg.photo || (scene.size && scene.size !== "landscape")) {
+      const rect = photoPlacement(
+        background.naturalWidth,
+        background.naturalHeight,
+        WIDTH,
+        HEIGHT,
+        scene.baseBg.crop,
+      );
+      ctx.drawImage(background, rect.x, rect.y, rect.width, rect.height);
+    } else ctx.drawImage(background, 0, 0, WIDTH, HEIGHT);
+  }
   for (const item of [...scene.items].sort((a, b) => a.z - b.z)) {
     const image = await loadImage(item.asset.src);
     const width = ITEM_WIDTH * item.scale;

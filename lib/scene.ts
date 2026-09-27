@@ -4,20 +4,127 @@ export const ITEM_WIDTH = 320;
 export const ITEM_HEIGHT = 270;
 export const HISTORY_LIMIT = 50;
 
+export const CANVAS_SIZES = {
+  landscape: { label: "Landscape", width: 1200, height: 800 },
+  square: { label: "Square", width: 1080, height: 1080 },
+  portrait: { label: "Portrait post", width: 1080, height: 1350 },
+  wallpaper: { label: "Phone wallpaper", width: 1080, height: 1920 },
+} as const;
+export type CanvasSize = keyof typeof CANVAS_SIZES;
+export const sceneDimensions = (scene: Scene) =>
+  CANVAS_SIZES[scene.size ?? "landscape"];
+export type PhotoCrop = { zoom: number; x: number; y: number };
+export function photoCrop(value?: Partial<PhotoCrop>): PhotoCrop {
+  const valid = (v: unknown, fallback: number, min: number, max: number) =>
+    typeof v === "number" && Number.isFinite(v)
+      ? Math.max(min, Math.min(max, v))
+      : fallback;
+  return {
+    zoom: valid(value?.zoom, 1, 1, 3),
+    x: valid(value?.x, 50, 0, 100),
+    y: valid(value?.y, 50, 0, 100),
+  };
+}
+export function photoPlacement(
+  imageWidth: number,
+  imageHeight: number,
+  width: number,
+  height: number,
+  crop?: PhotoCrop,
+) {
+  const { zoom, x, y } = photoCrop(crop);
+  const scale = Math.max(width / imageWidth, height / imageHeight) * zoom;
+  const drawWidth = imageWidth * scale,
+    drawHeight = imageHeight * scale;
+  return {
+    x: ((width - drawWidth) * x) / 100,
+    y: ((height - drawHeight) * y) / 100,
+    width: drawWidth,
+    height: drawHeight,
+  };
+}
+
 export type Asset = {
   id: string;
   type: string;
   variant: string;
   style: string;
   src: string;
+  text?: TextStyle;
 };
+export type TextStyle = { content: string; color: string; bold: boolean };
+
+export function textAsset(value: TextStyle): Asset {
+  if (
+    typeof value.content !== "string" ||
+    value.content.length > 240 ||
+    !/^#[0-9a-f]{6}$/i.test(value.color) ||
+    typeof value.bold !== "boolean"
+  )
+    throw new Error("Invalid text");
+  const text = { content: value.content, color: value.color, bold: value.bold };
+  const escape = (s: string) =>
+    s.replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&apos;",
+        })[c]!,
+    );
+  const lines = text.content
+    .split("\n")
+    .flatMap((line) => {
+      const chars = Array.from(line);
+      return chars.length
+        ? Array.from({ length: Math.ceil(chars.length / 20) }, (_, i) =>
+            chars.slice(i * 20, i * 20 + 20).join(""),
+          )
+        : [""];
+    })
+    .slice(0, 8);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="270"><g fill="${text.color}" font-family="Arial, sans-serif" font-size="24" font-weight="${text.bold ? 700 : 400}" text-anchor="middle">${lines.map((line, i) => `<text x="160" y="${135 - (lines.length - 1) * 15 + i * 30}" textLength="${Math.max(1, Array.from(line).length * 14)}" lengthAdjust="spacingAndGlyphs">${escape(line)}</text>`).join("")}</g></svg>`;
+  return {
+    id: "custom-text",
+    type: "text",
+    variant: "Text",
+    style: "custom",
+    src: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`,
+    text,
+  };
+}
+
+export function photoBackground(src: unknown, crop?: PhotoCrop): Background {
+  if (
+    typeof src !== "string" ||
+    src.length > 2000000 ||
+    !/^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(src)
+  )
+    throw new Error("Invalid photo background");
+  return {
+    name: "Your photo",
+    sky: "#ffffff",
+    ground: "#ffffff",
+    kind: "full",
+    src,
+    photo: true,
+    ...(crop ? { crop: photoCrop(crop) } : {}),
+  };
+}
+
 export type Background = {
+  category?: string;
   name: string;
   description?: string;
   sky: string;
   ground: string;
   src?: string;
   kind?: "full" | "landscape";
+  photo?: boolean;
+  crop?: PhotoCrop;
 };
 
 // Display names can repeat; SVG paths identify the actual artwork.
@@ -37,7 +144,7 @@ export type Item = {
   opacity: number;
   hue: number;
 };
-export type Scene = { baseBg: Background; items: Item[] };
+export type Scene = { baseBg: Background; items: Item[]; size?: CanvasSize };
 export type EditorState = {
   present: Scene;
   past: Scene[];
@@ -174,6 +281,8 @@ export function resizeItem(
   corner: string,
   dx: number,
   dy: number,
+  width = WIDTH,
+  height = HEIGHT,
 ): Partial<Item> {
   const sx = (corner.includes("e") ? 1 : -1) * (item.flipX ? -1 : 1);
   const sy = (corner.includes("s") ? 1 : -1) * (item.flipY ? -1 : 1);
@@ -190,18 +299,20 @@ export function resizeItem(
   const delta = scale - item.scale;
   return {
     scale,
-    x: item.x + (((vx - ITEM_WIDTH) * delta) / 2 / WIDTH) * 100,
-    y: item.y + (((vy - ITEM_HEIGHT) * delta) / 2 / HEIGHT) * 100,
+    x: item.x + (((vx - ITEM_WIDTH) * delta) / 2 / width) * 100,
+    y: item.y + (((vy - ITEM_HEIGHT) * delta) / 2 / height) * 100,
   };
 }
 
 export function serializeScene(scene: Scene): string {
   return JSON.stringify({
     version: 2,
+    ...(scene.size ? { size: scene.size } : {}),
     baseBg: scene.baseBg,
     items: scene.items.map(({ asset, ...it }) => ({
       ...it,
       assetId: asset.id,
+      ...(asset.text ? { text: asset.text } : {}),
     })),
   });
 }
@@ -219,12 +330,15 @@ export function restoreScene(
     !data.baseBg
   )
     throw new Error("Invalid scene");
-  const baseBg = backgrounds.find((bg) =>
-    data.baseBg.src
-      ? bg.src === data.baseBg.src
-      : bg.name === data.baseBg.name ||
-        bg.name === data.baseBg.name + " Colors",
-  );
+  const baseBg =
+    data.baseBg.photo === true
+      ? photoBackground(data.baseBg.src, data.baseBg.crop)
+      : backgrounds.find((bg) =>
+          data.baseBg.src
+            ? bg.src === data.baseBg.src
+            : bg.name === data.baseBg.name ||
+              bg.name === data.baseBg.name + " Colors",
+        );
   if (!baseBg) throw new Error("Unknown background");
   const used = new Set<string>();
   const finite = (v: unknown, fallback: number, min: number, max: number) =>
@@ -233,8 +347,9 @@ export function restoreScene(
     (it: Record<string, unknown>, index: number) => {
       if (!it || typeof it !== "object") throw new Error("Invalid element");
       const oldAsset = it.asset as Partial<Asset> | undefined;
-      const asset =
-        typeof it.assetId === "string"
+      const asset = it.text
+        ? textAsset(it.text as TextStyle)
+        : typeof it.assetId === "string"
           ? catalog.find((a) => a.id === it.assetId)
           : catalog.find((a) => a.src === oldAsset?.src);
       if (!asset || asset.type === "background")
@@ -261,5 +376,14 @@ export function restoreScene(
       };
     },
   );
-  return { baseBg, items };
+  if (
+    data.size !== undefined &&
+    (typeof data.size !== "string" || !Object.hasOwn(CANVAS_SIZES, data.size))
+  )
+    throw new Error("Unknown canvas size");
+  return {
+    baseBg,
+    items,
+    ...(data.size ? { size: data.size as CanvasSize } : {}),
+  };
 }

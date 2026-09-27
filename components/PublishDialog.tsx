@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { sceneCategories } from "@/lib/gallery-filters";
 import Script from "next/script";
 import type { Scene } from "@/lib/scene";
+import blockedArtwork from "@/data/publishing-compatibility.json";
 import { serializeScene } from "@/lib/scene";
 
 type Turnstile = {
@@ -23,6 +24,9 @@ export default function PublishDialog({
   scene: Scene;
   onClose: () => void;
 }) {
+  const blocked = scene.items
+    .filter((item) => item.asset.src in blockedArtwork)
+    .map((item) => item.asset.variant.replace(/-/g, " "));
   const dialog = useRef<HTMLDialogElement>(null);
   const widget = useRef<HTMLDivElement>(null);
   const widgetId = useRef<string | null>(null);
@@ -94,7 +98,7 @@ export default function PublishDialog({
   }, [scriptReady, settings]);
   async function publish(event: React.FormEvent) {
     event.preventDefault();
-    if (busyRef.current || !challenge || !consent) return;
+    if (busyRef.current || !challenge || !consent || blocked.length > 0) return;
     busyRef.current = true;
     setBusy(true);
     setError("");
@@ -204,6 +208,7 @@ export default function PublishDialog({
                   autoComplete="off"
                   minLength={3}
                   maxLength={120}
+                  placeholder="e.g. A quiet village beside the lake"
                   required
                   value={title}
                   disabled={busy}
@@ -247,6 +252,11 @@ export default function PublishDialog({
                   this scene after owner approval.
                 </span>
               </label>
+              <p className="usageNote">
+                Publishing is limited to protect the service. Keep this window
+                open if you need to retry. Saving and downloading remain
+                available.
+              </p>
               <div ref={widget} />
               <Script
                 src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
@@ -260,13 +270,20 @@ export default function PublishDialog({
               <button
                 className="publishPrimary"
                 type="submit"
-                disabled={busy || !challenge || !consent}
+                disabled={busy || !challenge || !consent || blocked.length > 0}
               >
                 {busy ? "Submitting…" : "Submit for review"}
               </button>
             </form>
           )}
         </>
+      )}
+      {blocked.length > 0 && (
+        <p role="alert">
+          To publish this scene, first remove or replace:{" "}
+          {[...new Set(blocked)].join(", ")}. These elements can still be used
+          for local downloads.
+        </p>
       )}
       {error && <p role="alert">{error}</p>}
       {managementLink && (

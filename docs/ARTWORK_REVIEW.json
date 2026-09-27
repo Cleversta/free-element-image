@@ -1,0 +1,4479 @@
+{
+  "note": "Source and license claims are extracted metadata, not independent permission verification.",
+  "assets": [
+    {
+      "src": "/assets/vector-countryside/trees/oak-001.svg",
+      "sha256": "3be908c39b4eaa55592e015694538445838bb4436cd099b86304c2af7102ae25",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/oak-002.svg",
+      "sha256": "197ad1ded548a4fe123f5d0ac00f7fc961c48fd09f25c1e8a05283c699456c21",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/pine-001.svg",
+      "sha256": "527fb1daab86f699b14d3997970ca957747f4c0566dacb6195c93f23733dfb28",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/pine-002.svg",
+      "sha256": "d5b4167a0634b25ef44e3511b55722b289a81a3db7e77d1defc2da018f7e937d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/willow-001.svg",
+      "sha256": "038f1637971a946347284528317cce14e104c51c1c0580df286298a3ac073a1a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/birch-001.svg",
+      "sha256": "170e994d3e193b323dcfb9d0639edb0d3980146ab5477c6521ccb9bc8e7d4487",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/maple-001.svg",
+      "sha256": "a7097ca9cd6d5c99011c645228581b6d037897295d2b5d25cbced2863b03fe19",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/cherry-001.svg",
+      "sha256": "3743c610f4b4a13b5f52873d699559a48e35967ab4e24f96dcd681a1c5be698e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/cypress-001.svg",
+      "sha256": "08f56a33f83252b83eaf1baf56480dc3f4f5911dcafb2c0e5855b9f8f35a8fa2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/trees/round-tree-001.svg",
+      "sha256": "c2c8795897e36e35c6ffe953f33a0f5806222e41015a5c439cb4905b9cdf9fac",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/cottage-001.svg",
+      "sha256": "52401209974fae4295631feb4ea8d037765a7fd3db8b51d3cb1e083521f5e93e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/cottage-002.svg",
+      "sha256": "38052e06967e6578085365bda3694b87b1fbc8922c774a72c962caa6d0e57b20",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/barn-001.svg",
+      "sha256": "5123f6a6e2894dd801b15b7dc34b8fbf25463e00dac765b935e627796dbaeb09",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/barn-002.svg",
+      "sha256": "4eece35b7e7450509da1338e33164c9e1345551f64bd6c226b18bf33b5eeaa55",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/farmhouse-001.svg",
+      "sha256": "da4cdd027c687d0454a12e9978b81d41240dd16d256cca2ad11928a9e5ee30d5",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/windmill-001.svg",
+      "sha256": "5f13c7bd15921bf200194b28ba54b9bb36d6a26ce31bcd6de8ceb2e9dbc8f015",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/chapel-001.svg",
+      "sha256": "895e90504051a30d71f8bf32979a11237b53d0d2a4de466a25f6ece9c14ff27d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/shop-001.svg",
+      "sha256": "c01d6af2f90f36bb2c3d55af9da8446951f897f782742d8a536a52d949b78e65",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/tower-001.svg",
+      "sha256": "2075bd437786c2187b1ca4d34fa2c4112ffe52cf1d96ae13bc2c5aff03d0cd7b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/buildings/cabin-001.svg",
+      "sha256": "0e7f3f1012d0c2b55c7380744b05730089a3e54bab46b7edf2d3e1c62e389d85",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/cow-001.svg",
+      "sha256": "2197dbb489d852bc4e7a42900ce0a53de9a43a836b70c436fb8ff37e00ff935f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/sheep-001.svg",
+      "sha256": "a27eca2c16944f89b215704a417a97f0f849e6cf575f83e51ab2f5752020095c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/horse-001.svg",
+      "sha256": "b41bbed31e5522e62ba8f84c1ed9585b5255ae672aed422c512a33293cc8ab7c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/chicken-001.svg",
+      "sha256": "c95423b1405e0a80783d6edea8030da73e4bdd73f816357c3e754d2ef67d8d7f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/duck-001.svg",
+      "sha256": "f51806956f117c69e15a2e515d10e3f974a0432445301fde54614569fe0f9f39",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/dog-001.svg",
+      "sha256": "ab27d6bd197e293cbd3638672a772254883e85febcc8bba1c8d5056cfae0c03f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/cat-001.svg",
+      "sha256": "13e40326306d13036df652a63fb15e66660067f51f5afc7ea2dac8e23f41bff3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/rabbit-001.svg",
+      "sha256": "1eedb28814e885d47c8623a42c4889b677f8c05f250f4fe5607112f7693925bf",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/goat-001.svg",
+      "sha256": "1da757be84c058fcf601e37b7ba7c9eb7d8ff739c6ca089ea708f411f46ee8e9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/animals/pig-001.svg",
+      "sha256": "1c340d3ae7bb2e6496acabee1d5d1f672c32125e1b06151fbcc88f0c4f17d3b2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/grass-field-001.svg",
+      "sha256": "7a24b3a8f0eeccfedc22c98f36428dfd2d8be4ffd1229c33cb5e9c8f5c8b536e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/rolling-hills-001.svg",
+      "sha256": "806dc086d77a51eb0ac34fd673ab5c22f226b5fe5cfbdd35c7c7ebdf368de382",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/dirt-patch-001.svg",
+      "sha256": "9caae62af385f815a3a715c17c29fd867703327b72269937fa5bb72c741c46a3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/meadow-001.svg",
+      "sha256": "37cabe536b1b0966ba67b7f9cf20d4eb50778c455d48eed6def807585945708a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/stone-ground-001.svg",
+      "sha256": "3b79b9087a335cd85bec04a63d719e51fd1384f4eb990658b805b723d403d5e2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/river-001.svg",
+      "sha256": "1782244ab1d81fbd1c018c476c7309e4730b2d63c4e2267f2fdd090eb7ed1ef2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/pond-001.svg",
+      "sha256": "6cefdddefcba91740c9a8ae1227575dc769fd207ba94e50c1dc03a5887d67120",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/lake-001.svg",
+      "sha256": "dbf2b17c888eafb15a164133051c0967442c4054b48386dc7719bc0ea037afa8",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/stream-001.svg",
+      "sha256": "1d682a41a1e036a7b7d974a40d88e6fe24eb0f394528969569166dc3e2fc105f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/waterfall-001.svg",
+      "sha256": "62c88801df06f77fe5dff89be1378784b71ea421777c931b90ca1ceba296e285",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/sun-001.svg",
+      "sha256": "2869193b39a69f29c4dfc425f4959338b8dee3e82c0044bf616d9ceadf5d5d11",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/moon-001.svg",
+      "sha256": "ac91764c347260d27e34e0b0a40734da45d246739980f87b65ac266ae58e5520",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/cloud-001.svg",
+      "sha256": "920782d9b3e3ceed72f6132ff4b9fb1a33d0ff5d2c34a75b481c1f8c2c6c3570",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/cloud-002.svg",
+      "sha256": "a701c6cc87ff0401f57ad8f742851647540b6a4f502f4ca40991dbaa16278eb3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/cloud-003.svg",
+      "sha256": "6d4f1b3e580767054ffeb4b7d8492bdcdd79b4aa8b11fb6a5f11a550966f4815",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/rain-cloud-001.svg",
+      "sha256": "556ca379fe733b52b930368557437564c18adfc8a0c0cd92ab85d18d31fa5781",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/rainbow-001.svg",
+      "sha256": "be800e973a1367dbacf0fff4e9f1a4b12b8e3a10fddab73c72ffd17a0bb3049e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/stars-001.svg",
+      "sha256": "c2e47cc4750b574e25c07c780586674a16d768d94443651ed7c12b1e28a86410",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/mist-001.svg",
+      "sha256": "6c731f124d69a8dd05d6508d8b2d7b119ddbd8379c637526602be9fbce5dad7f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/sky/sun-rays-001.svg",
+      "sha256": "3cb919182b56fd554f58d6bd389d507bac92711267091e89b67c6601d02b7dcc",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/mountains-001.svg",
+      "sha256": "5cda6e95d3c901d414cd898cf7b15552bbb47c5b0c64081fe833aecbf066de31",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/mountains-002.svg",
+      "sha256": "4e36566de291b043ccd71f60b3f91768abd687663c2563cc9372937f3b7a08bc",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/distant-forest-001.svg",
+      "sha256": "e2dd3b71c59327bfec945f9fc3bfd12afd8a9ac3bbea49c89c5d421efa5a2346",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/village-silhouette-001.svg",
+      "sha256": "67b107e96a4e7f59916b9515a1eca43c3d246a3602b914eff27cd3a452ab4682",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/cliffs-001.svg",
+      "sha256": "9ed735b668319bb50bdd1b4f4ee81017e37bafd25ec4bd2a60cbb5f622a50e4a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/low-hills-001.svg",
+      "sha256": "d08cf48cc56d2a7002db9ba2bce238fad5da8048872634cd714474350fdabc3a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/farm-fields-001.svg",
+      "sha256": "85071c9a5c4683f36914905d96b9af4493d3ba43dd58ed1e0b0cad12b18d43fc",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/hedgerow-001.svg",
+      "sha256": "8c1e897af77360075f7dd621d9f3f6beee1e250d7fa7a48e454026d30aec54d4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/rock-ridge-001.svg",
+      "sha256": "c4dcfcdaaaee2bb0079339bab651574a4f21bf281c3ac9d84a1cf2f5ebe8178b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/distant-city-001.svg",
+      "sha256": "c1adba66f9de4e43c2607c80a454899c2a23ae91330c9c87f2efb95d13765b14",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/flower-red-001.svg",
+      "sha256": "21ab32f0361e735d9d98e9462105fac422264d547af99001f161534f06e4019d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/flower-yellow-001.svg",
+      "sha256": "1ca49b3be2c8d82de81a2a3a0dc5432982069dc33d982e3afe31cc9928297dbf",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/flower-blue-001.svg",
+      "sha256": "0ca1e169113e22fe70829c8aaeb0b251139a0f6402c56c4e6d5fa4d55d04bced",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/flower-pink-001.svg",
+      "sha256": "c7119c358d32f559871a701b2939ef2fdd4aa4b0dbb74bdbc291c82e451c8d68",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/bush-001.svg",
+      "sha256": "e5e6da59ba64a8d2930f2d29d32bddbab20aea823b8dbea2b753bc2a6b0a6739",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/bush-002.svg",
+      "sha256": "f3e4fbb36d3bd7be1a91a82cc4f21c152ab5355e01d1e3c81ac66be516cba79c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/reeds-001.svg",
+      "sha256": "dad1b4f901dabd92adc32111486cc3bc55887e43a3c00676bebb26133fced58d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/wheat-001.svg",
+      "sha256": "fb60097fef6cb6f0e5f77cadc0485d67c1bd64b6c195a5ccb46784de3a4930dd",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/mushrooms-001.svg",
+      "sha256": "2a002bc6fe9ae7a492e610ad737e0798926c35717a451fa1edfa251c72829785",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/plants/grass-tuft-001.svg",
+      "sha256": "a56fc0adba98d1c716d2e5b6b2cb25da68f7a4d846ae764f0316f454faa36cca",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/wood-fence-001.svg",
+      "sha256": "5595a2681510e0ace5192b081fde2c769087e66f4168df5017b8b418069b9ba8",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/stone-wall-001.svg",
+      "sha256": "094baea575084c12e278a13751ef393a037bc3b29b747e8713c85720bebfc10a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/wood-bridge-001.svg",
+      "sha256": "781db4ec3f38dde277c1e677c16ad2e9d193acdb42f1b7dfbbe9be2973682512",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/well-001.svg",
+      "sha256": "5999b74e661507d68d83bb4b62e47ad46e10dc0290eec04ebe9617f905aeeefd",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/gate-001.svg",
+      "sha256": "7c715d730aa69940abe8aa2d9756e0801bd733a6026d36119387dcfa526f0458",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/signpost-001.svg",
+      "sha256": "e8a630478cbd3adbb539070696f5cf2dcbc227dbcbbe7fc6df1a7c67b03d0a15",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/bench-001.svg",
+      "sha256": "19ea5780ef652e6d053a5dba1daa4a7f5fea052494e88c727d5aa9ddbcda9250",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/lamp-post-001.svg",
+      "sha256": "ad9a7687ae15b2be2e104f71def815f6d16d47b7a7451c653c6036cb8ab0ce1f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/hay-bale-001.svg",
+      "sha256": "987f5e38157b68c1d146dea5428d511a0c8821c90cc06a2879dd3cdde87b495d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/structures/cart-001.svg",
+      "sha256": "710e22a8954000d0362bd2ee959c164e9785b19cc07e827ea6a1c2d454679597",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/rock-001.svg",
+      "sha256": "a695c53406a2d14960627bfcfae2c2f875b066942485b2f4d4d4d46b4f0dd5bb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/rock-002.svg",
+      "sha256": "503719080662ee244b3a0d8ec25c97a9aeb38b243434fd15d4252956af0244ed",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/log-001.svg",
+      "sha256": "58d0d17370c5a5e61e48338bb843973036b62d1d5ac48b80b6dad4a6a85d7bb1",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/barrel-001.svg",
+      "sha256": "61197c3b2eb6289876c843fe6bea01815be03d9cf70e292d0a801bc9bdd658ef",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/crate-001.svg",
+      "sha256": "c1bd15e319add758d223543a95e8a071cbb35225f5144c07e0fc9f4cdb2b69a5",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/basket-001.svg",
+      "sha256": "f09769edde12111c8e73d25c1c64ddfe12b195ff79bbfd6813931ceb4475f184",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/flower-pot-001.svg",
+      "sha256": "7389d6b2260d669983722f77a977d5f250569226ddc563453ad514bde676fe49",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/mailbox-001.svg",
+      "sha256": "fbef6ebc8139ccd248ead5b6c10179248fbb5d3eecd76edc4eab480edb37cf7f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/birdhouse-001.svg",
+      "sha256": "d1b128770e73769189ec77747111c5b53e05471f7eea9cabba8c9ece06fb3df9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/decorations/picnic-blanket-001.svg",
+      "sha256": "6871ff6efdf5a6241412b3d5e0d0eae39f312efc0983e0e257ee460a61db99c9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/characters/villager-001.svg",
+      "sha256": "0cef663af59966b0ce9fadb3980e851eb5303af6ab0b7e0e2596f81fc803ee6b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/characters/villager-002.svg",
+      "sha256": "159ec2372bac665c27c49c1d629c2c1a02252d76420d3cc8b3ffc4cc5332fa04",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/characters/villager-003.svg",
+      "sha256": "710933e860f93c4148f971c92631e50af8e3a731c7790e14cd417b5f072659ed",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/characters/villager-004.svg",
+      "sha256": "9f845ad877e38883ed86c7f00ee195600c58727f7b698e267b962710d0ec785e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/characters/villager-005.svg",
+      "sha256": "5b45b3b962a3df5dcc59520783705c0df763f0e5d1f51d1d6d266aad45e2156c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/characters/villager-006.svg",
+      "sha256": "b3c9723ba83d3a37ef052a44742331869a8ba58e9514e29edc5a7b8151bec836",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/effects/sparkles-001.svg",
+      "sha256": "ac800f68a0c7f316f6b678a50e1d849c20ca5c64d2cdcbe475a0e84ac11b4ffa",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/effects/falling-leaves-001.svg",
+      "sha256": "c4b23a64e55d709c5a927365238f8479353c81e0d29d750e8455185abc560a8e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/effects/fireflies-001.svg",
+      "sha256": "d7174010f176a0db03a6eb3b20fa1e1e614539fd2a3ebb5cc6ce8ebf05a90664",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/effects/wind-lines-001.svg",
+      "sha256": "ae1463ff015ba3e29365100544960db88afec88e40a95ef233bdf7a2e2baef6a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/path-curved-001.svg",
+      "sha256": "d8bd8621230182c9cd29d57ad9615c4749ef2a42ad45537c708f3c6aaef3866f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/path-straight-001.svg",
+      "sha256": "4fc4cf47835adce791c6944e59db3613331412ee7de8c8179146c1ac30787b7a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/sand-patch-001.svg",
+      "sha256": "34e2c365fde6acfab31fae2b5fbeac61ce4d477d7a04f4cd625b854b3977b833",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/snow-patch-001.svg",
+      "sha256": "6b8f0895c99e82695451fb48948cb13b0e78a55945a92f3469efaa8ee8f3da8e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/terrain/mud-patch-001.svg",
+      "sha256": "c16a089930c6e13e8c8a95dec42581f39cb13119cb5005df91ea9ac1537852ff",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/puddle-001.svg",
+      "sha256": "6f75c35443617ec32a42c83ea6f0a07bd79435b50c279473f82c92524d37f463",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/river-bend-001.svg",
+      "sha256": "ec174c47a0ed64f5a6c9ff9dff5df7a5a34785284566b8820cafad3826638fb4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/creek-001.svg",
+      "sha256": "e725abed398580366d5e427803b236407a1a7c8701aea3a91f1ae886aa5ac10c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/marsh-001.svg",
+      "sha256": "456a57de196a0630f1fe1bbc9c3a6662c5eba4e69fecb7d9298df2f5a6c867bf",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/water/shoreline-001.svg",
+      "sha256": "ddfaac6ac29b9d655f68ba66c9481512c99705e22a5c61e6d8982f67f092dc62",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/meadow-day-full-001.svg",
+      "sha256": "2d89364304089695d7804b749b60b1fa4e3b9ee4b7e6615c10434bd8a7e91aa5",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/meadow-sunrise-full-001.svg",
+      "sha256": "fc15b3387831188677319a2fad32f03c0dd1eacb03a3218c6f3e77c0b888622e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/meadow-sunset-full-001.svg",
+      "sha256": "405c995c8e505b251853ccb89804581363871eee73f0e55d566388e616a113ea",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/meadow-cloudy-full-001.svg",
+      "sha256": "0b71c6a7ffa567fe5084fb3926bc07901531e4282d2d25960e05c3313b8c0d82",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/mountain-day-full-001.svg",
+      "sha256": "dde1e56627ce2a09012320e08fa75d976e9961b7fa5c7b03271a1f60cf32cbe9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/mountain-sunrise-full-001.svg",
+      "sha256": "5841ad36353649ad5c5e8b10d13e91aa33b5178db1684fb95fd289aa71851f02",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/mountain-sunset-full-001.svg",
+      "sha256": "8a3e540022a0dc53dbcf5c97f875443c12efbba1f7714469a780a9691951c639",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/alpine-valley-full-001.svg",
+      "sha256": "e9e0f210ccb276780b28c59711590a18b3d61ef24b89e3652f969a8f75a37195",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/forest-clearing-full-001.svg",
+      "sha256": "18f410c49a5b88a5975d831526ed5cca59413827e0d9b1e9a9413e5ab5e16738",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/pine-valley-full-001.svg",
+      "sha256": "1a78f776d2ed16b30acb8a44551e8b9d62626892b95a67d4bcb0e1ef1aed76a1",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/autumn-forest-full-001.svg",
+      "sha256": "21c2b9375705980b5a6dc3468d267add4cbe8b422264bd9a355aa69e6a4a9cd9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/winter-valley-full-001.svg",
+      "sha256": "3f65875736b009350839570e4686eb0beae2dafa30a45193fb5cb65b6c9044d6",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/snow-mountains-full-001.svg",
+      "sha256": "d37da94865e2799e5a8975181d4e16e56d81a1f565e81432d8559b9ced2a9a93",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/lake-day-full-001.svg",
+      "sha256": "5719cd0e5ba0a3602ccd0b36b1a8774bc3f1b673fe9e40f5deff4428667b3e5a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/lake-sunset-full-001.svg",
+      "sha256": "530b3e17f58f3fb0b4576aae820ebfe2b778c03152eac3469962ebcc6181863e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/river-valley-full-001.svg",
+      "sha256": "a0dae505d6f289c29656d595d211f9bbb2e72a869d32fa455b374db0bbf8c325",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/river-mountains-full-001.svg",
+      "sha256": "38f6afa2d8f5e940fc73af8239b438c942d225bedf5f3adb62ea97e40b12eb6b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/farm-fields-full-001.svg",
+      "sha256": "688cd2294ccd83961bd99bb6c54a5e0b2504133cc89e0aa09105858e16234fd1",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/wheat-fields-full-001.svg",
+      "sha256": "7b083d9d03b554b9b049b1b1080c31f0d5205aa01bdfc188a8782c3f6bc0ab22",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/lavender-fields-full-001.svg",
+      "sha256": "554c57dce0f299f222fc3e52e7ae66bdf8dc3d32b838bc1d1b31e40936b9c856",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/village-valley-full-001.svg",
+      "sha256": "9c9f5c1ad715233b77a5a7243a828dbf1d855274c08aa7d385c261d796c4d536",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/village-sunset-full-001.svg",
+      "sha256": "fc98624e0950e98bd55f01772d6eb6180997ee686524ea1cb213c5625af0d8cc",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/coastal-cliffs-full-001.svg",
+      "sha256": "cda5e50b1518a8ef03c13515160ee8ee99b3bb0d4aaea652a4d1bf7b06ea4e1b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/green-cliffs-full-001.svg",
+      "sha256": "1df4b57f180a5b4145ccae2630f8830cad102fe2a5493e22a257919def5a430e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/rolling-hills-full-001.svg",
+      "sha256": "ae79e9827084d224ef0d56b40ad335685bc929356a1a28fb697415938ecf2fd2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/misty-hills-full-001.svg",
+      "sha256": "0786fe541dfeca9cb373a3d66e3b37b781ffb13213aaf2dfeef5d893a325f219",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/spring-hills-full-001.svg",
+      "sha256": "6ec27202c3da1b9b17d1f201a4a8d9a5e473da0a6a9316412584bc81de80d2ed",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/summer-hills-full-001.svg",
+      "sha256": "1262f2cd57d8cbc889451defec9ca3f33a2a5142fc544c6b2d636297d46cc79b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/autumn-hills-full-001.svg",
+      "sha256": "b1ae4a8e8b29a5d48bff7f34876e2af977c25c0e6ba2d3ebac3975242eb0e1cc",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/winter-hills-full-001.svg",
+      "sha256": "a8bad603ba9378aa75a5b81a5f76cec430f497e0143263590263955996fc1e62",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/desert-valley-full-001.svg",
+      "sha256": "237557f84a8d0f2e2193ba1c8551259a93c8c61656476f48868ae69c82209202",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/rocky-highlands-full-001.svg",
+      "sha256": "a29b1434de7d79a94ac8bb56fe7c183757ffc965481e5af98cc70df30a46be70",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/country-road-full-001.svg",
+      "sha256": "f9907bb8d0fe6e531fb169dbda23bc07b7e6f280c9e8393b805f11a75dd461a2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/flower-meadow-full-001.svg",
+      "sha256": "ec72da6a96bb995e1ad55cb37a86ec5980a8602c91c627e1633b98a0808e0ec6",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/stormy-country-full-001.svg",
+      "sha256": "e6c3b8a194fb70454bf1304930124044ba29d195098a8a5a2b6ba419a025aea0",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/full/moonlit-valley-full-001.svg",
+      "sha256": "2a4eadf5c43f0d5dc5df1d5e354fc0c8ea630d7b0ae86867ed6ebc236a5dbbbb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-rose-red-001.svg",
+      "sha256": "d6cc563494670e9d96e49ff70ff9ef56e2fb5c5134788c7cf2f5abcc1c0e8b10",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-rose-pink-001.svg",
+      "sha256": "cada89f2090ea28d95529a03bac76cbbae7c8aa0e4bb028832db9db7ab483616",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-daisy-white-001.svg",
+      "sha256": "3f598a28ea2104e1a3258a8c449dfa8b85d9da10192e221ed2805b4d13291824",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-sunflower-001.svg",
+      "sha256": "8184d72be906d1f68c11835917818a4661a5f926eec43aedc4d939907addf665",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-lavender-001.svg",
+      "sha256": "3dc13c03871692a18a240de794866da3bc04dbbf35685a7aab1cb5b70c787390",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-tulip-red-001.svg",
+      "sha256": "2fb18526ea35cab6387cc2579ac1b89c23359b9d4357b90ea72142b3a8b669f2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-tulip-yellow-001.svg",
+      "sha256": "694878e804a72e7446ae96312bb41b9a5477be3a6e35fb888475c3e7619df1a7",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-wildflowers-001.svg",
+      "sha256": "67b8ae2afb8abe4c21d38c7387986f70e124d82941041a79fba19e177ca011fd",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-hydrangea-001.svg",
+      "sha256": "9931304fb0200b498675d16b0ffd954d0a4449d10e2475d7626c6372620ca907",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-marigold-001.svg",
+      "sha256": "63ff418e895b7282917323cbdc674f99d614626491e887948973ebdabf0b47e2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-poppy-001.svg",
+      "sha256": "7d12606ad8da05d761d54bc5f368d4515eeb314d9283a2d54151913423dc7ff0",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/flowers/flower-bluebell-001.svg",
+      "sha256": "36c576b97e7e2e87e2cdbbf6674da011c254cdd7388d3e75c65892c17d981c5b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-apple-small-001.svg",
+      "sha256": "52148792e0a99790c024c464e26b6964dc019410d40bcce367febb4457159eb9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-pear-small-001.svg",
+      "sha256": "a1c1413a6f6627047709c1959c3efae8bab9fbe6e47bee8e06ae48780930cfc6",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-cherry-small-001.svg",
+      "sha256": "dd590e6f2d55ba8c4cb46e37b30241841924b79b812acc3de3d98c7443cb6913",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-olive-small-001.svg",
+      "sha256": "1b26fa1586a26d094600e787323eb465b392fb62fac92af30d0d8d4aebcfa667",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-young-oak-001.svg",
+      "sha256": "5e6b835023d370a484c908c89833deaeda40b91b35b5ff88736011e93ac3dd56",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-young-maple-001.svg",
+      "sha256": "f60fda56fe01e7ff262ad7f169773988a0fbbfb68a679b4975fb39826aaa32e6",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-small-pine-001.svg",
+      "sha256": "d8d1157cd051140064023b742f05f2fb516dcf37a27016826cf8451eebb69ed4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-small-birch-001.svg",
+      "sha256": "a59164a9766efd17e3e702c687efe23ef97082db23eb654b753d5930dd2e0794",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-lemon-small-001.svg",
+      "sha256": "1cf03570e16a2aec8bed82a0d2aa8d55e97b691d786f46e38f4973672246e3c9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/small-trees/tree-peach-small-001.svg",
+      "sha256": "7c29cc7659988ef998f5041d016735ffe85605d7e8d3014c596afaf279aac6cf",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-grass-tuft-001.svg",
+      "sha256": "923b1020e8228cc512912b1f4fe724f2f7660d2636eeb162978c8243412bc2a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-tall-grass-001.svg",
+      "sha256": "e81ae9885b6178920822973cd00d33cd0caebac6d71bb408e8446c5745d8bae7",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-reeds-001.svg",
+      "sha256": "923b1020e8228cc512912b1f4fe724f2f7660d2636eeb162978c8243412bc2a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-fern-clump-001.svg",
+      "sha256": "923b1020e8228cc512912b1f4fe724f2f7660d2636eeb162978c8243412bc2a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-clover-001.svg",
+      "sha256": "923b1020e8228cc512912b1f4fe724f2f7660d2636eeb162978c8243412bc2a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-herbs-001.svg",
+      "sha256": "923b1020e8228cc512912b1f4fe724f2f7660d2636eeb162978c8243412bc2a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-ivy-001.svg",
+      "sha256": "923b1020e8228cc512912b1f4fe724f2f7660d2636eeb162978c8243412bc2a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-ground-cover-001.svg",
+      "sha256": "923b1020e8228cc512912b1f4fe724f2f7660d2636eeb162978c8243412bc2a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-wheat-clump-001.svg",
+      "sha256": "e3748e9856eeb917641be2cbb89c4cee5534968730e7d3c58b43bfdf20e2dcbb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/grass/plant-bamboo-small-001.svg",
+      "sha256": "923b1020e8228cc512912b1f4fe724f2f7660d2636eeb162978c8243412bc2a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/watering-can-001.svg",
+      "sha256": "c9f0ae7b4ca301ee908aeb0feb9575c06f4555ef2282763de1773ddda28a2431",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/wheelbarrow-001.svg",
+      "sha256": "f865a8371e674c0514c5dd58254e9b296e16348615d6634f6ac29f52bf717f0d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/shovel-001.svg",
+      "sha256": "54e117f5eacc070a6d660118be9aff32d89307b8ecf55ff87701beb46dbd5608",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/rake-001.svg",
+      "sha256": "b46bfa87c6d8854484491110f9fb629797161fa3faa05cd31117a168b4de22cb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/garden-fork-001.svg",
+      "sha256": "52b1fde5b82eac97333423f1b43da88380fdfcf86c2aea97aaca50b41940870c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/wood-bucket-001.svg",
+      "sha256": "73a58a9d66fe7ddaea9ff3917f2ebb1258fbdb77234e4da67666782d8dad72e2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/metal-bucket-001.svg",
+      "sha256": "af013f8b05eb59a33050b886baa60840a1e021365574a7dcff498fd185d3b031",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/wood-crate-001.svg",
+      "sha256": "f52e3057c3511b41dfde06ed2ec1cc627038f60f1238d308ca437a9bc8fa4ac2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/compost-bin-001.svg",
+      "sha256": "4e0787efe025e756fabea48d4c47d09956613b7f4bdb4f0eda4b444f7d958b39",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/garden-hose-001.svg",
+      "sha256": "8d1be336159582941330fa72b2694b49e57fd276feaa01f5f1903e940dda62cb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/clay-pots-001.svg",
+      "sha256": "cb41c9f1e29946b211f9c03f62211d5f4bf7ba302e4a6375518a640c8d9dd345",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/garden-equipment/garden-bench-001.svg",
+      "sha256": "24bcfaf3e17bf1f2cbcf689df165fd74d1665c20611bc70f0afb9e81ec22ece1",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/village-props/picket-fence-001.svg",
+      "sha256": "a406e0654e443289625f19c94f35389d3c41d57fa50e471ffd5b73448cf22d38",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/village-props/stone-path-001.svg",
+      "sha256": "6f75cb750f7c226bde559407b71b1f2619652b68af773ec701dbc56e84474a13",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/village-props/wood-sign-001.svg",
+      "sha256": "2fa4ff15613c5963e75108b0777f6548c07bbefcecf1a63c9a1eaecc1ce4cea7",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/village-props/birdhouse-001.svg",
+      "sha256": "6e22feb1989710f2555dd038fdb506a1c10063b9bff81d6268bb538188f6d2b8",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/village-props/hay-bale-round-001.svg",
+      "sha256": "5ebfe02b9c5eaf82925a281a729d20c748862f83b97f64efa9c55c7d2a037aab",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/village-props/barrel-001.svg",
+      "sha256": "20fac93176ca603dd67b7c6ad551ec9fe2cd5eb110d1a649bd0d456890abc457",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/village-props/lantern-post-001.svg",
+      "sha256": "77a9eca884408c5b972d1e652251dd083c67ec9779dc0aefdd54532551e29d19",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/village-props/wood-cart-001.svg",
+      "sha256": "98b0fd9d4de4c4301c8ac08962b868f0a626027e1419b3ceb4bb93285d0cc14b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/rabbit-sitting.svg",
+      "sha256": "c94b2ac397a1aa34c2034f4b96cd034edea54f61922164dad33adeaa5c84b610",
+      "creatorClaims": [
+        "PolyLingua"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/188698/brown-rabbit-by-polylingua-188698"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/brown-goat.svg",
+      "sha256": "a3c8c96fa9f9c692ed9d4c7567290068254794a675dc22d0b7ae32e35524f93b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/round-sheep.svg",
+      "sha256": "7c2b807e9c0049a9faa414ef32384a519aa76444eea9d59c1cab22ade8531ea4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/cream-goat.svg",
+      "sha256": "75b42a55618cbf5062b796c93bc473b4e29fb7cdf3576840db517da8c8f7260b",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/yellow-chick.svg",
+      "sha256": "e41c4a50eae587f1da79486e91029009fdfbb980f78f6b8e732436b1378d78f9",
+      "creatorClaims": [
+        "Cyanide Cupcake"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/beagle-puppy.svg",
+      "sha256": "01839a67ff694ff4c5154c64073e3f622c42bbf284622186af1a2f4902bfb002",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/mallard-duck.svg",
+      "sha256": "54be3c26867149592350467d1b6e9defdd491405b0096ce30abc5fedc0566706",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/domestic-goat.svg",
+      "sha256": "59bfd74df42e5f7b140bdfc7c1afce5370ffabf2c541b242057508b290d20ee3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/grazing-cow.svg",
+      "sha256": "8f7bff8e778bf558080a4c2ad47f9266ebc229779a0a3d5f975f0ee1078c8326",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/cream-cat.svg",
+      "sha256": "dabe66724794c10bf129b71a4b8dcd786d20de663dc5aff642b26a5f47671086",
+      "creatorClaims": [
+        "Anonymous"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/26972/architetto----gatto-04-by-anonymous"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/clydesdale-horse.svg",
+      "sha256": "1341ccb5347d1dd9b3da25431c627b214705b283282ab73280bd3c760ca54dd4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/bunny.svg",
+      "sha256": "6d264185d661152b2c50de3a8d0e375cc379cf9847f173b0fb8de41908925349",
+      "creatorClaims": [
+        "apple"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/37867/bunny-by-apple"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/sleeping-tabby-cat.svg",
+      "sha256": "a1e845659a8eeb3570b2182ec7180e3a28fa19af2ca942f71c4e469e970b91c5",
+      "creatorClaims": [
+        "Jilllio"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/rust-cow.svg",
+      "sha256": "8ae2e0027c62643d5966e4eeac4afc93f8a69e5f2966511e9caef0f2730a81be",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/blue-eyed-dog.svg",
+      "sha256": "eb06efd8fae0150906f44f5e04cd0bfb1e931b5a9bdd8fa01cfcce7ae351f16d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/standing-brown-dog.svg",
+      "sha256": "3e4e38766d39ff8671e25631c9b99d777d8179a1366adb2292027dc8a7a8768e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/fluffy-sheep.svg",
+      "sha256": "58ca98277f49eb61d36d9c03f84190e47bddebe9bed6ceb1ea473ef7dba16f51",
+      "creatorClaims": [
+        "halattas"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/171863/eid-sheep-color-by-halattas-171863"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/green-headed-duck.svg",
+      "sha256": "437e4cd7f9c2f8c5865d3ceaff268a7fb5d189c0a11f06f8b7b6e746262b01f0",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/goose-family.svg",
+      "sha256": "a4099f2d04c3814b3172e8bf7956c76fa0e78e50ff73ce23b54471d57f1977d7",
+      "creatorClaims": [
+        "salvor"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/169536/goose-and-goslings-by-salvor"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/dachshund.svg",
+      "sha256": "48c2d12e2401fd7463e9f32636de25f43adc800d23565694167a635660df5836",
+      "creatorClaims": [
+        "Gerald_G"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/8508/dog-(simple-drawing)-by-gerald_g-8508"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/copper-beagle.svg",
+      "sha256": "4920b44acc311aff8375cd5ffc9344096c42508fcad88e43e8d1febde08a30c8",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/rearing-goat.svg",
+      "sha256": "289b14c8359b9f89b82be2fa1e1c3341bdd00333119676b06e6068d89703c534",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/great-tit-bird.svg",
+      "sha256": "46cffa443b7b0a87a72155b6e086c7771eced516510334570e1a19ee2c4277b8",
+      "creatorClaims": [
+        "pesasa"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/103171/great-tit-by-pesasa"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/chicken-family.svg",
+      "sha256": "d71a9a42145e12f953cce75316037dc9f049c69a29f76bf0b7f00bd03f0324f4",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/trotting-horse.svg",
+      "sha256": "7b1f90088fcc2bc369beb3b240dcba28def8f36a8eb93584d040395bd8e7adca",
+      "creatorClaims": [
+        "Jurgentje"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/28717/horse-by-jurgentje"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/kingfisher.svg",
+      "sha256": "027811363214daf677696963b268694df8fc60a22cad598cd9c72e7f791c13f6",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/brown-white-cow.svg",
+      "sha256": "ee366abdba00559ef67c49ca361145d7e51132cd4b50ecaba8f7d35c647df657",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/black-white-cow.svg",
+      "sha256": "c2d6029b918aefcc1438baa7e12b1ace73e26a34915766e4badab1586cabe518",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/ginger-cat.svg",
+      "sha256": "76898f6e3ffac51c4caf5c916c3dd255372183725d6e9ffc0169ccfac98b436a",
+      "creatorClaims": [
+        "Machovka"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/2686/cat-by-machovka"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/brown-horse.svg",
+      "sha256": "a31e99904e6207271e8704a938d6807ee431dc6eef28c2b10f7590a1491478f3",
+      "creatorClaims": [
+        "Machovka"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/2691/horse-by-machovka"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/golden-mane-horse.svg",
+      "sha256": "46607d29f856d78f7e2c982eef20048bc6ba2523fc858b40a921281629c5fb13",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/standing-pig.svg",
+      "sha256": "861719e1fec25692133a2be14db8ef65ab79c11e810a9a204c103c62ee07d06e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/pink-goat.svg",
+      "sha256": "5ef89eebe27d97abf966ccaa8d4bd7762e8e8f5f173f1737fd2aa53139aa9b88",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/resting-rabbit.svg",
+      "sha256": "23dfad7a4421312628c00872821bda5f7028657e1995ab2eaf8637f06f432ed9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/rooster.svg",
+      "sha256": "cc0b8d2bd22ad278525d1d16dbe1179120645202b91a8a39ea2188e1a7fc799a",
+      "creatorClaims": [
+        "andinuryadin"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/175282/ayam-jantan-by-andinuryadin-175282"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/sitting-brown-dog.svg",
+      "sha256": "70140d90e0dc4b31d051f4d749c6c1c9b33f142f7df2c5bf865fb90925684b43",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/happy-pig.svg",
+      "sha256": "af30314a5e899d68ff5ddc4eaa06605b3cf29ecbe37e90667b95344f365ea6b2",
+      "creatorClaims": [
+        "bugmenot"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/3631/happy-pig-by-bugmenot"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/friendly-bull.svg",
+      "sha256": "eb41680ca8ad48d517e02e5592f092108c2abc190849429aa8a6c0d29f5a2f10",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/resting-tabby-cat.svg",
+      "sha256": "199b3e0cab466d3962d909fe298c7c66b73745cbe24408e7685789cdeb7252e5",
+      "creatorClaims": [
+        "Nadenka1"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/134137/tabby-cat-by-nadenka1"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/black-white-rabbit.svg",
+      "sha256": "10f1f3a6428ae7471367cfb29b40a697bb3dc710f5f0aee09a0904df9c621cc9",
+      "creatorClaims": [
+        "danko"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/4152/friendly-rabbit-by-danko"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/farm-hen.svg",
+      "sha256": "b27e2d99882c6e5946898ce4f988544a5abe8613955dd9f026b8f71ee72d4cf5",
+      "creatorClaims": [
+        "davidone"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/27980/chicken-by-davidone"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/chickadee.svg",
+      "sha256": "429a8fa84ddf4cba5f01cfb6823e17deb98f7cca7dad07457088fb2a0523e7ba",
+      "creatorClaims": [
+        "stilg4r"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/170913/bird-by-stilg4r-170913"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/hoopoe-bird.svg",
+      "sha256": "624c188c7f5fe9c231bdbeaecf17fc55e3acea7fd67e37e7b76e487854928441",
+      "creatorClaims": [
+        "kwstasm83"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/178523/hoopoe-by-kwstasm83-178523"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/chestnut-horse.svg",
+      "sha256": "b7e97e502ab891bb4efea31236b8a102de81637ca4e988aa3562e056c82be16c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/golden-rabbit.svg",
+      "sha256": "90100c68f7a5c2c3b7d3e960b2c926f5863296dec7801afaa8207928d7813896",
+      "creatorClaims": [
+        "jilagan"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/6001/rabbit-by-jilagan"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/walking-pig.svg",
+      "sha256": "42dd5a49dba7642790757817e960e7a418e42dcae9c68260a34941e0284102aa",
+      "creatorClaims": [
+        "johnny_automatic"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/7568/piggie-by-johnny_automatic"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/fluffy-yellow-chick.svg",
+      "sha256": "7da415701b7a805872068afe739afbf858b8a42d56c413e8ecfd86c1e4ba3967",
+      "creatorClaims": [
+        "cgillis73"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/122089/new-sprink-chick-by-cgillis73"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/blue-hummingbird.svg",
+      "sha256": "a011137606b1bd536fb593a743eaacd320dc29ae044f11bfd0db664eafb4ebe3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/smiling-pig.svg",
+      "sha256": "e03d17b5c4b4ebb7cb59681aadf703e5cf851300fe40c63176bd9602336ceee6",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/grazing-pig.svg",
+      "sha256": "bcac662d618c4920d9e01b67d67c3daac6b10274c946c1780b45f9a74e2d399e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/red-cardinal.svg",
+      "sha256": "82b965bba0af3482e7684ea7d5f896b88af741f5d155038ca9621c2192077e92",
+      "creatorClaims": [
+        "kattekrab"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/75481/red-cardinal-by-kattekrab"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/brown-duck.svg",
+      "sha256": "28b2efad1c3cbc65fd07f189c5c6e0362a239e2b2ed089d89ce33ccec31bdc8b",
+      "creatorClaims": [
+        "sutrannu"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/27623/duck-by-sutrannu"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/welsummer-rooster.svg",
+      "sha256": "c12b7cee372cde1ebf3ac4d5f4adc85b3991180292c9072f9e2ab3f2368641bb",
+      "creatorClaims": [
+        "Nelson Wright"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/potted-seedling.svg",
+      "sha256": "2666a91782e50178fb52db8f343c2811cc183018b37bfe36424b505bf78b4e04",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/wooden-barrel.svg",
+      "sha256": "a0c5c39183a76778046cbf0cf3460913f196edc44108e769ecd95c7b0255bde3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/wooden-crate.svg",
+      "sha256": "8517491ef4de220f977c8d82eb7c14c912c0508e6bb83bb0a322a8858e8e5166",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/rocks/rock-rubble.svg",
+      "sha256": "434c10251246406b1263f30f702dc233a3802b3766573348e94ea24b78c269f9",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/rocks/rounded-boulder.svg",
+      "sha256": "6d651b84fca6b3851aa9dbad11bcf711cc33a40dd816edbe0b7edd4bbc473333",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/colorful-birdhouse.svg",
+      "sha256": "a9de7ffda37c0550b59cf7ff087ef6155502007fbe92cf2c2a16d150e886eb8e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/vegetable-basket.svg",
+      "sha256": "f7b6e186f6d53a7a9cb8bd38370d4799f49c6a0144ab41184545a3cdb17f79d6",
+      "creatorClaims": [
+        "mediobit"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/172704/cesta-de-la-compra-llena.-full-shopping-basket-by-mediobit-172704"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/wicker-basket.svg",
+      "sha256": "34066036ffece59513cc59c5243d37d1595a953888cf762958ed5b2da0054a07",
+      "creatorClaims": [
+        "mediobit"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/170735/cesta-basket-by-mediobit-170735"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/potted-red-roses.svg",
+      "sha256": "94beb5d73eb4bde04a4fccba742738d7e78586bf70a84eb7e6908f2495758da8",
+      "creatorClaims": [
+        "jpenrici"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/rocks/metal-ore-rock.svg",
+      "sha256": "c55b93d8b3dfeb81804a99a2d091d2334a07caba1d214b2a22f30f13146e7fba",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/rocks/angular-boulder.svg",
+      "sha256": "671378e19324a535da285830f2adf7ebd6a75941c75a4eb4407d0d074e18afd0",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/picnic-basket.svg",
+      "sha256": "a1ce0044410d2a96063add97964b5e16e11dc1329eb3fa5906556e10fbc8bc42",
+      "creatorClaims": [
+        "johnny_automatic"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/414/picnic-basket-by-johnny_automatic"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/wood-log.svg",
+      "sha256": "4a76433673bf83b8871aa7d3a0e64bf40ee6b10784fa762b7beb34119ad990be",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/mailbox.svg",
+      "sha256": "b83a9f2f836e3eea51bdf8c59c574bf448c66ba9ce26ff575c475dda306beb1f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/decoration/shipping-crate.svg",
+      "sha256": "bfc50c7f97137833640c42b272a7cea3efb9260bdc9ef16c299d4a3234a31a85",
+      "creatorClaims": [
+        "eady"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/62857/perspective-wooden-crate-by-eady"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/potted-purple-flowers.svg",
+      "sha256": "ec7424c81eb344138a080d6e8520f6d1a59dfaa2a7234879317d9b117f9b5ca2",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/potted-white-flowers.svg",
+      "sha256": "7654c362988cb1b7c007d9c6d28a2524f67d7860431e512db1b755f4a1fa9b34",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/effect/glowing-firefly.svg",
+      "sha256": "8fb4b53657e5f210b52daca3518cdee70ceb68dbb0306d99a60966c4a42735cb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/effect/lightning-bug.svg",
+      "sha256": "a9027a57a0310c309150a01b0efdab25ec44e9fe6f470efb31fd4f1bfa26a193",
+      "creatorClaims": [
+        "treblac"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/29653/lightning-bug-buddy-by-treblac"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/yellow-bucket-and-spade.svg",
+      "sha256": "42be3f582710528ca53e58e0069b11900c168490b77d56d024fecf3d12e79fc7",
+      "creatorClaims": [
+        "Mirek2"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/174088/bucket-by-mirek2-174088"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/round-point-shovel.svg",
+      "sha256": "ac0c870458e0bd4bedb32773fa17924f23fb7a1a47975161ab02d02ea34a3678",
+      "creatorClaims": [
+        "Anonymous"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/26276/round-point-shovel-by-anonymous"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/red-pail.svg",
+      "sha256": "d4f78c19a8d711342a1cefdfa12de8732a1f34c679ed621fa22df4c6225077fe",
+      "creatorClaims": [
+        "pianoBrad"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/70663/summer-pail-by-pianobrad"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/metal-watering-can.svg",
+      "sha256": "40cac52bfa61b546d5461c4339a2aa083dd8f4ddcf48e4fcb5da3577a0f62ff8",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/green-garden-bench.svg",
+      "sha256": "798883adf19a8ac35da4365c28e818209c1d0180d64ef998087bbd9fbf6c43f7",
+      "creatorClaims": [
+        "gramzon"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/68407/bench-by-gramzon"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/gray-garden-bench.svg",
+      "sha256": "4b66dea68041fa3d004d5089a6543bdb4c562395240251ea3486005ad4bb00cb",
+      "creatorClaims": [
+        "mazeo"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/63439/park-bench-by-mazeo"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/garden-rake.svg",
+      "sha256": "d776564d9d0b9677d9b2e72ac5686188414fce6038a1dfe909a4fdb3690a7358",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/earthen-pot.svg",
+      "sha256": "6f14db6fa87d11619336511911313e2b5d5772b10e1b7ec411156a3c7ff0dbc1",
+      "creatorClaims": [
+        "netalloy"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/88981/earthen-pot-by-netalloy"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/garden-equipment/green-watering-can.svg",
+      "sha256": "04e2368996db7b682e00b9b7fad781025b3de123264838b0205fac5f635ecf57",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/daisy.svg",
+      "sha256": "e021d7ce1360d5341b2ab6c94789a90f60a5056ee712a54d006f17303b0d8067",
+      "creatorClaims": [
+        "cyberscooty"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/171339/marguerite-sur-tige-by-cyberscooty-171339"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/white-hydrangea.svg",
+      "sha256": "12037af29908a09c23dcf4704f0df5bee312930c39a3b3337d3e46825742f6cb",
+      "creatorClaims": [
+        "warszawianka"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/175467/hydrangea-by-warszawianka-175467"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/rose-stem.svg",
+      "sha256": "e614fc1e69f29e00dfd3d9112b7b32b99d3fcaf828d37a55738384ab1e9be669",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/deep-red-rose.svg",
+      "sha256": "263746277d6f4f2be4e28afb0845c371f4b727170f26f9b038bbad80a080896e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/potted-flowers.svg",
+      "sha256": "573f3c7a97af65de520033f2433bac42d9b3c8599231e7cd9eef297130561e30",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/pink-tulip.svg",
+      "sha256": "27b96218477e214963a6b2c3b768ec9a64dd263ffa6dedfdbeb23e4f36616795",
+      "creatorClaims": [
+        "Arvin61r58"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/185394/flower-by-arvin61r58-185394"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/indian-paintbrush.svg",
+      "sha256": "92449773d7b82a3af1a2fe40a57f0cc34694575344e4faa1772c22edec6183c5",
+      "creatorClaims": [
+        "Gerald_G"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/193/ku-castilleja-miniata-by-gerald_g"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/silverweed-flowers.svg",
+      "sha256": "1c16342a703c97228daa3a72345da34faf6ebb6754b3529332dec6e2b5a310ae",
+      "creatorClaims": [
+        "Gerald_G"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/235/gg-potentilla-anserina-by-gerald_g"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/yellow-violets.svg",
+      "sha256": "b4e8d02c8354193e60b05e0f537d7d2b792b9c4f4a066775fd4eb6bfdba032f8",
+      "creatorClaims": [
+        "Gerald_G"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/182/ku-viola-glabella-by-gerald_g"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/sunflower.svg",
+      "sha256": "9662f1f01dadc9e24bb63350bc2f2ba9b68ebd5de7cf82b1850821b8dac2f4c5",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/poppy.svg",
+      "sha256": "e0866cfb69487ce19f820de6594b1d428890ffa8aad9b285234a9bb95016d001",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/shaded-pink-tulip.svg",
+      "sha256": "d43493a7ddf1fc4b61fbd5de8bbb524bf1a56149aac85dc731d1a0b534d35644",
+      "creatorClaims": [
+        "TrinitySquare"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/5123/tulip-by-trinitysquare"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/bee-on-flowers.svg",
+      "sha256": "ad08c87da341f436e934e41a7f8f5d2855ae1903c0552197e602f22075116e49",
+      "creatorClaims": [
+        "biswajyotim"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/5085/bee-by-biswajyotim"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/red-tulip.svg",
+      "sha256": "31687d91f102700e098f500bb4d6a91572faa621d2182faee0629f1dba99292f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/dark-grass-clump.svg",
+      "sha256": "9c2797d0caea1c15203c139b3e12d9ef4f0b760ed23efd051175dde2c333b86b",
+      "creatorClaims": [
+        "qubodup"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/167346/dark-grass-shaded-by-qubodup"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/butterfly-and-flowers.svg",
+      "sha256": "4ff3906b4db70298c4401900f0cfa5edd0c52fe5b217115f1d8414ab31a9aa55",
+      "creatorClaims": [
+        "presquesage"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/171934/butterfly-on-a-button-or-by-presquesage-171934"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/red-rose.svg",
+      "sha256": "cc7364affdea43db2da519df8f64ef89f677d7dc3536cd67b816378d19249597",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/ladybird-on-grass.svg",
+      "sha256": "ed5bd21c7412ca33e3b325a8758e8131814ae83c121fd5e08fa85f30eb4f2e11",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/tall-grass-blades.svg",
+      "sha256": "7ccfecc84c7f2551e3cc474dd382cb782a448ae0c0d03fd171513da2a348b3eb",
+      "creatorClaims": [
+        "eady"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/13350/-by--13350"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/grass-blades.svg",
+      "sha256": "2355a67a76e7c7991cd6ec6d13e967ccfc7e8042f25e8b0114e6fb1a07d65c01",
+      "creatorClaims": [
+        "eady"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/13352/-by--13352"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/grass-border.svg",
+      "sha256": "0847d177637869b2432a8c0e6021348bfc3426c3fa4e0aa960e374332b92cf72",
+      "creatorClaims": [
+        "rg1024"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/64141/grass-background-by-rg1024"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/shaded-grass-clump.svg",
+      "sha256": "cb623d953dd3dfb9277c3ad5bc6a86d7c111a949c8903afe22ec9db356d4c1ca",
+      "creatorClaims": [
+        "qubodup"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/167347/darker-grass-shaded-by-qubodup"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/meadow-groundcover.svg",
+      "sha256": "9a8685798c6ce470ac8fbac6ee7325ce7c95c1bfb63608f9cfd1086d5d2e010f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/meadow-groundcover-wide.svg",
+      "sha256": "4fcaedd595433aad088bb0f6dc59a2b28aa0188de3cf900682cd696849f14f3c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/curled-fern.svg",
+      "sha256": "c38da8a06f18122e415cd8bac891065d2a3c13d595078cab73dbb67c2b6a9506",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/broad-leaf-plant.svg",
+      "sha256": "f297f109bfb3f5dcc1ba3f21805ea5eb8735bc8cb17a407889f590773b36df92",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/dark-broad-leaf-plant.svg",
+      "sha256": "44b04b8a3e4e3da15aae59021b15c6eed5388e7a009f7cfcde2fb05b36c60b9c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/scattered-grass-tufts.svg",
+      "sha256": "c53f6d29c62258d6862a50b27d570ef0b1bb4495532247d70fd00a57685e1824",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/garden-house.svg",
+      "sha256": "f6589974fbfb8b43e8d8b0b36a2702ae3824928cf779a72e7d3d287ad100f1b6",
+      "creatorClaims": [
+        "rygle"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/166955/iso-city-grey-house-1-by-rygle"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/blue-townhouse.svg",
+      "sha256": "67751fbbf09091630558cfdac885fbd3181d9eaafeefbc3323b21ff42a98de4c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/modern-hospital.svg",
+      "sha256": "e890464a072602266c356e8eea3dc949b08e78ef2ef32a21e4cd741b05ddc134",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/village-school.svg",
+      "sha256": "e38f1c7eda53f215d1b721623b5043fcb57a96ef88d498313907798b71325538",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/clock-tower-school.svg",
+      "sha256": "605f6573d75c8e24ff69426c52ce30a371606183ef469648300de4faf87f4530",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/purple-cottage.svg",
+      "sha256": "708d7b6aa838434cbfcca84e91482f117d54253db43ff6dda7c87c192dcc77d4",
+      "creatorClaims": [
+        "BigRedSmile"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/4751/a-little-purple-house-by-bigredsmile"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/golden-church.svg",
+      "sha256": "6cfd9e347ff2ccf8f44ab4de9b00309930dbf59e2daddab61e26f963b06721aa",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/hospital-and-ambulance.svg",
+      "sha256": "78a2f6c5d14d1a2ee87468d63ba381f6c729ab23156b2ff4b45a0d602fc8bbdb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/smoking-chimney-house.svg",
+      "sha256": "2dc5afa81f5d2a783f472a66a8d58a57579747aa3dbe18bad76ea202f21b2274",
+      "creatorClaims": [
+        "inky2010"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/76411/house-by-inky2010"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/red-barn.svg",
+      "sha256": "abab7c9db7fbbb07e66e42ee44539a9f9e1a863737baa1f2869ab0040c99db2e",
+      "creatorClaims": [
+        "Rfc1394"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/29228/red-barn-by-rfc1394"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/long-farm-building.svg",
+      "sha256": "fecf1876c6c2d500b8ceed0800c9ebdeec912e5cb4ec6102f3c8df98e771ce8d",
+      "creatorClaims": [
+        "vlodco_zotov"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/164665/super-cheap-house-modification-5-by-vlodco_zotov"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/chinese-pavilion.svg",
+      "sha256": "f7d7591ba0cbcf385da243c5bd0238a737bba9784ab5916b4609aef8b8d79497",
+      "creatorClaims": [
+        "netalloy"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/101359/chinese-architecure-by-netalloy"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/cream-house.svg",
+      "sha256": "8eac1e41c6c77dbce14f741945353ee9ad855f3493cf05fc6d5f84d750bb77cb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/farm-and-silos.svg",
+      "sha256": "e6fb594dc710807611e8fd4ad2285a894766fe103f6a7712e19427309f7d8cb8",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/dark-roof-house.svg",
+      "sha256": "0dd661698ecc61ad7881c68688b0889f1c330a3cdb69eb63c403b301b2e477e7",
+      "creatorClaims": [
+        "nicubunu"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/22171/house-by-nicubunu"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/fenced-farmhouse.svg",
+      "sha256": "5f602034e9bc0e18f86cd453cd9276a702afad390912e7ffd1296951992419a3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/porch-house.svg",
+      "sha256": "52abd7eb485c3d3a5985824a3b16fe2f6eb24bf61de2ace86c5acad0a38ff0cb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/red-stable.svg",
+      "sha256": "49108e1829d8fa3de6af4546b4ad079b98e8fae945949004d53204f538cfefd2",
+      "creatorClaims": [
+        "rdevries"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/181745/stall-by-rdevries-181745"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/building/brown-village-house.svg",
+      "sha256": "1d75a3ed11b05ce3158b951694a06405bbed8edc7d5e0b0af6794180bc9e6358",
+      "creatorClaims": [
+        "rdevries"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/181398/village-house-by-rdevries-181398"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/village-prop/street-lamp.svg",
+      "sha256": "1b5baddf18094985705ec1cbaf790677e952dbe50fa1b265a0fcc33fa203c371",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/vehicles/bicycle.svg",
+      "sha256": "6f1eda72041a617db435f4a16dc02aad5b8d5b0b438948eb757c08bb83e85ec6",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/vehicles/school-bus.svg",
+      "sha256": "517cfc3684fd3eb9626c16f6a356f374cceefe6030aea2cdf8328556fd45fda6",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/terrain/winding-road.svg",
+      "sha256": "4dc94e8320eea4b0e2d254439c6718151a5d056ddfa67b0bbeedccd4cc874b71",
+      "creatorClaims": [
+        "mi_brami"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/167242/country-road-by-mi_brami"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/young-cedar-tree.svg",
+      "sha256": "110a37253b61ca2a9609e380ff0cadfd8c57b374a3e53a87a4729a99205a74f7",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/water/water-lilies.svg",
+      "sha256": "0366e7775fd2235384bf53325f2c12cd87005dbb81490ad5946033fa8a3c322d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/vehicles/red-bus.svg",
+      "sha256": "1cfc9c975badfef4e0bde8ff052850aa5fd0dfff40ba1685b74ed533e7a0a37b",
+      "creatorClaims": [
+        "PolyLingua"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/183976/tour-bus-by-polylingua-183976"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/water/marsh-reeds.svg",
+      "sha256": "b24bd529055095b4624d8cce3b257135c0610d4995af96907026fd662c7ea931",
+      "creatorClaims": [
+        "nicubunu"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/24217/rpg-map-symbols:-marsh-by-nicubunu"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/character/jogger.svg",
+      "sha256": "8ed79f1b166607a3ac23cd93a31fad9b531ee9a13da8fc257caec14f0bc7a657",
+      "creatorClaims": [
+        "Anonymous"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/32323/architetto----nonno-sport-by-anonymous"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/character/cyclist.svg",
+      "sha256": "7b94451b89fa19d5bbe55b3672e7adc7fb54731071d4e5c3ab87ac5b3a6a194f",
+      "creatorClaims": [
+        "bitterjug"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/169408/on-bicycle-by-bitterjug"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/vehicles/green-car.svg",
+      "sha256": "be4b176063e86ac7914866de09a4d0e8b6fa492b30fae29fcdbe20b89ae3a5f3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/character/village-farmer.svg",
+      "sha256": "873b1d4813a5fc0e8867c59cd720f5adbfc5693a01a667bb4829fe77bc54d958",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/slender-grass.svg",
+      "sha256": "4cb08fb1aa8f65114489c446bebf42bdcd73edcb060e3012566c10b407fee037",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/cassava-plant.svg",
+      "sha256": "bb77b1584a8b87f00996e5ca9534bb45369bda857f0edc2d86a82ecd8d7c2c87",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/purple-sweetvetch.svg",
+      "sha256": "2da772a581545c8b3aa9db4e754e73929c914faae22bd9126c64dbd3a3f8940b",
+      "creatorClaims": [
+        "Gerald_G"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/216/ku-hedysarum-boreale-by-gerald_g"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/fireweed.svg",
+      "sha256": "40b1b1e89628804757c7a01d6e540c1ea4cc7a6c40e741f479948ad52a892de7",
+      "creatorClaims": [
+        "Gerald_G"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/195/ku-epilobium-angustifolium-by-gerald_g"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/pasque-flowers.svg",
+      "sha256": "44aea1d3422cd126963b3cacba85ddea106aff9a7a440fc60db38f2990b4ae1f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/mustard-greens.svg",
+      "sha256": "6e9e4d15dc0fc89daf194236a1880a32aa7ccf7815ad90068a600f281753c117",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/potted-green-plant.svg",
+      "sha256": "68d081b1240f0b0f9de18344d64b9261881730809dc0cef4ab12915d26069f8c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/flowering-tobacco.svg",
+      "sha256": "e1d26df19c19c7fbc811e0c2eba8a72aa1d69dad8b6a69f54798290ff2997594",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/grass/delicate-grass.svg",
+      "sha256": "9894fe919eaae63cad200c89a593eab40de406e3cd13b4ad7559068fd419ba6a",
+      "creatorClaims": [
+        "Chrisdesign"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/166639/floral-by-chrisdesign"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/tender-potted-seedling.svg",
+      "sha256": "e4894ab7918765da95bba239985e82af3069932836a6d58647e68f9594fad1d3",
+      "creatorClaims": [
+        "gsagri04"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/166800/tender-plant-by-gsagri04"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/golden-sun.svg",
+      "sha256": "45598f778f70dfc1bc22b45bf346b23bd1bd2144a5c4d45bc492e31280500a12",
+      "creatorClaims": [
+        "purzen"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/176488/sun-by-purzen-176488"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/rain-cloud.svg",
+      "sha256": "ea12e573a8fdb8f7564bf9e674354b1c86c1302a44518d89450687da187f5efc",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/soft-gray-cloud.svg",
+      "sha256": "60f6302f22d80a71b4855ac9b13b1fa269c7414b7575b5ddbe91c8e79de7aebb",
+      "creatorClaims": [
+        "b.gaultier"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/152311/internet-cloud-by-b.gaultier"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/soft-blue-cloud.svg",
+      "sha256": "713db1dfeb1f273a0da5ad64fde0ac4c77c9476dddc6d7e784b17a1bd0d8dffe",
+      "creatorClaims": [
+        "rgtaylor_csc"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/17666/net-wan-cloud-by-rgtaylor_csc"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/rain-shower.svg",
+      "sha256": "6fe5c07d11d0446d2441c1f15adc73ed74bc1e05d4adeb5817e1bc6fefc37e60",
+      "creatorClaims": [
+        "gnokii"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/170675/weather-icon---showers-by-gnokii-170675"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/crescent-moon.svg",
+      "sha256": "92000630dd441b87dbe9b3390953145d6a3eac57c414c8354a4b9d674c7dc8bf",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/radiant-sun.svg",
+      "sha256": "0c220684036a62f56feec07175f9ccd2dd48f7cfba6e6fde3b7da0e5a94a336d",
+      "creatorClaims": [
+        "bobby520"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/172455/sun-abstract-design-by-bobby520-172455"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/tropical-palm.svg",
+      "sha256": "e8ab5a6b991d63472f309f2818e1b9cfdc14baf4c4e5d2d41d7129ba7d2b4b7e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/heart-leaf-tree.svg",
+      "sha256": "cf61678e8ac69f6a99c9467735f2c0d2bba301adf78014e17e3b3323c9d168fc",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/leafy-tree.svg",
+      "sha256": "71973bf05c12b4a891b967802035198f26a4c552715ec39a4c4937b4af25d109",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/slender-palm.svg",
+      "sha256": "98d1e4620a01c85d41619de32ebea10d543957a671487281c3be603cf59d8c86",
+      "creatorClaims": [
+        "gbig95"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/21573/palm_tree.svg-by-gbig95"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/bare-tree.svg",
+      "sha256": "e82c46d359a86c04b035dc9f793b57ddf2eb9d6a19ca42169d5a6627b06e8c07",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/cartoon-palm.svg",
+      "sha256": "be217c08b4f91b3d72050aed5d23c43b28b7d773225aacc5483110b2a66c412e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/treehouse.svg",
+      "sha256": "77e75912551308bb0f9691ccfa6bfae634da2b2bc24423874a90509d0f1d9c04",
+      "creatorClaims": [
+        "tzunghaor"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/146071/tree-house-by-tzunghaor"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/crafted-landscapes/alpine-mirror-lake.svg",
+      "sha256": "d6929042e0bf27aee06518f7e377dd1707206793cbaa5a0a67d3289e764ffb1e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/sunlit-coastal-cove.svg",
+      "sha256": "690b43cb770e9ef1a5c2d6c8442a7cb7a32b97cb8f6f48eb06abb840f5027b92",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/emerald-rice-terraces.svg",
+      "sha256": "4240a84c89c63cc14fcc08764261e5139011980fbd4dac78f752ca6e6221e6d5",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/lavender-golden-hour.svg",
+      "sha256": "0028343c21b5ef4c1c957f4b261e841a61346d3d1692c6ab979fd73b8bb6fb00",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/silver-birch-clearing.svg",
+      "sha256": "e681025296d722bf64d29a5d05b19a3825e9e6808f1b77255e1bcfdd5c50df1a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/sandstone-arch-canyon.svg",
+      "sha256": "9d39ea2710e99474ccd77dc8fee58aa8b4add822b59e57baa02f5441ef5ae4d0",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/northern-lights-river.svg",
+      "sha256": "11b9ea514b56548199ba33865fc2debac3cd8aef3fc466973260282fb65be458",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/cherry-blossom-bridge.svg",
+      "sha256": "0b256554f12286e5f7595e55721e68117e2ef98754389908c7a69d62b18024f8",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/tuscan-vineyard.svg",
+      "sha256": "5ccf76c44e6501cb04db4e1b8898711d62fe6a711f1a13dd7a7200785baef016",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/hidden-jungle-falls.svg",
+      "sha256": "2432a98e4426843ff7cd9b8ea0b413844113dc7ff6a051ae7566ba66beb1d8a4",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/copperwood-creek.svg",
+      "sha256": "f6664bca3ab84d41d9b2a1aa209cc1f5892ba2c5a78591fa2c50e9d7af270122",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/crafted-landscapes/wildflower-trail.svg",
+      "sha256": "193ea2d4e817d31e5a47b581ccb9fa5a130db541a062f5e5987c4b692811e319",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": "Original project artwork generated by scripts/create-backgrounds.py; approved for display and download.",
+      "review": "Project display/download evidence recorded; no broader reuse license asserted"
+    },
+    {
+      "src": "/assets/freeimage/animal/Anonymous-Architetto----Anatra.svg",
+      "sha256": "0c21dfeedde8a688fe8115f87a376a762114f426192c1833ef782d194bd96d06",
+      "creatorClaims": [
+        "Anonymous"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/24747/-by--24747"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/Reedabadeeda-Sea-Bird-1.svg",
+      "sha256": "7e7a65246b38b2b842145c769d21692376519f8e46dd00f7e1d21e5edc83a0db",
+      "creatorClaims": [
+        "Reedabadeeda"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/13506/-by--13506"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/RobGTX-Cardinal-remix-2-plain.svg",
+      "sha256": "1cea815c6ca25f74ad857d7a35876fd4b93ae8e8d6090b1731a13f6fe8bcbcb9",
+      "creatorClaims": [
+        "10binary"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/133513/cardinal-remix-2-by-10binary"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/chlopaya_Bird.svg",
+      "sha256": "c832bbe5388469a85c136f431d77218551bb82c3e4c63863b4598ed6d4dda341",
+      "creatorClaims": [
+        "chlopaya"
+      ],
+      "sourceClaims": [
+        "http://openclipart.org/detail/16018/bird-by-chlopaya"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/monarch.svg",
+      "sha256": "af8a8a26bcb95812bd90538c307dcebb54a77c8d47fdf24b0a2dc750edda118a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/openclipart.svg",
+      "sha256": "a011137606b1bd536fb593a743eaacd320dc29ae044f11bfd0db664eafb4ebe3",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/animal/ryanlerch-Frigate-Bird.svg",
+      "sha256": "6c7a31cd06017217cd6f20cfcce4d48117cd3931c798ac5e7344a2330813fafc",
+      "creatorClaims": [
+        "ryanlerch"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/2101/frigate-bird-by-ryanlerch"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/character/man-reads-a-newspaper_1776010295.svg",
+      "sha256": "678b21291bda5d688e4cc00be7bbda6ab7bf6479470c2daf44367a0e6539d29a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/character/man41_1728038482.svg",
+      "sha256": "b8508675e1b1ddf836351385e03c75aa2859a491e9b191868030f0b554cc5d7c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/effect/100710_red_maple_leaf.svg",
+      "sha256": "add7e694493a10c3e344f450ed1466d96aed59b8627b5e874d7e8b9ea4cbd63c",
+      "creatorClaims": [
+        "Tomas Sobek"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/79573/red-maple-leaf-by-tomas-sobek"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/effect/Butterfly_XVIII_1783226787.svg",
+      "sha256": "2af932bf84f7dc9524a4590de2c31f8c8e70fecb2a3e266ac455a4fe2148d80d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/effect/monarch.svg",
+      "sha256": "af8a8a26bcb95812bd90538c307dcebb54a77c8d47fdf24b0a2dc750edda118a",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/effect/ryanlerch-Frigate-Bird.svg",
+      "sha256": "6c7a31cd06017217cd6f20cfcce4d48117cd3931c798ac5e7344a2330813fafc",
+      "creatorClaims": [
+        "ryanlerch"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/2101/frigate-bird-by-ryanlerch"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/100710_red_maple_leaf.svg",
+      "sha256": "add7e694493a10c3e344f450ed1466d96aed59b8627b5e874d7e8b9ea4cbd63c",
+      "creatorClaims": [
+        "Tomas Sobek"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/79573/red-maple-leaf-by-tomas-sobek"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/Flowers28_1774523985.svg",
+      "sha256": "ceaf0b9b4909754d97019a66d229c640c061e38c2491fdbaff30be49cf02573e",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/Flowers53_1779857999.svg",
+      "sha256": "62d140573bd37ee0961464d9d1c0cc356655f03e6cb9581e1a8258875f845df1",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/Flowers63_1782801812.svg",
+      "sha256": "82bbe8e5e35186bc79c692da63392ec1cfc22a9dd109c27a2d0f813888408d67",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/Flowers64_1782908226.svg",
+      "sha256": "dc2fa5ad96bb2a355a223e03bde91fc0e418202e8e8e4c2404ccc2a314c0acfb",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/Potted-Grass.svg",
+      "sha256": "33cba0cd5880e2b12de6eec2bd3c89aa8bb10d55d1b7f32cd83eb6bd0cd965cf",
+      "creatorClaims": [
+        "stevepetmonkey"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/87025/potted-grass-by-stevepetmonkey"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/flower/lotus_fleur.svg",
+      "sha256": "b38ac5231ba9b8826c0fa3ffff30577e9325060f2d241c93b832b6fc85aaa6d3",
+      "creatorClaims": [
+        "presquesage"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/171674/lotus-blossom-by-presquesage-171674"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/Butterfly_XVIII_1783226787.svg",
+      "sha256": "2af932bf84f7dc9524a4590de2c31f8c8e70fecb2a3e266ac455a4fe2148d80d",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/harvestable-resources-garden-new.svg",
+      "sha256": "da993e96265b5b9f4fb1a2ca54a08079e7a40c6caaf59d4edf566f2428aca3b8",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/misc-proto-herb-garden-medium.svg",
+      "sha256": "9889d72dca1151ebd7e02a0adc30fdc8ca5409f883fd39c6dc4b1b4d1219d804",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/plant/white-flower-pot.svg",
+      "sha256": "7654c362988cb1b7c007d9c6d28a2524f67d7860431e512db1b755f4a1fa9b34",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/1474979417.svg",
+      "sha256": "ad50d263d93dcff0d956b73b3006a79f50ad11750f2f0550effa66ab2aa7ee4f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/egonpin-Sol-1.svg",
+      "sha256": "1379eb4489a8f94af0bfea0dd458b869b1c2b4e1286e6e779d1c3f0f38e55388",
+      "creatorClaims": [
+        "egonpin"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/4467/sol-by-egonpin"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/ernes-Sun-Sole.svg",
+      "sha256": "301fb14813572ce6aba6f912fafc4958a792dab226064b9b4b6d399bdc2c1c2f",
+      "creatorClaims": [
+        "ernes"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/27381/sun---sole-by-ernes"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/sky/nicubunu-Weather-Symbols-Cloudy-Night.svg",
+      "sha256": "4a259c01802591441df297883a6b76badf19dc2d5bc656fb20b21548833978a0",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/",
+        "http://web.resource.org/cc/PublicDomain"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/1423333804.svg",
+      "sha256": "98d5a490ef22cd64c3be8b241a16d99a4305516b681737f7d43bebb18adfb185",
+      "creatorClaims": [
+        "Frank Tremmel"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/1549628824.svg",
+      "sha256": "87735c6aaedcc056151792a492108b5263179d5664d0e0dd32ee548a67081033",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/PalmTree8.svg",
+      "sha256": "c66c3c2ef50d27ac4ca57ccc5c23537551292579138708a9688b8b2b700898b5",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/bobocal-simple-vector-tree.svg",
+      "sha256": "5e014ea0affdabe9d255385e4bfd5b6681fd292d9647cf31e3935fead9f80242",
+      "creatorClaims": [
+        "bobocal"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/16185/simple-vector-tree-by-bobocal"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/cocoku.svg",
+      "sha256": "57c5557f7c68c359a804d09be340b3cd38dee1a2ce1ef341e5a3b93938a9f4e3",
+      "creatorClaims": [
+        "newt"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/149197/coco-tree-by-newt"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/ilmenskie-tree-10.svg",
+      "sha256": "3ca48fd8db964d73099cea419bf5bf3050bf5c6f64e2596e74b463eeab52796c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/ilmenskie-tree-11.svg",
+      "sha256": "cc937aa9b874fb121cc34d213690bbd27ca223040eff38a47c374bcae7662709",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/ilmenskie-tree-14.svg",
+      "sha256": "913925606aefea16d23e780614b795592266aed41d3eb384c8c2dd0ab1d011ae",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/ilmenskie-tree-int-stump-1.svg",
+      "sha256": "49a718c6aa85e3cdd4e8a45c041a2bec9f43fe03243d92c9ba4b6b3bf5d5d70f",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/palm-colour.svg",
+      "sha256": "4b06d309575c9cd886982c5fa36a40b1d6d1bd252cdb92b9580a9fe321252e15",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/red-aiflowers-tree.svg",
+      "sha256": "05f9ec6d7c50726ef6a190d5f136a4cd1705281c4127efdc4c1c435388b995d6",
+      "creatorClaims": [
+        "jykhui"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/179135/red-aifowers-tree-by-jykhui-179135"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/simple-tree.svg",
+      "sha256": "50f56e61c377673c9454359d8ffa34befb459887b0677386677d39497a3da028",
+      "creatorClaims": [
+        "rg1024"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/104527/simple-tree-by-rg1024"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/tree-21.svg",
+      "sha256": "b0515dc62bafb5e1c3cc64a26ddb759a9b55198ed4b817ba22bdc039b6ae4e3f",
+      "creatorClaims": [
+        "jpenrici"
+      ],
+      "sourceClaims": [],
+      "licenseClaims": [
+        "http://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/tree_15042015_3.svg",
+      "sha256": "a47c31ac813c314ffcddf3a2075e0bf70f09b74f268d162686f189b33622cfd7",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/tree/tree_21102016.svg",
+      "sha256": "f8b305a76894f637ac7189bd7d097e46f36db8cccb7f6d88cd4bda5dc78a328c",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/water/fisherman.svg",
+      "sha256": "26ec96078eb10a37ca7d47685fdd176d1d295c664362dda3a8cbac27591f7833",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/freeimage/water/nicubunu_RPG_map_symbols_Wishing_Well.svg",
+      "sha256": "7281f2c7cceb9ab7c4ed5448f9de6abcd4c740bbfc55c5e09badfdceed50639d",
+      "creatorClaims": [
+        "nicubunu"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/11554/rpg-map-symbols:-wishing-well-by-nicubunu"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/1435942396.svg",
+      "sha256": "591def8fb53c4c6f2c8d178ec713743c0fc9677bc0bf9a838777a5a439e52054",
+      "creatorClaims": [],
+      "sourceClaims": [],
+      "licenseClaims": [],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    },
+    {
+      "src": "/assets/vector-countryside/backgrounds/mountain.svg",
+      "sha256": "15f4a51938430f634072acf9eb429cb15e380298d4aeb18b2d8244206fe20e94",
+      "creatorClaims": [
+        "J_Alves"
+      ],
+      "sourceClaims": [
+        "https://openclipart.org/detail/64039/mountain-by-j_alves"
+      ],
+      "licenseClaims": [
+        "http://creativecommons.org/licenses/publicdomain/"
+      ],
+      "projectSharingEvidence": null,
+      "review": "Owner must verify source, creator, permission and attribution before broader reuse"
+    }
+  ]
+}

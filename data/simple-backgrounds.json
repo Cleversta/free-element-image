@@ -1,0 +1,326 @@
+[
+  {
+    "name": "Morning soft gradient",
+    "description": "Soft gradient in morning tones, with open space for your objects and text.",
+    "sky": "#b8ddf3",
+    "ground": "#f4f6de",
+    "src": "/assets/simple-backgrounds/morning-gradient.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Golden soft gradient",
+    "description": "Soft gradient in golden tones, with open space for your objects and text.",
+    "sky": "#f2c97e",
+    "ground": "#fff0cc",
+    "src": "/assets/simple-backgrounds/golden-gradient.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Rose soft gradient",
+    "description": "Soft gradient in rose tones, with open space for your objects and text.",
+    "sky": "#d5b8e6",
+    "ground": "#ffd6ce",
+    "src": "/assets/simple-backgrounds/rose-gradient.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Mint soft gradient",
+    "description": "Soft gradient in mint tones, with open space for your objects and text.",
+    "sky": "#b7ded8",
+    "ground": "#eff7df",
+    "src": "/assets/simple-backgrounds/mint-gradient.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Blue soft gradient",
+    "description": "Soft gradient in blue tones, with open space for your objects and text.",
+    "sky": "#83add7",
+    "ground": "#d9e9f1",
+    "src": "/assets/simple-backgrounds/blue-gradient.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Twilight soft gradient",
+    "description": "Soft gradient in twilight tones, with open space for your objects and text.",
+    "sky": "#25375e",
+    "ground": "#9b83a9",
+    "src": "/assets/simple-backgrounds/twilight-gradient.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Morning gentle glow",
+    "description": "Gentle glow in morning tones, with open space for your objects and text.",
+    "sky": "#b8ddf3",
+    "ground": "#f4f6de",
+    "src": "/assets/simple-backgrounds/morning-glow.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Golden gentle glow",
+    "description": "Gentle glow in golden tones, with open space for your objects and text.",
+    "sky": "#f2c97e",
+    "ground": "#fff0cc",
+    "src": "/assets/simple-backgrounds/golden-glow.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Rose gentle glow",
+    "description": "Gentle glow in rose tones, with open space for your objects and text.",
+    "sky": "#d5b8e6",
+    "ground": "#ffd6ce",
+    "src": "/assets/simple-backgrounds/rose-glow.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Mint gentle glow",
+    "description": "Gentle glow in mint tones, with open space for your objects and text.",
+    "sky": "#b7ded8",
+    "ground": "#eff7df",
+    "src": "/assets/simple-backgrounds/mint-glow.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Blue gentle glow",
+    "description": "Gentle glow in blue tones, with open space for your objects and text.",
+    "sky": "#83add7",
+    "ground": "#d9e9f1",
+    "src": "/assets/simple-backgrounds/blue-glow.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Twilight gentle glow",
+    "description": "Gentle glow in twilight tones, with open space for your objects and text.",
+    "sky": "#25375e",
+    "ground": "#9b83a9",
+    "src": "/assets/simple-backgrounds/twilight-glow.svg",
+    "kind": "landscape",
+    "category": "Gradients"
+  },
+  {
+    "name": "Morning open sky",
+    "description": "Open sky in morning tones, with open space for your objects and text.",
+    "sky": "#b8ddf3",
+    "ground": "#f4f6de",
+    "src": "/assets/simple-backgrounds/morning-clouds.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Golden open sky",
+    "description": "Open sky in golden tones, with open space for your objects and text.",
+    "sky": "#f2c97e",
+    "ground": "#fff0cc",
+    "src": "/assets/simple-backgrounds/golden-clouds.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Rose open sky",
+    "description": "Open sky in rose tones, with open space for your objects and text.",
+    "sky": "#d5b8e6",
+    "ground": "#ffd6ce",
+    "src": "/assets/simple-backgrounds/rose-clouds.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Mint open sky",
+    "description": "Open sky in mint tones, with open space for your objects and text.",
+    "sky": "#b7ded8",
+    "ground": "#eff7df",
+    "src": "/assets/simple-backgrounds/mint-clouds.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Blue open sky",
+    "description": "Open sky in blue tones, with open space for your objects and text.",
+    "sky": "#83add7",
+    "ground": "#d9e9f1",
+    "src": "/assets/simple-backgrounds/blue-clouds.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Twilight open sky",
+    "description": "Open sky in twilight tones, with open space for your objects and text.",
+    "sky": "#25375e",
+    "ground": "#9b83a9",
+    "src": "/assets/simple-backgrounds/twilight-clouds.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Morning quiet horizon",
+    "description": "Quiet horizon in morning tones, with open space for your objects and text.",
+    "sky": "#b8ddf3",
+    "ground": "#f4f6de",
+    "src": "/assets/simple-backgrounds/morning-horizon.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Golden quiet horizon",
+    "description": "Quiet horizon in golden tones, with open space for your objects and text.",
+    "sky": "#f2c97e",
+    "ground": "#fff0cc",
+    "src": "/assets/simple-backgrounds/golden-horizon.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Rose quiet horizon",
+    "description": "Quiet horizon in rose tones, with open space for your objects and text.",
+    "sky": "#d5b8e6",
+    "ground": "#ffd6ce",
+    "src": "/assets/simple-backgrounds/rose-horizon.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Mint quiet horizon",
+    "description": "Quiet horizon in mint tones, with open space for your objects and text.",
+    "sky": "#b7ded8",
+    "ground": "#eff7df",
+    "src": "/assets/simple-backgrounds/mint-horizon.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Blue quiet horizon",
+    "description": "Quiet horizon in blue tones, with open space for your objects and text.",
+    "sky": "#83add7",
+    "ground": "#d9e9f1",
+    "src": "/assets/simple-backgrounds/blue-horizon.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Twilight quiet horizon",
+    "description": "Quiet horizon in twilight tones, with open space for your objects and text.",
+    "sky": "#25375e",
+    "ground": "#9b83a9",
+    "src": "/assets/simple-backgrounds/twilight-horizon.svg",
+    "kind": "landscape",
+    "category": "Skies"
+  },
+  {
+    "name": "Morning rolling hills",
+    "description": "Rolling hills in morning tones, with open space for your objects and text.",
+    "sky": "#b8ddf3",
+    "ground": "#f4f6de",
+    "src": "/assets/simple-backgrounds/morning-hills.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Golden rolling hills",
+    "description": "Rolling hills in golden tones, with open space for your objects and text.",
+    "sky": "#f2c97e",
+    "ground": "#fff0cc",
+    "src": "/assets/simple-backgrounds/golden-hills.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Rose rolling hills",
+    "description": "Rolling hills in rose tones, with open space for your objects and text.",
+    "sky": "#d5b8e6",
+    "ground": "#ffd6ce",
+    "src": "/assets/simple-backgrounds/rose-hills.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Mint rolling hills",
+    "description": "Rolling hills in mint tones, with open space for your objects and text.",
+    "sky": "#b7ded8",
+    "ground": "#eff7df",
+    "src": "/assets/simple-backgrounds/mint-hills.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Blue rolling hills",
+    "description": "Rolling hills in blue tones, with open space for your objects and text.",
+    "sky": "#83add7",
+    "ground": "#d9e9f1",
+    "src": "/assets/simple-backgrounds/blue-hills.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Twilight rolling hills",
+    "description": "Rolling hills in twilight tones, with open space for your objects and text.",
+    "sky": "#25375e",
+    "ground": "#9b83a9",
+    "src": "/assets/simple-backgrounds/twilight-hills.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Morning smooth dunes",
+    "description": "Smooth dunes in morning tones, with open space for your objects and text.",
+    "sky": "#b8ddf3",
+    "ground": "#f4f6de",
+    "src": "/assets/simple-backgrounds/morning-dunes.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Golden smooth dunes",
+    "description": "Smooth dunes in golden tones, with open space for your objects and text.",
+    "sky": "#f2c97e",
+    "ground": "#fff0cc",
+    "src": "/assets/simple-backgrounds/golden-dunes.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Rose smooth dunes",
+    "description": "Smooth dunes in rose tones, with open space for your objects and text.",
+    "sky": "#d5b8e6",
+    "ground": "#ffd6ce",
+    "src": "/assets/simple-backgrounds/rose-dunes.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Mint smooth dunes",
+    "description": "Smooth dunes in mint tones, with open space for your objects and text.",
+    "sky": "#b7ded8",
+    "ground": "#eff7df",
+    "src": "/assets/simple-backgrounds/mint-dunes.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Blue smooth dunes",
+    "description": "Smooth dunes in blue tones, with open space for your objects and text.",
+    "sky": "#83add7",
+    "ground": "#d9e9f1",
+    "src": "/assets/simple-backgrounds/blue-dunes.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  },
+  {
+    "name": "Twilight smooth dunes",
+    "description": "Smooth dunes in twilight tones, with open space for your objects and text.",
+    "sky": "#25375e",
+    "ground": "#9b83a9",
+    "src": "/assets/simple-backgrounds/twilight-dunes.svg",
+    "kind": "landscape",
+    "category": "Open landscapes"
+  }
+]

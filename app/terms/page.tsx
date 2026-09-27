@@ -1,10 +1,11 @@
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import InformationPage from "@/components/InformationPage";
-export const metadata = {
-  title: "Terms | Freelement Images",
-  description:
-    "Rules for using the editor, submitting scenes, and managing public images.",
-};
+export const metadata = pageMetadata(
+  "Terms",
+  "Rules for using the editor, submitting scenes, and managing public images.",
+  "/terms",
+);
 export default function Terms() {
   return (
     <InformationPage title="Terms of use">

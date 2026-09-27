@@ -1,3 +1,4 @@
+import { imageCacheControl } from "@/lib/image-cache";
 import { publishedFile } from "@/lib/server/gallery";
 import { submissionFailure } from "@/lib/server/submissions";
 
@@ -71,7 +72,7 @@ export async function GET(
 
         "Content-Length": String(bytes.length),
 
-        "Cache-Control": "no-store",
+        "Cache-Control": imageCacheControl(variant),
 
         "X-Content-Type-Options": "nosniff",
 

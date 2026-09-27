@@ -2,6 +2,12 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile, access } from "node:fs/promises";
 import {
+  CANVAS_SIZES,
+  sceneDimensions,
+  photoCrop,
+  photoPlacement,
+  textAsset,
+  photoBackground,
   initialState,
   backgroundKey,
   sceneReducer,
@@ -277,4 +283,108 @@ test("crafted backgrounds have unique identities and render as full-size SVGs", 
     assert.equal(metadata.height, 800);
     await sharp(svg).resize(120, 80).png().toBuffer();
   }
+});
+
+test("custom text round-trips, escapes markup, and rejects invalid styling", () => {
+  const custom = textAsset({
+    content: "<script>& hello",
+    color: "#123456",
+    bold: true,
+  });
+  const saved = { baseBg, items: [{ ...item, asset: custom }] };
+  assert.deepEqual(
+    restoreScene(serializeScene(saved), [asset], [baseBg]),
+    saved,
+  );
+  assert.ok(decodeURIComponent(custom.src).includes("&lt;script&gt;&amp;"));
+  assert.throws(() =>
+    textAsset({
+      content: "hello",
+      color: "url(https://example.com)",
+      bold: true,
+    }),
+  );
+});
+test("photo saves restore only bounded JPEG data URLs", () => {
+  const photo = photoBackground("data:image/jpeg;base64,YWJj");
+  assert.deepEqual(
+    restoreScene(serializeScene({ baseBg: photo, items: [] }), [], []).baseBg,
+    photo,
+  );
+  for (const src of [
+    "https://example.com/a.jpg",
+    "data:image/svg+xml,<svg/>",
+    "data:image/jpeg;base64," + "A".repeat(2000000),
+  ])
+    assert.throws(() => photoBackground(src));
+});
+
+test("canvas sizes round-trip and arbitrary dimensions are rejected", () => {
+  for (const size of Object.keys(CANVAS_SIZES)) {
+    const saved = { ...scene, size };
+    assert.deepEqual(
+      restoreScene(serializeScene(saved), [asset], [baseBg]),
+      saved,
+    );
+    assert.deepEqual(sceneDimensions(saved), CANVAS_SIZES[size]);
+  }
+  assert.equal(sceneDimensions(scene).width, 1200);
+  for (const size of ["unknown", "__proto__", "constructor", 10, null])
+    assert.throws(() =>
+      restoreScene(JSON.stringify({ ...scene, size }), [asset], [baseBg]),
+    );
+});
+test("photo crop preserves a bounded, full-cover frame across canvas sizes", () => {
+  assert.deepEqual(photoCrop({ zoom: Infinity, x: -10, y: 120 }), {
+    zoom: 1,
+    x: 0,
+    y: 100,
+  });
+  for (const { width, height } of Object.values(CANVAS_SIZES)) {
+    for (const zoom of [1, 2, 3])
+      for (const x of [0, 50, 100])
+        for (const y of [0, 50, 100]) {
+          const frame = photoPlacement(1600, 900, width, height, {
+            zoom,
+            x,
+            y,
+          });
+          assert.ok(frame.x <= 0 && frame.y <= 0);
+          assert.ok(frame.x + frame.width >= width - 1e-6);
+          assert.ok(frame.y + frame.height >= height - 1e-6);
+        }
+  }
+  const photo = photoBackground("data:image/jpeg;base64,YWJj", {
+    zoom: 2,
+    x: 20,
+    y: 90,
+  });
+  assert.deepEqual(
+    restoreScene(
+      serializeScene({ baseBg: photo, items: [], size: "portrait" }),
+      [],
+      [],
+    ).baseBg,
+    photo,
+  );
+});
+test("resizing on a portrait canvas keeps the opposite corner fixed", () => {
+  const patch = resizeItem(item, "se", 160, 135, 1080, 1920);
+  assert.equal(patch.x, item.x);
+  assert.equal(patch.y, item.y);
+  const nw = resizeItem(item, "nw", -160, -135, 1080, 1920);
+  assert.ok(
+    Math.abs(
+      (nw.x / 100) * 1080 +
+        ITEM_WIDTH * nw.scale -
+        ((item.x / 100) * 1080 + ITEM_WIDTH),
+    ) < 1e-6,
+  );
+  assert.ok(
+    Math.abs(
+      (nw.y / 100) * 1920 +
+        ITEM_HEIGHT * nw.scale -
+        ((item.y / 100) * 1920 + ITEM_HEIGHT),
+    ) < 1e-6,
+  );
 });

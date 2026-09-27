@@ -1,3 +1,4 @@
+import { galleryMetadata } from "@/lib/seo";
 import {
   galleryFilters,
   galleryPageHref,
@@ -6,11 +7,19 @@ import {
 import Link from "next/link";
 import { listPublished } from "@/lib/server/gallery";
 export const dynamic = "force-dynamic";
-export const metadata = {
-  title: "Community image gallery | Freelement Images",
-  description:
-    "Browse scenes shared by the Freelement community and download your favorites.",
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string; q?: string; category?: string }>;
+}) {
+  const params = await searchParams;
+  const { q, category } = galleryFilters(params.q, params.category);
+  const page = Math.max(
+    1,
+    Math.min(10000, Math.floor(Number(params.page) || 1)),
+  );
+  return galleryMetadata(page, q, category);
+}
 export default async function GalleryPage({
   searchParams,
 }: {
@@ -86,6 +95,10 @@ export default async function GalleryPage({
                   : "Images appear here after owner review."}
               </p>
               <Link href="/create">Create a scene →</Link>
+              <p>
+                Looking for inspiration?{" "}
+                <Link href="/scenes">Explore the starter landscapes.</Link>
+              </p>
             </section>
           )}
           <div className="publicGrid">

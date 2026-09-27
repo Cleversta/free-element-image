@@ -14,11 +14,10 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
 
       disallow: [
-        "/admin",
-        "/manage",
         "/api/admin/",
         "/api/submissions/",
         "/api/publish",
+        "/api/reports",
       ],
     },
 

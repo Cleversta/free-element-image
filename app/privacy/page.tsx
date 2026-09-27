@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import InformationPage from "@/components/InformationPage";
-export const metadata = {
-  title: "Privacy | Freelement Images",
-  description:
-    "How Freelement Images handles local saves, optional submissions, reports, and service data.",
-};
+export const metadata = pageMetadata(
+  "Privacy",
+  "How Freelement Images handles local saves, optional submissions, reports, and service data.",
+  "/privacy",
+);
 export default function Privacy() {
   return (
     <InformationPage title="Privacy notice">
-      <p>Last updated: September 22, 2026.</p>
+      <p>Last updated: September 27, 2026.</p>
       <p>
         This notice describes the current Freelement Images service. For
         questions or requests, contact{" "}
@@ -74,9 +75,14 @@ export default function Privacy() {
       <p>
         The owner login uses an essential session cookie lasting up to eight
         hours. Visitors do not need this cookie to edit or download. The current
-        website does not include advertising or analytics tracking scripts. We
-        will update this notice and the relevant privacy controls before adding
-        those features.
+        website uses Umami Cloud for basic audience measurement, such as page
+        views, referrers, browser and device types, and approximate location. We
+        do not configure custom user identifiers or send scene contents to
+        Umami. Page views for private management and owner pages are not sent by
+        this integration. See the{" "}
+        <a href="https://umami.is/privacy">Umami privacy policy</a> for provider
+        information. Advertising is not currently enabled. We will update this
+        notice and the relevant privacy controls before enabling ads.
       </p>
       <h2>Retention and removal</h2>
       <p>
@@ -91,7 +97,9 @@ export default function Privacy() {
         Rate-limit records older than two days are cleaned up when relevant
         later requests run. Provider logs and backups may follow separate
         retention schedules. Removing an image from this site cannot remove
-        copies already downloaded or cached elsewhere.
+        copies already downloaded or cached elsewhere. Gallery thumbnails may
+        remain in a visitor’s browser cache for up to one minute after removal;
+        original image requests recheck publication status.
       </p>
       <h2>Your choices</h2>
       <p>

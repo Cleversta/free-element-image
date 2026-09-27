@@ -97,7 +97,7 @@ test("submission uploads normalized private images, hashes tokens, retries once 
   assert.ok(!JSON.stringify(f.row()).includes(token));
   assert.equal(f.row().license_code, undefined);
   assert.deepEqual(await submit(request(), f.deps), result);
-  assert.equal(f.reserved(), 0);
+  assert.equal(f.reserved(), 1);
   const status = await manage(
     request({ managementToken: token, action: "status" }),
     f.deps,
@@ -354,11 +354,9 @@ test("persistent submission limits enforce both quotas and deny browser access",
   }
 });
 
-test("submissions ignore quotas and automatic publication and always wait for review", async () => {
+test("submissions reserve quota and always wait for manual review", async () => {
   const f = fixture({
-    reserve: async () => {
-      throw new Error("Quota must not be called");
-    },
+
     autoPublish: async () => {
       throw new Error("Automatic publication must not be called");
     },
@@ -393,4 +391,19 @@ test("Netlify Functions are recognized without the build-only NETLIFY flag", () 
     invalid.headers.set("x-nf-client-connection-ip", value);
     assert.throws(() => actorHash(invalid, f.deps), (error) => error.status === 503);
   }
+});
+
+
+test("quota rejects before rendering or writing files", async () => {
+  const f = fixture({ reserve: async () => false, render: async () => { throw new Error("must not render"); } });
+  await assert.rejects(submit(request(), f.deps), error => error.status === 429);
+  assert.equal(f.row(), null);
+  assert.equal(f.objects.size, 0);
+});
+
+test("submission records the dimensions returned by the renderer", async () => {
+  const f = fixture({render: async () => ({png: Buffer.from(png, 'base64'), thumbnail: Buffer.from('test'), verified: false, width: 1080, height: 1920})});
+  await submit(request(), f.deps);
+  assert.equal(f.row().image_width, 1080);
+  assert.equal(f.row().image_height, 1920);
 });

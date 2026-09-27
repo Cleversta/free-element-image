@@ -7137,7 +7137,7 @@
     "transparent": true
   },
   {
-    "id": "freeimage-monarch",
+    "id": "freeimage-monarch-effect",
     "type": "effect",
     "variant": "monarch",
     "style": "freeimage",
@@ -7156,7 +7156,7 @@
     "transparent": true
   },
   {
-    "id": "freeimage-ryanlerch-frigate-bird",
+    "id": "freeimage-ryanlerch-frigate-bird-effect",
     "type": "effect",
     "variant": "ryanlerch-frigate-bird",
     "style": "freeimage",
@@ -7175,7 +7175,7 @@
     "transparent": true
   },
   {
-    "id": "freeimage-100710-red-maple-leaf",
+    "id": "freeimage-100710-red-maple-leaf-flower",
     "type": "flower",
     "variant": "100710-red-maple-leaf",
     "style": "freeimage",
@@ -7308,7 +7308,7 @@
     "transparent": true
   },
   {
-    "id": "freeimage-butterfly-xviii-1783226787",
+    "id": "freeimage-butterfly-xviii-1783226787-plant",
     "type": "plant",
     "variant": "butterfly-xVIII-1783226787",
     "style": "freeimage",

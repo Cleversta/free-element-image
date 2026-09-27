@@ -58,6 +58,8 @@ export type SubmissionDependencies = {
     thumbnail: Buffer;
     verified: boolean;
     editableScene?: string;
+    width?: number;
+    height?: number;
   }>;
 
   autoPublish: (
@@ -78,6 +80,7 @@ export type SubmissionDependencies = {
 
   reserve: (
     actor: string,
+    token: string,
   ) => Promise<boolean>;
 
   insert: (
@@ -413,7 +416,7 @@ export async function submit(
     deps.siteUrl,
   );
 
-  actorHash(request, deps);
+  const actor = actorHash(request, deps);
 
   const body = await readBody(
     request,
@@ -510,6 +513,13 @@ export async function submit(
     );
   }
 
+  if (!(await deps.reserve(actor, hash))) {
+    throw new SubmissionError(
+      429,
+      "The submission limit has been reached. Check your private link before trying again later. You can still save and download your scene.",
+    );
+  }
+
   // ==========================================================
   // RENDER SCENE
   // ==========================================================
@@ -518,6 +528,8 @@ export async function submit(
     png,
     thumbnail,
     editableScene,
+    width = 1200,
+    height = 800,
   } = await deps.render(body.scene);
 
   // ==========================================================
@@ -582,9 +594,9 @@ export async function submit(
 
         image_bytes: png.length,
 
-        image_width: 1200,
+        image_width: width,
 
-        image_height: 800,
+        image_height: height,
 
         expires_at: null,
       },

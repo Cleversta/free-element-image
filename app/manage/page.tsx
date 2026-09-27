@@ -1,6 +1,6 @@
 import ManageSubmission from "@/components/ManageSubmission";
 export const metadata = {
-  title: "Manage your submission | Freelement Images",
+  title: "Manage your submission",
   robots: { index: false, follow: false },
   referrer: "no-referrer",
 };

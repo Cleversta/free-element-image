@@ -1,3 +1,4 @@
+import { reserveOwnerLogin } from "@/lib/server/login-limit";
 import {
   requireOwner,
   ownerOrigin,
@@ -23,6 +24,7 @@ export async function POST(request: Request) {
   try {
     ownerOrigin(request);
     const body = await readBody(request, 1024);
+    await reserveOwnerLogin(request);
     const response = submissionResponse({ signedIn: true });
     response.headers.set("Set-Cookie", loginCookie(body.key));
     return response;

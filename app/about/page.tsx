@@ -1,10 +1,11 @@
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import InformationPage from "@/components/InformationPage";
-export const metadata = {
-  title: "About | Freelement Images",
-  description:
-    "Create scenes with visual elements, download them for free, and optionally share them with the community.",
-};
+export const metadata = pageMetadata(
+  "About",
+  "Create scenes with visual elements, download them for free, and optionally share them with the community.",
+  "/about",
+);
 export default function About() {
   return (
     <InformationPage title="About Freelement Images">
@@ -20,8 +21,8 @@ export default function About() {
       </p>
       <h2>Share when you choose</h2>
       <p>
-        Publishing is optional. Eligible scenes can appear automatically; other
-        submissions wait for owner review. Your private management link lets you
+        Publishing is optional. Every submission waits for owner review before
+        it appears in the public gallery. Your private management link lets you
         check or remove your submission without an account.
       </p>
       <h2>A growing community gallery</h2>

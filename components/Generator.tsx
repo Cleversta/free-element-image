@@ -2,12 +2,16 @@
 
 import Link from "next/link";
 import PublishDialog from "./PublishDialog";
+import CanvasViewport from "./CanvasViewport";
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import assets from "@/data/assets.json";
 import { backgrounds, savedBackgrounds } from "@/lib/backgrounds";
 import {
-  WIDTH,
-  HEIGHT,
+  textAsset,
+  photoBackground,
+  CANVAS_SIZES,
+  sceneDimensions,
+  photoCrop,
   ITEM_WIDTH,
   ITEM_HEIGHT,
   clamp,
@@ -22,7 +26,7 @@ import {
   serializeScene,
   updateItem,
 } from "@/lib/scene";
-import type { Asset, Background, Item, Scene } from "@/lib/scene";
+import type { Asset, Background, Item, Scene, CanvasSize } from "@/lib/scene";
 import { renderScene } from "@/lib/export";
 
 const aliases: Record<string, string> = {
@@ -101,7 +105,12 @@ const icon = (category: string) =>
 const pick = <T,>(values: T[]) =>
   values[Math.floor(Math.random() * values.length)];
 const STORAGE_KEY = "freelement-scene";
-const defaultScene: Scene = { baseBg: backgrounds[0], items: [] };
+const defaultScene: Scene = {
+  baseBg:
+    backgrounds.find((bg) => bg.name === "Alpine Mirror Lake") ||
+    backgrounds[0],
+  items: [],
+};
 type Section = "backgrounds" | "elements" | "decorations" | "others";
 
 export default function Generator({ sharedScene }: { sharedScene?: string }) {
@@ -110,15 +119,33 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     defaultScene,
     initialState,
   );
+  const storageKey = sharedScene
+    ? `${STORAGE_KEY}-copy-${Array.from(sharedScene).reduce((hash, char) => (Math.imul(hash, 31) + char.charCodeAt(0)) | 0, 0) >>> 0}`
+    : STORAGE_KEY;
+  const [uploading, setUploading] = useState(false);
+  const photoInput = useRef<HTMLInputElement>(null);
   const { baseBg, items } = state.present;
+  const { width: WIDTH, height: HEIGHT } = sceneDimensions(state.present);
+  const crop = photoCrop(baseBg.crop);
   const [active, setActive] = useState<string | null>(null);
   const [section, setSection] = useState<Section>("backgrounds");
+  const [backgroundCategory, setBackgroundCategory] = useState("All");
+  const [backgroundSearch, setBackgroundSearch] = useState("");
+  const filteredBackgrounds = backgrounds.filter(
+    (bg) =>
+      (backgroundCategory === "All" || bg.category === backgroundCategory) &&
+      `${bg.name} ${bg.description ?? ""}`
+        .toLowerCase()
+        .includes(backgroundSearch.trim().toLowerCase()),
+  );
   const [pickerCat, setPickerCat] = useState(cats[0]);
   const [search, setSearch] = useState("");
   const [collection, setCollection] = useState<
     "all" | "freeimage" | "original"
   >("all");
-  const [downloadFormat, setDownloadFormat] = useState<"png" | "jpeg" | "webp">("png");
+  const [downloadFormat, setDownloadFormat] = useState<"png" | "jpeg" | "webp">(
+    "png",
+  );
   const [downloadQuality, setDownloadQuality] = useState<number>(0.92);
   const [downloadDialogOpen, setDownloadDialogOpen] = useState<boolean>(false);
   const downloadRef = useRef<HTMLDivElement | null>(null);
@@ -337,9 +364,12 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     const clamped = clamp(nextValue, min, max);
     update(uid, { [key]: clamped } as Partial<Item>);
     // keep local inputs in sync after committing
-    if (key === "scale") setSizeInput(String(Math.round((clamped as number) * 100)));
-    if (key === "rotation") setRotationInput(String(Math.round(clamped as number)));
-    if (key === "opacity") setOpacityInput(String(Math.round((clamped as number) * 100)));
+    if (key === "scale")
+      setSizeInput(String(Math.round((clamped as number) * 100)));
+    if (key === "rotation")
+      setRotationInput(String(Math.round(clamped as number)));
+    if (key === "opacity")
+      setOpacityInput(String(Math.round((clamped as number) * 100)));
   };
 
   const beginPointer = (
@@ -422,6 +452,8 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           corner,
           ((next.clientX - startX) / rect.width) * WIDTH,
           ((next.clientY - startY) / rect.height) * HEIGHT,
+          WIDTH,
+          HEIGHT,
         ),
       ),
     );
@@ -472,7 +504,8 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     addFrom("garden-equipment", [61]);
     addFrom("grass", [9, 42, 78]);
     addFrom("flowers", [19, 39, 84]);
-    change(() => ({
+    change((scene) => ({
+      ...scene,
       baseBg: pick(backgrounds.filter((bg) => bg.kind === "full")),
       items: out,
     }));
@@ -481,7 +514,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const save = () => {
     try {
       const value = serializeScene(state.present);
-      localStorage.setItem(STORAGE_KEY, value);
+      localStorage.setItem(storageKey, value);
       setSaved(value);
       setNotice("Saved in this browser.");
     } catch {
@@ -492,14 +525,14 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   };
   useEffect(() => {
     try {
-      const raw = sharedScene || localStorage.getItem(STORAGE_KEY);
+      const raw = localStorage.getItem(storageKey) || sharedScene;
       if (raw) {
         const scene = restoreScene(raw, assets, savedBackgrounds);
         dispatch({ type: "load", scene });
         setSaved(serializeScene(scene));
         setNotice(
           sharedScene
-            ? "Editing a copy. Your saved scene stays unchanged until you save."
+            ? "Editing a copy. Your saved scene stays unchanged while this copy autosaves separately."
             : "Your saved scene is ready.",
         );
       }
@@ -509,20 +542,81 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       );
     }
     setReady(true);
-  }, [sharedScene]);
+  }, [sharedScene, storageKey]);
+  useEffect(() => {
+    if (!ready || !dirty || state.gesture) return;
+    const persist = () => {
+      try {
+        const value = serializeScene(state.present);
+        localStorage.setItem(storageKey, value);
+        setSaved(value);
+      } catch {
+        setNotice(
+          "Autosave failed: browser storage is full or unavailable. Download your scene to keep a copy.",
+        );
+      }
+    };
+    const timer = window.setTimeout(persist, 700);
+    window.addEventListener("pagehide", persist);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("pagehide", persist);
+    };
+  }, [ready, dirty, state.present, state.gesture, storageKey]);
+
+  const uploadPhoto = async (file?: File) => {
+    if (!file) return;
+    setUploading(true);
+    let url = "";
+    try {
+      if (
+        !["image/jpeg", "image/png", "image/webp"].includes(file.type) ||
+        file.size > 15 * 1024 * 1024
+      )
+        throw new Error("Choose a JPG, PNG, or WebP photo smaller than 15 MB.");
+      url = URL.createObjectURL(file);
+      const image = new Image();
+      image.src = url;
+      await image.decode();
+      const canvas = document.createElement("canvas");
+      // Keep the whole photo so later crops and aspect changes are reversible.
+      const scale = Math.min(
+        1,
+        1920 / Math.max(image.naturalWidth, image.naturalHeight),
+      );
+      canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+      canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+      const ctx = canvas.getContext("2d");
+      if (!ctx) throw new Error("Photo upload is unavailable in this browser.");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      chooseBackground(photoBackground(canvas.toDataURL("image/jpeg", 0.8)));
+      setNotice(
+        "Photo added. It stays in this browser and can be downloaded with your scene. Choose another scene to replace it.",
+      );
+    } catch (error) {
+      setNotice(
+        error instanceof Error ? error.message : "Could not open this photo.",
+      );
+    } finally {
+      if (url) URL.revokeObjectURL(url);
+      setUploading(false);
+    }
+  };
   const download = async () => {
     if (exportingRef.current) return;
     exportingRef.current = true;
     setExporting(true);
-    setNotice("Preparing your PNG…");
+    setNotice(`Preparing your ${downloadFormat.toUpperCase()}…`);
     try {
       const blob = await renderScene(
         state.present,
         downloadFormat === "png"
           ? "image/png"
           : downloadFormat === "jpeg"
-          ? "image/jpeg"
-          : "image/webp",
+            ? "image/jpeg"
+            : "image/webp",
         downloadQuality,
       );
       const url = URL.createObjectURL(blob);
@@ -533,12 +627,14 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       link.click();
       link.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-      setNotice("PNG downloaded (1200 × 800).");
+      setNotice(
+        `${downloadFormat.toUpperCase()} downloaded (${WIDTH} × ${HEIGHT}).`,
+      );
     } catch (error) {
       setNotice(
         error instanceof Error
           ? error.message
-          : "PNG export failed. Please try again.",
+          : "Image export failed. Please try again.",
       );
     } finally {
       exportingRef.current = false;
@@ -671,11 +767,48 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           >
             ↷
           </button>
+          <button
+            disabled={!ready}
+            onClick={() =>
+              addAsset(
+                textAsset({
+                  content: "Your text",
+                  color: "#183c2c",
+                  bold: true,
+                }),
+              )
+            }
+          >
+            Add text
+          </button>
+          <button
+            disabled={!ready || uploading}
+            onClick={() => photoInput.current?.click()}
+          >
+            {uploading ? "Opening photo…" : "Upload photo"}
+          </button>
+          <input
+            ref={photoInput}
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            aria-label="Upload photo background"
+            hidden
+            onChange={(e) => {
+              void uploadPhoto(e.target.files?.[0]);
+              e.target.value = "";
+            }}
+          />
           <button onClick={newScene}>⊕ New</button>
           <button onClick={randomScene}>⟳ Random</button>
           <button
             disabled={!ready}
-            onClick={() => setPublishScene(state.present)}
+            onClick={() =>
+              baseBg.photo
+                ? setNotice(
+                    "Photo backgrounds are available for local saving and downloading. Choose a catalog background to publish.",
+                  )
+                : setPublishScene(state.present)
+            }
           >
             Publish
           </button>
@@ -701,7 +834,11 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                   <label>Format</label>
                   <select
                     value={downloadFormat}
-                    onChange={(e) => setDownloadFormat(e.target.value as "png" | "jpeg" | "webp")}
+                    onChange={(e) =>
+                      setDownloadFormat(
+                        e.target.value as "png" | "jpeg" | "webp",
+                      )
+                    }
                   >
                     <option value="png">PNG</option>
                     <option value="jpeg">JPEG</option>
@@ -717,13 +854,22 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                       max={1}
                       step={0.01}
                       value={downloadQuality}
-                      onChange={(e) => setDownloadQuality(Number(e.target.value))}
+                      onChange={(e) =>
+                        setDownloadQuality(Number(e.target.value))
+                      }
                     />
                   </div>
                 )}
                 <div className="popupActions">
-                  <button className="btnAlt" onClick={() => setDownloadDialogOpen(false)}>Cancel</button>
-                  <button className="btnPrimary" onClick={confirmDownload}>Download</button>
+                  <button
+                    className="btnAlt"
+                    onClick={() => setDownloadDialogOpen(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button className="btnPrimary" onClick={confirmDownload}>
+                    Download
+                  </button>
                 </div>
               </div>
             )}
@@ -772,10 +918,14 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
             <>
               <div className="panelTitle">
                 <b>Scene background</b>
-                <small>{backgrounds.length} scenes</small>
+                <small>
+                  {filteredBackgrounds.length} / {backgrounds.length}{" "}
+                  backgrounds
+                </small>
               </div>
               <p className="backgroundIntro">
-                Distinct landscapes, ready to make your own.
+                Start simple with a sky, gradient, or open landscape. Add your
+                own objects to build the image.
               </p>
               {!backgrounds.some(
                 (bg) => backgroundKey(bg) === backgroundKey(baseBg),
@@ -785,8 +935,44 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                   it.
                 </p>
               )}
+              <div className="backgroundFilters">
+                <label className="srOnly" htmlFor="background-search">
+                  Search backgrounds
+                </label>
+                <input
+                  id="background-search"
+                  type="search"
+                  placeholder="Search backgrounds…"
+                  value={backgroundSearch}
+                  onChange={(e) => setBackgroundSearch(e.target.value)}
+                />
+                <label className="srOnly" htmlFor="background-category">
+                  Background category
+                </label>
+                <select
+                  id="background-category"
+                  value={backgroundCategory}
+                  onChange={(e) => setBackgroundCategory(e.target.value)}
+                >
+                  {[
+                    "All",
+                    "Skies",
+                    "Gradients",
+                    "Open landscapes",
+                    "Colors",
+                    "Full scenes",
+                  ].map((category) => (
+                    <option key={category}>{category}</option>
+                  ))}
+                </select>
+              </div>
+              {!filteredBackgrounds.length && (
+                <p className="backgroundIntro">
+                  No backgrounds match. Try another search or category.
+                </p>
+              )}
               <div className="visualBgGrid">
-                {backgrounds.map((bg) => (
+                {filteredBackgrounds.map((bg) => (
                   <button
                     key={backgroundKey(bg)}
                     title={bg.description || bg.name}
@@ -800,6 +986,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                   >
                     <span
                       style={{
+                        aspectRatio: "3 / 2",
                         background: `linear-gradient(${bg.sky} 0 58%,${bg.ground} 58%)`,
                       }}
                     >
@@ -886,165 +1073,276 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               <button onClick={clear}>♙ Clear All</button>
             </span>
           </div>
-          <div
-            ref={board}
-            aria-label="Scene canvas"
-            className="vBoard"
-            onPointerDown={() => setActive(null)}
-            style={{
-              background: `linear-gradient(${baseBg.sky} 0 45%,${baseBg.ground} 45%)`,
-            }}
-          >
-            {baseBg.src && (
-              <img
-                className="sceneBackground"
-                src={baseBg.src}
-                alt=""
-                draggable={false}
-              />
-            )}
-            {!items.length && (
-              <div className="emptyScene">
-                <b>Start your village</b>
-                <span>
-                  Choose a scene, then add trees, flowers, buildings and
-                  details.
-                </span>
-                <button onClick={() => selectSection("elements")}>
-                  Browse objects
-                </button>
-              </div>
-            )}
-
-            {[...items]
-              .sort((a, b) => a.z - b.z)
-              .map((it) => {
-                const selected = active === it.uid;
-                return (
-                  <div
-                    key={it.uid}
-                    className={
-                      "assetBox " +
-                      (selected ? "selected " : "") +
-                      (it.locked ? "locked" : "")
-                    }
-                    tabIndex={0}
-                    aria-label={
-                      pretty(it.asset.variant) + (it.locked ? ", locked" : "")
-                    }
-                    onFocus={() => setActive(it.uid)}
-                    style={{
-                      left: `${it.x}%`,
-                      top: `${it.y}%`,
-                      width: `${((ITEM_WIDTH * it.scale) / WIDTH) * 100}%`,
-                      height: `${((ITEM_HEIGHT * it.scale) / HEIGHT) * 100}%`,
-                      zIndex: it.z,
-                      transform: `rotate(${it.rotation}deg) scale(${it.flipX ? -1 : 1},${it.flipY ? -1 : 1})`,
-                    }}
-                    onPointerDown={(e) => down(e, it)}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setActive(it.uid);
-                    }}
-                  >
-                    <img
-                      src={it.asset.src}
-                      alt={it.asset.variant || it.asset.id}
-                      draggable={false}
-                      style={{
-                        opacity: it.opacity,
-                        filter: `hue-rotate(${it.hue || 0}deg)`,
-                      }}
-                    />
-                    {selected && !it.locked && (
-                      <>
-                        <button
-                          className="directDelete"
-                          title="Delete"
-                          onPointerDown={(e) => e.stopPropagation()}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            remove(it.uid);
-                          }}
-                        >
-                          ×
-                        </button>
-                        <span
-                          className="resizeHandle nw"
-                          onPointerDown={(e) => resizeDown(e, it, "nw")}
-                        />
-                        <span
-                          className="resizeHandle ne"
-                          onPointerDown={(e) => resizeDown(e, it, "ne")}
-                        />
-                        <span
-                          className="resizeHandle sw"
-                          onPointerDown={(e) => resizeDown(e, it, "sw")}
-                        />
-                        <span
-                          className="resizeHandle se"
-                          onPointerDown={(e) => resizeDown(e, it, "se")}
-                        />
-                      </>
-                    )}
-                  </div>
-                );
-              })}
-            {current && (
-              <div
-                className="floatingTools"
-                onPointerDown={(e) => e.stopPropagation()}
-                onClick={(e) => e.stopPropagation()}
+          <div className="sceneTools">
+            <label>
+              Canvas size
+              <select
+                aria-label="Canvas size"
+                value={state.present.size ?? "landscape"}
+                disabled={!ready}
+                onChange={(e) => {
+                  const size = e.target.value as CanvasSize;
+                  change((scene) => ({ ...scene, size }));
+                }}
               >
+                {Object.entries(CANVAS_SIZES).map(([key, size]) => (
+                  <option key={key} value={key}>
+                    {size.label} · {size.width} × {size.height}
+                  </option>
+                ))}
+              </select>
+            </label>
+            {baseBg.photo && (
+              <fieldset className="photoCropControls">
+                <legend>Photo crop</legend>
+                <p>
+                  Zoom and move the photo inside the canvas. Your original
+                  framing stays available.
+                </p>
+                {(["zoom", "x", "y"] as const).map((key) => (
+                  <label key={key}>
+                    {key === "zoom"
+                      ? "Photo zoom"
+                      : key === "x"
+                        ? "Horizontal position"
+                        : "Vertical position"}
+                    <input
+                      aria-label={
+                        key === "zoom"
+                          ? "Photo zoom"
+                          : key === "x"
+                            ? "Horizontal position"
+                            : "Vertical position"
+                      }
+                      type="range"
+                      min={key === "zoom" ? 1 : 0}
+                      max={key === "zoom" ? 3 : 100}
+                      step={key === "zoom" ? 0.01 : 1}
+                      value={crop[key]}
+                      onPointerDown={beginRange}
+                      onChange={(e) =>
+                        change((scene) => ({
+                          ...scene,
+                          baseBg: {
+                            ...scene.baseBg,
+                            crop: {
+                              ...photoCrop(scene.baseBg.crop),
+                              [key]: Number(e.target.value),
+                            },
+                          },
+                        }))
+                      }
+                    />
+                    <output>
+                      {Math.round(key === "zoom" ? crop[key] * 100 : crop[key])}
+                      %
+                    </output>
+                  </label>
+                ))}
                 <button
-                  disabled={current.locked}
-                  title="Delete"
-                  onClick={() => remove(current.uid)}
-                >
-                  🗑
-                </button>
-                <button title="Duplicate" onClick={() => duplicate(current)}>
-                  ▣
-                </button>
-                <button
-                  disabled={current.locked}
-                  title="Rotate left"
-                  onClick={() => rotateDirect(current.uid, -15)}
-                >
-                  ↶
-                </button>
-                <button
-                  disabled={current.locked}
-                  title="Rotate right"
-                  onClick={() => rotateDirect(current.uid, 15)}
-                >
-                  ↻
-                </button>
-                <button
-                  disabled={current.locked}
-                  title="Flip horizontal"
-                  onClick={() => update(current.uid, { flipX: !current.flipX })}
-                >
-                  ↔
-                </button>
-                <button
-                  disabled={current.locked}
-                  title="Bring forward"
-                  onClick={() => layer(current, "up")}
-                >
-                  ↑
-                </button>
-                <button
-                  title={current.locked ? "Unlock" : "Lock"}
                   onClick={() =>
-                    update(current.uid, { locked: !current.locked })
+                    change((scene) => ({
+                      ...scene,
+                      baseBg: { ...scene.baseBg, crop: photoCrop() },
+                    }))
                   }
                 >
-                  {current.locked ? "🔓" : "🔒"}
+                  Reset photo crop
                 </button>
-              </div>
+              </fieldset>
             )}
           </div>
+          <CanvasViewport
+            aspectRatio={WIDTH / HEIGHT}
+            onNavigate={() => {
+              pointerCleanup.current?.();
+              dispatch({ type: "cancel" });
+              setActive(null);
+            }}
+          >
+            <div
+              ref={board}
+              aria-label="Scene canvas"
+              className="vBoard"
+              onPointerDown={() => setActive(null)}
+              style={{
+                aspectRatio: `${WIDTH} / ${HEIGHT}`,
+                background: `linear-gradient(${baseBg.sky} 0 45%,${baseBg.ground} 45%)`,
+              }}
+            >
+              {baseBg.src && (
+                <img
+                  className="sceneBackground"
+                  src={baseBg.src}
+                  style={
+                    baseBg.photo
+                      ? {
+                          objectFit: "cover",
+                          width: `${crop.zoom * 100}%`,
+                          height: `${crop.zoom * 100}%`,
+                          left: `${(1 - crop.zoom) * crop.x}%`,
+                          top: `${(1 - crop.zoom) * crop.y}%`,
+                          right: "auto",
+                          bottom: "auto",
+                          objectPosition: `${crop.x}% ${crop.y}%`,
+                        }
+                      : {
+                          objectFit:
+                            state.present.size &&
+                            state.present.size !== "landscape"
+                              ? "cover"
+                              : "fill",
+                        }
+                  }
+                  alt=""
+                  draggable={false}
+                />
+              )}
+              {!items.length && !baseBg.photo && (
+                <div className="emptyScene">
+                  <b>Start your village</b>
+                  <span>
+                    Choose a scene, then add trees, flowers, buildings and
+                    details.
+                  </span>
+                  <button onClick={() => selectSection("elements")}>
+                    Browse objects
+                  </button>
+                </div>
+              )}
+
+              {[...items]
+                .sort((a, b) => a.z - b.z)
+                .map((it) => {
+                  const selected = active === it.uid;
+                  return (
+                    <div
+                      key={it.uid}
+                      className={
+                        "assetBox " +
+                        (selected ? "selected " : "") +
+                        (it.locked ? "locked" : "")
+                      }
+                      tabIndex={0}
+                      aria-label={
+                        pretty(it.asset.variant) + (it.locked ? ", locked" : "")
+                      }
+                      onFocus={() => setActive(it.uid)}
+                      style={{
+                        left: `${it.x}%`,
+                        top: `${it.y}%`,
+                        width: `${((ITEM_WIDTH * it.scale) / WIDTH) * 100}%`,
+                        height: `${((ITEM_HEIGHT * it.scale) / HEIGHT) * 100}%`,
+                        zIndex: it.z,
+                        transform: `rotate(${it.rotation}deg) scale(${it.flipX ? -1 : 1},${it.flipY ? -1 : 1})`,
+                      }}
+                      onPointerDown={(e) => down(e, it)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActive(it.uid);
+                      }}
+                    >
+                      <img
+                        src={it.asset.src}
+                        alt={it.asset.variant || it.asset.id}
+                        draggable={false}
+                        style={{
+                          opacity: it.opacity,
+                          filter: `hue-rotate(${it.hue || 0}deg)`,
+                        }}
+                      />
+                      {selected && !it.locked && (
+                        <>
+                          <button
+                            className="directDelete"
+                            title="Delete"
+                            onPointerDown={(e) => e.stopPropagation()}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              remove(it.uid);
+                            }}
+                          >
+                            ×
+                          </button>
+                          <span
+                            className="resizeHandle nw"
+                            onPointerDown={(e) => resizeDown(e, it, "nw")}
+                          />
+                          <span
+                            className="resizeHandle ne"
+                            onPointerDown={(e) => resizeDown(e, it, "ne")}
+                          />
+                          <span
+                            className="resizeHandle sw"
+                            onPointerDown={(e) => resizeDown(e, it, "sw")}
+                          />
+                          <span
+                            className="resizeHandle se"
+                            onPointerDown={(e) => resizeDown(e, it, "se")}
+                          />
+                        </>
+                      )}
+                    </div>
+                  );
+                })}
+              {current && (
+                <div
+                  className="floatingTools"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    disabled={current.locked}
+                    title="Delete"
+                    onClick={() => remove(current.uid)}
+                  >
+                    🗑
+                  </button>
+                  <button title="Duplicate" onClick={() => duplicate(current)}>
+                    ▣
+                  </button>
+                  <button
+                    disabled={current.locked}
+                    title="Rotate left"
+                    onClick={() => rotateDirect(current.uid, -15)}
+                  >
+                    ↶
+                  </button>
+                  <button
+                    disabled={current.locked}
+                    title="Rotate right"
+                    onClick={() => rotateDirect(current.uid, 15)}
+                  >
+                    ↻
+                  </button>
+                  <button
+                    disabled={current.locked}
+                    title="Flip horizontal"
+                    onClick={() =>
+                      update(current.uid, { flipX: !current.flipX })
+                    }
+                  >
+                    ↔
+                  </button>
+                  <button
+                    disabled={current.locked}
+                    title="Bring forward"
+                    onClick={() => layer(current, "up")}
+                  >
+                    ↑
+                  </button>
+                  <button
+                    title={current.locked ? "Unlock" : "Lock"}
+                    onClick={() =>
+                      update(current.uid, { locked: !current.locked })
+                    }
+                  >
+                    {current.locked ? "🔓" : "🔒"}
+                  </button>
+                </div>
+              )}
+            </div>
+          </CanvasViewport>
           <div className="addedStrip">
             <div className="stripTitle">
               <b>Added Elements ({items.length})</b>
@@ -1118,6 +1416,61 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               )}
               <fieldset className="propertyFields" disabled={current.locked}>
                 <legend className="srOnly">Element adjustments</legend>
+                {current.asset.text && (
+                  <div className="textControls">
+                    <label>
+                      Text
+                      <textarea
+                        aria-label="Text content"
+                        maxLength={240}
+                        rows={4}
+                        value={current.asset.text.content}
+                        onChange={(e) =>
+                          update(current.uid, {
+                            asset: textAsset({
+                              ...current.asset.text!,
+                              content: e.target.value,
+                            }),
+                          })
+                        }
+                      />
+                    </label>
+                    <small>
+                      Up to 8 lines; long lines wrap at 20 characters.
+                    </small>
+                    <label>
+                      Text color
+                      <input
+                        aria-label="Text color"
+                        type="color"
+                        value={current.asset.text.color}
+                        onChange={(e) =>
+                          update(current.uid, {
+                            asset: textAsset({
+                              ...current.asset.text!,
+                              color: e.target.value,
+                            }),
+                          })
+                        }
+                      />
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={current.asset.text.bold}
+                        onChange={(e) =>
+                          update(current.uid, {
+                            asset: textAsset({
+                              ...current.asset.text!,
+                              bold: e.target.checked,
+                            }),
+                          })
+                        }
+                      />{" "}
+                      Bold text
+                    </label>
+                  </div>
+                )}
                 <Prop
                   label="Size"
                   value={`${Math.round(current.scale * 100)}%`}
@@ -1142,34 +1495,36 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                         min="15"
                         max="400"
                         step="1"
-                          value={sizeInput}
-                          onChange={(e) => setSizeInput(e.target.value)}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter") {
-                              setNumericValue(
-                                current.uid,
-                                "scale",
-                                Number(e.currentTarget.value) / 100,
-                                0.15,
-                                4,
-                              );
-                            }
-                          }}
-                          onBlur={(e) => {
-                            const v = e.currentTarget.value.trim();
-                            if (v === "") {
-                              // restore previous value
-                              setSizeInput(String(Math.round(current.scale * 100)));
-                              return;
-                            }
+                        value={sizeInput}
+                        onChange={(e) => setSizeInput(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
                             setNumericValue(
                               current.uid,
                               "scale",
-                              Number(v) / 100,
+                              Number(e.currentTarget.value) / 100,
                               0.15,
                               4,
                             );
-                          }}
+                          }
+                        }}
+                        onBlur={(e) => {
+                          const v = e.currentTarget.value.trim();
+                          if (v === "") {
+                            // restore previous value
+                            setSizeInput(
+                              String(Math.round(current.scale * 100)),
+                            );
+                            return;
+                          }
+                          setNumericValue(
+                            current.uid,
+                            "scale",
+                            Number(v) / 100,
+                            0.15,
+                            4,
+                          );
+                        }}
                       />
                     </label>
                     <span className="numberSuffix">%</span>
@@ -1222,7 +1577,9 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                         onBlur={(e) => {
                           const v = e.currentTarget.value.trim();
                           if (v === "") {
-                            setRotationInput(String(Math.round(current.rotation)));
+                            setRotationInput(
+                              String(Math.round(current.rotation)),
+                            );
                             return;
                           }
                           setNumericValue(
@@ -1313,7 +1670,9 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                         onBlur={(e) => {
                           const v = e.currentTarget.value.trim();
                           if (v === "") {
-                            setOpacityInput(String(Math.round(current.opacity * 100)));
+                            setOpacityInput(
+                              String(Math.round(current.opacity * 100)),
+                            );
                             return;
                           }
                           setNumericValue(

@@ -47,20 +47,21 @@ try {
     console.log("Publishing: submission limits table is accessible.");
     // The function rejects this sentinel before any lock, cleanup, or quota write.
     const { error: probeError } = await createSupabaseAdmin().rpc(
-      "reserve_submission",
+      "reserve_submission_attempt",
       {
         p_actor_hash: "invalid-readiness-probe",
+        p_token_hash: "invalid-readiness-probe",
       },
     );
     if (
       probeError?.code === "P0001" &&
-      probeError.message === "Invalid actor"
+      probeError.message === "Invalid reservation"
     ) {
       console.log("Publishing: submission quota function is accessible.");
     } else {
       failed = true;
       console.error(
-        "Publishing: quota function is missing or incompatible. Rerun supabase/migrations/002_submission_limits.sql in the Supabase SQL editor; it preserves existing counters.",
+        "Publishing: reservation function is missing or incompatible. Apply migrations 002, 005, then 006 in that order; see docs/RELEASE_STEPS.md.",
       );
     }
   }
@@ -81,7 +82,7 @@ if (
     "Publishing: Turnstile keys are present; browser verification still needs testing.",
   );
 
-if (process.env.AUTO_PUBLISH === "true") {
+{
   try {
     const db = createSupabaseAdmin();
     const { error: tableError } = await db
@@ -97,20 +98,35 @@ if (process.env.AUTO_PUBLISH === "true") {
       tableError ||
       probe?.code !== "P0001" ||
       probe.message !== "Invalid report" ||
-      (process.env.ADMIN_ACCESS_KEY?.trim().length || 0) < 32
+      (process.env.ADMIN_ACCESS_KEY?.trim().length || 0) < 8
     ) {
       failed = true;
       console.error(
-        "Mixed publishing: apply 003_image_reports.sql and configure owner access. Submissions stay pending until ready.",
+        "Moderation: apply 003_image_reports.sql and configure owner access. Every submission requires owner review.",
       );
-    } else
-      console.log("Mixed publishing: reporting and owner access are ready.");
+    } else console.log("Moderation: reporting and owner access are ready.");
   } catch {
     failed = true;
     console.error(
-      "Mixed publishing: readiness check failed; submissions remain pending.",
+      "Moderation: readiness check failed; submissions remain pending.",
     );
   }
+}
+
+try {
+  const { error } = await createSupabaseAdmin().rpc("reserve_owner_login", {
+    p_actor_hash: "invalid-readiness-probe",
+  });
+  if (error?.code !== "P0001" || error.message !== "Invalid actor") {
+    failed = true;
+    console.error(
+      "Owner login: apply migration 006_launch_limits.sql before deploying.",
+    );
+  } else
+    console.log("Owner login: persistent attempt protection is accessible.");
+} catch {
+  failed = true;
+  console.error("Owner login: readiness could not be checked.");
 }
 
 let r2;

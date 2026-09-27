@@ -6,7 +6,7 @@ import sharp from "sharp";
 import assets from "../../data/assets.json" with { type: "json" };
 import rights from "../../data/publishing-rights.json" with { type: "json" };
 import { savedBackgrounds } from "../backgrounds.ts";
-import { restoreScene, serializeScene } from "../scene.ts";
+import { restoreScene, serializeScene, sceneDimensions } from "../scene.ts";
 import { SubmissionError } from "./submissions.ts";
 const registry: Record<string, { sha256: string; evidence: string }> = rights;
 export function textNeedsReview(title: string, description: string) {
@@ -44,6 +44,7 @@ export async function renderSubmission(raw: unknown) {
         throw new Error();
     }
     scene = restoreScene(raw, assets, savedBackgrounds);
+    if (scene.baseBg.photo) throw new Error("Local photo");
   } catch {
     throw new SubmissionError(
       400,
@@ -75,21 +76,30 @@ export async function renderSubmission(raw: unknown) {
   }
   const dataImage = (bytes: Buffer) =>
     `data:image/png;base64,${bytes.toString("base64")}`;
+  const { width: canvasWidth, height: canvasHeight } = sceneDimensions(scene);
   const parts = [
-    `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="${scene.baseBg.sky}"/><rect y="360" width="1200" height="440" fill="${scene.baseBg.ground}"/>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${canvasWidth}" height="${canvasHeight}" viewBox="0 0 ${canvasWidth} ${canvasHeight}"><rect width="${canvasWidth}" height="${canvasHeight}" fill="${scene.baseBg.sky}"/><rect y="${canvasHeight * 0.45}" width="${canvasWidth}" height="${canvasHeight * 0.55}" fill="${scene.baseBg.ground}"/>`,
   ];
   if (scene.baseBg.src) {
     const image = await sharp(await source(scene.baseBg.src, scene.baseBg.name))
-      .resize(1200, 800, { fit: "fill" })
+      .resize(canvasWidth, canvasHeight, {
+        fit: scene.size && scene.size !== "landscape" ? "cover" : "fill",
+      })
       .png()
       .toBuffer();
-    parts.push(`<image href="${dataImage(image)}" width="1200" height="800"/>`);
+    parts.push(
+      `<image href="${dataImage(image)}" width="${canvasWidth}" height="${canvasHeight}"/>`,
+    );
   }
   let index = 0;
   for (const item of [...scene.items].sort((a, b) => a.z - b.z)) {
     const width = 320 * item.scale,
       height = 270 * item.scale;
-    const { data, info } = await sharp(await source(item.asset.src, item.asset.variant.replace(/-/g, " ")))
+    const { data, info } = await sharp(
+      item.asset.text
+        ? Buffer.from(decodeURIComponent(item.asset.src.split(",")[1]))
+        : await source(item.asset.src, item.asset.variant.replace(/-/g, " ")),
+    )
       .resize({
         width: Math.ceil(width),
         height: Math.ceil(height),
@@ -97,20 +107,28 @@ export async function renderSubmission(raw: unknown) {
       })
       .png()
       .toBuffer({ resolveWithObject: true });
+    if (item.asset.text) verified = false;
     const filter = `hue${index++}`;
     parts.push(
-      `<defs><filter id="${filter}" color-interpolation-filters="sRGB"><feColorMatrix type="hueRotate" values="${item.hue}"/></filter></defs><g transform="translate(${item.x * 12 + width / 2} ${item.y * 8 + height / 2}) rotate(${item.rotation}) scale(${item.flipX ? -1 : 1} ${item.flipY ? -1 : 1})" opacity="${item.opacity}"><image href="${dataImage(data)}" x="${-info.width / 2}" y="${-info.height / 2}" width="${info.width}" height="${info.height}" filter="url(#${filter})"/></g>`,
+      `<defs><filter id="${filter}" color-interpolation-filters="sRGB"><feColorMatrix type="hueRotate" values="${item.hue}"/></filter></defs><g transform="translate(${(item.x * canvasWidth) / 100 + width / 2} ${(item.y * canvasHeight) / 100 + height / 2}) rotate(${item.rotation}) scale(${item.flipX ? -1 : 1} ${item.flipY ? -1 : 1})" opacity="${item.opacity}"><image href="${dataImage(data)}" x="${-info.width / 2}" y="${-info.height / 2}" width="${info.width}" height="${info.height}" filter="url(#${filter})"/></g>`,
     );
   }
   parts.push("</svg>");
   const png = await sharp(Buffer.from(parts.join("")), {
-    limitInputPixels: 960000,
+    limitInputPixels: 1080 * 1920,
   })
     .png()
     .toBuffer();
   const thumbnail = await sharp(png)
-    .resize(480, 320)
+    .resize(480, 320, { fit: "inside" })
     .webp({ quality: 80 })
     .toBuffer();
-  return { png, thumbnail, verified, editableScene: serializeScene(scene) };
+  return {
+    png,
+    thumbnail,
+    verified,
+    editableScene: serializeScene(scene),
+    width: canvasWidth,
+    height: canvasHeight,
+  };
 }

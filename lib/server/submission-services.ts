@@ -177,14 +177,15 @@ export function submissionServices(requirePublish = false) {
       if (error) throw new Error("Database unavailable");
       return data as Submission | null;
     },
-    async reserve(actor) {
-      const { data, error } = await db.rpc("reserve_submission", {
+    async reserve(actor, token) {
+      const { data, error } = await db.rpc("reserve_submission_attempt", {
         p_actor_hash: actor,
+        p_token_hash: token,
       });
       if (error?.code === "PGRST202")
         throw new SubmissionError(
           503,
-          "Publishing setup is incomplete. The site owner needs to apply the submission limits migration.",
+          "Publishing setup is incomplete. Please contact the site owner.",
         );
       if (error) throw new Error("Submission limits unavailable");
       return data === true;

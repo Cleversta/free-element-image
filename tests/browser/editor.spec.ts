@@ -13,7 +13,7 @@ test("curated backgrounds switch cleanly and retired saved artwork still loads",
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/create");
   const choices = page.locator(".visualBgGrid button");
-  await expect(choices).toHaveCount(18);
+  await expect(choices).toHaveCount(54);
   await expect(
     choices.filter({ hasText: /^Mountains Landscape$/ }),
   ).toHaveCount(0);
@@ -233,13 +233,15 @@ test("corrupt storage and failed image exports show errors without crashing", as
       }
     };
   });
+  await page.getByRole("button", { name: "⇩ Download", exact: true }).click();
   await page
-    .getByRole("button", { name: "Download PNG", exact: false })
+    .getByRole("menu", { name: "Download options" })
+    .getByRole("button", { name: "Download", exact: true })
     .click();
   await expect(page.getByRole("status")).toContainText("could not be loaded");
   await expect(page.locator(".assetBox")).toHaveCount(1);
   await expect(
-    page.getByRole("button", { name: "Download PNG", exact: false }),
+    page.getByRole("button", { name: "⇩ Download", exact: true }),
   ).toBeEnabled();
 });
 
@@ -262,8 +264,10 @@ test("PNG matches the scene composition, transforms, and SVG background", async 
     );
   const preview = await page.locator(".vBoard").screenshot();
   const downloaded = page.waitForEvent("download");
+  await page.getByRole("button", { name: "⇩ Download", exact: true }).click();
   await page
-    .getByRole("button", { name: "Download PNG", exact: false })
+    .getByRole("menu", { name: "Download options" })
+    .getByRole("button", { name: "Download", exact: true })
     .click();
   const file = await downloaded;
   const png = await readFile((await file.path())!);

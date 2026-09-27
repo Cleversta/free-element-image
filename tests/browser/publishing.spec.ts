@@ -15,7 +15,7 @@ test("unconfigured publishing leaves editing and downloads available", async ({
   await page.getByRole("button", { name: "Close publishing" }).click();
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(
-    page.getByRole("button", { name: "Download PNG", exact: false }),
+    page.getByRole("button", { name: "⇩ Download", exact: true }),
   ).toBeEnabled();
 });
 

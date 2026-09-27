@@ -12,6 +12,8 @@ export default function InformationPage({
         <Link href="/">Freelement Images</Link>
         <Link href="/create">Create</Link>
         <Link href="/gallery">Gallery</Link>
+        <Link href="/scenes">Starter scenes</Link>
+        <Link href="/guides">Guides</Link>
       </nav>
       <h1>{title}</h1>
       {children}

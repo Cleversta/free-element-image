@@ -1,10 +1,11 @@
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import InformationPage from "@/components/InformationPage";
-export const metadata = {
-  title: "Image use and permissions | Freelement Images",
-  description:
-    "Understand the difference between free downloads and permission to reuse artwork.",
-};
+export const metadata = pageMetadata(
+  "Image use and permissions",
+  "Understand the difference between free downloads and permission to reuse artwork.",
+  "/image-use",
+);
 export default function ImageUse() {
   return (
     <InformationPage title="Image use and permissions">
@@ -39,10 +40,9 @@ export default function ImageUse() {
       </p>
       <h2>What publication checks mean</h2>
       <p>
-        Some project-created backgrounds are eligible for automatic publication.
-        Other artwork may require owner review. These checks concern sharing on
-        this website; they are not a promise of a broader license for every
-        future use.
+        Every submitted scene requires owner review before publication. These
+        checks concern sharing on this website; they are not a promise of a
+        broader license for every future use.
       </p>
       <h2>Rights concerns</h2>
       <p>

@@ -113,7 +113,12 @@ test("gallery navigation and missing-image downloads work without owner access",
   const missingPage = await request.get(`/images/scene-${id}`);
   expect(missingPage.status()).toBe(404);
   const robots = await request.get("/robots.txt");
-  expect(await robots.text()).toContain("Disallow: /admin");
+  expect(await robots.text()).toContain("Disallow: /api/admin/");
+  await page.goto("/admin");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+    "content",
+    /noindex/,
+  );
 });
 
 test("owner can inspect reports and confirm removal from the public gallery", async ({
