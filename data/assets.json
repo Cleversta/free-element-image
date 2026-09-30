@@ -7815,5 +7815,90 @@
     "maxScale": 1.2,
     "collision": "none",
     "transparent": true
+  },
+  {
+    "id": "uploaded-mountain-mountain-range",
+    "type": "mountain",
+    "variant": "mountain-range",
+    "style": "freeimage",
+    "src": "/assets/freeimage/mountain/1435942396.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "uploaded-mountain-layered-mountains",
+    "type": "mountain",
+    "variant": "layered-mountains",
+    "style": "freeimage",
+    "src": "/assets/freeimage/mountain/Mountains.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "uploaded-mountain-mount-hood",
+    "type": "mountain",
+    "variant": "mount-hood",
+    "style": "freeimage",
+    "src": "/assets/freeimage/mountain/mount-hood-dan-gerhards-01.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "uploaded-mountain-mountain-peak",
+    "type": "mountain",
+    "variant": "mountain-peak",
+    "style": "freeimage",
+    "src": "/assets/freeimage/mountain/mountain.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 2,
+    "collision": "none",
+    "transparent": true
+  },
+  {
+    "id": "uploaded-mountain-volcano",
+    "type": "mountain",
+    "variant": "volcano",
+    "style": "freeimage",
+    "src": "/assets/freeimage/mountain/volcano-2.svg",
+    "placement": [
+      "ground"
+    ],
+    "depth": [
+      "background"
+    ],
+    "minScale": 0.4,
+    "maxScale": 2,
+    "collision": "none",
+    "transparent": true
   }
 ]

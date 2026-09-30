@@ -1,8 +1,7 @@
 import {
   sceneDimensions,
   photoPlacement,
-  ITEM_HEIGHT,
-  ITEM_WIDTH,
+  itemDimensions,
 } from "./scene";
 import type { Scene } from "./scene";
 
@@ -104,9 +103,9 @@ export async function renderScene(
     } else ctx.drawImage(background, 0, 0, WIDTH, HEIGHT);
   }
   for (const item of [...scene.items].sort((a, b) => a.z - b.z)) {
+    if (item.hidden) continue;
     const image = await loadImage(item.asset.src);
-    const width = ITEM_WIDTH * item.scale;
-    const height = ITEM_HEIGHT * item.scale;
+    const { width, height } = itemDimensions(item);
     const fit = Math.min(
       width / image.naturalWidth,
       height / image.naturalHeight,

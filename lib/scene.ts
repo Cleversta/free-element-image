@@ -50,8 +50,46 @@ export type Asset = {
   variant: string;
   style: string;
   src: string;
+  shape?: ShapeStyle;
   text?: TextStyle;
+  photo?: boolean;
 };
+export const SHAPE_NAMES = ["Rectangle", "Rounded rectangle", "Square", "Circle", "Oval", "Triangle", "Diamond", "Star", "Arrow", "Line"] as const;
+export type ShapeStyle = {
+  kind: (typeof SHAPE_NAMES)[number];
+  fill: string;
+  stroke: string;
+  strokeWidth: number;
+  width?: number;
+  height?: number;
+};
+
+export function shapeAsset(value: ShapeStyle): Asset {
+  if (!SHAPE_NAMES.includes(value.kind) ||
+      !/^(#[0-9a-f]{6}|transparent)$/i.test(value.fill) ||
+      !/^#[0-9a-f]{6}$/i.test(value.stroke) ||
+      !Number.isFinite(value.strokeWidth) || value.strokeWidth < 0 || value.strokeWidth > 20)
+    throw new Error("Invalid shape");
+  for (const dimension of [value.width, value.height]) {
+    if (dimension !== undefined && (typeof dimension !== "number" || !Number.isFinite(dimension) || dimension < 32 || dimension > 1200)) throw new Error("Invalid shape dimensions");
+  }
+  const shape = { ...(value.width !== undefined ? { width: value.width } : {}), ...(value.height !== undefined ? { height: value.height } : {}), kind: value.kind, fill: value.fill, stroke: value.stroke, strokeWidth: value.strokeWidth };
+  const geometry: Record<ShapeStyle["kind"], string> = {
+    Rectangle: '<rect x="16" y="16" width="288" height="238"/>',
+    "Rounded rectangle": '<rect x="16" y="16" width="288" height="238" rx="36"/>',
+    Square: '<rect x="41" y="16" width="238" height="238"/>',
+    Circle: '<circle cx="160" cy="135" r="119"/>',
+    Oval: '<ellipse cx="160" cy="135" rx="144" ry="119"/>',
+    Triangle: '<path d="M160 16 304 254H16Z"/>',
+    Diamond: '<path d="M160 16 304 135 160 254 16 135Z"/>',
+    Star: '<path d="m160 16 34 78 85 8-64 56 19 83-74-43-74 43 19-83-64-56 85-8Z"/>',
+    Arrow: '<path d="M16 95H190V35L304 135 190 235V175H16Z"/>',
+    Line: '<path d="M16 135H304"/>',
+  };
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${shape.width ?? ITEM_WIDTH}" height="${shape.height ?? ITEM_HEIGHT}" viewBox="0 0 320 270" preserveAspectRatio="none"><g fill="${shape.fill}" stroke="${shape.stroke}" stroke-width="${shape.strokeWidth}" stroke-linejoin="round" stroke-linecap="round">${geometry[shape.kind]}</g></svg>`;
+  return { id: "custom-shape", type: "shapes", variant: shape.kind, style: "custom", src: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`, shape };
+}
+
 export type TextStyle = { content: string; color: string; bold: boolean };
 
 export function textAsset(value: TextStyle): Asset {
@@ -97,6 +135,23 @@ export function textAsset(value: TextStyle): Asset {
   };
 }
 
+export function photoAsset(src: unknown): Asset {
+  if (
+    typeof src !== "string" ||
+    src.length > 2000000 ||
+    !/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(src)
+  )
+    throw new Error("This photo is too large to save. Try a smaller image.");
+  return {
+    id: "uploaded-photo",
+    type: "photo",
+    variant: "Your photo",
+    style: "custom",
+    src,
+    photo: true,
+  };
+}
+
 export function photoBackground(src: unknown, crop?: PhotoCrop): Background {
   if (
     typeof src !== "string" ||
@@ -138,12 +193,29 @@ export type Item = {
   scale: number;
   rotation: number;
   locked: boolean;
+  hidden?: boolean;
   z: number;
   flipX: boolean;
   flipY: boolean;
   opacity: number;
   hue: number;
 };
+export const itemDimensions = (item: Item) => ({
+  width: (item.asset.shape?.width ?? ITEM_WIDTH) * item.scale,
+  height: (item.asset.shape?.height ?? ITEM_HEIGHT) * item.scale,
+});
+
+// Place the dragged layer at the target's position in the stack.
+export function moveLayer(scene: Scene, uid: string, targetUid: string): Scene {
+  const sorted = [...scene.items].sort((a, b) => a.z - b.z);
+  const from = sorted.findIndex((item) => item.uid === uid);
+  const to = sorted.findIndex((item) => item.uid === targetUid);
+  if (from < 0 || to < 0 || from === to || sorted[from].locked) return scene;
+  const [item] = sorted.splice(from, 1);
+  sorted.splice(to, 0, item);
+  return { ...scene, items: sorted.map((entry, index) => ({ ...entry, z: index + 1 })) };
+}
+
 export type Scene = { baseBg: Background; items: Item[]; size?: CanvasSize };
 export type EditorState = {
   present: Scene;
@@ -284,13 +356,15 @@ export function resizeItem(
   width = WIDTH,
   height = HEIGHT,
 ): Partial<Item> {
+  const itemWidth = item.asset.shape?.width ?? ITEM_WIDTH;
+  const itemHeight = item.asset.shape?.height ?? ITEM_HEIGHT;
   const sx = (corner.includes("e") ? 1 : -1) * (item.flipX ? -1 : 1);
   const sy = (corner.includes("s") ? 1 : -1) * (item.flipY ? -1 : 1);
   const angle = (item.rotation * Math.PI) / 180;
   const vx =
-    sx * ITEM_WIDTH * Math.cos(angle) - sy * ITEM_HEIGHT * Math.sin(angle);
+    sx * itemWidth * Math.cos(angle) - sy * itemHeight * Math.sin(angle);
   const vy =
-    sx * ITEM_WIDTH * Math.sin(angle) + sy * ITEM_HEIGHT * Math.cos(angle);
+    sx * itemWidth * Math.sin(angle) + sy * itemHeight * Math.cos(angle);
   const scale = clamp(
     item.scale + (dx * vx + dy * vy) / (vx * vx + vy * vy),
     0.15,
@@ -299,8 +373,8 @@ export function resizeItem(
   const delta = scale - item.scale;
   return {
     scale,
-    x: item.x + (((vx - ITEM_WIDTH) * delta) / 2 / width) * 100,
-    y: item.y + (((vy - ITEM_HEIGHT) * delta) / 2 / height) * 100,
+    x: item.x + (((vx - itemWidth) * delta) / 2 / width) * 100,
+    y: item.y + (((vy - itemHeight) * delta) / 2 / height) * 100,
   };
 }
 
@@ -312,7 +386,9 @@ export function serializeScene(scene: Scene): string {
     items: scene.items.map(({ asset, ...it }) => ({
       ...it,
       assetId: asset.id,
+      ...(asset.shape ? { shape: asset.shape } : {}),
       ...(asset.text ? { text: asset.text } : {}),
+      ...(asset.photo ? { photo: asset.src } : {}),
     })),
   });
 }
@@ -347,11 +423,15 @@ export function restoreScene(
     (it: Record<string, unknown>, index: number) => {
       if (!it || typeof it !== "object") throw new Error("Invalid element");
       const oldAsset = it.asset as Partial<Asset> | undefined;
-      const asset = it.text
-        ? textAsset(it.text as TextStyle)
-        : typeof it.assetId === "string"
-          ? catalog.find((a) => a.id === it.assetId)
-          : catalog.find((a) => a.src === oldAsset?.src);
+      const asset = it.shape
+        ? shapeAsset(it.shape as ShapeStyle)
+        : it.photo
+        ? photoAsset(it.photo)
+        : it.text
+          ? textAsset(it.text as TextStyle)
+          : typeof it.assetId === "string"
+            ? catalog.find((a) => a.id === it.assetId)
+            : catalog.find((a) => a.src === oldAsset?.src);
       if (!asset || asset.type === "background")
         throw new Error("Unknown element");
       const uid =
@@ -369,6 +449,7 @@ export function restoreScene(
         rotation: normalizeRotation(finite(it.rotation, 0, -3600, 3600)),
         z: finite(it.z, index + 1, 1, 10000),
         locked: it.locked === true,
+        ...(it.hidden === true ? { hidden: true } : {}),
         flipX: it.flipX === true,
         flipY: it.flipY === true,
         opacity: finite(it.opacity, 1, 0.1, 1),

@@ -8,7 +8,12 @@ import assets from "@/data/assets.json";
 import { backgrounds, savedBackgrounds } from "@/lib/backgrounds";
 import {
   textAsset,
+  shapeAsset,
+  SHAPE_NAMES,
+  itemDimensions,
+  moveLayer,
   photoBackground,
+  photoAsset,
   CANVAS_SIZES,
   sceneDimensions,
   photoCrop,
@@ -32,6 +37,7 @@ import { renderScene } from "@/lib/export";
 const aliases: Record<string, string> = {
   background: "backgrounds",
   tree: "trees",
+  mountain: "mountains",
   building: "buildings",
   animal: "animals",
   character: "people",
@@ -46,6 +52,7 @@ const aliases: Record<string, string> = {
   gras: "grass",
 };
 const CAT_ORDER = [
+  "mountains",
   "trees",
   "small-trees",
   "flowers",
@@ -82,6 +89,7 @@ const pretty = (value: string) =>
 const icon = (category: string) =>
   (
     ({
+      mountains: "△",
       trees: "🌳",
       "small-trees": "🌱",
       flowers: "🌸",
@@ -111,7 +119,8 @@ const defaultScene: Scene = {
     backgrounds[0],
   items: [],
 };
-type Section = "backgrounds" | "elements" | "decorations" | "others";
+type Section =
+  "backgrounds" | "elements" | "decorations" | "others" | "text" | "uploads" | "shapes";
 
 export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const [state, dispatch] = useReducer(
@@ -124,9 +133,11 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     : STORAGE_KEY;
   const [uploading, setUploading] = useState(false);
   const photoInput = useRef<HTMLInputElement>(null);
+  const backgroundPhotoInput = useRef<HTMLInputElement>(null);
   const { baseBg, items } = state.present;
   const { width: WIDTH, height: HEIGHT } = sceneDimensions(state.present);
   const crop = photoCrop(baseBg.crop);
+  const draggedLayer = useRef<string | null>(null);
   const [active, setActive] = useState<string | null>(null);
   const [section, setSection] = useState<Section>("backgrounds");
   const [backgroundCategory, setBackgroundCategory] = useState("All");
@@ -263,6 +274,9 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     let x = 36 + Math.random() * 20,
       y = 60,
       scale = 0.65;
+    if (category === "mountains") {
+      x = 30; y = 24; scale = 1.5;
+    }
     if (category === "buildings") {
       y = 38;
       scale = 1;
@@ -314,6 +328,11 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   });
   const addAsset = (asset: Asset) => {
     const item = makeItem(asset);
+    if (asset.photo || asset.shape) {
+      item.scale = 1;
+      item.x = (1 - ITEM_WIDTH / WIDTH) * 50;
+      item.y = (1 - ITEM_HEIGHT / HEIGHT) * 50;
+    }
     change((scene) => ({
       ...scene,
       items: [
@@ -564,7 +583,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     };
   }, [ready, dirty, state.present, state.gesture, storageKey]);
 
-  const uploadPhoto = async (file?: File) => {
+  const uploadPhoto = async (file?: File, asBackground = false) => {
     if (!file) return;
     setUploading(true);
     let url = "";
@@ -588,12 +607,20 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
       const ctx = canvas.getContext("2d");
       if (!ctx) throw new Error("Photo upload is unavailable in this browser.");
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      if (asBackground) {
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
       ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-      chooseBackground(photoBackground(canvas.toDataURL("image/jpeg", 0.8)));
+      const format = asBackground ? "image/jpeg" : "image/webp";
+      let src = canvas.toDataURL(format, 0.8);
+      if (src.length > 2000000) src = canvas.toDataURL(format, 0.55);
+      if (asBackground) chooseBackground(photoBackground(src));
+      else addAsset(photoAsset(src));
       setNotice(
-        "Photo added. It stays in this browser and can be downloaded with your scene. Choose another scene to replace it.",
+        asBackground
+          ? "Photo background added. It stays in this browser and can be downloaded with your scene."
+          : "Photo added. Drag it to move, use the corners to resize, or adjust it in Element Properties.",
       );
     } catch (error) {
       setNotice(
@@ -698,6 +725,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     section === "elements"
       ? cats.filter((category) =>
           [
+            "mountains",
             "trees",
             "small-trees",
             "flowers",
@@ -744,7 +772,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       )}
       <header className="vTop">
         <Link href="/" className="vBrand">
-          <span className="leaf">◒</span>
+          <img className="editorLogo" src="/logo.png" alt="" width={48} height={48} />
           <div>
             <b>Freelement Images</b>
             <small>Build a village scene your way</small>
@@ -767,37 +795,6 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           >
             ↷
           </button>
-          <button
-            disabled={!ready}
-            onClick={() =>
-              addAsset(
-                textAsset({
-                  content: "Your text",
-                  color: "#183c2c",
-                  bold: true,
-                }),
-              )
-            }
-          >
-            Add text
-          </button>
-          <button
-            disabled={!ready || uploading}
-            onClick={() => photoInput.current?.click()}
-          >
-            {uploading ? "Opening photo…" : "Upload photo"}
-          </button>
-          <input
-            ref={photoInput}
-            type="file"
-            accept="image/jpeg,image/png,image/webp"
-            aria-label="Upload photo background"
-            hidden
-            onChange={(e) => {
-              void uploadPhoto(e.target.files?.[0]);
-              e.target.value = "";
-            }}
-          />
           <button onClick={newScene}>⊕ New</button>
           <button onClick={randomScene}>⟳ Random</button>
           <button
@@ -807,7 +804,11 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                 ? setNotice(
                     "Photo backgrounds are available for local saving and downloading. Choose a catalog background to publish.",
                   )
-                : setPublishScene(state.present)
+                : items.some((item) => item.asset.photo)
+                  ? setNotice(
+                      "Uploaded photos are available for local saving and downloading. Remove uploaded photos to publish this scene.",
+                    )
+                  : setPublishScene(state.present)
             }
           >
             Publish
@@ -876,6 +877,28 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           </div>
         </div>
       </header>
+      <input
+        ref={photoInput}
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+        aria-label="Upload photo as an object"
+        hidden
+        onChange={(e) => {
+          void uploadPhoto(e.target.files?.[0]);
+          e.target.value = "";
+        }}
+      />
+      <input
+        ref={backgroundPhotoInput}
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+        aria-label="Upload photo background"
+        hidden
+        onChange={(e) => {
+          void uploadPhoto(e.target.files?.[0], true);
+          e.target.value = "";
+        }}
+      />
       <div className="sceneStatus">
         <span>{dirty ? "Unsaved changes" : "All changes saved"}</span>
         <span role="status" aria-live="polite">
@@ -886,11 +909,12 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
         <aside className="vLeft">
           <div className="bigTabs">
             <button
+              aria-label="Backgrounds"
               aria-pressed={section === "backgrounds"}
               className={section === "backgrounds" ? "on" : ""}
               onClick={() => selectSection("backgrounds")}
             >
-              ▣<span>Scenes</span>
+              ▣<span>Backgrounds</span>
             </button>
             <button
               aria-pressed={section === "elements"}
@@ -898,6 +922,30 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               onClick={() => selectSection("elements")}
             >
               ◇<span>Objects</span>
+            </button>
+            <button
+              aria-label="Shapes"
+              aria-pressed={section === "shapes"}
+              className={section === "shapes" ? "on" : ""}
+              onClick={() => selectSection("shapes")}
+            >
+              ◯<span>Shapes</span>
+            </button>
+            <button
+              aria-label="Text"
+              aria-pressed={section === "text"}
+              className={section === "text" ? "on" : ""}
+              onClick={() => selectSection("text")}
+            >
+              T<span>Text</span>
+            </button>
+            <button
+              aria-label="Upload image"
+              aria-pressed={section === "uploads"}
+              className={section === "uploads" ? "on" : ""}
+              onClick={() => selectSection("uploads")}
+            >
+              ↑<span>Upload image</span>
             </button>
             <button
               aria-pressed={section === "decorations"}
@@ -914,7 +962,79 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               ⊙<span>More</span>
             </button>
           </div>
-          {section === "backgrounds" ? (
+          {section === "shapes" ? (
+            <section className="creationPanel" aria-label="Shape tools">
+              <div className="panelTitle"><b>Shapes</b></div>
+              <p>Choose a shape, then customize its fill and outline.</p>
+              <div className="shapeGrid">
+                {SHAPE_NAMES.map((kind) => {
+                  const asset = shapeAsset({ kind, fill: "#438568", stroke: "#183c2c", strokeWidth: kind === "Line" ? 6 : 0 });
+                  return <button key={kind} disabled={!ready} aria-label={`Add ${kind.toLowerCase()}`} onClick={() => addAsset(asset)}>
+                    <img src={asset.src} alt="" /><span>{kind}</span>
+                  </button>;
+                })}
+              </div>
+              <p className="creationHint">Drag to move. Use the corners to resize, and Element Properties to style.</p>
+            </section>
+          ) : section === "text" ? (
+            <section className="creationPanel" aria-label="Text tools">
+              <div className="panelTitle">
+                <b>Text</b>
+              </div>
+              <p>
+                Add a title or caption, then select it to change the words,
+                color, and style.
+              </p>
+              <button
+                className="creationPrimary"
+                disabled={!ready}
+                onClick={() =>
+                  addAsset(
+                    textAsset({
+                      content: "Your text",
+                      color: "#183c2c",
+                      bold: true,
+                    }),
+                  )
+                }
+              >
+                Add text
+              </button>
+              <p className="creationHint">
+                Drag to move it. Use the corners to resize it.
+              </p>
+            </section>
+          ) : section === "uploads" ? (
+            <section className="creationPanel" aria-label="Image upload tools">
+              <div className="panelTitle">
+                <b>Your images</b>
+              </div>
+              <p>
+                Add a photo from your device as an object you can move and
+                resize.
+              </p>
+              <button
+                className="creationPrimary"
+                disabled={!ready || uploading}
+                onClick={() => photoInput.current?.click()}
+              >
+                {uploading ? "Opening image…" : "Choose image"}
+              </button>
+              <p className="creationHint">
+                JPG, PNG, or WebP · up to 15 MB. Transparent images keep their
+                transparency.
+              </p>
+              <p className="creationHint">
+                Your images stay in this browser and are included in downloads.
+              </p>
+              <button
+                className="creationSecondary"
+                onClick={() => selectSection("backgrounds")}
+              >
+                Want a full background? Open Backgrounds
+              </button>
+            </section>
+          ) : section === "backgrounds" ? (
             <>
               <div className="panelTitle">
                 <b>Scene background</b>
@@ -935,6 +1055,13 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                   it.
                 </p>
               )}
+              <button
+                className="creationSecondary"
+                disabled={!ready || uploading}
+                onClick={() => backgroundPhotoInput.current?.click()}
+              >
+                {uploading ? "Opening image…" : "Use your photo as background"}
+              </button>
               <div className="backgroundFilters">
                 <label className="srOnly" htmlFor="background-search">
                   Search backgrounds
@@ -1212,6 +1339,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               )}
 
               {[...items]
+                .filter((item) => !item.hidden)
                 .sort((a, b) => a.z - b.z)
                 .map((it) => {
                   const selected = active === it.uid;
@@ -1231,8 +1359,8 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                       style={{
                         left: `${it.x}%`,
                         top: `${it.y}%`,
-                        width: `${((ITEM_WIDTH * it.scale) / WIDTH) * 100}%`,
-                        height: `${((ITEM_HEIGHT * it.scale) / HEIGHT) * 100}%`,
+                        width: `${(itemDimensions(it).width / WIDTH) * 100}%`,
+                        height: `${(itemDimensions(it).height / HEIGHT) * 100}%`,
                         zIndex: it.z,
                         transform: `rotate(${it.rotation}deg) scale(${it.flipX ? -1 : 1},${it.flipY ? -1 : 1})`,
                       }}
@@ -1285,7 +1413,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                     </div>
                   );
                 })}
-              {current && (
+              {current && !current.hidden && (
                 <div
                   className="floatingTools"
                   onPointerDown={(e) => e.stopPropagation()}
@@ -1382,6 +1510,32 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
         </section>
 
         <aside className="vRight">
+          <section className="layersPanel" aria-label="Layers">
+            <div className="layersHeading"><h3>Layers</h3><span>{items.length}</span></div>
+            <p className="layersHint">Front layers appear first. Drag to reorder, or use the arrows.</p>
+            {!items.length && <p className="layersHint">Add an object, shape, or text to start.</p>}
+            <ol className="layerList">
+              {[...items].sort((a, b) => b.z - a.z).map((item, index) => {
+                const name = pretty(item.asset.variant || item.asset.id);
+                return <li key={item.uid} className={`layerRow ${active === item.uid ? "active" : ""} ${item.hidden ? "isHidden" : ""}`}
+                  draggable={!item.locked}
+                  onDragStart={(event) => { draggedLayer.current = item.uid; event.dataTransfer.effectAllowed = "move"; event.dataTransfer.setData("text/plain", item.uid); }}
+                  onDragEnd={() => { draggedLayer.current = null; }}
+                  onDragOver={(event) => { if (draggedLayer.current) { event.preventDefault(); event.dataTransfer.dropEffect = "move"; } }}
+                  onDrop={(event) => { event.preventDefault(); const uid = draggedLayer.current; draggedLayer.current = null; if (uid) change((scene) => moveLayer(scene, uid, item.uid)); }}>
+                  <button className="layerSelect" aria-label={`Select ${name} layer`} aria-pressed={active === item.uid} onClick={() => setActive(item.uid)}>
+                    <img src={item.asset.src} alt="" draggable={false} /><span>{name}</span>
+                  </button>
+                  <div className="layerActions">
+                    <button aria-label={`${item.hidden ? "Show" : "Hide"} ${name} layer`} title={item.hidden ? "Show layer" : "Hide layer"} disabled={item.locked} onClick={() => update(item.uid, { hidden: !item.hidden })}>{item.hidden ? "Show" : "Hide"}</button>
+                    <button aria-label={`${item.locked ? "Unlock" : "Lock"} ${name} layer`} onClick={() => update(item.uid, { locked: !item.locked })}>{item.locked ? "Unlock" : "Lock"}</button>
+                    <button aria-label={`Move ${name} layer forward`} disabled={item.locked || index === 0} onClick={() => layer(item, "up")}>↑</button>
+                    <button aria-label={`Move ${name} layer backward`} disabled={item.locked || index === items.length - 1} onClick={() => layer(item, "down")}>↓</button>
+                  </div>
+                </li>;
+              })}
+            </ol>
+          </section>
           <h3>Element Properties</h3>
           {!current ? (
             <div className="noSelection">
@@ -1416,6 +1570,37 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               )}
               <fieldset className="propertyFields" disabled={current.locked}>
                 <legend className="srOnly">Element adjustments</legend>
+                {current.asset.shape && (
+                  <div className="textControls">
+                    <div className="shapeDimensions">
+                      {(["width", "height"] as const).map((axis) => <label key={axis}>
+                        {axis === "width" ? "Width" : "Height"} (px)
+                        <input key={`${current.uid}-${itemDimensions(current)[axis]}`} aria-label={`Shape ${axis}`} type="number" min={Math.ceil(32 * current.scale)} max={Math.floor(1200 * current.scale)} step="1"
+                          defaultValue={Math.round(itemDimensions(current)[axis])}
+                          onKeyDown={(event) => { if (event.key === "Enter") event.currentTarget.blur(); }}
+                          onBlur={(event) => {
+                            const value = Number(event.target.value);
+                            if (!event.target.value.trim() || !Number.isFinite(value)) { event.target.value = String(Math.round(itemDimensions(current)[axis])); return; }
+                            const dimension = clamp(value / current.scale, 32, 1200);
+                            event.target.value = String(Math.round(dimension * current.scale));
+                            update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, [axis]: dimension }) });
+                          }} />
+                      </label>)}
+                    </div>
+                    {current.asset.shape.kind !== "Line" && <>
+                      <label>Fill color<input aria-label="Shape fill" type="color" value={current.asset.shape.fill === "transparent" ? "#438568" : current.asset.shape.fill}
+                        onChange={(e) => update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, fill: e.target.value }) })} /></label>
+                      <label className="shapeNoFill"><input type="checkbox" checked={current.asset.shape.fill === "transparent"}
+                        onChange={(e) => update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, fill: e.target.checked ? "transparent" : "#438568", strokeWidth: e.target.checked ? Math.max(2, current.asset.shape!.strokeWidth) : current.asset.shape!.strokeWidth }) })} /> No fill</label>
+                    </>}
+                    <label>Outline color<input aria-label="Shape outline" type="color" value={current.asset.shape.stroke}
+                      onChange={(e) => update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, stroke: e.target.value, strokeWidth: Math.max(1, current.asset.shape!.strokeWidth) }) })} /></label>
+                    <Prop label="Outline width" value={`${current.asset.shape.strokeWidth} px`}>
+                      <input aria-label="Outline width" type="range" min={current.asset.shape.kind === "Line" ? 1 : 0} max="20" step="1" value={current.asset.shape.strokeWidth} onPointerDown={beginRange}
+                        onChange={(e) => update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, strokeWidth: +e.target.value }) })} />
+                    </Prop>
+                  </div>
+                )}
                 {current.asset.text && (
                   <div className="textControls">
                     <label>

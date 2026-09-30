@@ -5,10 +5,11 @@ const assets = JSON.parse(await readFile("data/assets.json", "utf8"));
 const scenes = JSON.parse(
   await readFile("data/scene-backgrounds.json", "utf8"),
 );
+const simpleBackgrounds = JSON.parse(await readFile("data/simple-backgrounds.json", "utf8"));
 const rights = JSON.parse(
   await readFile("data/publishing-rights.json", "utf8"),
 );
-const sources = [...new Set([...assets, ...scenes].map((asset) => asset.src))];
+const sources = [...new Set([...assets, ...scenes, ...simpleBackgrounds].map((asset) => asset.src))];
 const inventory = [];
 for (const src of sources) {
   const bytes = await readFile(`public${src}`);

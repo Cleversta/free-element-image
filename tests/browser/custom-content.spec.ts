@@ -5,6 +5,7 @@ test("text autosaves, restores, exports and supports undo", async ({
   page,
 }) => {
   await page.goto("/create");
+  await page.getByRole("button", { name: "Text", exact: true }).click();
   await page.getByRole("button", { name: "Add text", exact: true }).click();
   await page
     .getByRole("textbox", { name: "Text content" })
@@ -76,4 +77,43 @@ test("photo backgrounds survive reload and export locally", async ({
     .toBuffer({ resolveWithObject: true });
   expect(data[0]).toBeGreaterThan(190);
   expect(data[1]).toBeLessThan(65);
+});
+
+test("uploaded photos are movable objects without replacing the background", async ({ page }) => {
+  await page.goto("/create");
+  await page.getByRole("button", { name: "Upload image", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Choose image", exact: true })).toBeVisible();
+  const background = await page.locator(".sceneBackground").getAttribute("src");
+  const buffer = await sharp({create: {width: 400, height: 300, channels: 4, background: {r: 255, g: 0, b: 0, alpha: 0.5}}}).png().toBuffer();
+  await page.getByLabel("Upload photo as an object", {exact: true}).setInputFiles({name: "photo.png", mimeType: "image/png", buffer});
+  const photo = page.locator(".assetBox");
+  await expect(photo).toHaveCount(1);
+  await expect(page.locator(".sceneBackground")).toHaveAttribute("src", background!);
+  const before = (await photo.boundingBox())!;
+  const canvas = (await page.getByLabel("Scene canvas", {exact: true}).boundingBox())!;
+  expect(before.width).toBeLessThan(canvas.width / 2);
+  await page.mouse.move(before.x + before.width / 2, before.y + before.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(before.x + before.width / 2 + 50, before.y + before.height / 2 + 30);
+  await page.mouse.up();
+  expect((await photo.boundingBox())!.x).toBeGreaterThan(before.x + 40);
+  await page.getByRole("slider", {name: "Size", exact: true}).fill("150");
+  expect((await photo.boundingBox())!.width).toBeGreaterThan(before.width * 1.4);
+  await expect(page.getByText("All changes saved", {exact: true})).toBeVisible();
+  await page.reload();
+  await expect(photo).toHaveCount(1);
+  await expect(page.locator(".sceneBackground")).toHaveAttribute("src", background!);
+  const src = (await photo.locator("img").getAttribute("src"))!;
+  expect((await sharp(Buffer.from(src.split(',')[1], 'base64')).metadata()).hasAlpha).toBe(true);
+  await page.getByRole("button", {name: "Publish", exact: true}).click();
+  await expect(page.getByRole("status")).toContainText("Remove uploaded photos");
+  await page.getByRole("button", {name: "⇩ Download", exact: true}).click();
+  const downloaded = page.waitForEvent("download");
+  await page.getByRole("menu").getByRole("button", {name: "Download", exact: true}).click();
+  expect((await sharp((await (await downloaded).path())!).metadata()).width).toBe(1200);
+  await photo.click();
+  await page.getByRole("button", {name: "Delete selected element"}).click();
+  await expect(photo).toHaveCount(0);
+  await page.getByTitle("Undo", {exact: true}).click();
+  await expect(photo).toHaveCount(1);
 });

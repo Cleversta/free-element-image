@@ -16,6 +16,7 @@ test("all canvas presets export correct dimensions, restore and undo", async ({
   page,
 }) => {
   await page.goto("/create");
+  await page.getByRole("button", { name: "Text", exact: true }).click();
   await page.getByRole("button", { name: "Add text", exact: true }).click();
   for (const [size, width, height] of [
     ["square", 1080, 1080],

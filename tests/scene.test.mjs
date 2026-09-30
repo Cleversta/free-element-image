@@ -8,6 +8,7 @@ import {
   photoPlacement,
   textAsset,
   photoBackground,
+  photoAsset,
   initialState,
   backgroundKey,
   sceneReducer,
@@ -242,6 +243,7 @@ test("every catalog entry has a unique ID, reachable category, and existing SVG"
   );
   assert.equal(new Set(catalog.map((a) => a.id)).size, catalog.length);
   const types = new Set([
+    "mountain",
     "tree",
     "small-tree",
     "flower",
@@ -387,4 +389,11 @@ test("resizing on a portrait canvas keeps the opposite corner fixed", () => {
         ((item.y / 100) * 1920 + ITEM_HEIGHT),
     ) < 1e-6,
   );
+});
+
+test("uploaded photo objects round-trip without accepting arbitrary URLs", () => {
+  const photo = photoAsset('data:image/webp;base64,YWJj');
+  const saved = {...scene, items: [{...item, asset: photo}]};
+  assert.deepEqual(restoreScene(serializeScene(saved), [], [baseBg]), saved);
+  for (const src of ['https://example.com/photo.jpg', 'data:image/svg+xml;base64,YWJj', 'data:image/webp;base64,' + 'A'.repeat(2000000)]) assert.throws(() => photoAsset(src));
 });

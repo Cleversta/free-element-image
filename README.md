@@ -62,9 +62,9 @@ Choose **Canvas size** above the canvas. Existing objects retain their pixel siz
 
 ## Text and photo backgrounds
 
-Use **Add text** for editable captions with color and bold controls. Text supports up to 8 displayed lines, wraps at 20 characters, and uses the same move, resize, rotate, and layer tools as objects. Text is included in downloads and submitted for owner review when published.
+Open **Text**, then **Add text**, for editable captions with color and bold controls. Text supports up to 8 displayed lines, wraps at 20 characters, and uses the same move, resize, rotate, and layer tools as objects. Text is included in downloads and submitted for owner review when published.
 
-Use **Upload photo** for JPG, PNG, or WebP files up to 15 MB. The full photo is resized to a maximum 1920-pixel edge and stored in this browser. Photo crop controls provide 100–300% zoom, horizontal/vertical positioning, and a reset button. Cropping and size changes are undoable and autosaved. Older photo saves retain their previously cropped image; upload the original again to recover the full frame. Photo scenes can be saved and downloaded; public publishing requires a catalog background. Choosing another background replaces the photo and can be undone. Browser storage failures are reported so you can download a copy.
+Open **Upload image**, then **Choose image**, to add JPG, PNG, or WebP files up to 15 MB as movable objects. Uploaded objects preserve transparency and support resize, rotation, flips, opacity, layers, duplication, locking, undo, autosave, and downloads. Scenes containing uploaded photos remain local-only. Open **Backgrounds** and select **Use your photo as background** to fill the canvas. The full photo is resized to a maximum 1920-pixel edge and stored in this browser. Photo crop controls provide 100–300% zoom, horizontal/vertical positioning, and a reset button. Cropping and size changes are undoable and autosaved. Older photo saves retain their previously cropped image; upload the original again to recover the full frame. Photo scenes can be saved and downloaded; public publishing requires a catalog background. Choosing another background replaces the photo and can be undone. Browser storage failures are reported so you can download a copy.
 
 ## Imported artwork
 
@@ -107,7 +107,7 @@ Recheck these overrides and run the build and tests when upgrading Next.js.
 
 ## Curated landscape collection
 
-The scene picker contains 12 original, detailed SVG landscapes, two retained classic scenes,
+Alongside 36 simple backdrops, the scene picker contains 12 original, detailed SVG landscapes, two retained classic scenes,
 and four plain color choices. Repetitive older choices are hidden from the picker, but their
 files and save compatibility are retained.
 

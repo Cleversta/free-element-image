@@ -6,7 +6,7 @@ import sharp from "sharp";
 import assets from "../../data/assets.json" with { type: "json" };
 import rights from "../../data/publishing-rights.json" with { type: "json" };
 import { savedBackgrounds } from "../backgrounds.ts";
-import { restoreScene, serializeScene, sceneDimensions } from "../scene.ts";
+import { restoreScene, serializeScene, sceneDimensions, itemDimensions } from "../scene.ts";
 import { SubmissionError } from "./submissions.ts";
 const registry: Record<string, { sha256: string; evidence: string }> = rights;
 export function textNeedsReview(title: string, description: string) {
@@ -44,7 +44,8 @@ export async function renderSubmission(raw: unknown) {
         throw new Error();
     }
     scene = restoreScene(raw, assets, savedBackgrounds);
-    if (scene.baseBg.photo) throw new Error("Local photo");
+    if (scene.baseBg.photo || scene.items.some((item) => item.asset.photo))
+      throw new Error("Local photo");
   } catch {
     throw new SubmissionError(
       400,
@@ -93,10 +94,10 @@ export async function renderSubmission(raw: unknown) {
   }
   let index = 0;
   for (const item of [...scene.items].sort((a, b) => a.z - b.z)) {
-    const width = 320 * item.scale,
-      height = 270 * item.scale;
+    if (item.hidden) continue;
+    const { width, height } = itemDimensions(item);
     const { data, info } = await sharp(
-      item.asset.text
+      item.asset.text || item.asset.shape
         ? Buffer.from(decodeURIComponent(item.asset.src.split(",")[1]))
         : await source(item.asset.src, item.asset.variant.replace(/-/g, " ")),
     )

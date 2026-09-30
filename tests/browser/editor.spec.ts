@@ -86,6 +86,11 @@ test("landing page opens the editor and imported categories are reachable", asyn
   await expect(page).toHaveURL(/\/create$/);
   await addTree(page);
   await page.getByLabel("Search elements").fill("");
+  await page.locator(".categoryTiles button").filter({ hasText: "Mountains" }).click();
+  await expect(page.locator(".miniAssetGrid button")).toHaveCount(5);
+  await page.locator(".miniAssetGrid button").first().click();
+  await expect(page.locator('.assetBox img[src*="/freeimage/mountain/"]')).toHaveCount(1);
+
   await page
     .locator(".categoryTiles button")
     .filter({ hasText: "Grass" })
