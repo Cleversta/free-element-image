@@ -12,7 +12,9 @@ import { withdrawImage } from "../lib/server/review.ts";
 import { savedBackgrounds } from "../lib/backgrounds.ts";
 import assets from "../data/assets.json" with { type: "json" };
 import { restoreScene, serializeScene } from "../lib/scene.ts";
-const background = savedBackgrounds.find(bg => bg.name === "Alpine Mirror Lake");
+const background = savedBackgrounds.find(
+  (bg) => bg.name === "Alpine Mirror Lake",
+);
 const raw = (items = [], baseBg = background) =>
   JSON.stringify({ version: 2, baseBg, items });
 test("server renders verified landscapes and never accepts an arbitrary background URL", async () => {
@@ -240,7 +242,7 @@ test("unsupported artwork errors identify the element to replace", async () => {
   );
 });
 
-test("custom text renders safely for review and local photos cannot publish", async () => {
+test("custom text renders safely for review and invalid photos cannot publish", async () => {
   const image = await renderSubmission(
     raw([
       {
@@ -272,6 +274,106 @@ test("custom text renders safely for review and local photos cannot publish", as
   );
 });
 
+test("photo scenes render privately for review and keep an editable metadata-free copy", async () => {
+  const jpeg = await sharp({
+    create: { width: 500, height: 700, channels: 3, background: "#905040" },
+  })
+    .jpeg()
+    .withMetadata()
+    .toBuffer();
+  const photo = {
+    photo: true,
+    src: `data:image/jpeg;base64,${jpeg.toString("base64")}`,
+    crop: { zoom: 1.4, x: 30, y: 60 },
+    adjustments: { brightness: 1.2, contrast: 1.1, saturation: 0.5 },
+  };
+  const png = await sharp({
+    create: {
+      width: 60,
+      height: 80,
+      channels: 4,
+      background: { r: 0, g: 200, b: 100, alpha: 0.5 },
+    },
+  })
+    .png()
+    .toBuffer();
+  const items = [
+    {
+      assetId: "uploaded-photo",
+      photo: `data:image/png;base64,${png.toString("base64")}`,
+      uid: "photo",
+      x: 20,
+      y: 30,
+      scale: 1,
+      rotation: 15,
+      opacity: 0.8,
+      hue: 0,
+      z: 1,
+    },
+  ];
+  const result = await renderSubmission(raw(items, photo));
+  assert.equal(result.verified, false);
+  const restored = restoreScene(result.editableScene, assets, savedBackgrounds);
+  assert.equal(restored.baseBg.photo, true);
+  assert.deepEqual(restored.baseBg.crop, {
+    ...photo.crop,
+    rotation: 0,
+    flipX: false,
+    flipY: false,
+  });
+  assert.deepEqual(restored.baseBg.adjustments, photo.adjustments);
+  const metadata = await sharp(
+    Buffer.from(restored.baseBg.src.split(",")[1], "base64"),
+  ).metadata();
+  assert.equal(metadata.exif, undefined);
+  assert.equal(metadata.icc, undefined);
+  assert.equal(
+    (
+      await sharp(
+        Buffer.from(restored.items[0].asset.src.split(",")[1], "base64"),
+      ).metadata()
+    ).hasAlpha,
+    true,
+  );
+  await renderSubmission(result.editableScene);
+  const spoofed = {
+    ...photo,
+    src: `data:image/jpeg;base64,${Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"/>').toString("base64")}`,
+  };
+  await assert.rejects(
+    renderSubmission(raw([], spoofed)),
+    (error) => error.status === 400,
+  );
+});
+
+test("photo migration preserves existing scenes and bounds editable project bytes", async () => {
+  const db = new PGlite();
+  try {
+    await db.exec(
+      "create schema if not exists public; create table public.images (editable_scene text constraint images_editable_scene_check check (octet_length(editable_scene) <= 200000)); insert into public.images values ('old scene');",
+    );
+    const sql = await readFile(
+      "supabase/migrations/007_photo_scenes.sql",
+      "utf8",
+    );
+    await db.exec(sql);
+    await db.exec(sql);
+    await db.query("insert into public.images values ($1)", [
+      "x".repeat(200001),
+    ]);
+    assert.equal(
+      (await db.query("select editable_scene from public.images limit 1"))
+        .rows[0].editable_scene,
+      "old scene",
+    );
+    await assert.rejects(
+      db.query("insert into public.images values ($1)", ["x".repeat(3145729)]),
+    );
+  } finally {
+    await db.close();
+  }
+});
+
 test("publishing renders every canvas preset at its declared dimensions", async () => {
   for (const [size, width, height] of [
     ["square", 1080, 1080],
@@ -293,12 +395,17 @@ test("publishing renders every canvas preset at its declared dimensions", async 
 });
 
 test("simple backdrops render for review and remain editable", async () => {
-  const simple = savedBackgrounds.filter(bg => bg.src?.includes('/simple-backgrounds/'));
+  const simple = savedBackgrounds.filter((bg) =>
+    bg.src?.includes("/simple-backgrounds/"),
+  );
   assert.equal(simple.length, 36);
   for (const bg of simple.filter((_, index) => index % 6 === 0)) {
     const result = await renderSubmission(raw([], bg));
     assert.equal(result.verified, false);
     assert.equal((await sharp(result.png).metadata()).width, 1200);
-    assert.equal(restoreScene(result.editableScene, assets, savedBackgrounds).baseBg.src, bg.src);
+    assert.equal(
+      restoreScene(result.editableScene, assets, savedBackgrounds).baseBg.src,
+      bg.src,
+    );
   }
 });

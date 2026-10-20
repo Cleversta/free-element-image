@@ -9,9 +9,11 @@ export default function CanvasViewport({
   children,
   onNavigate,
   aspectRatio = 1.5,
+  compact = false,
 }: {
   children: ReactNode;
   aspectRatio?: number;
+  compact?: boolean;
   onNavigate: () => void;
 }) {
   const [zoom, setZoom] = useState(1);
@@ -142,68 +144,74 @@ export default function CanvasViewport({
       viewport.current.releasePointerCapture(event.pointerId);
   };
 
+  const ViewPanel = compact ? "details" : "div";
   return (
     <>
-      <div
-        className="canvasZoomControls"
-        role="group"
-        aria-label="Canvas view controls"
+      <ViewPanel
+        className={compact ? "photoControlPanel canvasViewPanel" : undefined}
       >
-        <button
-          type="button"
-          aria-label="Zoom out"
-          disabled={zoom <= 1}
-          onClick={() => changeZoom(zoom - 0.25)}
+        {compact && <summary>Zoom &amp; move view</summary>}
+        <div
+          className="canvasZoomControls"
+          role="group"
+          aria-label="Canvas view controls"
         >
-          −
-        </button>
-        <label>
-          Zoom{" "}
-          <input
-            aria-label="Canvas zoom"
-            type="range"
-            min="100"
-            max="300"
-            step="1"
-            value={Math.round(zoom * 100)}
-            onChange={(event) => changeZoom(Number(event.target.value) / 100)}
-          />
-        </label>
-        <span className="canvasZoomValue" aria-hidden="true">
-          {Math.round(zoom * 100)}%
-        </span>
-        <button
-          type="button"
-          aria-label="Zoom in"
-          disabled={zoom >= 3}
-          onClick={() => changeZoom(zoom + 0.25)}
-        >
-          +
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            changeZoom(1);
-            setPanMode(false);
-            if (viewport.current) viewport.current.scrollTo(0, 0);
-          }}
-        >
-          Fit scene
-        </button>
-        <button
-          type="button"
-          aria-pressed={panMode}
-          onClick={() => setPanMode(!panMode)}
-        >
-          Move canvas
-        </button>
-      </div>
-      <p className="canvasZoomHint">
-        {panMode
-          ? "Drag to move the view. Turn off Move canvas to edit objects."
-          : "Pinch with two fingers to zoom. Use Move canvas to pan."}{" "}
-        Zoom changes only your editing view.
-      </p>
+          <button
+            type="button"
+            aria-label="Zoom out"
+            disabled={zoom <= 1}
+            onClick={() => changeZoom(zoom - 0.25)}
+          >
+            −
+          </button>
+          <label>
+            Zoom{" "}
+            <input
+              aria-label="Canvas zoom"
+              type="range"
+              min="100"
+              max="300"
+              step="1"
+              value={Math.round(zoom * 100)}
+              onChange={(event) => changeZoom(Number(event.target.value) / 100)}
+            />
+          </label>
+          <span className="canvasZoomValue" aria-hidden="true">
+            {Math.round(zoom * 100)}%
+          </span>
+          <button
+            type="button"
+            aria-label="Zoom in"
+            disabled={zoom >= 3}
+            onClick={() => changeZoom(zoom + 0.25)}
+          >
+            +
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              changeZoom(1);
+              setPanMode(false);
+              if (viewport.current) viewport.current.scrollTo(0, 0);
+            }}
+          >
+            Fit scene
+          </button>
+          <button
+            type="button"
+            aria-pressed={panMode}
+            onClick={() => setPanMode(!panMode)}
+          >
+            Move canvas
+          </button>
+        </div>
+        <p className="canvasZoomHint">
+          {panMode
+            ? "Drag to move the view. Turn off Move canvas to edit objects."
+            : "Pinch with two fingers to zoom. Use Move canvas to pan."}{" "}
+          Zoom changes only your editing view.
+        </p>
+      </ViewPanel>
       <div
         ref={viewport}
         style={{

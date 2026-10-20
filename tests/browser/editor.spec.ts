@@ -32,7 +32,8 @@ test("curated backgrounds switch cleanly and retired saved artwork still loads",
       new RegExp(slug),
     );
   }
-  await page.getByRole("button", { name: "Save", exact: false }).click();
+  await page.locator(".vBrand").focus();
+  await page.keyboard.press("Control+s");
   await expect(page.getByRole("status")).toContainText("Saved");
   await page.reload();
   await expect(page.locator(".sceneBackground")).toHaveAttribute(
@@ -70,13 +71,41 @@ async function addTree(page: Page) {
     .getByRole("button", { name: "Objects", exact: false })
     .first()
     .click();
-  await page.getByLabel("Artwork collection").selectOption("freeimage");
   await page.getByLabel("Search elements").fill("leafy tree");
   await page.locator(".miniAssetGrid button").first().click();
   await expect(page.locator(".assetBox")).toHaveCount(1);
 }
 
-test("landing page opens the editor and imported categories are reachable", async ({
+for (const width of [1440, 390]) {
+  test(`selected trees can be duplicated and undone at ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/create");
+    await addTree(page);
+    await page.keyboard.press("Escape");
+    await page.locator(".assetBox").click();
+    const source = await page.locator(".assetBox img").getAttribute("src");
+    await page.getByRole("button", { name: "Duplicate", exact: true }).click();
+    await expect(page.locator(".assetBox")).toHaveCount(2);
+    expect(await page.locator(".assetBox img").last().getAttribute("src")).toBe(
+      source,
+    );
+    await page
+      .getByRole("button", { name: "Duplicate element", exact: true })
+      .click();
+    await expect(page.locator(".assetBox")).toHaveCount(3);
+    await page.getByRole("button", { name: "Undo", exact: true }).click();
+    await expect(page.locator(".assetBox")).toHaveCount(2);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= window.innerWidth,
+      ),
+    ).toBe(true);
+  });
+}
+
+test("landing page opens the editor with original and imported artwork together", async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -86,10 +115,25 @@ test("landing page opens the editor and imported categories are reachable", asyn
   await expect(page).toHaveURL(/\/create$/);
   await addTree(page);
   await page.getByLabel("Search elements").fill("");
-  await page.locator(".categoryTiles button").filter({ hasText: "Mountains" }).click();
-  await expect(page.locator(".miniAssetGrid button")).toHaveCount(5);
-  await page.locator(".miniAssetGrid button").first().click();
-  await expect(page.locator('.assetBox img[src*="/freeimage/mountain/"]')).toHaveCount(1);
+  await expect(page.getByLabel("Artwork collection")).toHaveCount(0);
+  await expect(
+    page.locator('.miniAssetGrid img[src*="/vector-countryside/"]').first(),
+  ).toBeVisible();
+  await expect(
+    page.locator('.miniAssetGrid img[src*="/freeimage/"]').first(),
+  ).toBeVisible();
+  await page
+    .locator(".categoryTiles button")
+    .filter({ hasText: "Mountains" })
+    .click();
+  const importedMountain = page
+    .locator(".miniAssetGrid button")
+    .filter({ has: page.locator('img[src*="/freeimage/mountain/"]') });
+  await expect(importedMountain).toHaveCount(5);
+  await importedMountain.first().click();
+  await expect(
+    page.locator('.assetBox img[src*="/freeimage/mountain/"]'),
+  ).toHaveCount(1);
 
   await page
     .locator(".categoryTiles button")
@@ -198,7 +242,8 @@ test("backgrounds, property changes, saving, reloading, and New preserve history
   await addTree(page);
   await page.getByRole("button", { name: "150%", exact: true }).click();
   await page.getByRole("slider", { name: "Rotation", exact: true }).fill("45");
-  await page.getByRole("button", { name: "Save", exact: false }).click();
+  await page.locator(".vBrand").focus();
+  await page.keyboard.press("Control+s");
   await expect(page.getByRole("status")).toContainText("Saved");
   await page.reload();
   await expect(page.locator(".assetBox")).toHaveCount(1);

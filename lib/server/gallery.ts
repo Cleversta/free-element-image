@@ -12,11 +12,12 @@ import {
 import type { ReviewImage, ReviewDependencies } from "./review.ts";
 import { SubmissionError } from "./submissions.ts";
 const publicFields =
-  "slug,title,description,license_code,image_width,image_height,published_at";
+  "slug,title,description,category,license_code,image_width,image_height,published_at";
 export type PublicImage = {
   slug: string;
   title: string;
   description: string;
+  category: string;
   license_code: string;
   image_width: number;
   image_height: number;
@@ -27,6 +28,7 @@ export async function listPublished(
   pageSize = 24,
   search = "",
   category = "",
+  sort: "newest" | "oldest" = "newest",
 ) {
   const size = Math.max(1, Math.min(24, Math.floor(pageSize)));
   const db = createSupabaseAdmin();
@@ -36,7 +38,7 @@ export async function listPublished(
     query = query.ilike("title", `%${filters.q.replace(/[\\%_]/g, "\\$&")}%`);
   if (filters.category) query = query.eq("category", filters.category);
   const { data, error } = await query
-    .order("published_at", { ascending: false })
+    .order("published_at", { ascending: sort === "oldest" })
     .order("id")
     .range((page - 1) * size, page * size);
   if (error) throw new Error("Gallery unavailable");
@@ -153,7 +155,8 @@ export async function publishedFile(slug: string, variant: string) {
     !["image", "thumbnail", "download"].includes(variant)
   )
     throw new SubmissionError(404, "Image not found.");
-  const { data, error } = await createSupabaseAdmin()
+  const db = createSupabaseAdmin();
+  const { data, error } = await db
     .from("images")
     .select("public_image_key,public_thumbnail_key")
     .eq("slug", slug)
@@ -167,7 +170,13 @@ export async function publishedFile(slug: string, variant: string) {
   if (!key) throw new SubmissionError(404, "Image not found.");
   const bytes = await imageBytes(key, true);
   // Recheck after storage access so an in-flight removal cannot reveal a pending image.
-  if (!(await publicImage(slug)))
-    throw new SubmissionError(404, "Image not found.");
+  const { data: publication, error: publicationError } = await db
+    .from("images")
+    .select("slug")
+    .eq("slug", slug)
+    .eq("status", "published")
+    .maybeSingle();
+  if (publicationError) throw new Error("Gallery unavailable");
+  if (!publication) throw new SubmissionError(404, "Image not found.");
   return bytes;
 }

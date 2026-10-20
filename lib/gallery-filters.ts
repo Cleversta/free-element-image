@@ -18,10 +18,19 @@ export function galleryFilters(q: unknown, category: unknown) {
         : "",
   };
 }
-export function galleryPageHref(page: number, q: string, category: string) {
+export function gallerySort(value: unknown): "newest" | "oldest" {
+  return value === "oldest" ? "oldest" : "newest";
+}
+export function galleryPageHref(
+  page: number,
+  q: string,
+  category: string,
+  sort = "newest",
+) {
   const params = new URLSearchParams();
   if (q) params.set("q", q);
   if (category) params.set("category", category);
+  if (sort === "oldest") params.set("sort", sort);
   if (page > 1) params.set("page", String(page));
   return `/gallery${params.size ? `?${params}` : ""}`;
 }

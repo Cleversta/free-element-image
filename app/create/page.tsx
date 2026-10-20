@@ -14,14 +14,22 @@ export const metadata = pageMetadata(
 export default async function CreatePage({
   searchParams,
 }: {
-  searchParams: Promise<{ scene?: string; template?: string }>;
+  searchParams: Promise<{
+    scene?: string;
+    template?: string;
+    project?: string;
+    creations?: string;
+    mode?: string;
+  }>;
 }) {
-  const { scene, template } = await searchParams;
-  if (template && !scene) {
+  const { scene, template, project, creations, mode } = await searchParams;
+  if (project) return <Generator key={project} projectId={project} />;
+  if (template && !scene && mode !== "photo") {
     const starter = starterScene(template);
     if (!starter) notFound();
     return (
       <Generator
+        entryType="starter"
         sharedScene={JSON.stringify({
           version: 2,
           baseBg: starter.background,
@@ -30,7 +38,14 @@ export default async function CreatePage({
       />
     );
   }
-  if (!scene) return <Generator />;
+  if (!scene)
+    return (
+      <Generator
+        key={mode || "scene"}
+        photoMode={mode === "photo"}
+        openCreations={creations === "1"}
+      />
+    );
   const sharedScene = await publishedScene(scene).catch(() => null);
   if (!sharedScene)
     return (

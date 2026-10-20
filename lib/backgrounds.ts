@@ -2,6 +2,8 @@ import assets from "../data/assets.json" with { type: "json" };
 import type { Background } from "./scene.ts";
 import { backgroundKey } from "./scene.ts";
 import craftedScenes from "../data/scene-backgrounds.json" with { type: "json" };
+import elementScenes from "../data/element-scenes.json" with { type: "json" };
+import editableElementScenes from "../data/editable-element-scenes.json" with { type: "json" };
 
 import simpleBackgrounds from "../data/simple-backgrounds.json" with { type: "json" };
 
@@ -99,7 +101,7 @@ export const backgrounds: Background[] = [
     ...scene,
     kind: "landscape" as const,
   })),
-  ...craftedScenes.map((scene) => ({
+  ...[...craftedScenes, ...elementScenes].map((scene) => ({
     ...scene,
     kind: "full" as const,
     category: "Full scenes",
@@ -112,8 +114,18 @@ export const backgrounds: Background[] = [
     })),
 ];
 const visibleKeys = new Set(backgrounds.map(backgroundKey));
+export const photoCanvasBackground: Background = {
+  name: "Photo canvas",
+  sky: "#ffffff",
+  ground: "#ffffff",
+};
 export const savedBackgrounds: Background[] = [
+  photoCanvasBackground,
   ...backgrounds,
+  ...editableElementScenes.map(({ background }) => ({
+    ...background,
+    kind: "full" as const,
+  })),
   ...legacyBackgrounds.filter(
     (scene) => !visibleKeys.has(backgroundKey(scene)),
   ),

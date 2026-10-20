@@ -1,6 +1,8 @@
+import SiteHeader from "@/components/SiteHeader";
 import { galleryMetadata } from "@/lib/seo";
 import {
   galleryFilters,
+  gallerySort,
   galleryPageHref,
   sceneCategories,
 } from "@/lib/gallery-filters";
@@ -10,44 +12,58 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: Promise<{ page?: string; q?: string; category?: string }>;
+  searchParams: Promise<{
+    page?: string;
+    q?: string;
+    category?: string;
+    sort?: string;
+  }>;
 }) {
   const params = await searchParams;
   const { q, category } = galleryFilters(params.q, params.category);
+  const sort = gallerySort(params.sort);
   const page = Math.max(
     1,
     Math.min(10000, Math.floor(Number(params.page) || 1)),
   );
-  return galleryMetadata(page, q, category);
+  return galleryMetadata(page, q, category, sort);
 }
 export default async function GalleryPage({
   searchParams,
 }: {
-  searchParams: Promise<{ page?: string; q?: string; category?: string }>;
+  searchParams: Promise<{
+    page?: string;
+    q?: string;
+    category?: string;
+    sort?: string;
+  }>;
 }) {
   const params = await searchParams;
   const { q, category } = galleryFilters(params.q, params.category);
+  const sort = gallerySort(params.sort);
   const page = Math.max(
     1,
     Math.min(10000, Math.floor(Number(params.page) || 1)),
   );
   let result: Awaited<ReturnType<typeof listPublished>> | null = null;
   try {
-    result = await listPublished(page, 24, q, category);
-  } catch {
-    /* Keep the editor available when the gallery is offline. */
+    result = await listPublished(page, 24, q, category, sort);
+  } catch (error) {
+    console.error("Gallery listing failed:", error);
   }
   return (
     <main className="galleryPage">
-      <nav>
-        <Link href="/">Freelement Images</Link>
-        <Link href="/create">Create a scene</Link>
-      </nav>
+      <SiteHeader active="gallery" />
       <h1>Made by the community</h1>
       <p>
         Explore approved scenes. Create your own, or download an image you like.
       </p>
-      <form action="/gallery" className="galleryFilters" role="search">
+      <form
+        key={JSON.stringify([q, category, sort])}
+        action="/gallery"
+        className="galleryFilters"
+        role="search"
+      >
         <label>
           Search titles
           <input
@@ -69,15 +85,36 @@ export default async function GalleryPage({
             ))}
           </select>
         </label>
+        <label>
+          Sort by
+          <select aria-label="Sort by" name="sort" defaultValue={sort}>
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </label>
         <button type="submit" className="primary">
           Search
         </button>
-        {(q || category) && <Link href="/gallery">Clear filters</Link>}
+        {(q || category || sort === "oldest") && (
+          <Link href="/gallery">Clear filters</Link>
+        )}
       </form>
       {!result ? (
-        <p role="status">
-          The gallery is temporarily unavailable. Please try again shortly.
-        </p>
+        <section className="galleryEmpty" role="status">
+          <h2>The gallery is temporarily unavailable</h2>
+          <p>
+            Please try again. You can still create and download your own scene.
+          </p>
+          <a
+            className="primary"
+            href={galleryPageHref(page, q, category, sort)}
+          >
+            Try again
+          </a>
+          <p>
+            <Link href="/create">Create a scene →</Link>
+          </p>
+        </section>
       ) : (
         <>
           {result.images.length === 0 && (
@@ -111,20 +148,33 @@ export default async function GalleryPage({
                     width="480"
                     height="320"
                     loading="lazy"
+                    decoding="async"
                   />
                   <h2>{image.title}</h2>
                 </Link>
+                {sceneCategories.some((value) => value === image.category) && (
+                  <p className="galleryCategory">
+                    <Link href={galleryPageHref(1, "", image.category)}>
+                      <span className="srOnly">Browse category: </span>
+                      {image.category[0].toUpperCase() +
+                        image.category.slice(1)}
+                    </Link>
+                  </p>
+                )}
               </article>
             ))}
           </div>
           <nav className="publishButtons" aria-label="Gallery pages">
             {page > 1 && (
-              <Link href={galleryPageHref(page - 1, q, category)}>
+              <Link href={galleryPageHref(page - 1, q, category, sort)}>
                 ← Previous
               </Link>
             )}
+            <span aria-current="page">Page {page}</span>
             {result.more && (
-              <Link href={galleryPageHref(page + 1, q, category)}>Next →</Link>
+              <Link href={galleryPageHref(page + 1, q, category, sort)}>
+                Next →
+              </Link>
             )}
           </nav>
         </>

@@ -1,7 +1,9 @@
+import { moodImage } from "./scene-mood";
 import {
   sceneDimensions,
   photoPlacement,
   itemDimensions,
+  photoFilter,
 } from "./scene";
 import type { Scene } from "./scene";
 
@@ -91,6 +93,8 @@ export async function renderScene(
   ctx.fillRect(0, HEIGHT * 0.45, WIDTH, HEIGHT * 0.55);
   if (scene.baseBg.src) {
     const background = await loadImage(scene.baseBg.src);
+    ctx.save();
+    if (scene.baseBg.photo) ctx.filter = photoFilter(scene.baseBg.adjustments);
     if (scene.baseBg.photo || (scene.size && scene.size !== "landscape")) {
       const rect = photoPlacement(
         background.naturalWidth,
@@ -99,8 +103,18 @@ export async function renderScene(
         HEIGHT,
         scene.baseBg.crop,
       );
-      ctx.drawImage(background, rect.x, rect.y, rect.width, rect.height);
+      ctx.translate(rect.x + rect.width / 2, rect.y + rect.height / 2);
+      ctx.rotate((rect.rotation * Math.PI) / 180);
+      ctx.scale(rect.flipX ? -1 : 1, rect.flipY ? -1 : 1);
+      ctx.drawImage(
+        background,
+        -rect.width / 2,
+        -rect.height / 2,
+        rect.width,
+        rect.height,
+      );
     } else ctx.drawImage(background, 0, 0, WIDTH, HEIGHT);
+    ctx.restore();
   }
   for (const item of [...scene.items].sort((a, b) => a.z - b.z)) {
     if (item.hidden) continue;
@@ -130,6 +144,14 @@ export async function renderScene(
     );
     ctx.restore();
   }
+  if (scene.mood && scene.mood !== "Original")
+    ctx.drawImage(
+      await loadImage(moodImage(scene.mood, WIDTH, HEIGHT)),
+      0,
+      0,
+      WIDTH,
+      HEIGHT,
+    );
   return new Promise((resolve, reject) =>
     canvas.toBlob(
       (blob) =>

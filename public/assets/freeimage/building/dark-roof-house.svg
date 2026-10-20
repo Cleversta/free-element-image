@@ -1,53 +1,4 @@
-<?xml version="1.0"?>
-<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg548" height="400pt" width="400pt">
-  <defs id="defs550">
-    <linearGradient id="linearGradient817">
-      <stop id="stop818" stop-color="#333" offset="0"/>
-      <stop id="stop819" stop-color="#fff" offset="1"/>
-    </linearGradient>
-    <linearGradient id="linearGradient820" y2="-.23438" xlink:href="#linearGradient817" y1=".64062" x2=".33824" x1=".53676"/>
-    <linearGradient id="linearGradient821" y2="-.61719" xlink:href="#linearGradient817" y1=".51562" x2="1.25" x1=".40556"/>
-    <linearGradient id="linearGradient822" x2=".925" y1=".28907" x1=".074878" y2="1.0703">
-      <stop id="stop824" stop-color="#fff" offset="0"/>
-      <stop id="stop825" stop-color="#0ff" offset="1"/>
-    </linearGradient>
-    <linearGradient id="linearGradient827" x2=".55172" y1=".039063" x1="-1.1724" y2="1.0469">
-      <stop id="stop829" stop-color="#fff" offset="0"/>
-      <stop id="stop830" stop-color="#975e52" offset="1"/>
-    </linearGradient>
-  </defs>
-  <g id="g850" stroke-linejoin="round" stroke="#000" stroke-width="10" fill-rule="evenodd">
-    <path id="path807" transform="translate(38.75 3.75)" fill="url(#linearGradient827)" d="m241.25 455l1.25-197.5 142.5-122.5 1.25 198.75-145 121.25z"/>
-    <path id="path803" transform="translate(-35 -22.5)" fill="url(#linearGradient820)" d="m220 147.5s127.5 147.5 130 147.5 138.75-120 138.75-120l-136.25-136.25-135 110"/>
-    <path id="path804" transform="translate(-35 -22.5)" fill="url(#linearGradient821)" d="m218.75 148.75c0 1.25-136.25 82.5-136.25 82.5l131.25-105 137.5-87.5-132.5 110z"/>
-    <path id="path805" transform="translate(-35 -22.5)" d="m82.5 231.25l136.25-82.5 131.25 147.5-12.5 10-125-140-123.75 77.5-6.25-12.5z"/>
-    <path id="path806" transform="translate(-35 -22.5)" fill="#824a3d" d="m105 233.75c1.25 0 1.25 183.75 0 183.75l211.25 63.75v-198.75l-103.75-115-107.5 66.25z"/>
-    <path id="path808" transform="translate(38.75 3.75)" fill="#ee5e46" d="m68.75 402.5l1.25-132.5 108.75 27.5v137.5l-110-32.5z"/>
-    <path id="path809" transform="translate(38.75 3.75)" fill="#ee5e46" d="m283.75 288.75c1.25-1.25 76.25-63.75 76.25-63.75l1.25 81.25-75 65-2.5-82.5z"/>
-    <path id="path812" transform="translate(38.75 3.75)" d="m137.5 188.75c40 12.5 26.25 67.5-6.25 58.75-32.5-10-23.75-67.5 6.25-58.75z"/>
-    <path id="path814" transform="translate(73.75 -27.5)" fill="url(#linearGradient822)" d="m291.25 291.25c1.25 0 28.75-25 28.75-25v67.5l-27.5 25-1.25-67.5z"/>
-    <path id="path815" transform="translate(38.75 3.75)" fill="#ee5e46" d="m276.9 379.05l97.62-82.7 0.36 16.49-97.61 85.75s0.87-19.54-0.37-19.54z"/>
-    <path id="path816" transform="translate(38.75 3.75)" d="m162.47 359.8c9 2.84 8.99 18-2.37 17.05-9.95-1.42-9-16.58 2.37-17.05z"/>
-    <path id="path826" transform="translate(37.5 5)" fill="url(#linearGradient822)" d="m291.25 291.25c1.25 0 28.75-25 28.75-25v67.5l-27.5 25-1.25-67.5z"/>
-  </g>
-  <rdf:RDF xmlns="http://web.resource.org/cc/">
-    <Work rdf:about="">
-      <dc:title>Clipart by Nicu Buculei - nosmoke</dc:title>
-      <dc:rights>
-        <Agent>
-          <dc:title>Nicu Buculei</dc:title>
-        </Agent>
-      </dc:rights>
-      <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-      <license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
-    </Work>
-    <License rdf:about="http://web.resource.org/cc/PublicDomain">
-      <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
-      <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
-      <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
-    </License>
-  </rdf:RDF>
-  <metadata>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg548" width="400pt" height="400pt"><defs id="defs550"><linearGradient id="linearGradient817"><stop id="stop818" offset="0" stop-color="#333"/><stop id="stop819" offset="1" stop-color="#fff"/></linearGradient><linearGradient xlink:href="#linearGradient817" id="linearGradient820" x1=".537" x2=".338" y1=".641" y2="-.234"/><linearGradient xlink:href="#linearGradient817" id="linearGradient821" x1=".406" x2="1.25" y1=".516" y2="-.617"/><linearGradient id="linearGradient822" x1=".075" x2=".925" y1=".289" y2="1.07"><stop id="stop824" offset="0" stop-color="#fff"/><stop id="stop825" offset="1" stop-color="#0ff"/></linearGradient><linearGradient id="linearGradient827" x1="-1.172" x2=".552" y1=".039" y2="1.047"><stop id="stop829" offset="0" stop-color="#fff"/><stop id="stop830" offset="1" stop-color="#975e52"/></linearGradient></defs><g id="g850" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width="10"><path id="path807" fill="url(#linearGradient827)" d="m241.25 455 1.25-197.5L385 135l1.25 198.75z" transform="translate(38.75 3.75)"/><path id="path803" fill="url(#linearGradient820)" d="M220 147.5S347.5 295 350 295s138.75-120 138.75-120L352.5 38.75l-135 110" transform="translate(-35 -22.5)"/><path id="path804" fill="url(#linearGradient821)" d="M218.75 148.75c0 1.25-136.25 82.5-136.25 82.5l131.25-105 137.5-87.5z" transform="translate(-35 -22.5)"/><path id="path805" d="m82.5 231.25 136.25-82.5L350 296.25l-12.5 10-125-140-123.75 77.5z" transform="translate(-35 -22.5)"/><path id="path806" fill="#824a3d" d="M105 233.75c1.25 0 1.25 183.75 0 183.75l211.25 63.75V282.5l-103.75-115z" transform="translate(-35 -22.5)"/><path id="path808" fill="#ee5e46" d="M68.75 402.5 70 270l108.75 27.5V435z" transform="translate(38.75 3.75)"/><path id="path809" fill="#ee5e46" d="M283.75 288.75C285 287.5 360 225 360 225l1.25 81.25-75 65z" transform="translate(38.75 3.75)"/><path id="path812" d="M137.5 188.75c40 12.5 26.25 67.5-6.25 58.75-32.5-10-23.75-67.5 6.25-58.75z" transform="translate(38.75 3.75)"/><path id="path814" fill="url(#linearGradient822)" d="M291.25 291.25c1.25 0 28.75-25 28.75-25v67.5l-27.5 25z" transform="translate(73.75 -27.5)"/><path id="path815" fill="#ee5e46" d="m276.9 379.05 97.62-82.7.36 16.49-97.61 85.75s.87-19.54-.37-19.54z" transform="translate(38.75 3.75)"/><path id="path816" d="M162.47 359.8c9 2.84 8.99 18-2.37 17.05-9.95-1.42-9-16.58 2.37-17.05z" transform="translate(38.75 3.75)"/><path id="path826" fill="url(#linearGradient822)" d="M291.25 291.25c1.25 0 28.75-25 28.75-25v67.5l-27.5 25z" transform="translate(37.5 5)"/></g><metadata xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://web.resource.org/cc/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg">
     <rdf:RDF>
       <cc:Work>
         <dc:format>image/svg+xml</dc:format>
@@ -89,5 +40,4 @@
         <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
       </cc:License>
     </rdf:RDF>
-  </metadata>
-</svg>
+  </metadata></svg>

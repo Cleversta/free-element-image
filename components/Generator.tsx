@@ -1,15 +1,43 @@
 "use client";
 
 import Link from "next/link";
+import EditorIcon from "./EditorIcon";
+import { BLOB_NAMES, BLOB_COLORS } from "@/lib/blob-shapes";
 import PublishDialog from "./PublishDialog";
+import MyCreations from "./MyCreations";
+import { getProject, listProjects, putProject } from "@/lib/projects";
+import { projectThumbnail } from "@/lib/project-thumbnail";
 import CanvasViewport from "./CanvasViewport";
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
+import { SCENE_MOODS, moodImage, type SceneMood } from "@/lib/scene-mood";
+import {
+  duplicateSelection,
+  groupMembers,
+  groupSelection,
+  resizeGroup,
+} from "@/lib/groups";
 import assets from "@/data/assets.json";
-import { backgrounds, savedBackgrounds } from "@/lib/backgrounds";
+import { matchingElements } from "@/lib/matching-elements";
+import {
+  editableBackground,
+  sceneBackgroundKey,
+  replaceBackground,
+  adoptBackgroundLayers,
+  unpackBackground,
+} from "@/lib/editable-backgrounds";
+import {
+  backgrounds,
+  savedBackgrounds,
+  photoCanvasBackground,
+} from "@/lib/backgrounds";
 import {
   textAsset,
+  TEXT_FONTS,
+  textFontFamily,
+  type TextFont,
   shapeAsset,
   SHAPE_NAMES,
+  EFFECT_NAMES,
   itemDimensions,
   moveLayer,
   photoBackground,
@@ -17,6 +45,9 @@ import {
   CANVAS_SIZES,
   sceneDimensions,
   photoCrop,
+  photoPlacement,
+  photoAdjustments,
+  photoFilter,
   ITEM_WIDTH,
   ITEM_HEIGHT,
   clamp,
@@ -33,6 +64,7 @@ import {
 } from "@/lib/scene";
 import type { Asset, Background, Item, Scene, CanvasSize } from "@/lib/scene";
 import { renderScene } from "@/lib/export";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 const aliases: Record<string, string> = {
   background: "backgrounds",
@@ -120,24 +152,86 @@ const defaultScene: Scene = {
   items: [],
 };
 type Section =
-  "backgrounds" | "elements" | "decorations" | "others" | "text" | "uploads" | "shapes";
+  | "backgrounds"
+  | "elements"
+  | "decorations"
+  | "others"
+  | "text"
+  | "uploads"
+  | "shapes"
+  | "effects"
+  | "draw";
 
-export default function Generator({ sharedScene }: { sharedScene?: string }) {
+export default function Generator({
+  sharedScene,
+  projectId,
+  entryType,
+  openCreations = false,
+  photoMode: initialPhotoMode = false,
+}: {
+  sharedScene?: string;
+  projectId?: string;
+  entryType?: "starter";
+  openCreations?: boolean;
+  photoMode?: boolean;
+}) {
+  const [mobilePanel, setMobilePanel] = useState<
+    "none" | "tools" | "properties"
+  >("none");
+  const [photoMode, setPhotoMode] = useState(initialPhotoMode);
+  const startingScene: Scene = photoMode
+    ? {
+        ...defaultScene,
+        baseBg: photoCanvasBackground,
+      }
+    : defaultScene;
   const [state, dispatch] = useReducer(
     sceneReducer,
-    defaultScene,
+    startingScene,
     initialState,
   );
-  const storageKey = sharedScene
-    ? `${STORAGE_KEY}-copy-${Array.from(sharedScene).reduce((hash, char) => (Math.imul(hash, 31) + char.charCodeAt(0)) | 0, 0) >>> 0}`
-    : STORAGE_KEY;
+  const storageKey = projectId
+    ? `${STORAGE_KEY}-project-${projectId}`
+    : sharedScene
+      ? `${STORAGE_KEY}-copy-${Array.from(sharedScene).reduce((hash, char) => (Math.imul(hash, 31) + char.charCodeAt(0)) | 0, 0) >>> 0}`
+      : photoMode
+        ? `${STORAGE_KEY}-photo-editor`
+        : STORAGE_KEY;
   const [uploading, setUploading] = useState(false);
   const photoInput = useRef<HTMLInputElement>(null);
   const backgroundPhotoInput = useRef<HTMLInputElement>(null);
   const { baseBg, items } = state.present;
   const { width: WIDTH, height: HEIGHT } = sceneDimensions(state.present);
+  const [brushSpacing, setBrushSpacing] = useState(45);
+  const [brushCursor, setBrushCursor] = useState<[number, number] | null>(null);
+  const [brushKind, setBrushKind] = useState("Pen");
+  const [brushColor, setBrushColor] = useState("#305f4e");
+  const [brushSize, setBrushSize] = useState(8);
+  const [drawPoints, setDrawPoints] = useState<[number, number][]>([]);
+  const drawStroke = useRef<{ id: number; points: [number, number][] } | null>(
+    null,
+  );
+  const [editingPhoto, setEditingPhoto] = useState(false);
+  const [editingText, setEditingText] = useState<{
+    uid: string;
+    content: string;
+  } | null>(null);
   const crop = photoCrop(baseBg.crop);
+  const [photoDimensions, setPhotoDimensions] = useState({
+    src: "",
+    width: 1,
+    height: 1,
+  });
+  const photoRect = photoPlacement(
+    photoDimensions.width,
+    photoDimensions.height,
+    WIDTH,
+    HEIGHT,
+    crop,
+  );
+  const adjustments = photoAdjustments(baseBg.adjustments);
   const draggedLayer = useRef<string | null>(null);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [active, setActive] = useState<string | null>(null);
   const [section, setSection] = useState<Section>("backgrounds");
   const [backgroundCategory, setBackgroundCategory] = useState("All");
@@ -151,9 +245,6 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   );
   const [pickerCat, setPickerCat] = useState(cats[0]);
   const [search, setSearch] = useState("");
-  const [collection, setCollection] = useState<
-    "all" | "freeimage" | "original"
-  >("all");
   const [downloadFormat, setDownloadFormat] = useState<"png" | "jpeg" | "webp">(
     "png",
   );
@@ -162,10 +253,60 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const downloadRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
   const [notice, setNotice] = useState("");
-  const [saved, setSaved] = useState(serializeScene(defaultScene));
+  const [saved, setSaved] = useState(serializeScene(startingScene));
   const [ready, setReady] = useState(false);
+  const editorStartTracked = useRef(false);
+  const [welcomeDismissed, setWelcomeDismissed] = useState(true);
   const [exporting, setExporting] = useState(false);
   const [publishScene, setPublishScene] = useState<Scene | null>(null);
+  const [creationsOpen, setCreationsOpen] = useState(openCreations);
+  const [savedProject, setSavedProject] = useState<{
+    id: string;
+    name: string;
+  } | null>(null);
+  const [savingCreation, setSavingCreation] = useState(false);
+  const savingCreationRef = useRef(false);
+  const saveToCreations = async () => {
+    if (savingCreationRef.current || !ready) return;
+    savingCreationRef.current = true;
+    setSavingCreation(true);
+    setNotice("Saving to My creations…");
+    try {
+      const snapshot = state.present;
+      const raw = serializeScene(snapshot);
+      const existing = savedProject
+        ? await getProject(savedProject.id)
+        : (await listProjects()).find(
+            (project) => project.name === "My village" && project.scene === raw,
+          );
+      const project = {
+        id: existing?.id || crypto.randomUUID(),
+        name: existing?.name || "My village",
+        scene: raw,
+        updatedAt: Date.now(),
+        thumbnail: await projectThumbnail(snapshot),
+      };
+      await putProject(project);
+      rememberProject({ id: project.id, name: project.name });
+      setNotice(`Saved to My creations as “${project.name}”.`);
+    } catch {
+      setNotice(
+        "Could not save to My creations. Browser storage may be full or unavailable. Your scene is still open.",
+      );
+    } finally {
+      savingCreationRef.current = false;
+      setSavingCreation(false);
+    }
+  };
+  const rememberProject = (project: { id: string; name: string } | null) => {
+    setSavedProject(project);
+    try {
+      if (project) localStorage.setItem(`${storageKey}-project-id`, project.id);
+      else localStorage.setItem(`${storageKey}-project-id`, "");
+    } catch {
+      /* Named scenes still save when draft storage is unavailable. */
+    }
+  };
   const exportingRef = useRef(false);
   const board = useRef<HTMLDivElement>(null);
   const pointerCleanup = useRef<(() => void) | null>(null);
@@ -179,25 +320,59 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       ),
     [],
   );
+  const brushAssets = assets.filter((asset) =>
+    brushKind === "Flowers"
+      ? asset.style === "freeimage" && asset.type === "flower"
+      : brushKind === "Grass"
+        ? /grass/.test(asset.variant) && !/potted/.test(asset.variant)
+        : asset.type === "sky" && /cloud/.test(asset.variant),
+  );
+  const stampBrush = ["Flowers", "Grass", "Clouds"].includes(brushKind);
+  const previewScale = Math.max(
+    0.15,
+    ((brushKind === "Clouds" ? 0.45 : 0.2) * brushSize) / 8,
+  );
+  const matching = matchingElements(baseBg);
   const current = items.find((item) => item.uid === active) || null;
   const [sizeInput, setSizeInput] = useState<string>("");
   const [rotationInput, setRotationInput] = useState<string>("");
   const [opacityInput, setOpacityInput] = useState<string>("");
   const filtered = useMemo(
     () =>
-      (groups[pickerCat] || []).filter(
-        (asset) =>
-          (collection === "all" ||
-            (collection === "freeimage"
-              ? asset.style === "freeimage"
-              : asset.style !== "freeimage")) &&
-          pretty(asset.variant || asset.id)
-            .toLowerCase()
-            .includes(search.trim().toLowerCase()),
+      (groups[pickerCat] || []).filter((asset) =>
+        pretty(asset.variant || asset.id)
+          .toLowerCase()
+          .includes(search.trim().toLowerCase()),
       ),
-    [groups, pickerCat, search, collection],
+    [groups, pickerCat, search],
   );
   const dirty = serializeScene(state.present) !== saved;
+  useEffect(() => {
+    try {
+      setWelcomeDismissed(
+        localStorage.getItem("freelement-welcome-complete") === "1",
+      );
+    } catch {
+      setWelcomeDismissed(false);
+    }
+  }, []);
+  const finishWelcome = () => {
+    setWelcomeDismissed(true);
+    try {
+      localStorage.setItem("freelement-welcome-complete", "1");
+    } catch {
+      /* The editor remains usable without storage. */
+    }
+  };
+  const onboardingScenes = backgrounds
+    .filter((background) => editableBackground(background))
+    .slice(0, 3);
+  const personalElements = items.filter((item) => !item.backgroundScene).length;
+  const welcomeStep = personalElements
+    ? 3
+    : editableBackground(baseBg) && items.length
+      ? 2
+      : 1;
 
   const change = (apply: (scene: Scene) => Scene) => {
     setNotice("");
@@ -258,16 +433,19 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     setActive(null);
     setNotice("");
   };
-  const chooseBackground = (background: Background) =>
+  const chooseBackground = (background: Background) => {
     change((scene) =>
-      scene.baseBg === background ? scene : { ...scene, baseBg: background },
+      replaceBackground(scene, background, () => crypto.randomUUID()),
     );
+    setActive(null);
+  };
   const clear = () => {
     change((scene) => (scene.items.length ? { ...scene, items: [] } : scene));
     setActive(null);
   };
   const newScene = () => {
-    change(() => ({ ...defaultScene, items: [] }));
+    rememberProject(null);
+    change(() => ({ ...startingScene, items: [] }));
     setActive(null);
   };
   const positionFor = (category: string) => {
@@ -275,7 +453,9 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       y = 60,
       scale = 0.65;
     if (category === "mountains") {
-      x = 30; y = 24; scale = 1.5;
+      x = 30;
+      y = 24;
+      scale = 1.5;
     }
     if (category === "buildings") {
       y = 38;
@@ -327,6 +507,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     hue: 0,
   });
   const addAsset = (asset: Asset) => {
+    setMobilePanel("none");
     const item = makeItem(asset);
     if (asset.photo || asset.shape) {
       item.scale = 1;
@@ -344,6 +525,27 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   };
   const remove = (uid: string) => change((scene) => removeItem(scene, uid));
   const duplicate = (item: Item) => {
+    if (item.groupId) {
+      const members = groupMembers(state.present, item);
+      const groupId = crypto.randomUUID();
+      change((scene) => ({
+        ...scene,
+        items: [
+          ...scene.items,
+          ...members.map((entry, index) => ({
+            ...entry,
+            uid: crypto.randomUUID(),
+            groupId,
+            backgroundScene: undefined,
+            locked: false,
+            x: entry.x + 3,
+            y: entry.y + 3,
+            z: Math.max(0, ...scene.items.map((layer) => layer.z)) + index + 1,
+          })),
+        ],
+      }));
+      return;
+    }
     const copy = {
       ...item,
       uid: crypto.randomUUID(),
@@ -400,10 +602,23 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     pointerCleanup.current?.();
     dispatch({ type: "begin" });
     const pointerId = event.pointerId;
+    let pendingMove: PointerEvent | null = null;
+    let moveFrame = 0;
+    const flushMove = () => {
+      moveFrame = 0;
+      const pending = pendingMove;
+      pendingMove = null;
+      if (pending) move(pending);
+    };
     const onMove = (next: PointerEvent) => {
-      if (next.pointerId === pointerId) move(next);
+      if (next.pointerId !== pointerId) return;
+      pendingMove = next;
+      if (!moveFrame) moveFrame = window.requestAnimationFrame(flushMove);
     };
     const cleanup = () => {
+      if (moveFrame) window.cancelAnimationFrame(moveFrame);
+      moveFrame = 0;
+      pendingMove = null;
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerup", finish);
       window.removeEventListener("pointercancel", cancel);
@@ -412,6 +627,9 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     };
     const finish = (next: PointerEvent) => {
       if (next.pointerId === pointerId) {
+        if (moveFrame) window.cancelAnimationFrame(moveFrame);
+        moveFrame = 0;
+        flushMove();
         dispatch({ type: "end" });
         cleanup();
       }
@@ -423,6 +641,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       }
     };
     const blur = () => {
+      flushMove();
       dispatch({ type: "end" });
       cleanup();
     };
@@ -433,12 +652,39 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     window.addEventListener("blur", blur);
   };
   const down = (event: React.PointerEvent, item: Item) => {
+    setMobilePanel("properties");
     event.stopPropagation();
     setActive(item.uid);
     if (item.locked || !board.current || event.button !== 0) return;
     const rect = board.current.getBoundingClientRect();
     const startX = event.clientX,
       startY = event.clientY;
+    if (
+      item.groupId ||
+      (selectedIds.includes(item.uid) && selectedIds.length > 1)
+    ) {
+      const moving = item.groupId
+        ? groupMembers(state.present, item)
+        : items.filter((entry) => selectedIds.includes(entry.uid));
+      if (moving.some((entry) => entry.locked)) return;
+      const movingById = new Map(moving.map((entry) => [entry.uid, entry]));
+      beginPointer(event, (next) =>
+        change((scene) => ({
+          ...scene,
+          items: scene.items.map((entry) => {
+            const original = movingById.get(entry.uid);
+            return original
+              ? {
+                  ...entry,
+                  x: original.x + ((next.clientX - startX) / rect.width) * 100,
+                  y: original.y + ((next.clientY - startY) / rect.height) * 100,
+                }
+              : entry;
+          }),
+        })),
+      );
+      return;
+    }
     beginPointer(event, (next) =>
       update(item.uid, {
         x: clamp(
@@ -463,6 +709,22 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     const rect = board.current.getBoundingClientRect();
     const startX = event.clientX,
       startY = event.clientY;
+    if (item.groupId) {
+      const members = groupMembers(state.present, item);
+      if (members.some((entry) => entry.locked)) return;
+      beginPointer(event, (next) => {
+        const patch = resizeItem(
+          item,
+          corner,
+          ((next.clientX - startX) / rect.width) * WIDTH,
+          ((next.clientY - startY) / rect.height) * HEIGHT,
+          WIDTH,
+          HEIGHT,
+        );
+        change((scene) => resizeGroup(scene, members, { ...item, ...patch }));
+      });
+      return;
+    }
     beginPointer(event, (next) =>
       update(
         item.uid,
@@ -495,13 +757,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   const randomScene = () => {
     const out: Item[] = [];
     const addFrom = (category: string, positions: number[]) => {
-      const pool = (groups[category] || []).filter(
-        (asset) =>
-          collection === "all" ||
-          (collection === "freeimage"
-            ? asset.style === "freeimage"
-            : asset.style !== "freeimage"),
-      );
+      const pool = groups[category] || [];
       if (!pool.length) return;
       for (const x of positions) {
         const item = makeItem(pick(pool));
@@ -523,11 +779,16 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     addFrom("garden-equipment", [61]);
     addFrom("grass", [9, 42, 78]);
     addFrom("flowers", [19, 39, 84]);
-    change((scene) => ({
-      ...scene,
-      baseBg: pick(backgrounds.filter((bg) => bg.kind === "full")),
-      items: out,
-    }));
+    change((scene) =>
+      unpackBackground(
+        {
+          ...scene,
+          baseBg: pick(backgrounds.filter((bg) => bg.kind === "full")),
+          items: out,
+        },
+        () => crypto.randomUUID(),
+      ),
+    );
     setActive(null);
   };
   const save = () => {
@@ -543,25 +804,79 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
     }
   };
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(storageKey) || sharedScene;
-      if (raw) {
-        const scene = restoreScene(raw, assets, savedBackgrounds);
-        dispatch({ type: "load", scene });
-        setSaved(serializeScene(scene));
-        setNotice(
-          sharedScene
-            ? "Editing a copy. Your saved scene stays unchanged while this copy autosaves separately."
-            : "Your saved scene is ready.",
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const project = projectId ? await getProject(projectId) : undefined;
+        const linkedId = localStorage.getItem(`${storageKey}-project-id`);
+        const linkedProject =
+          linkedId !== null
+            ? linkedId
+              ? await getProject(linkedId)
+              : undefined
+            : project;
+        if (cancelled) return;
+        setSavedProject(
+          linkedProject
+            ? { id: linkedProject.id, name: linkedProject.name }
+            : null,
         );
+        if (projectId && !project) {
+          setNotice(
+            "This saved scene isn’t available in this browser. Open My creations to choose another scene.",
+          );
+          setReady(true);
+          return;
+        }
+        const raw =
+          localStorage.getItem(storageKey) || project?.scene || sharedScene;
+        if (raw) {
+          const scene = unpackBackground(
+            adoptBackgroundLayers(restoreScene(raw, assets, savedBackgrounds)),
+            () => crypto.randomUUID(),
+          );
+          if (
+            (projectId || sharedScene) &&
+            (scene.baseBg.photo || scene.baseBg.name === "Photo canvas")
+          )
+            setPhotoMode(true);
+          dispatch({ type: "load", scene });
+          setSaved(serializeScene(scene));
+          setNotice(
+            project
+              ? `Opened ${project.name}. Your edits autosave here. Use My creations to update the saved copy.`
+              : sharedScene
+                ? "Editing a copy. Your saved scene stays unchanged while this copy autosaves separately."
+                : "Your saved scene is ready.",
+          );
+        }
+      } catch {
+        if (!cancelled)
+          setNotice(
+            "Your saved scene could not be loaded. You can still create a new scene.",
+          );
       }
-    } catch {
-      setNotice(
-        "Your saved scene could not be loaded. You can still create a new scene.",
-      );
-    }
-    setReady(true);
-  }, [sharedScene, storageKey]);
+      if (!cancelled) setReady(true);
+    };
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  }, [sharedScene, storageKey, projectId]);
+  useEffect(() => {
+    if (!ready || editorStartTracked.current) return;
+    editorStartTracked.current = true;
+    trackAnalyticsEvent("editor_started", {
+      mode: photoMode ? "photo" : "scene",
+      entry:
+        entryType ||
+        (projectId
+          ? "saved_project"
+          : sharedScene
+            ? "shared_scene"
+            : "new_scene"),
+    });
+  }, [ready, photoMode, entryType, projectId, sharedScene]);
   useEffect(() => {
     if (!ready || !dirty || state.gesture) return;
     const persist = () => {
@@ -615,11 +930,29 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       const format = asBackground ? "image/jpeg" : "image/webp";
       let src = canvas.toDataURL(format, 0.8);
       if (src.length > 2000000) src = canvas.toDataURL(format, 0.55);
-      if (asBackground) chooseBackground(photoBackground(src));
-      else addAsset(photoAsset(src));
+      if (asBackground) {
+        const background = photoBackground(src);
+        if (photoMode) {
+          const ratio = image.naturalWidth / image.naturalHeight;
+          const size = (Object.keys(CANVAS_SIZES) as CanvasSize[]).sort(
+            (a, b) =>
+              Math.abs(
+                Math.log(
+                  ratio / (CANVAS_SIZES[a].width / CANVAS_SIZES[a].height),
+                ),
+              ) -
+              Math.abs(
+                Math.log(
+                  ratio / (CANVAS_SIZES[b].width / CANVAS_SIZES[b].height),
+                ),
+              ),
+          )[0];
+          change((scene) => ({ ...scene, baseBg: background, size }));
+        } else chooseBackground(background);
+      } else addAsset(photoAsset(src));
       setNotice(
         asBackground
-          ? "Photo background added. It stays in this browser and can be downloaded with your scene."
+          ? "Photo added. Adjust the crop and colors, add elements, or publish it for review."
           : "Photo added. Drag it to move, use the corners to resize, or adjust it in Element Properties.",
       );
     } catch (error) {
@@ -633,6 +966,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   };
   const download = async () => {
     if (exportingRef.current) return;
+    const exportStartedAt = performance.now();
     exportingRef.current = true;
     setExporting(true);
     setNotice(`Preparing your ${downloadFormat.toUpperCase()}…`);
@@ -654,6 +988,14 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
       link.click();
       link.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      trackAnalyticsEvent("scene_downloaded", {
+        format: downloadFormat,
+        width: WIDTH,
+        height: HEIGHT,
+        elements: state.present.items.length,
+        mode: photoMode ? "photo" : "scene",
+        render_ms: Math.round(performance.now() - exportStartedAt),
+      });
       setNotice(
         `${downloadFormat.toUpperCase()} downloaded (${WIDTH} × ${HEIGHT}).`,
       );
@@ -756,6 +1098,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
             )
           : [];
   const selectSection = (next: Section) => {
+    setMobilePanel("tools");
     setSection(next);
     setSearch("");
     if (next === "elements") setPickerCat("trees");
@@ -764,18 +1107,48 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
   };
   return (
     <main className="villageStudio">
+      {creationsOpen && (
+        <MyCreations
+          scene={state.present}
+          activeProject={savedProject}
+          onSaved={rememberProject}
+          onClose={() => setCreationsOpen(false)}
+          onOpen={(scene, name, id) => {
+            rememberProject({ id, name });
+            change(() =>
+              unpackBackground(adoptBackgroundLayers(scene), () =>
+                crypto.randomUUID(),
+              ),
+            );
+            setActive(null);
+            setNotice(
+              `Opened ${name}. Undo returns to your previous working scene.`,
+            );
+          }}
+        />
+      )}
       {publishScene && (
         <PublishDialog
           scene={publishScene}
           onClose={() => setPublishScene(null)}
         />
       )}
-      <header className="vTop">
+      <header className={`vTop${photoMode ? " photoEditorHeader" : ""}`}>
         <Link href="/" className="vBrand">
-          <img className="editorLogo" src="/logo.png" alt="" width={48} height={48} />
+          <img
+            className="editorLogo"
+            src="/logo.png"
+            alt=""
+            width={48}
+            height={48}
+          />
           <div>
             <b>Freelement Images</b>
-            <small>Build a village scene your way</small>
+            <small>
+              {photoMode
+                ? "Edit a photo and make it yours"
+                : "Build a village scene your way"}
+            </small>
           </div>
         </Link>
         <div className="vActions">
@@ -784,6 +1157,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
             disabled={!state.past.length}
             onClick={undo}
             title="Undo"
+            aria-label="Undo"
           >
             ↶
           </button>
@@ -792,37 +1166,51 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
             disabled={!state.future.length}
             onClick={redo}
             title="Redo"
+            aria-label="Redo"
           >
             ↷
           </button>
-          <button onClick={newScene}>⊕ New</button>
-          <button onClick={randomScene}>⟳ Random</button>
+          <button
+            className={photoMode ? "editorIconButton" : undefined}
+            aria-label={photoMode ? "New photo" : "⊕ New"}
+            title="New photo"
+            disabled={savingCreation}
+            onClick={newScene}
+          >
+            {photoMode ? <EditorIcon name="new" /> : "⊕ New"}
+          </button>
+          {!photoMode && <button onClick={randomScene}>⟳ Random</button>}
           <button
             disabled={!ready}
-            onClick={() =>
-              baseBg.photo
-                ? setNotice(
-                    "Photo backgrounds are available for local saving and downloading. Choose a catalog background to publish.",
-                  )
-                : items.some((item) => item.asset.photo)
-                  ? setNotice(
-                      "Uploaded photos are available for local saving and downloading. Remove uploaded photos to publish this scene.",
-                    )
-                  : setPublishScene(state.present)
-            }
+            onClick={() => setPublishScene(state.present)}
           >
             Publish
           </button>
-          <button disabled={!ready} onClick={save}>
-            ▣ Save
+          <button
+            className="saveCreation"
+            disabled={!ready || savingCreation}
+            onClick={() => void saveToCreations()}
+          >
+            Save to My creations
+          </button>
+          <button
+            disabled={!ready || savingCreation}
+            className="editorIconButton"
+            aria-label="My creations"
+            title="My creations"
+            onClick={() => setCreationsOpen(true)}
+          >
+            <EditorIcon name="folder" />
           </button>
           <div className="downloadWrap" ref={downloadRef}>
             <button
-              className="download"
+              className="download editorIconButton"
+              aria-label={exporting ? "Exporting…" : "⇩ Download"}
+              title="Download"
               disabled={exporting || !ready}
               onClick={() => setDownloadDialogOpen((s) => !s)}
             >
-              {exporting ? "Exporting…" : "⇩ Download"}
+              {exporting ? "…" : <EditorIcon name="download" />}
             </button>
             {downloadDialogOpen && (
               <div
@@ -905,16 +1293,36 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           {notice}
         </span>
       </div>
+      <nav className="mobileEditorDock" aria-label="Mobile editor panels">
+        <button
+          aria-pressed={mobilePanel === "none"}
+          onClick={() => setMobilePanel("none")}
+        >
+          Canvas
+        </button>
+        <button
+          aria-pressed={mobilePanel === "tools"}
+          onClick={() => setMobilePanel("tools")}
+        >
+          Tools
+        </button>
+        <button
+          aria-pressed={mobilePanel === "properties"}
+          onClick={() => setMobilePanel("properties")}
+        >
+          Layers & properties
+        </button>
+      </nav>
       <div className="vWorkspace">
-        <aside className="vLeft">
+        <aside className={`vLeft mobilePanel-${mobilePanel}`}>
           <div className="bigTabs">
             <button
-              aria-label="Backgrounds"
+              aria-label={photoMode ? "Photo" : "Backgrounds"}
               aria-pressed={section === "backgrounds"}
               className={section === "backgrounds" ? "on" : ""}
               onClick={() => selectSection("backgrounds")}
             >
-              ▣<span>Backgrounds</span>
+              ▣<span>{photoMode ? "Photo" : "Backgrounds"}</span>
             </button>
             <button
               aria-pressed={section === "elements"}
@@ -930,6 +1338,26 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               onClick={() => selectSection("shapes")}
             >
               ◯<span>Shapes</span>
+            </button>
+            <button
+              aria-label="Effects"
+              aria-pressed={section === "effects"}
+              className={section === "effects" ? "on" : ""}
+              onClick={() => selectSection("effects")}
+            >
+              ✦<span>Effects</span>
+            </button>
+            <button
+              aria-label="Draw"
+              aria-pressed={section === "draw"}
+              className={section === "draw" ? "on" : ""}
+              onClick={() => {
+                setEditingPhoto(false);
+                setActive(null);
+                selectSection("draw");
+              }}
+            >
+              ✎<span>Draw</span>
             </button>
             <button
               aria-label="Text"
@@ -962,19 +1390,153 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               ⊙<span>More</span>
             </button>
           </div>
-          {section === "shapes" ? (
-            <section className="creationPanel" aria-label="Shape tools">
-              <div className="panelTitle"><b>Shapes</b></div>
-              <p>Choose a shape, then customize its fill and outline.</p>
-              <div className="shapeGrid">
-                {SHAPE_NAMES.map((kind) => {
-                  const asset = shapeAsset({ kind, fill: "#438568", stroke: "#183c2c", strokeWidth: kind === "Line" ? 6 : 0 });
-                  return <button key={kind} disabled={!ready} aria-label={`Add ${kind.toLowerCase()}`} onClick={() => addAsset(asset)}>
-                    <img src={asset.src} alt="" /><span>{kind}</span>
-                  </button>;
-                })}
+          {section === "draw" ? (
+            <section className="creationPanel" aria-label="Drawing tools">
+              <div className="panelTitle">
+                <b>Draw</b>
               </div>
-              <p className="creationHint">Drag to move. Use the corners to resize, and Element Properties to style.</p>
+              <p>
+                Draw directly on the canvas. Each stroke becomes an editable
+                layer.
+              </p>
+              <label>
+                Brush
+                <select
+                  aria-label="Brush type"
+                  value={brushKind}
+                  onChange={(event) => setBrushKind(event.target.value)}
+                >
+                  {["Pen", "Path", "Flowers", "Grass", "Clouds"].map((kind) => (
+                    <option key={kind}>{kind}</option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Brush color{" "}
+                <input
+                  type="color"
+                  aria-label="Brush color"
+                  value={brushColor}
+                  onChange={(e) => setBrushColor(e.target.value)}
+                />
+              </label>
+              <label>
+                Brush size{" "}
+                <input
+                  type="range"
+                  aria-label="Brush size"
+                  min="2"
+                  max="20"
+                  value={brushSize}
+                  onChange={(e) => setBrushSize(+e.target.value)}
+                />
+                <output>{brushSize} px</output>
+              </label>
+              {stampBrush && (
+                <label>
+                  Spacing
+                  <input
+                    type="range"
+                    aria-label="Brush spacing"
+                    min="20"
+                    max="150"
+                    value={brushSpacing}
+                    onChange={(event) => setBrushSpacing(+event.target.value)}
+                  />
+                  <output>{brushSpacing} px</output>
+                </label>
+              )}
+              <button onClick={() => selectSection("elements")}>
+                Done drawing
+              </button>
+              <p>
+                Use Undo to remove a stroke. Select a drawing after finishing to
+                move, resize, recolor, or delete it.
+              </p>
+            </section>
+          ) : section === "shapes" || section === "effects" ? (
+            <section
+              className="creationPanel"
+              aria-label={
+                section === "effects" ? "Effect tools" : "Shape tools"
+              }
+            >
+              <div className="panelTitle">
+                <b>{section === "effects" ? "Effects" : "Shapes"}</b>
+              </div>
+              <p>
+                Add shapes, blobs, sparkles, glows, and decorative effects.
+                Customize their colors and opacity in either editor.
+              </p>
+              {(section === "effects"
+                ? [{ title: "Decorative effects", kinds: [...EFFECT_NAMES] }]
+                : [
+                    {
+                      title: "Blobs",
+                      kinds: SHAPE_NAMES.filter(
+                        (kind) =>
+                          kind === "Blob" ||
+                          kind === "Organic blob" ||
+                          BLOB_NAMES.includes(
+                            kind as (typeof BLOB_NAMES)[number],
+                          ),
+                      ),
+                    },
+                    {
+                      title: "Basic shapes",
+                      kinds: SHAPE_NAMES.filter(
+                        (kind) =>
+                          kind !== "Drawing" &&
+                          !EFFECT_NAMES.includes(
+                            kind as (typeof EFFECT_NAMES)[number],
+                          ) &&
+                          kind !== "Blob" &&
+                          kind !== "Organic blob" &&
+                          !BLOB_NAMES.includes(
+                            kind as (typeof BLOB_NAMES)[number],
+                          ),
+                      ),
+                    },
+                  ]
+              ).map((group) => (
+                <div key={group.title} className="shapeCollection">
+                  <h3>
+                    {group.title} <small>{group.kinds.length}</small>
+                  </h3>
+                  <div className="shapeGrid">
+                    {group.kinds.map((kind, index) => {
+                      const asset = shapeAsset({
+                        kind,
+                        fill:
+                          group.title === "Blobs"
+                            ? BLOB_COLORS[index % BLOB_COLORS.length]
+                            : kind === "Soft glow"
+                              ? "#ffc76b"
+                              : kind === "Gradient orb"
+                                ? "#a98ae8"
+                                : "#438568",
+                        stroke: "#183c2c",
+                        strokeWidth: kind === "Line" ? 6 : 0,
+                      });
+                      return (
+                        <button
+                          key={kind}
+                          disabled={!ready}
+                          aria-label={`Add ${kind.toLowerCase()}`}
+                          onClick={() => addAsset(asset)}
+                        >
+                          <img src={asset.src} alt="" />
+                          <span>{kind}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+              <p className="creationHint">
+                Drag to move. Use the corners to resize, and Element Properties
+                to style.
+              </p>
             </section>
           ) : section === "text" ? (
             <section className="creationPanel" aria-label="Text tools">
@@ -1025,14 +1587,38 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                 transparency.
               </p>
               <p className="creationHint">
-                Your images stay in this browser and are included in downloads.
+                Your images stay in this browser until you choose Publish.
+                Published copies are public after owner approval.
               </p>
               <button
                 className="creationSecondary"
                 onClick={() => selectSection("backgrounds")}
               >
-                Want a full background? Open Backgrounds
+                {photoMode
+                  ? "Edit your main photo"
+                  : "Want a full background? Open Backgrounds"}
               </button>
+            </section>
+          ) : section === "backgrounds" && photoMode ? (
+            <section className="creationPanel" aria-label="Photo tools">
+              <div className="panelTitle">
+                <b>Your photo</b>
+              </div>
+              <p>
+                Start with your own photo. Crop and color controls appear above
+                the canvas.
+              </p>
+              <button
+                className="creationPrimary"
+                disabled={!ready || uploading}
+                onClick={() => backgroundPhotoInput.current?.click()}
+              >
+                {baseBg.photo ? "Replace photo" : "Upload a photo"}
+              </button>
+              <p className="creationHint">JPG, PNG, or WebP · up to 15 MB.</p>
+              <p className="creationHint">
+                Add objects, text, and shapes with the tools above.
+              </p>
             </section>
           ) : section === "backgrounds" ? (
             <>
@@ -1048,7 +1634,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                 own objects to build the image.
               </p>
               {!backgrounds.some(
-                (bg) => backgroundKey(bg) === backgroundKey(baseBg),
+                (bg) => sceneBackgroundKey(bg) === sceneBackgroundKey(baseBg),
               ) && (
                 <p className="backgroundIntro">
                   Your saved background is preserved. Choose a scene to replace
@@ -1062,6 +1648,29 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               >
                 {uploading ? "Opening image…" : "Use your photo as background"}
               </button>
+              <button
+                className="creationSecondary"
+                onClick={() => selectSection("elements")}
+              >
+                Find elements for this scene
+              </button>
+              <label className="sceneMoodControl">
+                Scene mood
+                <select
+                  aria-label="Scene mood"
+                  value={state.present.mood ?? "Original"}
+                  onChange={(event) =>
+                    change((scene) => ({
+                      ...scene,
+                      mood: event.target.value as SceneMood,
+                    }))
+                  }
+                >
+                  {SCENE_MOODS.map((mood) => (
+                    <option key={mood}>{mood}</option>
+                  ))}
+                </select>
+              </label>
               <div className="backgroundFilters">
                 <label className="srOnly" htmlFor="background-search">
                   Search backgrounds
@@ -1103,9 +1712,11 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                   <button
                     key={backgroundKey(bg)}
                     title={bg.description || bg.name}
-                    aria-pressed={backgroundKey(baseBg) === backgroundKey(bg)}
+                    aria-pressed={
+                      sceneBackgroundKey(baseBg) === sceneBackgroundKey(bg)
+                    }
                     className={
-                      backgroundKey(baseBg) === backgroundKey(bg)
+                      sceneBackgroundKey(baseBg) === sceneBackgroundKey(bg)
                         ? "selected"
                         : ""
                     }
@@ -1136,6 +1747,31 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                 </b>
                 <small>{sectionCats.length} groups</small>
               </div>
+              <section
+                className="matchingElements"
+                aria-label="Matching scene elements"
+              >
+                <h3>
+                  Matches your scene <small>{matching.name}</small>
+                </h3>
+                <p>Choose an object to add it to your artwork.</p>
+                <div className="miniAssetGrid">
+                  {matching.assets.map((asset) => (
+                    <button
+                      key={asset.id}
+                      disabled={!ready}
+                      aria-label={`Add matching ${pretty(asset.variant)}`}
+                      onClick={() => addAsset(asset)}
+                    >
+                      <span>
+                        <img src={asset.src} alt="" loading="lazy" />
+                        <i>+</i>
+                      </span>
+                      <small>{pretty(asset.variant)}</small>
+                    </button>
+                  ))}
+                </div>
+              </section>
               <div className="categoryTiles">
                 {sectionCats.map((c) => (
                   <button
@@ -1149,20 +1785,6 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                   </button>
                 ))}
               </div>
-              <label className="collectionFilter">
-                Artwork collection
-                <select
-                  aria-label="Artwork collection"
-                  value={collection}
-                  onChange={(e) =>
-                    setCollection(e.target.value as typeof collection)
-                  }
-                >
-                  <option value="all">All artwork</option>
-                  <option value="freeimage">Imported SVGs</option>
-                  <option value="original">Original artwork</option>
-                </select>
-              </label>
               <input
                 className="vSearch"
                 value={search}
@@ -1173,8 +1795,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               <div className="assetCount">{filtered.length} elements</div>
               {!filtered.length && (
                 <p className="noSelection">
-                  No matching elements. Try another category, collection, or
-                  search.
+                  No matching elements. Try another category or search.
                 </p>
               )}
               <div className="miniAssetGrid">
@@ -1202,7 +1823,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           </div>
           <div className="sceneTools">
             <label>
-              Canvas size
+              {photoMode ? "Crop ratio / canvas size" : "Canvas size"}
               <select
                 aria-label="Canvas size"
                 value={state.present.size ?? "landscape"}
@@ -1220,66 +1841,262 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               </select>
             </label>
             {baseBg.photo && (
-              <fieldset className="photoCropControls">
-                <legend>Photo crop</legend>
-                <p>
-                  Zoom and move the photo inside the canvas. Your original
-                  framing stays available.
-                </p>
-                {(["zoom", "x", "y"] as const).map((key) => (
-                  <label key={key}>
-                    {key === "zoom"
-                      ? "Photo zoom"
-                      : key === "x"
-                        ? "Horizontal position"
-                        : "Vertical position"}
-                    <input
-                      aria-label={
-                        key === "zoom"
+              <div className="photoCompactControls">
+                {" "}
+                <button
+                  className="editorIconButton"
+                  aria-label={editingPhoto ? "Done cropping" : "Crop on photo"}
+                  title={editingPhoto ? "Done cropping" : "Crop on photo"}
+                  aria-pressed={editingPhoto}
+                  onClick={() => {
+                    setEditingPhoto(!editingPhoto);
+                    setActive(null);
+                  }}
+                >
+                  {<EditorIcon name={editingPhoto ? "done" : "crop"} />}
+                </button>
+                <details className="photoControlPanel">
+                  <summary>Crop &amp; rotate options</summary>
+                  <fieldset className="photoCropControls">
+                    <legend>Photo crop</legend>
+                    <p>
+                      Zoom and move the photo inside the canvas. Your original
+                      framing stays available.
+                    </p>
+                    {(["zoom", "x", "y"] as const).map((key) => (
+                      <label key={key}>
+                        {key === "zoom"
                           ? "Photo zoom"
                           : key === "x"
                             ? "Horizontal position"
-                            : "Vertical position"
-                      }
-                      type="range"
-                      min={key === "zoom" ? 1 : 0}
-                      max={key === "zoom" ? 3 : 100}
-                      step={key === "zoom" ? 0.01 : 1}
-                      value={crop[key]}
-                      onPointerDown={beginRange}
-                      onChange={(e) =>
+                            : "Vertical position"}
+                        <input
+                          aria-label={
+                            key === "zoom"
+                              ? "Photo zoom"
+                              : key === "x"
+                                ? "Horizontal position"
+                                : "Vertical position"
+                          }
+                          type="range"
+                          min={key === "zoom" ? 1 : 0}
+                          max={key === "zoom" ? 3 : 100}
+                          step={key === "zoom" ? 0.01 : 1}
+                          value={crop[key]}
+                          onPointerDown={beginRange}
+                          onChange={(e) =>
+                            change((scene) => ({
+                              ...scene,
+                              baseBg: {
+                                ...scene.baseBg,
+                                crop: {
+                                  ...photoCrop(scene.baseBg.crop),
+                                  [key]: Number(e.target.value),
+                                },
+                              },
+                            }))
+                          }
+                        />
+                        <output>
+                          {Math.round(
+                            key === "zoom" ? crop[key] * 100 : crop[key],
+                          )}
+                          %
+                        </output>
+                      </label>
+                    ))}
+                    <div className="photoTransformActions">
+                      <button
+                        className="editorIconButton"
+                        aria-label="Rotate left 90°"
+                        title="Rotate left 90°"
+                        onClick={() =>
+                          change((scene) => ({
+                            ...scene,
+                            baseBg: {
+                              ...scene.baseBg,
+                              crop: {
+                                ...photoCrop(scene.baseBg.crop),
+                                rotation: (crop.rotation + 270) % 360,
+                              },
+                            },
+                          }))
+                        }
+                      >
+                        <EditorIcon name="left" />
+                      </button>
+                      <button
+                        className="editorIconButton"
+                        aria-label="Rotate right 90°"
+                        title="Rotate right 90°"
+                        onClick={() =>
+                          change((scene) => ({
+                            ...scene,
+                            baseBg: {
+                              ...scene.baseBg,
+                              crop: {
+                                ...photoCrop(scene.baseBg.crop),
+                                rotation: (crop.rotation + 90) % 360,
+                              },
+                            },
+                          }))
+                        }
+                      >
+                        <EditorIcon name="right" />
+                      </button>
+                      <button
+                        className="editorIconButton"
+                        aria-label="Flip horizontally"
+                        title="Flip horizontally"
+                        aria-pressed={crop.flipX}
+                        onClick={() =>
+                          change((scene) => ({
+                            ...scene,
+                            baseBg: {
+                              ...scene.baseBg,
+                              crop: {
+                                ...photoCrop(scene.baseBg.crop),
+                                flipX: !crop.flipX,
+                              },
+                            },
+                          }))
+                        }
+                      >
+                        <EditorIcon name="flipX" />
+                      </button>
+                      <button
+                        className="editorIconButton"
+                        aria-label="Flip vertically"
+                        title="Flip vertically"
+                        aria-pressed={crop.flipY}
+                        onClick={() =>
+                          change((scene) => ({
+                            ...scene,
+                            baseBg: {
+                              ...scene.baseBg,
+                              crop: {
+                                ...photoCrop(scene.baseBg.crop),
+                                flipY: !crop.flipY,
+                              },
+                            },
+                          }))
+                        }
+                      >
+                        <EditorIcon name="flipY" />
+                      </button>
+                    </div>
+                    <button
+                      onClick={() =>
                         change((scene) => ({
                           ...scene,
-                          baseBg: {
-                            ...scene.baseBg,
-                            crop: {
-                              ...photoCrop(scene.baseBg.crop),
-                              [key]: Number(e.target.value),
-                            },
-                          },
+                          baseBg: { ...scene.baseBg, crop: photoCrop() },
                         }))
                       }
-                    />
-                    <output>
-                      {Math.round(key === "zoom" ? crop[key] * 100 : crop[key])}
-                      %
-                    </output>
-                  </label>
-                ))}
+                    >
+                      Reset photo crop
+                    </button>
+                  </fieldset>
+                </details>
+              </div>
+            )}
+          </div>
+          {photoMode && !baseBg.photo && (
+            <section className="photoStart">
+              <h2>Edit a photo</h2>
+              <p>
+                Choose a photo to start. Then crop it, adjust colors, and add
+                text or scene elements.
+              </p>
+              <button
+                className="primary"
+                disabled={!ready || uploading}
+                onClick={() => backgroundPhotoInput.current?.click()}
+              >
+                Choose a photo
+              </button>
+            </section>
+          )}
+          {photoMode && baseBg.photo && (
+            <div className="photoQuickActions">
+              <button
+                className="editorIconButton"
+                aria-label="Change photo"
+                title="Change photo"
+                disabled={uploading}
+                onClick={() => backgroundPhotoInput.current?.click()}
+              >
+                <EditorIcon name="image" />
+              </button>
+              <button
+                className="editorIconButton"
+                aria-label="Add elements"
+                title="Add elements"
+                onClick={() => selectSection("elements")}
+              >
+                <EditorIcon name="elements" />
+              </button>
+              <button
+                className="editorIconButton"
+                aria-label="Add text"
+                title="Add text"
+                onClick={() => selectSection("text")}
+              >
+                <EditorIcon name="text" />
+              </button>
+            </div>
+          )}
+          {baseBg.photo && (
+            <details className="photoControlPanel photoColorPanel">
+              <summary>Adjust colors</summary>
+              <fieldset className="photoCropControls photoAdjustments">
+                <legend>Photo adjustments</legend>
+                {(["brightness", "contrast", "saturation"] as const).map(
+                  (key) => (
+                    <label key={key}>
+                      {key[0].toUpperCase() + key.slice(1)}
+                      <input
+                        aria-label={`Photo ${key}`}
+                        type="range"
+                        min="0"
+                        max="2"
+                        step="0.01"
+                        value={adjustments[key]}
+                        onPointerDown={beginRange}
+                        onChange={(event) =>
+                          change((scene) => ({
+                            ...scene,
+                            baseBg: {
+                              ...scene.baseBg,
+                              adjustments: photoAdjustments({
+                                ...scene.baseBg.adjustments,
+                                [key]: Number(event.target.value),
+                              }),
+                            },
+                          }))
+                        }
+                      />
+                      <output>{Math.round(adjustments[key] * 100)}%</output>
+                    </label>
+                  ),
+                )}
                 <button
                   onClick={() =>
                     change((scene) => ({
                       ...scene,
-                      baseBg: { ...scene.baseBg, crop: photoCrop() },
+                      baseBg: {
+                        ...scene.baseBg,
+                        adjustments: photoAdjustments(),
+                      },
                     }))
                   }
                 >
-                  Reset photo crop
+                  Reset photo adjustments
                 </button>
               </fieldset>
-            )}
-          </div>
+            </details>
+          )}
           <CanvasViewport
+            compact={photoMode}
             aspectRatio={WIDTH / HEIGHT}
             onNavigate={() => {
               pointerCleanup.current?.();
@@ -1290,8 +2107,58 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
             <div
               ref={board}
               aria-label="Scene canvas"
-              className="vBoard"
-              onPointerDown={() => setActive(null)}
+              className={`vBoard${baseBg.photo && editingPhoto ? " photoCropActive" : ""}`}
+              onPointerDown={(event) => {
+                setActive(null);
+                if (!baseBg.photo || event.button !== 0) return;
+                if (!editingPhoto) {
+                  setEditingPhoto(true);
+                  return;
+                }
+                const bounds = event.currentTarget.getBoundingClientRect();
+                const startX = event.clientX,
+                  startY = event.clientY;
+                const sideways = crop.rotation % 180 !== 0;
+                const overflowX =
+                  (sideways ? photoRect.height : photoRect.width) - WIDTH;
+                const overflowY =
+                  (sideways ? photoRect.width : photoRect.height) - HEIGHT;
+                beginPointer(event, (next) =>
+                  change((scene) => ({
+                    ...scene,
+                    baseBg: {
+                      ...scene.baseBg,
+                      crop: {
+                        ...crop,
+                        x:
+                          overflowX > 0.001
+                            ? clamp(
+                                crop.x -
+                                  ((((next.clientX - startX) / bounds.width) *
+                                    WIDTH) /
+                                    overflowX) *
+                                    100,
+                                0,
+                                100,
+                              )
+                            : crop.x,
+                        y:
+                          overflowY > 0.001
+                            ? clamp(
+                                crop.y -
+                                  ((((next.clientY - startY) / bounds.height) *
+                                    HEIGHT) /
+                                    overflowY) *
+                                    100,
+                                0,
+                                100,
+                              )
+                            : crop.y,
+                      },
+                    },
+                  })),
+                );
+              }}
               style={{
                 aspectRatio: `${WIDTH} / ${HEIGHT}`,
                 background: `linear-gradient(${baseBg.sky} 0 45%,${baseBg.ground} 45%)`,
@@ -1301,17 +2168,30 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                 <img
                   className="sceneBackground"
                   src={baseBg.src}
+                  onLoad={(e) => {
+                    const img = e.currentTarget;
+                    setPhotoDimensions({
+                      src: img.src,
+                      width: img.naturalWidth,
+                      height: img.naturalHeight,
+                    });
+                  }}
                   style={
                     baseBg.photo
                       ? {
-                          objectFit: "cover",
-                          width: `${crop.zoom * 100}%`,
-                          height: `${crop.zoom * 100}%`,
-                          left: `${(1 - crop.zoom) * crop.x}%`,
-                          top: `${(1 - crop.zoom) * crop.y}%`,
+                          objectFit: "fill",
+                          filter: photoFilter(baseBg.adjustments),
+                          width: `${(photoRect.width / WIDTH) * 100}%`,
+                          height: `${(photoRect.height / HEIGHT) * 100}%`,
+                          left: `${(photoRect.x / WIDTH) * 100}%`,
+                          top: `${(photoRect.y / HEIGHT) * 100}%`,
                           right: "auto",
                           bottom: "auto",
-                          objectPosition: `${crop.x}% ${crop.y}%`,
+                          visibility:
+                            photoDimensions.src === baseBg.src
+                              ? "visible"
+                              : "hidden",
+                          transform: `rotate(${crop.rotation}deg) scale(${crop.flipX ? -1 : 1}, ${crop.flipY ? -1 : 1})`,
                         }
                       : {
                           objectFit:
@@ -1325,17 +2205,370 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                   draggable={false}
                 />
               )}
-              {!items.length && !baseBg.photo && (
-                <div className="emptyScene">
-                  <b>Start your village</b>
-                  <span>
-                    Choose a scene, then add trees, flowers, buildings and
-                    details.
-                  </span>
-                  <button onClick={() => selectSection("elements")}>
-                    Browse objects
-                  </button>
+              {section === "draw" && (
+                <svg
+                  className="drawingSurface"
+                  aria-label="Drawing canvas"
+                  viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+                  preserveAspectRatio="none"
+                  onPointerDown={(e) => {
+                    if (e.button !== 0) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.currentTarget.setPointerCapture(e.pointerId);
+                    const r = e.currentTarget.getBoundingClientRect();
+                    const point: [number, number] = [
+                      clamp(((e.clientX - r.left) / r.width) * WIDTH, 0, WIDTH),
+                      clamp(
+                        ((e.clientY - r.top) / r.height) * HEIGHT,
+                        0,
+                        HEIGHT,
+                      ),
+                    ];
+                    drawStroke.current = { id: e.pointerId, points: [point] };
+                    setDrawPoints([point]);
+                  }}
+                  onPointerLeave={() => setBrushCursor(null)}
+                  onPointerMove={(e) => {
+                    const bounds = e.currentTarget.getBoundingClientRect();
+                    setBrushCursor([
+                      ((e.clientX - bounds.left) / bounds.width) * WIDTH,
+                      ((e.clientY - bounds.top) / bounds.height) * HEIGHT,
+                    ]);
+                    const stroke = drawStroke.current;
+                    if (
+                      !stroke ||
+                      stroke.id !== e.pointerId ||
+                      stroke.points.length >= 1000
+                    )
+                      return;
+                    const r = e.currentTarget.getBoundingClientRect();
+                    stroke.points.push([
+                      clamp(((e.clientX - r.left) / r.width) * WIDTH, 0, WIDTH),
+                      clamp(
+                        ((e.clientY - r.top) / r.height) * HEIGHT,
+                        0,
+                        HEIGHT,
+                      ),
+                    ]);
+                    setDrawPoints([...stroke.points]);
+                  }}
+                  onPointerCancel={() => {
+                    drawStroke.current = null;
+                    setDrawPoints([]);
+                  }}
+                  onPointerUp={(e) => {
+                    const stroke = drawStroke.current;
+                    if (!stroke || stroke.id !== e.pointerId) return;
+                    drawStroke.current = null;
+                    setDrawPoints([]);
+                    if (["Flowers", "Grass", "Clouds"].includes(brushKind)) {
+                      const candidates = assets.filter((asset) =>
+                        brushKind === "Flowers"
+                          ? asset.style === "freeimage" &&
+                            asset.type === "flower"
+                          : brushKind === "Grass"
+                            ? /grass/.test(asset.variant) &&
+                              !/potted/.test(asset.variant)
+                            : asset.type === "sky" &&
+                              /cloud/.test(asset.variant),
+                      );
+                      if (!candidates.length) return;
+                      const points: [number, number][] = [];
+                      for (const point of stroke.points) {
+                        const last = points.at(-1);
+                        if (
+                          !last ||
+                          Math.hypot(point[0] - last[0], point[1] - last[1]) >=
+                            45
+                        )
+                          points.push(point);
+                        if (points.length >= 50) break;
+                      }
+                      const stamps = points.map((point) => {
+                        const asset = pick(candidates);
+                        const scale = Math.max(
+                          0.15,
+                          (brushKind === "Clouds" ? 0.45 : 0.2) *
+                            (brushSize / 8) *
+                            (0.85 + Math.random() * 0.3),
+                        );
+                        return {
+                          ...makeItem(asset),
+                          x: ((point[0] - 160 * scale) / WIDTH) * 100,
+                          y: ((point[1] - 135 * scale) / HEIGHT) * 100,
+                          scale,
+                          flipX: Math.random() > 0.5,
+                        };
+                      });
+                      change((scene) => ({
+                        ...scene,
+                        items: [
+                          ...scene.items,
+                          ...stamps.map((item, index) => ({
+                            ...item,
+                            z:
+                              Math.max(
+                                0,
+                                ...scene.items.map((entry) => entry.z),
+                              ) +
+                              index +
+                              1,
+                          })),
+                        ],
+                      }));
+                      return;
+                    }
+                    const pad =
+                      (brushKind === "Path" ? brushSize * 4 : brushSize) / 2 +
+                      1;
+                    const x = Math.min(...stroke.points.map((p) => p[0])) - pad,
+                      y = Math.min(...stroke.points.map((p) => p[1])) - pad;
+                    const w = Math.max(
+                        32,
+                        Math.max(...stroke.points.map((p) => p[0])) - x + pad,
+                      ),
+                      h = Math.max(
+                        32,
+                        Math.max(...stroke.points.map((p) => p[1])) - y + pad,
+                      );
+                    const factor = Math.max(1, w / 1200, h / 1200);
+                    const asset = shapeAsset({
+                      kind: "Drawing",
+                      fill: "transparent",
+                      stroke: brushKind === "Path" ? "#cbb58b" : brushColor,
+                      strokeWidth:
+                        (brushKind === "Path" ? brushSize * 4 : brushSize) /
+                        factor,
+                      width: w / factor,
+                      height: h / factor,
+                      points: stroke.points.map((p) => [
+                        (p[0] - x) / factor,
+                        (p[1] - y) / factor,
+                      ]),
+                    });
+                    const item = {
+                      ...makeItem(asset),
+                      x: (x / WIDTH) * 100,
+                      y: (y / HEIGHT) * 100,
+                      scale: factor,
+                    };
+                    change((scene) => ({
+                      ...scene,
+                      items: [
+                        ...scene.items,
+                        {
+                          ...item,
+                          z: Math.max(0, ...scene.items.map((i) => i.z)) + 1,
+                        },
+                      ],
+                    }));
+                  }}
+                >
+                  {brushCursor &&
+                    (stampBrush && brushAssets[0] ? (
+                      <image
+                        aria-label="Brush preview"
+                        href={brushAssets[0].src}
+                        x={brushCursor[0] - 160 * previewScale}
+                        y={brushCursor[1] - 135 * previewScale}
+                        width={320 * previewScale}
+                        height={270 * previewScale}
+                        opacity=".6"
+                        pointerEvents="none"
+                      />
+                    ) : (
+                      <circle
+                        aria-label="Brush preview"
+                        cx={brushCursor[0]}
+                        cy={brushCursor[1]}
+                        r={
+                          (brushKind === "Path" ? brushSize * 4 : brushSize) / 2
+                        }
+                        fill={brushKind === "Path" ? "#cbb58b" : brushColor}
+                        opacity=".5"
+                        pointerEvents="none"
+                      />
+                    ))}
+                  {drawPoints.length > 0 && !stampBrush && (
+                    <path
+                      d={
+                        drawPoints
+                          .map((p, i) => `${i ? "L" : "M"}${p[0]} ${p[1]}`)
+                          .join(" ") +
+                        (drawPoints.length === 1 ? "l.01 .01" : "")
+                      }
+                      fill="none"
+                      stroke={brushKind === "Path" ? "#cbb58b" : brushColor}
+                      strokeWidth={
+                        brushKind === "Path" ? brushSize * 4 : brushSize
+                      }
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  )}
+                </svg>
+              )}
+              {baseBg.photo && editingPhoto && (
+                <div
+                  className="photoCanvasCrop"
+                  aria-label="Crop photo directly"
+                >
+                  <div className="photoCropGrid" />
+                  <div
+                    className="photoCanvasToolbar"
+                    onPointerDown={(e) => e.stopPropagation()}
+                  >
+                    <span>Drag photo to crop</span>
+                    <button
+                      aria-label="Zoom photo out"
+                      onClick={() =>
+                        change((scene) => ({
+                          ...scene,
+                          baseBg: {
+                            ...scene.baseBg,
+                            crop: {
+                              ...crop,
+                              zoom: clamp(crop.zoom - 0.1, 1, 3),
+                            },
+                          },
+                        }))
+                      }
+                    >
+                      −
+                    </button>
+                    <button
+                      aria-label="Zoom photo in"
+                      onClick={() =>
+                        change((scene) => ({
+                          ...scene,
+                          baseBg: {
+                            ...scene.baseBg,
+                            crop: {
+                              ...crop,
+                              zoom: clamp(crop.zoom + 0.1, 1, 3),
+                            },
+                          },
+                        }))
+                      }
+                    >
+                      +
+                    </button>
+                    <button
+                      aria-label="Rotate photo right"
+                      onClick={() =>
+                        change((scene) => ({
+                          ...scene,
+                          baseBg: {
+                            ...scene.baseBg,
+                            crop: {
+                              ...crop,
+                              rotation: (crop.rotation + 90) % 360,
+                            },
+                          },
+                        }))
+                      }
+                    >
+                      ↻
+                    </button>
+                    <button onClick={() => setEditingPhoto(false)}>Done</button>
+                  </div>
                 </div>
+              )}
+              {!photoMode && !welcomeDismissed && (
+                <section
+                  className="firstCreationGuide"
+                  aria-label="Your first creation"
+                >
+                  <button
+                    className="guideClose"
+                    aria-label="Close getting started guide"
+                    onClick={finishWelcome}
+                  >
+                    ×
+                  </button>
+                  <small>STEP {welcomeStep} OF 3</small>
+                  {welcomeStep === 1 ? (
+                    <>
+                      <h2>Choose a scene to begin</h2>
+                      <p>
+                        Start with a ready-made landscape. Its trees and houses
+                        will be editable.
+                      </p>
+                      <div className="guideSceneChoices">
+                        {onboardingScenes.map((background) => (
+                          <button
+                            key={background.src}
+                            onClick={() => chooseBackground(background)}
+                          >
+                            <img
+                              src={
+                                backgrounds.find(
+                                  (entry) =>
+                                    editableBackground(entry)?.src ===
+                                    background.src,
+                                )?.src
+                              }
+                              alt=""
+                            />
+                            <span>{background.name}</span>
+                          </button>
+                        ))}
+                      </div>
+                      <button
+                        className="guideTextButton"
+                        onClick={() => selectSection("backgrounds")}
+                      >
+                        Browse all backgrounds
+                      </button>
+                    </>
+                  ) : welcomeStep === 2 ? (
+                    <>
+                      <h2>Make it yours</h2>
+                      <p>
+                        Add a tree, flower, or animal. Matching suggestions
+                        appear at the top of Elements.
+                      </p>
+                      <button
+                        className="guidePrimary"
+                        onClick={() => selectSection("elements")}
+                      >
+                        Choose an object
+                      </button>
+                      <button
+                        className="guideTextButton"
+                        onClick={() => selectSection("draw")}
+                      >
+                        Or draw something
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <h2>Your scene is taking shape</h2>
+                      <p>
+                        Keep arranging, or save your work and download the
+                        finished picture.
+                      </p>
+                      <div className="guideFinishActions">
+                        <button
+                          className="guidePrimary"
+                          onClick={() => void saveToCreations()}
+                        >
+                          Save creation
+                        </button>
+                        <button onClick={() => setDownloadDialogOpen(true)}>
+                          Download image
+                        </button>
+                      </div>
+                      <button
+                        className="guideTextButton"
+                        onClick={finishWelcome}
+                      >
+                        Keep creating
+                      </button>
+                    </>
+                  )}
+                </section>
               )}
 
               {[...items]
@@ -1365,6 +2598,14 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                         transform: `rotate(${it.rotation}deg) scale(${it.flipX ? -1 : 1},${it.flipY ? -1 : 1})`,
                       }}
                       onPointerDown={(e) => down(e, it)}
+                      onDoubleClick={(e) => {
+                        e.stopPropagation();
+                        if (it.asset.text && !it.locked)
+                          setEditingText({
+                            uid: it.uid,
+                            content: it.asset.text.content,
+                          });
+                      }}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActive(it.uid);
@@ -1375,10 +2616,78 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                         alt={it.asset.variant || it.asset.id}
                         draggable={false}
                         style={{
+                          visibility:
+                            editingText?.uid === it.uid ? "hidden" : "visible",
                           opacity: it.opacity,
                           filter: `hue-rotate(${it.hue || 0}deg)`,
                         }}
                       />
+                      {editingText?.uid === it.uid &&
+                        it.asset.text &&
+                        !it.locked && (
+                          <textarea
+                            className="canvasTextInput"
+                            aria-label="Edit text on canvas"
+                            autoFocus
+                            rows={Math.max(
+                              1,
+                              Math.min(
+                                8,
+                                editingText.content
+                                  .split("\n")
+                                  .reduce(
+                                    (n, line) =>
+                                      n +
+                                      Math.max(
+                                        1,
+                                        Math.ceil(Array.from(line).length / 20),
+                                      ),
+                                    0,
+                                  ),
+                              ),
+                            )}
+                            style={{
+                              color: it.asset.text.color,
+                              fontWeight: it.asset.text.bold ? 700 : 400,
+                              fontFamily: textFontFamily(it.asset.text.font),
+                              opacity: it.opacity,
+                            }}
+                            maxLength={240}
+                            value={editingText.content}
+                            onPointerDown={(e) => e.stopPropagation()}
+                            onClick={(e) => e.stopPropagation()}
+                            onDoubleClick={(e) => e.stopPropagation()}
+                            onChange={(e) =>
+                              setEditingText({
+                                uid: it.uid,
+                                content: e.target.value,
+                              })
+                            }
+                            onBlur={() => {
+                              if (
+                                editingText.content !== it.asset.text!.content
+                              )
+                                update(it.uid, {
+                                  asset: textAsset({
+                                    ...it.asset.text!,
+                                    content: editingText.content,
+                                  }),
+                                });
+                              setEditingText(null);
+                            }}
+                            onKeyDown={(e) => {
+                              e.stopPropagation();
+                              if (e.key === "Escape") {
+                                e.preventDefault();
+                                setEditingText(null);
+                              }
+                              if (e.key === "Enter" && !e.shiftKey) {
+                                e.preventDefault();
+                                e.currentTarget.blur();
+                              }
+                            }}
+                          />
+                        )}
                       {selected && !it.locked && (
                         <>
                           <button
@@ -1413,21 +2722,67 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                     </div>
                   );
                 })}
+              {state.present.mood && state.present.mood !== "Original" && (
+                <img
+                  className="sceneMoodOverlay"
+                  src={moodImage(state.present.mood, WIDTH, HEIGHT)}
+                  alt=""
+                />
+              )}
               {current && !current.hidden && (
                 <div
                   className="floatingTools"
                   onPointerDown={(e) => e.stopPropagation()}
                   onClick={(e) => e.stopPropagation()}
                 >
+                  {current.asset.text && !current.locked && (
+                    <select
+                      aria-label="Text font in toolbar"
+                      value={current.asset.text.font ?? "sans"}
+                      onChange={(e) =>
+                        update(current.uid, {
+                          asset: textAsset({
+                            ...current.asset.text!,
+                            font: e.target.value as TextFont,
+                          }),
+                        })
+                      }
+                    >
+                      {Object.entries(TEXT_FONTS).map(([key, font]) => (
+                        <option key={key} value={key}>
+                          {font.label}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                  {current.asset.text && !current.locked && (
+                    <button
+                      title="Edit text"
+                      aria-label="Edit text"
+                      onClick={() => {
+                        setEditingPhoto(false);
+                        setEditingText({
+                          uid: current.uid,
+                          content: current.asset.text!.content,
+                        });
+                      }}
+                    >
+                      <EditorIcon name="text" />
+                    </button>
+                  )}
+                  <button
+                    title="Duplicate"
+                    aria-label="Duplicate"
+                    onClick={() => duplicate(current)}
+                  >
+                    ▣ Duplicate
+                  </button>
                   <button
                     disabled={current.locked}
                     title="Delete"
                     onClick={() => remove(current.uid)}
                   >
                     🗑
-                  </button>
-                  <button title="Duplicate" onClick={() => duplicate(current)}>
-                    ▣
                   </button>
                   <button
                     disabled={current.locked}
@@ -1473,7 +2828,12 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           </CanvasViewport>
           <div className="addedStrip">
             <div className="stripTitle">
-              <b>Added Elements ({items.length})</b>
+              <b>
+                Scene elements (
+                {items.filter((item) => item.backgroundScene).length}) · Your
+                elements ({items.filter((item) => !item.backgroundScene).length}
+                )
+              </b>
             </div>
             <div className="stripItems">
               {items.map((it) => (
@@ -1485,6 +2845,7 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                     <img src={it.asset.src} alt="" />
                     <small>
                       {pretty(it.asset.variant || it.asset.id)}
+                      {it.backgroundScene ? " · Scene" : " · Yours"}
                       {it.locked ? " 🔒" : ""}
                     </small>
                   </button>
@@ -1509,31 +2870,206 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
           </div>
         </section>
 
-        <aside className="vRight">
+        <aside className={`vRight mobilePanel-${mobilePanel}`}>
           <section className="layersPanel" aria-label="Layers">
-            <div className="layersHeading"><h3>Layers</h3><span>{items.length}</span></div>
-            <p className="layersHint">Front layers appear first. Drag to reorder, or use the arrows.</p>
-            {!items.length && <p className="layersHint">Add an object, shape, or text to start.</p>}
-            <ol className="layerList">
-              {[...items].sort((a, b) => b.z - a.z).map((item, index) => {
-                const name = pretty(item.asset.variant || item.asset.id);
-                return <li key={item.uid} className={`layerRow ${active === item.uid ? "active" : ""} ${item.hidden ? "isHidden" : ""}`}
-                  draggable={!item.locked}
-                  onDragStart={(event) => { draggedLayer.current = item.uid; event.dataTransfer.effectAllowed = "move"; event.dataTransfer.setData("text/plain", item.uid); }}
-                  onDragEnd={() => { draggedLayer.current = null; }}
-                  onDragOver={(event) => { if (draggedLayer.current) { event.preventDefault(); event.dataTransfer.dropEffect = "move"; } }}
-                  onDrop={(event) => { event.preventDefault(); const uid = draggedLayer.current; draggedLayer.current = null; if (uid) change((scene) => moveLayer(scene, uid, item.uid)); }}>
-                  <button className="layerSelect" aria-label={`Select ${name} layer`} aria-pressed={active === item.uid} onClick={() => setActive(item.uid)}>
-                    <img src={item.asset.src} alt="" draggable={false} /><span>{name}</span>
+            <div className="layersHeading">
+              <h3>Layers</h3>
+              <span>{items.length}</span>
+            </div>
+            <p className="layersHint">
+              Front layers appear first. Drag to reorder, or use the arrows.
+            </p>
+            {!items.length && (
+              <p className="layersHint">
+                Add an object, shape, or text to start.
+              </p>
+            )}
+            {current?.groupId && (
+              <button
+                className="creationSecondary"
+                onClick={() =>
+                  change((scene) => groupSelection(scene, [current.uid]))
+                }
+              >
+                Ungroup objects
+              </button>
+            )}
+            {selectedIds.length > 0 && (
+              <div className="selectionTools">
+                <p>
+                  {
+                    items.filter((item) => selectedIds.includes(item.uid))
+                      .length
+                  }{" "}
+                  selected · Drag a selected object to move them together.
+                </p>
+                <button
+                  disabled={selectedIds.length < 2}
+                  onClick={() =>
+                    change((scene) =>
+                      groupSelection(scene, selectedIds, crypto.randomUUID()),
+                    )
+                  }
+                >
+                  Group selected
+                </button>
+                <button
+                  onClick={() =>
+                    change((scene) => groupSelection(scene, selectedIds))
+                  }
+                >
+                  Ungroup selected
+                </button>
+                <button onClick={() => setSelectedIds([])}>
+                  Clear selection
+                </button>
+                <button
+                  onClick={() =>
+                    change((scene) =>
+                      duplicateSelection(scene, selectedIds, () =>
+                        crypto.randomUUID(),
+                      ),
+                    )
+                  }
+                >
+                  Duplicate selected
+                </button>
+                <button
+                  onClick={() =>
+                    change((scene) => ({
+                      ...scene,
+                      items: scene.items.filter(
+                        (item) =>
+                          !selectedIds.includes(item.uid) || item.locked,
+                      ),
+                    }))
+                  }
+                >
+                  Delete selected
+                </button>
+                {["Front", "Back"].map((direction) => (
+                  <button
+                    key={direction}
+                    onClick={() =>
+                      change((scene) => {
+                        const sorted = [...scene.items].sort(
+                          (a, b) => a.z - b.z,
+                        );
+                        const chosen = sorted.filter(
+                          (item) =>
+                            selectedIds.includes(item.uid) && !item.locked,
+                        );
+                        const rest = sorted.filter(
+                          (item) => !chosen.includes(item),
+                        );
+                        return {
+                          ...scene,
+                          items: (direction === "Front"
+                            ? [...rest, ...chosen]
+                            : [...chosen, ...rest]
+                          ).map((item, index) => ({ ...item, z: index + 1 })),
+                        };
+                      })
+                    }
+                  >
+                    Send selected to {direction.toLowerCase()}
                   </button>
-                  <div className="layerActions">
-                    <button aria-label={`${item.hidden ? "Show" : "Hide"} ${name} layer`} title={item.hidden ? "Show layer" : "Hide layer"} disabled={item.locked} onClick={() => update(item.uid, { hidden: !item.hidden })}>{item.hidden ? "Show" : "Hide"}</button>
-                    <button aria-label={`${item.locked ? "Unlock" : "Lock"} ${name} layer`} onClick={() => update(item.uid, { locked: !item.locked })}>{item.locked ? "Unlock" : "Lock"}</button>
-                    <button aria-label={`Move ${name} layer forward`} disabled={item.locked || index === 0} onClick={() => layer(item, "up")}>↑</button>
-                    <button aria-label={`Move ${name} layer backward`} disabled={item.locked || index === items.length - 1} onClick={() => layer(item, "down")}>↓</button>
-                  </div>
-                </li>;
-              })}
+                ))}
+              </div>
+            )}
+            <ol className="layerList">
+              {[...items]
+                .sort((a, b) => b.z - a.z)
+                .map((item, index) => {
+                  const name = pretty(item.asset.variant || item.asset.id);
+                  return (
+                    <li
+                      key={item.uid}
+                      className={`layerRow ${active === item.uid ? "active" : ""} ${item.hidden ? "isHidden" : ""}`}
+                      draggable={!item.locked}
+                      onDragStart={(event) => {
+                        draggedLayer.current = item.uid;
+                        event.dataTransfer.effectAllowed = "move";
+                        event.dataTransfer.setData("text/plain", item.uid);
+                      }}
+                      onDragEnd={() => {
+                        draggedLayer.current = null;
+                      }}
+                      onDragOver={(event) => {
+                        if (draggedLayer.current) {
+                          event.preventDefault();
+                          event.dataTransfer.dropEffect = "move";
+                        }
+                      }}
+                      onDrop={(event) => {
+                        event.preventDefault();
+                        const uid = draggedLayer.current;
+                        draggedLayer.current = null;
+                        if (uid)
+                          change((scene) => moveLayer(scene, uid, item.uid));
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        aria-label={`Include ${name} in selection`}
+                        checked={selectedIds.includes(item.uid)}
+                        onChange={(event) =>
+                          setSelectedIds((ids) =>
+                            event.target.checked
+                              ? [...ids, item.uid]
+                              : ids.filter((id) => id !== item.uid),
+                          )
+                        }
+                      />
+                      <button
+                        className="layerSelect"
+                        aria-label={`Select ${name} layer`}
+                        aria-pressed={active === item.uid}
+                        onClick={() => setActive(item.uid)}
+                      >
+                        <img src={item.asset.src} alt="" draggable={false} />
+                        <span>
+                          {name}
+                          {item.groupId ? " · Group" : ""}
+                        </span>
+                      </button>
+                      <div className="layerActions">
+                        <button
+                          aria-label={`${item.hidden ? "Show" : "Hide"} ${name} layer`}
+                          title={item.hidden ? "Show layer" : "Hide layer"}
+                          disabled={item.locked}
+                          onClick={() =>
+                            update(item.uid, { hidden: !item.hidden })
+                          }
+                        >
+                          {item.hidden ? "Show" : "Hide"}
+                        </button>
+                        <button
+                          aria-label={`${item.locked ? "Unlock" : "Lock"} ${name} layer`}
+                          onClick={() =>
+                            update(item.uid, { locked: !item.locked })
+                          }
+                        >
+                          {item.locked ? "Unlock" : "Lock"}
+                        </button>
+                        <button
+                          aria-label={`Move ${name} layer forward`}
+                          disabled={item.locked || index === 0}
+                          onClick={() => layer(item, "up")}
+                        >
+                          ↑
+                        </button>
+                        <button
+                          aria-label={`Move ${name} layer backward`}
+                          disabled={item.locked || index === items.length - 1}
+                          onClick={() => layer(item, "down")}
+                        >
+                          ↓
+                        </button>
+                      </div>
+                    </li>
+                  );
+                })}
             </ol>
           </section>
           <h3>Element Properties</h3>
@@ -1559,6 +3095,12 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
               </div>
               <button
                 className="propertyLock"
+                onClick={() => duplicate(current)}
+              >
+                Duplicate element
+              </button>
+              <button
+                className="propertyLock"
                 onClick={() => update(current.uid, { locked: !current.locked })}
               >
                 {current.locked ? "Unlock element" : "Lock element"}
@@ -1573,36 +3115,172 @@ export default function Generator({ sharedScene }: { sharedScene?: string }) {
                 {current.asset.shape && (
                   <div className="textControls">
                     <div className="shapeDimensions">
-                      {(["width", "height"] as const).map((axis) => <label key={axis}>
-                        {axis === "width" ? "Width" : "Height"} (px)
-                        <input key={`${current.uid}-${itemDimensions(current)[axis]}`} aria-label={`Shape ${axis}`} type="number" min={Math.ceil(32 * current.scale)} max={Math.floor(1200 * current.scale)} step="1"
-                          defaultValue={Math.round(itemDimensions(current)[axis])}
-                          onKeyDown={(event) => { if (event.key === "Enter") event.currentTarget.blur(); }}
-                          onBlur={(event) => {
-                            const value = Number(event.target.value);
-                            if (!event.target.value.trim() || !Number.isFinite(value)) { event.target.value = String(Math.round(itemDimensions(current)[axis])); return; }
-                            const dimension = clamp(value / current.scale, 32, 1200);
-                            event.target.value = String(Math.round(dimension * current.scale));
-                            update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, [axis]: dimension }) });
-                          }} />
-                      </label>)}
+                      {(["width", "height"] as const).map((axis) => (
+                        <label key={axis}>
+                          {axis === "width" ? "Width" : "Height"} (px)
+                          <input
+                            key={`${current.uid}-${itemDimensions(current)[axis]}`}
+                            aria-label={`Shape ${axis}`}
+                            type="number"
+                            min={Math.ceil(32 * current.scale)}
+                            max={Math.floor(1200 * current.scale)}
+                            step="1"
+                            defaultValue={Math.round(
+                              itemDimensions(current)[axis],
+                            )}
+                            onKeyDown={(event) => {
+                              if (event.key === "Enter")
+                                event.currentTarget.blur();
+                            }}
+                            onBlur={(event) => {
+                              const value = Number(event.target.value);
+                              if (
+                                !event.target.value.trim() ||
+                                !Number.isFinite(value)
+                              ) {
+                                event.target.value = String(
+                                  Math.round(itemDimensions(current)[axis]),
+                                );
+                                return;
+                              }
+                              const dimension = clamp(
+                                value / current.scale,
+                                32,
+                                1200,
+                              );
+                              event.target.value = String(
+                                Math.round(dimension * current.scale),
+                              );
+                              update(current.uid, {
+                                asset: shapeAsset({
+                                  ...current.asset.shape!,
+                                  [axis]: dimension,
+                                }),
+                              });
+                            }}
+                          />
+                        </label>
+                      ))}
                     </div>
-                    {current.asset.shape.kind !== "Line" && <>
-                      <label>Fill color<input aria-label="Shape fill" type="color" value={current.asset.shape.fill === "transparent" ? "#438568" : current.asset.shape.fill}
-                        onChange={(e) => update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, fill: e.target.value }) })} /></label>
-                      <label className="shapeNoFill"><input type="checkbox" checked={current.asset.shape.fill === "transparent"}
-                        onChange={(e) => update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, fill: e.target.checked ? "transparent" : "#438568", strokeWidth: e.target.checked ? Math.max(2, current.asset.shape!.strokeWidth) : current.asset.shape!.strokeWidth }) })} /> No fill</label>
-                    </>}
-                    <label>Outline color<input aria-label="Shape outline" type="color" value={current.asset.shape.stroke}
-                      onChange={(e) => update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, stroke: e.target.value, strokeWidth: Math.max(1, current.asset.shape!.strokeWidth) }) })} /></label>
-                    <Prop label="Outline width" value={`${current.asset.shape.strokeWidth} px`}>
-                      <input aria-label="Outline width" type="range" min={current.asset.shape.kind === "Line" ? 1 : 0} max="20" step="1" value={current.asset.shape.strokeWidth} onPointerDown={beginRange}
-                        onChange={(e) => update(current.uid, { asset: shapeAsset({ ...current.asset.shape!, strokeWidth: +e.target.value }) })} />
+                    {current.asset.shape.kind !== "Line" && (
+                      <>
+                        <label>
+                          Fill color
+                          <input
+                            aria-label="Shape fill"
+                            type="color"
+                            value={
+                              current.asset.shape.fill === "transparent"
+                                ? "#438568"
+                                : current.asset.shape.fill
+                            }
+                            onChange={(e) =>
+                              update(current.uid, {
+                                asset: shapeAsset({
+                                  ...current.asset.shape!,
+                                  fill: e.target.value,
+                                }),
+                              })
+                            }
+                          />
+                        </label>
+                        <label className="shapeNoFill">
+                          <input
+                            type="checkbox"
+                            checked={current.asset.shape.fill === "transparent"}
+                            onChange={(e) =>
+                              update(current.uid, {
+                                asset: shapeAsset({
+                                  ...current.asset.shape!,
+                                  fill: e.target.checked
+                                    ? "transparent"
+                                    : "#438568",
+                                  strokeWidth: e.target.checked
+                                    ? Math.max(
+                                        2,
+                                        current.asset.shape!.strokeWidth,
+                                      )
+                                    : current.asset.shape!.strokeWidth,
+                                }),
+                              })
+                            }
+                          />{" "}
+                          No fill
+                        </label>
+                      </>
+                    )}
+                    <label>
+                      Outline color
+                      <input
+                        aria-label="Shape outline"
+                        type="color"
+                        value={current.asset.shape.stroke}
+                        onChange={(e) =>
+                          update(current.uid, {
+                            asset: shapeAsset({
+                              ...current.asset.shape!,
+                              stroke: e.target.value,
+                              strokeWidth: Math.max(
+                                1,
+                                current.asset.shape!.strokeWidth,
+                              ),
+                            }),
+                          })
+                        }
+                      />
+                    </label>
+                    <Prop
+                      label="Outline width"
+                      value={`${current.asset.shape.strokeWidth} px`}
+                    >
+                      <input
+                        aria-label="Outline width"
+                        type="range"
+                        min={current.asset.shape.kind === "Line" ? 1 : 0}
+                        max="20"
+                        step="1"
+                        value={current.asset.shape.strokeWidth}
+                        onPointerDown={beginRange}
+                        onChange={(e) =>
+                          update(current.uid, {
+                            asset: shapeAsset({
+                              ...current.asset.shape!,
+                              strokeWidth: +e.target.value,
+                            }),
+                          })
+                        }
+                      />
                     </Prop>
                   </div>
                 )}
                 {current.asset.text && (
                   <div className="textControls">
+                    <label>
+                      Font
+                      <select
+                        aria-label="Text font"
+                        value={current.asset.text.font ?? "sans"}
+                        onChange={(e) =>
+                          update(current.uid, {
+                            asset: textAsset({
+                              ...current.asset.text!,
+                              font: e.target.value as TextFont,
+                            }),
+                          })
+                        }
+                      >
+                        {Object.entries(TEXT_FONTS).map(([key, font]) => (
+                          <option
+                            key={key}
+                            value={key}
+                            style={{ fontFamily: font.family }}
+                          >
+                            {font.label}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+
                     <label>
                       Text
                       <textarea

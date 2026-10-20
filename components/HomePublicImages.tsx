@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { listPublished } from "@/lib/server/gallery";
+import { galleryPageHref, sceneCategories } from "@/lib/gallery-filters";
 export default async function HomePublicImages() {
   let result: Awaited<ReturnType<typeof listPublished>>;
   try {
@@ -31,9 +32,18 @@ export default async function HomePublicImages() {
               width="480"
               height="320"
               loading="lazy"
+              decoding="async"
             />
             <h3>{image.title}</h3>
           </Link>
+          {sceneCategories.some((value) => value === image.category) && (
+            <p className="galleryCategory">
+              <Link href={galleryPageHref(1, "", image.category)}>
+                <span className="srOnly">Browse category: </span>
+                {image.category[0].toUpperCase() + image.category.slice(1)}
+              </Link>
+            </p>
+          )}
         </article>
       ))}
     </div>

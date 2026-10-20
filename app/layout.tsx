@@ -1,6 +1,7 @@
 import { structuredData } from "@/lib/structured-data";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
+import PerformanceMetrics from "@/components/PerformanceMetrics";
 import SiteFooter from "@/components/SiteFooter";
 import type { Metadata } from "next";
 
@@ -110,9 +111,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      {/* Browser extensions can add body attributes before React hydrates. */}
+      <body suppressHydrationWarning>
         {/* Umami Analytics */}
         <Analytics />
+        <PerformanceMetrics />
 
         {/* Website structured data */}
         <script

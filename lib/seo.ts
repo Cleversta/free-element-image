@@ -42,11 +42,13 @@ export function galleryMetadata(
   page: number,
   q: string,
   category: string,
+  sort = "newest",
 ): Metadata {
   const params = new URLSearchParams();
   if (page > 1) params.set("page", String(page));
   if (q) params.set("q", q);
   if (category) params.set("category", category);
+  if (sort === "oldest") params.set("sort", sort);
   const path = `/gallery${params.size ? `?${params}` : ""}`;
   return {
     ...pageMetadata(
@@ -55,6 +57,6 @@ export function galleryMetadata(
       path,
     ),
     // Internal searches are useful to visitors but not standalone landing pages.
-    robots: { index: !q && !category, follow: true },
+    robots: { index: !q && !category && sort !== "oldest", follow: true },
   };
 }

@@ -12,19 +12,12 @@ type RouteContext = {
   }>;
 };
 
-export async function GET(
-  _request: Request,
-  context: RouteContext,
-) {
+export async function GET(_request: Request, context: RouteContext) {
   try {
     const { slug, variant } = await context.params;
 
     // Validate the image variant.
-    const allowedVariants = [
-      "image",
-      "thumbnail",
-      "download",
-    ];
+    const allowedVariants = ["image", "thumbnail", "download"];
 
     if (!allowedVariants.includes(variant)) {
       return Response.json(
@@ -38,10 +31,7 @@ export async function GET(
     }
 
     // Retrieve the published image from storage.
-    const bytes = await publishedFile(
-      slug,
-      variant,
-    );
+    const bytes = await publishedFile(slug, variant);
 
     if (!bytes || bytes.length === 0) {
       return Response.json(
@@ -57,14 +47,16 @@ export async function GET(
     const isThumbnail = variant === "thumbnail";
     const isDownload = variant === "download";
 
-    const contentType = isThumbnail
-      ? "image/webp"
-      : "image/png";
+    const contentType = isThumbnail ? "image/webp" : "image/png";
 
     const filename = `${slug}.png`;
+    const body =
+      bytes.buffer instanceof ArrayBuffer
+        ? new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+        : new Uint8Array(bytes);
 
     // Return the image with the correct response headers.
-    return new Response(Buffer.from(bytes), {
+    return new Response(body, {
       status: 200,
 
       headers: {
@@ -78,8 +70,7 @@ export async function GET(
 
         ...(isDownload
           ? {
-              "Content-Disposition":
-                `attachment; filename="${filename}"`,
+              "Content-Disposition": `attachment; filename="${filename}"`,
             }
           : {
               "Content-Disposition": "inline",
@@ -87,10 +78,7 @@ export async function GET(
       },
     });
   } catch (error) {
-    console.error(
-      "Published image request failed:",
-      error,
-    );
+    console.error("Published image request failed:", error);
 
     return submissionFailure(error);
   }

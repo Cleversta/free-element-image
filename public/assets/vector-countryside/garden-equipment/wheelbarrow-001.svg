@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 270">
-<defs>
- <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9abf72"/><stop offset="1" stop-color="#476c48"/></linearGradient>
- <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b58a5b"/><stop offset="1" stop-color="#6d4d35"/></linearGradient>
- <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7ded8"/><stop offset=".55" stop-color="#84928d"/><stop offset="1" stop-color="#5e6966"/></linearGradient>
- <filter id="shadow" x="-20%" y="-20%" width="140%" height="145%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity=".22"/></filter>
-</defs><g filter="url(#shadow)"><path d="M65 115h160l-28 85H92Z" fill="#8a6a48"/><path d="M195 195 275 225M95 195 50 230" stroke="#674b35" stroke-width="12"/><circle cx="175" cy="218" r="30" fill="#555"/><circle cx="175" cy="218" r="12" fill="#a7895c"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 270"><defs><filter id="shadow" width="140%" height="145%" x="-20%" y="-20%"><feDropShadow dx="2" dy="4" flood-opacity=".22" stdDeviation="3"/></filter></defs><g filter="url(#shadow)"><path fill="#8a6a48" d="M65 115h160l-28 85H92Z"/><path stroke="#674b35" stroke-width="12" d="m195 195 80 30M95 195l-45 35"/><circle cx="175" cy="218" r="30" fill="#555"/><circle cx="175" cy="218" r="12" fill="#a7895c"/></g></svg>

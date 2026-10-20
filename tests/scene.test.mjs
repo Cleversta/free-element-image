@@ -341,6 +341,9 @@ test("photo crop preserves a bounded, full-cover frame across canvas sizes", () 
     zoom: 1,
     x: 0,
     y: 100,
+    rotation: 0,
+    flipX: false,
+    flipY: false,
   });
   for (const { width, height } of Object.values(CANVAS_SIZES)) {
     for (const zoom of [1, 2, 3])
@@ -392,8 +395,34 @@ test("resizing on a portrait canvas keeps the opposite corner fixed", () => {
 });
 
 test("uploaded photo objects round-trip without accepting arbitrary URLs", () => {
-  const photo = photoAsset('data:image/webp;base64,YWJj');
-  const saved = {...scene, items: [{...item, asset: photo}]};
+  const photo = photoAsset("data:image/webp;base64,YWJj");
+  const saved = { ...scene, items: [{ ...item, asset: photo }] };
   assert.deepEqual(restoreScene(serializeScene(saved), [], [baseBg]), saved);
-  for (const src of ['https://example.com/photo.jpg', 'data:image/svg+xml;base64,YWJj', 'data:image/webp;base64,' + 'A'.repeat(2000000)]) assert.throws(() => photoAsset(src));
+  for (const src of [
+    "https://example.com/photo.jpg",
+    "data:image/svg+xml;base64,YWJj",
+    "data:image/webp;base64," + "A".repeat(2000000),
+  ])
+    assert.throws(() => photoAsset(src));
+});
+
+test("rotated photo crop covers every ratio and retains transforms", () => {
+  for (const { width, height } of Object.values(CANVAS_SIZES)) {
+    for (const rotation of [0, 90, 180, 270]) {
+      const rect = photoPlacement(1600, 900, width, height, {
+        zoom: 1,
+        x: 0,
+        y: 100,
+        rotation,
+        flipX: true,
+      });
+      const w = rotation % 180 ? rect.height : rect.width;
+      const h = rotation % 180 ? rect.width : rect.height;
+      const left = rect.x + rect.width / 2 - w / 2;
+      const top = rect.y + rect.height / 2 - h / 2;
+      assert.ok(left <= 1e-6 && top <= 1e-6);
+      assert.ok(left + w >= width - 1e-6 && top + h >= height - 1e-6);
+    }
+  }
+  assert.equal(photoCrop({ rotation: 45 }).rotation, 0);
 });

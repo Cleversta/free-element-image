@@ -1,6 +1,7 @@
 "use client";
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { flushAnalyticsQueue } from "@/lib/analytics";
 
 declare global {
   interface Window {
@@ -30,6 +31,7 @@ export default function Analytics() {
       data-do-not-track="true"
       data-before-send="freelementAnalyticsFilter"
       strategy="afterInteractive"
+      onReady={flushAnalyticsQueue}
     />
   );
 }

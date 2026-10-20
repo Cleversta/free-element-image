@@ -6,7 +6,8 @@ test("mobile zoom and pan preserve the saved scene and fit inside the page", asy
   page,
 }) => {
   await page.goto("/create?template=alpine-mirror-lake");
-  await page.getByRole("button", { name: "Save", exact: false }).click();
+  await page.locator(".vBrand").focus();
+  await page.keyboard.press("Control+s");
   const before = await page.evaluate(() =>
     localStorage.getItem("freelement-scene"),
   );
@@ -32,7 +33,8 @@ test("mobile zoom and pan preserve the saved scene and fit inside the page", asy
   );
   await page.mouse.up();
   expect(await viewport.evaluate((el) => el.scrollLeft)).toBeGreaterThan(left);
-  await page.getByRole("button", { name: "Save", exact: false }).click();
+  await page.locator(".vBrand").focus();
+  await page.keyboard.press("Control+s");
   expect(
     await page.evaluate(() => localStorage.getItem("freelement-scene")),
   ).toBe(before);

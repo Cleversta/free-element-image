@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Apple Orchard Lane",
+    "description": "Leafy trees flank a winding lane beside a small country cottage.",
+    "sky": "#bcdff2",
+    "ground": "#86ac63",
+    "src": "/assets/element-scenes/apple-orchard-lane.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Harvest Windmill Farm",
+    "description": "Golden fields, farm silos, a red barn, and grazing farm animals.",
+    "sky": "#f5d4a0",
+    "ground": "#b5ad67",
+    "src": "/assets/element-scenes/harvest-windmill-farm.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Little Village Square",
+    "description": "Village houses and a church surround a warm stone square.",
+    "sky": "#c6e5eb",
+    "ground": "#91a879",
+    "src": "/assets/element-scenes/little-village-square.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Willow Woodland Pond",
+    "description": "A peaceful woodland pond ringed by leafy trees and ducks.",
+    "sky": "#c5dfd6",
+    "ground": "#729576",
+    "src": "/assets/element-scenes/willow-woodland-pond.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Highland Cabin Trail",
+    "description": "A timber cabin below jagged alpine peaks with a cedar-lined trail.",
+    "sky": "#b8d1e3",
+    "ground": "#7b9270",
+    "src": "/assets/element-scenes/highland-cabin-trail.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Seaside Cottage Meadow",
+    "description": "A coastal cottage overlooks open blue water and a flower-covered bluff.",
+    "sky": "#b8e3ef",
+    "ground": "#a4b886",
+    "src": "/assets/element-scenes/seaside-cottage-meadow.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Moonlit Pine Camp",
+    "description": "A starry cedar clearing with a tiny cabin and a glowing moon.",
+    "sky": "#233857",
+    "ground": "#465d57",
+    "src": "/assets/element-scenes/moonlit-pine-camp.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Cottage Flower Garden",
+    "description": "A cozy cottage garden with colorful flower beds and a leafy tree.",
+    "sky": "#e2d5ed",
+    "ground": "#9fb57a",
+    "src": "/assets/element-scenes/cottage-flower-garden.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Cozy Village Green",
+    "description": "A welcoming village green with cottages and a church.",
+    "sky": "#f0dfa7",
+    "ground": "#a8b77b",
+    "src": "/assets/element-scenes/cozy-village-green.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Tropical Beach Garden",
+    "description": "A palm-framed seaside garden beside bright tropical water.",
+    "sky": "#a4e5f5",
+    "ground": "#a8bd7b",
+    "src": "/assets/element-scenes/tropical-beach-garden.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Rainy Village Street",
+    "description": "A soft gray village with rain clouds and a quiet square.",
+    "sky": "#a8b8c8",
+    "ground": "#82978a",
+    "src": "/assets/element-scenes/rainy-village-street.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Enchanted Treehouse Garden",
+    "description": "A whimsical treehouse among colorful flowers and heart-shaped leaves.",
+    "sky": "#c8b6e7",
+    "ground": "#83af95",
+    "src": "/assets/element-scenes/enchanted-treehouse-garden.svg",
+    "kind": "full"
+  }
+]

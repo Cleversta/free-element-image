@@ -11,7 +11,8 @@ test("server-rendered scene matches the browser download with transforms", async
     .first()
     .click();
   await page.locator(".miniAssetGrid button").first().click();
-  await page.getByRole("button", { name: "Save", exact: false }).click();
+  await page.locator(".vBrand").focus();
+  await page.keyboard.press("Control+s");
   const scene = await page.evaluate(() =>
     localStorage.getItem("freelement-scene"),
   );

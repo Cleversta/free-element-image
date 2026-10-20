@@ -12,6 +12,7 @@
     "test:e2e": "playwright test",
     "check": "npm run lint && npm run typecheck && npm test",
     "format": "prettier --write app components lib tests scripts *.config.*",
+    "optimize:svg": "svgo --folder public --recursive --multipass --quiet --config svgo.config.mjs",
     "check:services": "node --env-file-if-exists=.env.local --conditions=react-server --experimental-strip-types scripts/check-services.mjs",
     "cleanup:publications": "node --env-file-if-exists=.env.local --conditions=react-server --experimental-strip-types scripts/cleanup-publications.mjs"
   },
@@ -34,6 +35,7 @@
     "eslint": "9.39.5",
     "eslint-config-next": "15.5.25",
     "prettier": "^3.0.0",
+    "svgo": "^4.1.0",
     "typescript": "^5.8.3"
   },
   "engines": {

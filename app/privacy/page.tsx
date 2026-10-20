@@ -9,7 +9,7 @@ export const metadata = pageMetadata(
 export default function Privacy() {
   return (
     <InformationPage title="Privacy notice">
-      <p>Last updated: September 27, 2026.</p>
+      <p>Last updated: October 9, 2026.</p>
       <p>
         This notice describes the current Freelement Images service. For
         questions or requests, contact{" "}
@@ -22,10 +22,11 @@ export default function Privacy() {
         artwork still sends normal web requests to the hosting service.
       </p>
       <p>
-        When you choose Save, the scene is stored in this browser’s local
-        storage. The latest private submission link is also stored there when
-        available. Clearing website data removes those local records. Anyone
-        with access to your browser profile may be able to access them.
+        Working drafts and My creations are stored only in this browser,
+        including uploaded photos. The latest private submission link is also
+        stored there when available. Clearing website data removes those local
+        records. Anyone with access to your browser profile may be able to
+        access them.
       </p>
       <h2>When you publish</h2>
       <p>
@@ -33,7 +34,9 @@ export default function Privacy() {
         private management token. The server renders the image and stores its
         image files and thumbnails in Cloudflare R2. Supabase stores submission
         details, status, dates, consent, and a hash of the management token. The
-        raw token is not stored in the submission database.
+        raw token is not stored in the submission database. Photo submissions
+        include the uploaded photos. The server processes them and removes
+        embedded image metadata before storing the editable copy.
       </p>
       <p>
         Published images, titles, descriptions, dimensions, and publication
@@ -78,8 +81,11 @@ export default function Privacy() {
         website uses Umami Cloud for basic audience measurement, such as page
         views, referrers, browser and device types, and approximate location. We
         do not configure custom user identifiers or send scene contents to
-        Umami. Page views for private management and owner pages are not sent by
-        this integration. See the{" "}
+        Umami. We also send editor-start and successful-download events, plus
+        Core Web Vitals measurements, with basic format, canvas-size, and
+        element-count details to understand completion and performance. Page
+        views and these events are excluded on private management and owner
+        pages. See the{" "}
         <a href="https://umami.is/privacy">Umami privacy policy</a> for provider
         information. Advertising is not currently enabled. We will update this
         notice and the relevant privacy controls before enabling ads.

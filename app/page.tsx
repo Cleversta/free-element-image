@@ -1,3 +1,5 @@
+import SiteHeader from "@/components/SiteHeader";
+import HomeCreations from "@/components/HomeCreations";
 import { starterScenes } from "@/lib/starter-scenes";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
@@ -12,26 +14,8 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   return (
     <main className="home">
-      <nav>
-        <Link
-          href="/"
-          className="brandWrap"
-          aria-label="Freelement Images home"
-        >
-          <img
-            src="/logo.png"
-            alt="Freelement Images logo"
-            className="brandLogo"
-          />
-          <b>Freelement Images</b>
-        </Link>
-        <div className="headerLinks">
-          <Link href="/create">Create</Link>
-          <Link href="/gallery">Gallery</Link>
-          <Link href="/scenes">Starter scenes</Link>
-          <Link href="/guides">Guides</Link>
-        </div>
-      </nav>
+      <SiteHeader />
+      <HomeCreations />
       <section className="hero">
         <span className="pill">NO PROMPTS • INSTANT • EDITABLE</span>
         <h1>
@@ -43,9 +27,16 @@ export default function Home() {
           Pick what you want. We compose a countryside scene instantly, then you
           can move, resize, rotate, lock and download it.
         </p>
-        <Link className="primary" href="/create">
-          Start creating →
-        </Link>
+        <div className="homeEditorChoices">
+          <Link className="primary" href="/create">
+            Start creating →
+            <small>Create a scene with trees, houses, and more</small>
+          </Link>
+          <Link className="photoEditorChoice" href="/create?mode=photo">
+            Edit a photo →
+            <small>Crop, adjust colors, and add your own details</small>
+          </Link>
+        </div>
       </section>
       <section className="homePublicImages" aria-labelledby="starter-title">
         <div className="homeGalleryHeading">
@@ -69,6 +60,12 @@ export default function Home() {
                 <h3>{scene.background.name}</h3>
               </Link>
               <p>{scene.background.description}</p>
+              <Link
+                className="starterSceneAction"
+                href={`/create?template=${scene.slug}`}
+              >
+                Customize this scene →
+              </Link>
             </article>
           ))}
         </div>

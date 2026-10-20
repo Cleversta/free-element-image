@@ -67,6 +67,7 @@ test("photo framing matches export, survives reload, and resets on mobile", asyn
     .getByLabel("Upload photo background")
     .setInputFiles({ name: "halves.png", mimeType: "image/png", buffer });
   await page.getByLabel("Canvas size", { exact: true }).selectOption("square");
+  await page.getByText("Crop & rotate options", { exact: true }).click();
   await page.getByLabel("Photo zoom", { exact: true }).fill("2");
   for (const [x, channel] of [
     ["0", 0],
@@ -98,6 +99,7 @@ test("photo framing matches export, survives reload, and resets on mobile", asyn
   await expect(
     page.getByLabel("Horizontal position", { exact: true }),
   ).toHaveValue("100");
+  await page.getByText("Crop & rotate options", { exact: true }).click();
   await page.getByRole("button", { name: "Reset photo crop" }).click();
   await expect(page.getByLabel("Photo zoom", { exact: true })).toHaveValue("1");
   await expect(

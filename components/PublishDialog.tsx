@@ -103,6 +103,11 @@ export default function PublishDialog({
     setBusy(true);
     setError("");
     try {
+      const editableScene = serializeScene(scene);
+      if (new Blob([editableScene]).size > 3 * 1024 * 1024)
+        throw new Error(
+          "This scene is too large to publish. Remove some uploaded photos and try again. You can still save or download it.",
+        );
       const link = `${location.origin}/manage#${token.current}`;
       setManagementLink(link);
       // Keep a receipt even if the connection drops after the server accepted the image.
@@ -121,7 +126,7 @@ export default function PublishDialog({
           consent,
           managementToken: token.current,
           challenge,
-          scene: serializeScene(scene),
+          scene: editableScene,
         }),
         signal: AbortSignal.timeout(90000),
       });
@@ -248,8 +253,9 @@ export default function PublishDialog({
                   onChange={(e) => setConsent(e.target.checked)}
                 />
                 <span>
-                  I agree to public display, download, and editing of a copy of
-                  this scene after owner approval.
+                  I have permission to share any photos and agree to public
+                  display, download, and editing of a copy of this scene after
+                  owner approval.
                 </span>
               </label>
               <p className="usageNote">

@@ -1,0 +1,536 @@
+[
+  {
+    "src": "/assets/element-scenes/apple-orchard-lane.svg",
+    "background": {
+      "name": "Apple Orchard Lane",
+      "description": "Leafy trees flank a winding lane beside a small country cottage.",
+      "sky": "#bcdff2",
+      "ground": "#86ac63",
+      "src": "/assets/element-scenes/apple-orchard-lane-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-garden-house",
+        "x": 68.00154320987654,
+        "y": 43.125,
+        "scale": 0.7592592592592593
+      },
+      {
+        "assetId": "freeimage-leafy-tree",
+        "x": 3.137882766881603,
+        "y": 38.766304751834525,
+        "scale": 0.9990337924838797
+      },
+      {
+        "assetId": "freeimage-leafy-tree",
+        "x": 23.58091807815138,
+        "y": 49.23913069266034,
+        "scale": 0.6376811441386466
+      },
+      {
+        "assetId": "freeimage-leafy-tree",
+        "x": 74.65438841653615,
+        "y": 61.486413464678556,
+        "scale": 1.0415458687597894
+      },
+      {
+        "assetId": "freeimage-daisy",
+        "x": 5.478395061728396,
+        "y": 85,
+        "scale": 0.37037037037037035
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/harvest-windmill-farm.svg",
+    "background": {
+      "name": "Harvest Windmill Farm",
+      "description": "Golden fields, farm silos, a red barn, and grazing farm animals.",
+      "sky": "#f5d4a0",
+      "ground": "#b5ad67",
+      "src": "/assets/element-scenes/harvest-windmill-farm-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-farm-and-silos",
+        "x": 62.5,
+        "y": 40.29296875,
+        "scale": 1.09375
+      },
+      {
+        "assetId": "freeimage-red-barn",
+        "x": 11.666666666666666,
+        "y": 45.33203125,
+        "scale": 0.90625
+      },
+      {
+        "assetId": "freeimage-grazing-cow",
+        "x": 43.333333333333336,
+        "y": 69.619140625,
+        "scale": 0.578125
+      },
+      {
+        "assetId": "freeimage-round-sheep",
+        "x": 63.563218569659135,
+        "y": 80.62297975222484,
+        "scale": 0.3890086072755653
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/little-village-square.svg",
+    "background": {
+      "name": "Little Village Square",
+      "description": "Village houses and a church surround a warm stone square.",
+      "sky": "#c6e5eb",
+      "ground": "#91a879",
+      "src": "/assets/element-scenes/little-village-square-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-purple-cottage",
+        "x": 8.24074074074074,
+        "y": 41.25,
+        "scale": 0.9444444444444445
+      },
+      {
+        "assetId": "freeimage-blue-townhouse",
+        "x": 37.77006172839506,
+        "y": 38.125,
+        "scale": 0.8703703703703703
+      },
+      {
+        "assetId": "freeimage-golden-church",
+        "x": 70.83333333333333,
+        "y": 43.515625,
+        "scale": 0.625
+      },
+      {
+        "assetId": "freeimage-heart-leaf-tree",
+        "x": -1.5215227805655285,
+        "y": 51.17979148084675,
+        "scale": 0.7078642085424146
+      },
+      {
+        "assetId": "freeimage-white-hydrangea",
+        "x": 77.48456790123457,
+        "y": 83.75,
+        "scale": 0.40740740740740744
+      },
+      {
+        "assetId": "freeimage-cream-cat",
+        "x": 33.81172839506173,
+        "y": 81.25,
+        "scale": 0.3703703703703704
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/willow-woodland-pond.svg",
+    "background": {
+      "name": "Willow Woodland Pond",
+      "description": "A peaceful woodland pond ringed by leafy trees and ducks.",
+      "sky": "#c5dfd6",
+      "ground": "#729576",
+      "src": "/assets/element-scenes/willow-woodland-pond-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-heart-leaf-tree",
+        "x": -2.420805118724696,
+        "y": 37.62952789661406,
+        "scale": 1.1034353839043523
+      },
+      {
+        "assetId": "freeimage-leafy-tree",
+        "x": 73.59581355768461,
+        "y": 36.035326533944584,
+        "scale": 1.105313983173654
+      },
+      {
+        "assetId": "freeimage-young-cedar-tree",
+        "x": 63.086419753086425,
+        "y": 43.125,
+        "scale": 0.5185185185185185
+      },
+      {
+        "assetId": "freeimage-mallard-duck",
+        "x": 41.126543209876544,
+        "y": 75,
+        "scale": 0.2592592592592593
+      },
+      {
+        "assetId": "freeimage-mallard-duck",
+        "x": 55.20061728395061,
+        "y": 81.875,
+        "scale": 0.2037037037037037
+      },
+      {
+        "assetId": "freeimage-purple-sweetvetch",
+        "x": 11.31172839506173,
+        "y": 85,
+        "scale": 0.37037037037037035
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/highland-cabin-trail.svg",
+    "background": {
+      "name": "Highland Cabin Trail",
+      "description": "A timber cabin below jagged alpine peaks with a cedar-lined trail.",
+      "sky": "#b8d1e3",
+      "ground": "#7b9270",
+      "src": "/assets/element-scenes/highland-cabin-trail-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-brown-village-house",
+        "x": 58.71913580246913,
+        "y": 43.75,
+        "scale": 0.8148148148148149
+      },
+      {
+        "assetId": "freeimage-young-cedar-tree",
+        "x": 1.8981481481481477,
+        "y": 46.25,
+        "scale": 0.8888888888888888
+      },
+      {
+        "assetId": "freeimage-young-cedar-tree",
+        "x": 20.509259259259263,
+        "y": 54.375,
+        "scale": 0.5555555555555555
+      },
+      {
+        "assetId": "freeimage-young-cedar-tree",
+        "x": 78.71913580246914,
+        "y": 57.5,
+        "scale": 0.8148148148148148
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/seaside-cottage-meadow.svg",
+    "background": {
+      "name": "Seaside Cottage Meadow",
+      "description": "A coastal cottage overlooks open blue water and a flower-covered bluff.",
+      "sky": "#b8e3ef",
+      "ground": "#a4b886",
+      "src": "/assets/element-scenes/seaside-cottage-meadow-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-garden-house",
+        "x": 9.135802469135804,
+        "y": 45.625,
+        "scale": 0.8148148148148148
+      },
+      {
+        "assetId": "freeimage-heart-leaf-tree",
+        "x": -1.03559563996066,
+        "y": 44.656121143174786,
+        "scale": 0.6870446729970495
+      },
+      {
+        "assetId": "freeimage-poppy",
+        "x": 32.56172839506173,
+        "y": 83.125,
+        "scale": 0.37037037037037035
+      },
+      {
+        "assetId": "freeimage-daisy",
+        "x": 81.88271604938272,
+        "y": 89.375,
+        "scale": 0.2962962962962963
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/moonlit-pine-camp.svg",
+    "background": {
+      "name": "Moonlit Pine Camp",
+      "description": "A starry cedar clearing with a tiny cabin and a glowing moon.",
+      "sky": "#233857",
+      "ground": "#465d57",
+      "src": "/assets/element-scenes/moonlit-pine-camp-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-young-cedar-tree",
+        "x": -0.3009259259259238,
+        "y": 46.5625,
+        "scale": 0.9444444444444443
+      },
+      {
+        "assetId": "freeimage-young-cedar-tree",
+        "x": 19.97685185185185,
+        "y": 54.0625,
+        "scale": 0.611111111111111
+      },
+      {
+        "assetId": "freeimage-brown-village-house",
+        "x": 40.29320987654321,
+        "y": 50.625,
+        "scale": 0.7592592592592593
+      },
+      {
+        "assetId": "freeimage-young-cedar-tree",
+        "x": 72.95524691358025,
+        "y": 50.625,
+        "scale": 0.9814814814814814
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/cottage-flower-garden.svg",
+    "background": {
+      "name": "Cottage Flower Garden",
+      "description": "A cozy cottage garden with colorful flower beds and a leafy tree.",
+      "sky": "#e2d5ed",
+      "ground": "#9fb57a",
+      "src": "/assets/element-scenes/cottage-flower-garden-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-purple-cottage",
+        "x": 38.91975308641975,
+        "y": 37.5,
+        "scale": 1.0185185185185186
+      },
+      {
+        "assetId": "freeimage-heart-leaf-tree",
+        "x": -1.1708051187246962,
+        "y": 34.50452789661406,
+        "scale": 1.1034353839043523
+      },
+      {
+        "assetId": "freeimage-white-hydrangea",
+        "x": 5.262345679012344,
+        "y": 75,
+        "scale": 0.5740740740740742
+      },
+      {
+        "assetId": "freeimage-poppy",
+        "x": 23.03240740740741,
+        "y": 80.625,
+        "scale": 0.4444444444444444
+      },
+      {
+        "assetId": "freeimage-daisy",
+        "x": 69.24382716049382,
+        "y": 80.625,
+        "scale": 0.46296296296296297
+      },
+      {
+        "assetId": "freeimage-purple-sweetvetch",
+        "x": 83.88117283950616,
+        "y": 76.25,
+        "scale": 0.5370370370370371
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/cozy-village-green.svg",
+    "background": {
+      "name": "Cozy Village Green",
+      "description": "A welcoming village green with cottages and a church.",
+      "sky": "#f0dfa7",
+      "ground": "#a8b77b",
+      "src": "/assets/element-scenes/cozy-village-green-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-purple-cottage",
+        "x": 8.24074074074074,
+        "y": 41.25,
+        "scale": 0.9444444444444445
+      },
+      {
+        "assetId": "freeimage-blue-townhouse",
+        "x": 37.77006172839506,
+        "y": 38.125,
+        "scale": 0.8703703703703703
+      },
+      {
+        "assetId": "freeimage-golden-church",
+        "x": 70.83333333333333,
+        "y": 43.515625,
+        "scale": 0.625
+      },
+      {
+        "assetId": "freeimage-heart-leaf-tree",
+        "x": -1.5215227805655285,
+        "y": 51.17979148084675,
+        "scale": 0.7078642085424146
+      },
+      {
+        "assetId": "freeimage-white-hydrangea",
+        "x": 77.48456790123457,
+        "y": 83.75,
+        "scale": 0.40740740740740744
+      },
+      {
+        "assetId": "freeimage-cream-cat",
+        "x": 33.81172839506173,
+        "y": 81.25,
+        "scale": 0.3703703703703704
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/tropical-beach-garden.svg",
+    "background": {
+      "name": "Tropical Beach Garden",
+      "description": "A palm-framed seaside garden beside bright tropical water.",
+      "sky": "#a4e5f5",
+      "ground": "#a8bd7b",
+      "src": "/assets/element-scenes/tropical-beach-garden-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-garden-house",
+        "x": 9.135802469135804,
+        "y": 45.625,
+        "scale": 0.8148148148148148
+      },
+      {
+        "assetId": "freeimage-tropical-palm",
+        "x": -6.527777777777781,
+        "y": 29.374999999999996,
+        "scale": 1.3333333333333335
+      },
+      {
+        "assetId": "freeimage-poppy",
+        "x": 32.56172839506173,
+        "y": 83.125,
+        "scale": 0.37037037037037035
+      },
+      {
+        "assetId": "freeimage-daisy",
+        "x": 81.88271604938272,
+        "y": 89.375,
+        "scale": 0.2962962962962963
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/rainy-village-street.svg",
+    "background": {
+      "name": "Rainy Village Street",
+      "description": "A soft gray village with rain clouds and a quiet square.",
+      "sky": "#a8b8c8",
+      "ground": "#82978a",
+      "src": "/assets/element-scenes/rainy-village-street-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-purple-cottage",
+        "x": 8.24074074074074,
+        "y": 41.25,
+        "scale": 0.9444444444444445
+      },
+      {
+        "assetId": "freeimage-blue-townhouse",
+        "x": 37.77006172839506,
+        "y": 38.125,
+        "scale": 0.8703703703703703
+      },
+      {
+        "assetId": "freeimage-golden-church",
+        "x": 70.83333333333333,
+        "y": 43.515625,
+        "scale": 0.625
+      },
+      {
+        "assetId": "freeimage-heart-leaf-tree",
+        "x": -1.5215227805655285,
+        "y": 51.17979148084675,
+        "scale": 0.7078642085424146
+      },
+      {
+        "assetId": "freeimage-white-hydrangea",
+        "x": 77.48456790123457,
+        "y": 83.75,
+        "scale": 0.40740740740740744
+      },
+      {
+        "assetId": "freeimage-cream-cat",
+        "x": 33.81172839506173,
+        "y": 81.25,
+        "scale": 0.3703703703703704
+      },
+      {
+        "assetId": "freeimage-rain-cloud",
+        "x": 16.944444444444446,
+        "y": 8.75,
+        "scale": 0.6666666666666666
+      },
+      {
+        "assetId": "freeimage-soft-gray-cloud",
+        "x": 67.8853222004714,
+        "y": 11.815798409971634,
+        "scale": 0.5961008349646438
+      }
+    ]
+  },
+  {
+    "src": "/assets/element-scenes/enchanted-treehouse-garden.svg",
+    "background": {
+      "name": "Enchanted Treehouse Garden",
+      "description": "A whimsical treehouse among colorful flowers and heart-shaped leaves.",
+      "sky": "#c8b6e7",
+      "ground": "#83af95",
+      "src": "/assets/element-scenes/enchanted-treehouse-garden-base.svg",
+      "kind": "full"
+    },
+    "items": [
+      {
+        "assetId": "freeimage-treehouse",
+        "x": 32.75365271724366,
+        "y": 23.992904220261504,
+        "scale": 1.3559760462067256
+      },
+      {
+        "assetId": "freeimage-heart-leaf-tree",
+        "x": -1.1708051187246962,
+        "y": 34.50452789661406,
+        "scale": 1.1034353839043523
+      },
+      {
+        "assetId": "freeimage-white-hydrangea",
+        "x": 5.262345679012344,
+        "y": 75,
+        "scale": 0.5740740740740742
+      },
+      {
+        "assetId": "freeimage-poppy",
+        "x": 23.03240740740741,
+        "y": 80.625,
+        "scale": 0.4444444444444444
+      },
+      {
+        "assetId": "freeimage-daisy",
+        "x": 69.24382716049382,
+        "y": 80.625,
+        "scale": 0.46296296296296297
+      },
+      {
+        "assetId": "freeimage-purple-sweetvetch",
+        "x": 83.88117283950616,
+        "y": 76.25,
+        "scale": 0.5370370370370371
+      }
+    ]
+  }
+]
