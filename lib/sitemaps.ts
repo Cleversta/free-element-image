@@ -14,6 +14,7 @@ export function xmlEscape(value: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
+
 }
 export function sitemapIndex(count: number) {
   const pages = Math.max(1, Math.ceil(count / SITEMAP_PAGE_SIZE));
