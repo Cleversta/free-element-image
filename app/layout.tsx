@@ -25,8 +25,19 @@ export const metadata: Metadata = {
 
   keywords: [
     "free image creator",
+    "free online image editor",
+    "free photo editor online",
+    "online picture editor",
     "image maker",
     "scene creator",
+    "online scene creator",
+    "free scene builder",
+    "landscape maker",
+    "create a landscape online",
+    "illustration maker",
+    "background maker",
+    "photo crop editor",
+    "image composition editor",
     "free visual elements",
     "image elements",
     "PNG elements",
@@ -35,6 +46,7 @@ export const metadata: Metadata = {
     "online image creator",
     "scene builder",
     "Freelement Images",
+    "Free element images",
   ],
 
   creator: "Freelement Images",

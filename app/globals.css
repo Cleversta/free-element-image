@@ -1153,6 +1153,63 @@ a {
   color: #607267;
   margin: 0;
 }
+.homeDetails {
+  margin-top: 72px;
+  padding: 42px;
+  border: 1px solid rgba(49, 95, 75, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+}
+.homeDetailsIntro {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+.homeDetailsIntro h2 {
+  margin: 0 0 14px;
+  color: #213d34;
+  font: 700 clamp(26px, 3vw, 36px)/1.2 Georgia, serif;
+  letter-spacing: -0.04em;
+}
+.homeDetailsIntro p,
+.homeDetailsGrid p,
+.homeDetailsNote {
+  color: #607267;
+  font-size: 15px;
+  line-height: 1.75;
+}
+.homeDetailsIntro p {
+  margin: 0;
+}
+.homeDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.homeDetailsGrid article {
+  padding: 22px;
+  border: 1px solid rgba(49, 95, 75, 0.1);
+  border-radius: 15px;
+  background: #fff;
+}
+.homeDetailsGrid h3 {
+  margin: 0 0 10px;
+  color: #213d34;
+  font: 700 19px/1.35 Georgia, serif;
+}
+.homeDetailsGrid p {
+  margin: 0 0 16px;
+  font-size: 14px;
+}
+.homeDetailsGrid a,
+.homeDetailsNote a {
+  color: var(--brand);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+.homeDetailsNote {
+  margin: 24px 0 0;
+  font-size: 13px;
+}
 @media (max-width: 1150px) {
   .brandWrap {
     gap: 10px;
@@ -1290,6 +1347,13 @@ a {
   .features {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+  .homeDetails {
+    margin-top: 48px;
+    padding: 24px;
+  }
+  .homeDetailsGrid {
+    grid-template-columns: 1fr;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
