@@ -1359,6 +1359,11 @@ a {
   min-height: 90px;
   resize: vertical;
 }
+.publishDialog .fieldHint {
+  color: #52645b;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
 .publishDialog .publishConsent {
   display: flex;
   align-items: flex-start;
@@ -2490,8 +2495,13 @@ a {
   position: absolute;
   inset: 0;
   z-index: 10000;
-  pointer-events: none;
+  pointer-events: auto;
+  touch-action: none;
+  cursor: grab;
   border: 2px solid #305f4e;
+}
+.photoCanvasCrop:active {
+  cursor: grabbing;
 }
 .photoCropGrid {
   position: absolute;
@@ -2520,11 +2530,85 @@ a {
       transparent 66.8%
     );
 }
+.photoCropHandle {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 8px;
+  color: white;
+  background: var(--brand);
+  opacity: 0;
+  transition: opacity 120ms ease;
+  touch-action: none;
+}
+.photoCropHandle svg {
+  width: 18px;
+  height: 18px;
+}
+.photoCanvasCrop:hover .photoCropHandle,
+.photoCropHandle:focus-visible {
+  opacity: 1;
+}
+.photoCropHandle.top-left {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+.photoCropHandle.top-right {
+  top: 0;
+  right: 0;
+  cursor: nesw-resize;
+}
+.photoCropHandle.bottom-left {
+  bottom: 0;
+  left: 0;
+  cursor: nesw-resize;
+}
+.photoCropHandle.bottom-right {
+  right: 0;
+  bottom: 0;
+  cursor: nwse-resize;
+}
+.photoCropHandle.top,
+.photoCropHandle.bottom {
+  left: 50%;
+  width: 44px;
+  height: 24px;
+  transform: translateX(-50%);
+  cursor: ns-resize;
+}
+.photoCropHandle.top {
+  top: 0;
+}
+.photoCropHandle.bottom {
+  bottom: 0;
+}
+.photoCropHandle.left,
+.photoCropHandle.right {
+  top: 50%;
+  width: 24px;
+  height: 44px;
+  transform: translateY(-50%);
+  cursor: ew-resize;
+}
+.photoCropHandle.left {
+  left: 0;
+}
+.photoCropHandle.right {
+  right: 0;
+}
 .photoCanvasToolbar {
   position: absolute;
-  left: 8px;
-  right: 8px;
+  left: 50%;
   top: 8px;
+  width: max-content;
+  max-width: calc(100% - 80px);
+  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2536,8 +2620,11 @@ a {
   cursor: default;
 }
 .photoCanvasToolbar span {
+  flex: 1 1 180px;
+  min-width: 0;
   margin-right: auto;
   font-size: 13px;
+  line-height: 1.35;
 }
 .photoCropActive .assetBox {
   pointer-events: none;
@@ -2557,6 +2644,18 @@ a {
   background: white;
   font-size: 13px;
   cursor: pointer;
+}
+.photoCompactControls > .photoCropToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand);
+  font-weight: 700;
+}
+.photoCompactControls > .photoCropToggle.isActive {
+  color: white;
+  background: var(--brand);
+  border-color: var(--brand);
 }
 .photoControlPanel {
   min-width: 0;
@@ -2650,6 +2749,9 @@ a {
   .photoCanvasToolbar {
     padding: 5px;
     gap: 4px;
+  }
+  .photoCropHandle {
+    opacity: 0.9;
   }
   .photoCanvasToolbar button {
     min-width: 36px;

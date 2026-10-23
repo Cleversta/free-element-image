@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" aria-labelledby="title desc">
+  <title id="title">Misty Pine Lake</title><desc id="desc">A still mountain lake between misty pine-covered ridges.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#91b5c1"/><stop offset="1" stop-color="#dce4d8"/></linearGradient><linearGradient id="water" x2="0" y2="1"><stop stop-color="#719da0"/><stop offset="1" stop-color="#b1c9b9"/></linearGradient><linearGradient id="hill" x2="0" y2="1"><stop stop-color="#668779"/><stop offset="1" stop-color="#344f49"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h1200v800H0z"/><circle cx="900" cy="175" r="66" fill="#f4edcf" opacity=".8"/>
+  <path fill="#dce4d8" opacity=".7" d="M0 310q180-90 350 0t350 0 500 4v120H0z"/>
+  <path fill="#8daaa2" d="m0 430 150-180 135 125 190-245 215 280 170-205 190 220 150-120v250H0z"/>
+  <path fill="url(#hill)" d="m0 520 180-165 130 135 165-320 180 350 155-180 160 190 130-100v190H0z"/>
+  <path fill="url(#water)" d="M0 480q170 35 330 0t320 0q180 40 350 0t200 0v320H0z"/>
+  <path fill="#d8e2cf" opacity=".55" d="M0 505q170 35 330 0t320 0q180 40 350 0t200 0v30q-190 35-370 0t-330 0q-180 30-330 0z"/>
+  <g fill="#29463f"><path d="m65 540 58-125 58 125h-37l48 84H54l48-84z"/><path d="m190 570 46-102 46 102h-29l40 70h-114l40-70z"/><path d="m1010 545 66-140 66 140h-42l51 92H1000l51-92z"/><path d="m1100 580 48-105 48 105h-30l40 70h-116l40-70z"/></g>
+  <g stroke="#e4eee1" stroke-width="4" opacity=".48"><path d="M300 590h170M700 570h130M520 650h240M120 700h210M890 685h170"/></g>
+  <path fill="#506e54" d="M0 688q190-55 370 0t365-5q220-60 465 5v112H0z"/>
+</svg>

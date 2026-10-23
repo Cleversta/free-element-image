@@ -63,6 +63,9 @@ export default function CanvasViewport({
   const start = (event: ReactPointerEvent<HTMLDivElement>) => {
     const el = viewport.current;
     if (!el || event.button !== 0) return;
+    const photoCropTarget =
+      event.target instanceof Element &&
+      event.target.closest(".photoCropActive") !== null;
     if (event.pointerType === "touch") {
       touches.current.set(event.pointerId, {
         x: event.clientX,
@@ -85,7 +88,7 @@ export default function CanvasViewport({
         return;
       }
     }
-    if (panMode) {
+    if (panMode && !photoCropTarget) {
       event.preventDefault();
       event.stopPropagation();
       onNavigate();

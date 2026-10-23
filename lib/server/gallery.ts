@@ -12,9 +12,10 @@ import {
 import type { ReviewImage, ReviewDependencies } from "./review.ts";
 import { SubmissionError } from "./submissions.ts";
 const publicFields =
-  "slug,title,description,category,license_code,image_width,image_height,published_at";
+  "slug,public_slug,title,description,category,license_code,image_width,image_height,published_at";
 export type PublicImage = {
   slug: string;
+  public_slug: string;
   title: string;
   description: string;
   category: string;
@@ -48,11 +49,12 @@ export async function listPublished(
   };
 }
 export async function publicImage(slug: string) {
-  if (!/^scene-[a-f0-9-]{36}$/.test(slug)) return null;
-  const { data, error } = await createSupabaseAdmin()
-    .from("images")
-    .select(publicFields)
-    .eq("slug", slug)
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return null;
+  const db = createSupabaseAdmin();
+  const query = /^scene-[a-f0-9-]{36}$/.test(slug)
+    ? db.from("images").select(publicFields).eq("slug", slug)
+    : db.from("images").select(publicFields).eq("public_slug", slug);
+  const { data, error } = await query
     .eq("status", "published")
     .maybeSingle();
   if (error) throw new Error("Gallery unavailable");
@@ -151,15 +153,15 @@ export async function imageBytes(key: string, isPublic: boolean) {
 }
 export async function publishedFile(slug: string, variant: string) {
   if (
-    !/^scene-[a-f0-9-]{36}$/.test(slug) ||
+    !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) ||
     !["image", "thumbnail", "download"].includes(variant)
   )
     throw new SubmissionError(404, "Image not found.");
   const db = createSupabaseAdmin();
-  const { data, error } = await db
-    .from("images")
-    .select("public_image_key,public_thumbnail_key")
-    .eq("slug", slug)
+  const query = /^scene-[a-f0-9-]{36}$/.test(slug)
+    ? db.from("images").select("slug,public_image_key,public_thumbnail_key").eq("slug", slug)
+    : db.from("images").select("slug,public_image_key,public_thumbnail_key").eq("public_slug", slug);
+  const { data, error } = await query
     .eq("status", "published")
     .maybeSingle();
   if (error) throw new Error("Gallery unavailable");
@@ -167,13 +169,14 @@ export async function publishedFile(slug: string, variant: string) {
     variant === "thumbnail"
       ? data?.public_thumbnail_key
       : data?.public_image_key;
-  if (!key) throw new SubmissionError(404, "Image not found.");
+  if (!data || !key)
+    throw new SubmissionError(404, "Image not found.");
   const bytes = await imageBytes(key, true);
   // Recheck after storage access so an in-flight removal cannot reveal a pending image.
   const { data: publication, error: publicationError } = await db
     .from("images")
     .select("slug")
-    .eq("slug", slug)
+    .eq("slug", data.slug)
     .eq("status", "published")
     .maybeSingle();
   if (publicationError) throw new Error("Gallery unavailable");

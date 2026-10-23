@@ -49,7 +49,7 @@ export async function GET(_request: Request, context: RouteContext) {
 
     const contentType = isThumbnail ? "image/webp" : "image/png";
 
-    const filename = `${slug}.png`;
+    const filename = `${slug}.${isThumbnail ? "webp" : "png"}`;
     const body =
       bytes.buffer instanceof ArrayBuffer
         ? new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength)
@@ -73,7 +73,7 @@ export async function GET(_request: Request, context: RouteContext) {
               "Content-Disposition": `attachment; filename="${filename}"`,
             }
           : {
-              "Content-Disposition": "inline",
+              "Content-Disposition": `inline; filename="${filename}"`,
             }),
       },
     });

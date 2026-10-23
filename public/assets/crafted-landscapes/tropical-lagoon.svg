@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" aria-labelledby="title desc">
+  <title id="title">Tropical Lagoon</title><desc id="desc">A turquoise lagoon meets a palm-lined shore and distant islands.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#67bfd0"/><stop offset="1" stop-color="#e4edce"/></linearGradient><linearGradient id="sea" x2="0" y2="1"><stop stop-color="#37a9ae"/><stop offset="1" stop-color="#9bd2b8"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h1200v800H0z"/><circle cx="905" cy="160" r="67" fill="#fff0bd"/>
+  <path fill="#4d9c91" d="M0 430q160-130 310 0t305 0q170-135 330 0t255 0v130H0z"/><path fill="#367e75" d="M0 475q160-120 315 0t300 0q190-130 345 0t240 0v100H0z"/>
+  <path fill="url(#sea)" d="M0 495q230 25 420 0t390 0q195 25 390 0v305H0z"/><path fill="#e3d19a" d="M0 635q230-80 470 10t400-10q180-70 330 0v165H0z"/>
+  <path fill="#f6e2ac" d="M0 700q190-60 370 0t400 0q220-60 430 0v100H0z"/>
+  <g fill="none" stroke="#f5f1d0" stroke-width="5" opacity=".6"><path d="M120 560h160M510 590h205M850 540h190M290 665h110M750 720h225"/></g>
+  <g stroke="#664b37" stroke-width="13" fill="none" stroke-linecap="round"><path d="M190 640q20-115 0-230M1040 650q-8-120 26-230M300 664q-8-90-46-150"/></g>
+  <g fill="#347657"><path d="M190 410q-75-95-155-67 65 10 135 82-70-90-55-160 20 60 85 144 0-100 65-147-32 68-45 156 70-82 135-75-75 30-150 100z"/><path d="M1066 420q-80-95-155-65 70 8 145 78-66-88-50-155 18 58 76 138 0-92 65-136-32 64-50 145 75-75 130-68-70 26-151 94z"/><path d="M255 510q-52-65-105-45 47 5 98 54-45-60-34-105 13 39 52 94 0-62 44-92-22 43-34 98 48-52 89-46-50 18-110 62z"/></g>
+</svg>

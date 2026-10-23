@@ -94,5 +94,53 @@
     "ground": "#789b68",
     "src": "/assets/crafted-landscapes/wildflower-trail.svg",
     "kind": "full"
+  },
+  {
+    "name": "Misty Pine Lake",
+    "description": "A still mountain lake sits between misty pine-covered ridges.",
+    "sky": "#b9d0d0",
+    "ground": "#587866",
+    "src": "/assets/crafted-landscapes/misty-pine-lake.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Autumn River Valley",
+    "description": "Warm autumn hills frame a winding river beneath a soft evening sky.",
+    "sky": "#e9b88d",
+    "ground": "#816346",
+    "src": "/assets/crafted-landscapes/autumn-river-valley.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Moonlit Desert Dunes",
+    "description": "Quiet blue dunes roll beneath a bright moon and distant stars.",
+    "sky": "#354768",
+    "ground": "#8c7892",
+    "src": "/assets/crafted-landscapes/moonlit-desert-dunes.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Tropical Lagoon",
+    "description": "A turquoise lagoon meets a palm-lined shore and faraway islands.",
+    "sky": "#92d7df",
+    "ground": "#438c6e",
+    "src": "/assets/crafted-landscapes/tropical-lagoon.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Bluebell Woodland",
+    "description": "Soft morning light falls across a woodland carpeted with bluebells.",
+    "sky": "#c5d8d3",
+    "ground": "#597658",
+    "src": "/assets/crafted-landscapes/bluebell-woodland.svg",
+    "kind": "full"
+  },
+  {
+    "name": "Cloud Top Islands",
+    "description": "Green floating islands drift among bright clouds in an open sky.",
+    "sky": "#89c9e3",
+    "ground": "#539778",
+    "src": "/assets/crafted-landscapes/cloud-top-islands.svg",
+    "kind": "full"
   }
 ]

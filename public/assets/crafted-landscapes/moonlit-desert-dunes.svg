@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" aria-labelledby="title desc">
+  <title id="title">Moonlit Desert Dunes</title><desc id="desc">Blue desert dunes roll beneath a bright moon and stars.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#263858"/><stop offset="1" stop-color="#77708d"/></linearGradient><linearGradient id="sand" x2="0" y2="1"><stop stop-color="#d3a982"/><stop offset="1" stop-color="#866e85"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h1200v800H0z"/><circle cx="880" cy="185" r="72" fill="#f6edca"/><circle cx="907" cy="163" r="68" fill="#343f60"/>
+  <g fill="#f5ebd1"><circle cx="180" cy="135" r="3"/><circle cx="360" cy="210" r="4"/><circle cx="540" cy="100" r="3"/><circle cx="1040" cy="285" r="3"/><circle cx="760" cy="305" r="3"/><circle cx="270" cy="330" r="2"/></g>
+  <path fill="#59627d" d="M0 490q180-175 375-10t390-15q210-170 435 5v330H0z"/><path fill="#77728a" d="M0 565q210-135 420 8t405-8q190-145 375 0v235H0z"/>
+  <path fill="url(#sand)" d="M0 640q220-125 465 5t430-5q150-105 305 0v160H0z"/><path fill="#d8b28a" d="M0 705q205-80 400 12t405-8q210-90 395 8v83H0z"/>
+  <path fill="none" stroke="#f0c89d" stroke-width="8" opacity=".55" d="M75 658q185-90 355 5M730 655q170-75 300-10M250 741q155-38 270 20"/>
+  <g fill="#303d56"><path d="M85 610h12v75H85z"/><path d="m55 615 36-78 39 78z"/><path d="m65 580 26-58 29 58z"/><path d="M1080 630h13v68h-13z"/><path d="m1040 637 47-97 49 97z"/><path d="m1050 590 37-75 39 75z"/></g>
+</svg>

@@ -141,7 +141,7 @@ export default async function GalleryPage({
           <div className="publicGrid">
             {result.images.map((image) => (
               <article key={image.slug}>
-                <Link href={`/images/${image.slug}`}>
+                <Link href={`/images/${image.public_slug}`}>
                   <img
                     src={`/api/images/${image.slug}/thumbnail`}
                     alt={image.title}

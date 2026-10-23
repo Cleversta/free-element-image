@@ -11,6 +11,7 @@ Apply database migrations in the Supabase SQL editor, in order. Keep existing im
 - Apply `005_daily_submission_limit.sql` if not already applied.
 - Apply `007_photo_scenes.sql` after 004 before deploying photo publishing. It raises the editable-scene limit to 3 MB and preserves existing rows.
 - Apply `006_launch_limits.sql`. It is safe to rerun and adds persistent submission reservations and owner-login attempt limits.
+- Apply `008_public_image_slugs.sql` before deploying readable public image URLs. It adds unique title-based URLs such as `/images/tree-image` and preserves the existing internal image IDs.
 
 Migration 006 depends on 002 (submission limits). If repairing a partial setup, apply 002, then 005, then 006. Applying 002 after 005 changes the quota back to five per hour, so preserve this order.
 
@@ -49,6 +50,7 @@ Optional `GOOGLE_SITE_VERIFICATION` is only needed for HTML-tag verification. If
 - Check the reporting flow with a legitimate report when available; do not submit fabricated abuse reports.
 - Check titles, descriptions, canonicals, and noindex rules on the deployed HTML.
 - `/sitemap.xml` is now a sitemap index. `/sitemaps/main.xml` lists the main pages, guides, and 12 starter scenes. `/sitemaps/images/0.xml` and subsequent pages list up to 1,000 published images each.
+- Each published image sitemap entry uses its readable public page URL and includes the full image URL.
 - The index preserves static-page discovery on a database outage. Image sitemap requests return a retryable 503 rather than falsely reporting the gallery empty.
 
 In the existing Google Search Console property, submit or resubmit `https://freelementimages.site/sitemap.xml`. Use URL Inspection on the home page, `/create`, `/scenes`, one guide, and an approved image page. Indexing is Google's decision and may take time; do not repeatedly deploy just to request indexing.

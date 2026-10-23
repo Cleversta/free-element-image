@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" aria-labelledby="title desc">
+  <title id="title">Bluebell Woodland</title><desc id="desc">Morning light falls across a woodland carpeted with bluebells.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#9dbdc0"/><stop offset="1" stop-color="#e4e3ca"/></linearGradient><radialGradient id="light"><stop stop-color="#fff2c8" stop-opacity=".9"/><stop offset="1" stop-color="#fff2c8" stop-opacity="0"/></radialGradient></defs>
+  <path fill="url(#sky)" d="M0 0h1200v800H0z"/><circle cx="600" cy="300" r="285" fill="url(#light)"/>
+  <path fill="#8caa91" d="M0 355q180-115 355 0t350 0q245-125 495 0v445H0z"/><path fill="#54745d" d="M0 435q190-110 390 15t420-10q190-120 390 0v360H0z"/>
+  <path fill="#3f604d" d="M0 530q230-90 455 30t400-10q180-90 345-15v265H0z"/>
+  <g fill="#315447"><path d="M75 520h24V240H75z"/><path d="m25 395 62-190 63 190z"/><path d="m35 325 52-165 55 165z"/><path d="M1080 530h24V205h-24z"/><path d="m1020 385 72-205 75 205z"/><path d="m1035 310 57-170 62 170z"/><path d="M250 520h18V320h-18z"/><path d="m205 405 54-145 59 145z"/></g>
+  <path fill="#a0b77b" d="M0 700q230-95 450 10t400-5q180-80 350-5v100H0z"/>
+  <g fill="#8e92ce"><circle cx="125" cy="704" r="7"/><circle cx="165" cy="744" r="8"/><circle cx="230" cy="710" r="6"/><circle cx="355" cy="758" r="8"/><circle cx="465" cy="728" r="7"/><circle cx="570" cy="770" r="8"/><circle cx="710" cy="725" r="7"/><circle cx="825" cy="760" r="8"/><circle cx="930" cy="715" r="7"/><circle cx="1045" cy="752" r="8"/><circle cx="1130" cy="705" r="6"/></g>
+  <g fill="#b7b4df"><circle cx="145" cy="710" r="3"/><circle cx="240" cy="716" r="3"/><circle cx="360" cy="764" r="3"/><circle cx="575" cy="776" r="3"/><circle cx="715" cy="731" r="3"/><circle cx="935" cy="721" r="3"/><circle cx="1050" cy="758" r="3"/></g>
+</svg>

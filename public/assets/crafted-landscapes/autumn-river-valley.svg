@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" aria-labelledby="title desc">
+  <title id="title">Autumn River Valley</title><desc id="desc">Warm autumn hills frame a winding river beneath an evening sky.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d98770"/><stop offset=".62" stop-color="#f2c18b"/><stop offset="1" stop-color="#f6dfad"/></linearGradient><linearGradient id="river" x2="0" y2="1"><stop stop-color="#759d9a"/><stop offset="1" stop-color="#c3c5a0"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h1200v800H0z"/><circle cx="885" cy="205" r="76" fill="#ffe7ac"/>
+  <path fill="#ba8270" d="M0 365q170-150 345-20t340 0q230-195 515-5v210H0z"/><path fill="#9a705e" d="M0 455q210-130 405 5t390-18q205-132 405 15v220H0z"/>
+  <path fill="#cf9a58" d="M0 535q175-130 365-5t390 0q220-140 445-8v278H0z"/><path fill="#6b7650" d="M0 625q205-100 405 16t390-10q220-102 405 10v159H0z"/>
+  <path fill="url(#river)" d="M500 505q180 5 105 110t55 185H475q90-90 0-150t25-145z"/>
+  <path fill="#e9d19b" d="M530 535q115 40 40 100t48 120h-42q-70-75-5-130t-41-90z" opacity=".8"/>
+  <g fill="#704c3e"><path d="M90 590h18v145H90z"/><path d="m40 605 60-145 62 145z"/><path d="m50 550 50-120 54 120z"/><path d="m1035 600 18-170 18 170z"/><path d="m975 530 78-150 80 150z"/><path d="m990 475 64-125 68 125z"/></g>
+  <g fill="#c86c43"><circle cx="100" cy="450" r="52"/><circle cx="150" cy="490" r="38"/><circle cx="1055" cy="390" r="67"/><circle cx="1110" cy="460" r="44"/></g><g fill="#e4a450"><circle cx="60" cy="500" r="35"/><circle cx="1090" cy="350" r="38"/></g>
+  <g stroke="#f4e3b5" stroke-width="4" opacity=".6"><path d="M575 620h110M540 700h180M250 690h90M810 680h125"/></g>
+</svg>

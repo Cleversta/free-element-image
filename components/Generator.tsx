@@ -211,6 +211,15 @@ export default function Generator({
   const drawStroke = useRef<{ id: number; points: [number, number][] } | null>(
     null,
   );
+  const cropResizeGesture = useRef<{
+    pointerId: number;
+    centerX: number;
+    centerY: number;
+    startX: number;
+    startY: number;
+    distanceSquared: number;
+    startZoom: number;
+  } | null>(null);
   const [editingPhoto, setEditingPhoto] = useState(false);
   const [editingText, setEditingText] = useState<{
     uid: string;
@@ -650,6 +659,59 @@ export default function Generator({
     window.addEventListener("pointerup", finish);
     window.addEventListener("pointercancel", cancel);
     window.addEventListener("blur", blur);
+  };
+  const cropHandleDown = (event: React.PointerEvent<HTMLButtonElement>) => {
+    if (!board.current || event.button !== 0) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const bounds = board.current.getBoundingClientRect();
+    const centerX = bounds.left + bounds.width / 2;
+    const centerY = bounds.top + bounds.height / 2;
+    const startX = event.clientX - centerX;
+    const startY = event.clientY - centerY;
+    const distanceSquared = startX * startX + startY * startY;
+    if (!distanceSquared) return;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    cropResizeGesture.current = {
+      pointerId: event.pointerId,
+      centerX,
+      centerY,
+      startX,
+      startY,
+      distanceSquared,
+      startZoom: crop.zoom,
+    };
+    dispatch({ type: "begin" });
+  };
+  const cropHandleMove = (event: React.PointerEvent<HTMLButtonElement>) => {
+    const gesture = cropResizeGesture.current;
+    if (!gesture || gesture.pointerId !== event.pointerId) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const nextX = event.clientX - gesture.centerX;
+    const nextY = event.clientY - gesture.centerY;
+    const dragFactor =
+      (nextX * gesture.startX + nextY * gesture.startY) /
+      gesture.distanceSquared;
+    // Dragging a crop edge inward should tighten the crop. The previous
+    // direct multiplier fell below the minimum zoom for inward drags, making
+    // those gestures look like they had no effect.
+    const zoomFactor = 1 / Math.max(0.25, dragFactor);
+    const zoom = clamp(gesture.startZoom * zoomFactor, 1, 3);
+    change((scene) => ({
+      ...scene,
+      baseBg: {
+        ...scene.baseBg,
+        crop: { ...photoCrop(scene.baseBg.crop), zoom },
+      },
+    }));
+  };
+  const cropHandleFinish = (event: React.PointerEvent<HTMLButtonElement>) => {
+    const gesture = cropResizeGesture.current;
+    if (!gesture || gesture.pointerId !== event.pointerId) return;
+    event.stopPropagation();
+    cropResizeGesture.current = null;
+    dispatch({ type: event.type === "pointercancel" ? "cancel" : "end" });
   };
   const down = (event: React.PointerEvent, item: Item) => {
     setMobilePanel("properties");
@@ -1842,9 +1904,9 @@ export default function Generator({
             </label>
             {baseBg.photo && (
               <div className="photoCompactControls">
-                {" "}
                 <button
-                  className="editorIconButton"
+                  type="button"
+                  className={`photoCropToggle${editingPhoto ? " isActive" : ""}`}
                   aria-label={editingPhoto ? "Done cropping" : "Crop on photo"}
                   title={editingPhoto ? "Done cropping" : "Crop on photo"}
                   aria-pressed={editingPhoto}
@@ -1853,7 +1915,26 @@ export default function Generator({
                     setActive(null);
                   }}
                 >
-                  {<EditorIcon name={editingPhoto ? "done" : "crop"} />}
+                  <EditorIcon name={editingPhoto ? "done" : "crop"} />
+                  <span>{editingPhoto ? "Done cropping" : "Crop photo"}</span>
+                </button>
+                <button
+                  type="button"
+                  title="Cancel photo edits and restore this photo’s original framing and colors"
+                  onClick={() => {
+                    change((scene) => ({
+                      ...scene,
+                      baseBg: {
+                        ...scene.baseBg,
+                        crop: photoCrop(),
+                        adjustments: photoAdjustments(),
+                      },
+                    }));
+                    setEditingPhoto(false);
+                    setActive(null);
+                  }}
+                >
+                  Cancel photo edits
                 </button>
                 <details className="photoControlPanel">
                   <summary>Crop &amp; rotate options</summary>
@@ -2110,14 +2191,12 @@ export default function Generator({
               className={`vBoard${baseBg.photo && editingPhoto ? " photoCropActive" : ""}`}
               onPointerDown={(event) => {
                 setActive(null);
-                if (!baseBg.photo || event.button !== 0) return;
-                if (!editingPhoto) {
-                  setEditingPhoto(true);
+                if (!baseBg.photo || !editingPhoto || event.button !== 0)
                   return;
-                }
                 const bounds = event.currentTarget.getBoundingClientRect();
                 const startX = event.clientX,
                   startY = event.clientY;
+                event.currentTarget.setPointerCapture(event.pointerId);
                 const sideways = crop.rotation % 180 !== 0;
                 const overflowX =
                   (sideways ? photoRect.height : photoRect.width) - WIDTH;
@@ -2415,11 +2494,38 @@ export default function Generator({
                   aria-label="Crop photo directly"
                 >
                   <div className="photoCropGrid" />
+                  {[
+                    "top-left",
+                    "top",
+                    "top-right",
+                    "right",
+                    "bottom-right",
+                    "bottom",
+                    "bottom-left",
+                    "left",
+                  ].map((position) => (
+                    <button
+                      key={position}
+                      type="button"
+                      className={`photoCropHandle ${position}`}
+                      aria-label={`Adjust crop from ${position.replace("-", " ")}`}
+                      title="Drag to adjust crop"
+                      onPointerDown={cropHandleDown}
+                      onPointerMove={cropHandleMove}
+                      onPointerUp={cropHandleFinish}
+                      onPointerCancel={cropHandleFinish}
+                    >
+                      <EditorIcon name="crop" />
+                    </button>
+                  ))}
                   <div
                     className="photoCanvasToolbar"
                     onPointerDown={(e) => e.stopPropagation()}
                   >
-                    <span>Drag photo to crop</span>
+                    <span>
+                      Drag the photo to move it, or drag a corner/edge handle
+                      to crop
+                    </span>
                     <button
                       aria-label="Zoom photo out"
                       onClick={() =>

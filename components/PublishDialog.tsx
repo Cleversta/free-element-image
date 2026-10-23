@@ -213,12 +213,16 @@ export default function PublishDialog({
                   autoComplete="off"
                   minLength={3}
                   maxLength={120}
-                  placeholder="e.g. A quiet village beside the lake"
+                  placeholder="e.g. Treehouse beside a mountain lake"
                   required
                   value={title}
                   disabled={busy}
                   onChange={(e) => setTitle(e.target.value)}
                 />
+                <span className="fieldHint">
+                  Use a clear, specific title. It appears on your public page
+                  and in its web address.
+                </span>
               </label>
               <label>
                 Category
@@ -239,10 +243,15 @@ export default function PublishDialog({
                 Description (optional)
                 <textarea
                   maxLength={1000}
+                  placeholder="Describe what is shown, including useful details such as colors, setting, or style."
                   value={description}
                   disabled={busy}
                   onChange={(e) => setDescription(e.target.value)}
                 />
+                <span className="fieldHint">
+                  A short, accurate description helps visitors understand the
+                  image.
+                </span>
               </label>
               <label className="publishConsent">
                 <input

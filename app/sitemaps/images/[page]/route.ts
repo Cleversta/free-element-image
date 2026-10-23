@@ -12,7 +12,7 @@ export async function GET(
   try {
     const { data, error } = await createSupabaseAdmin()
       .from("images")
-      .select("slug,published_at")
+      .select("public_slug,published_at")
       .eq("status", "published")
       .order("id")
       .range(index * SITEMAP_PAGE_SIZE, (index + 1) * SITEMAP_PAGE_SIZE - 1);
@@ -20,8 +20,8 @@ export async function GET(
     return new Response(
       urlset(
         (data || []).map((row) => ({
-          path: `/images/${encodeURIComponent(row.slug)}`,
-          image: `/api/images/${encodeURIComponent(row.slug)}/image`,
+          path: `/images/${encodeURIComponent(row.public_slug)}`,
+          image: `/api/images/${encodeURIComponent(row.public_slug)}/image`,
           modified: row.published_at,
         })),
       ),

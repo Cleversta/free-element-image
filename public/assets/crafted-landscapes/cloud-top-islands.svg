@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" aria-labelledby="title desc">
+  <title id="title">Cloud Top Islands</title><desc id="desc">Green floating islands drift among bright clouds in an open sky.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#69b9e0"/><stop offset="1" stop-color="#d8eff1"/></linearGradient><linearGradient id="cloud" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#d9edf0"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h1200v800H0z"/><circle cx="930" cy="170" r="68" fill="#fff0b5"/>
+  <g fill="url(#cloud)"><path d="M70 260q-35-4-35-34t38-34q6-47 62-47 42 0 55 36 50-18 77 12 43-2 47 33 4 34-45 38z"/><path d="M760 350q-38-3-38-36 0-32 42-35 7-48 62-48 43 0 57 37 49-20 79 12 41-2 45 34 4 35-46 39z"/><path d="M350 500q-31-3-31-30t36-32q6-41 54-41 39 0 51 32 43-17 69 10 37-1 40 30 3 30-40 34z"/></g>
+  <g><path fill="#4b936f" d="M110 430q155-110 290-8 100-115 235-15 130-140 290-18 90-90 175 7l-68 72q-180-40-318 35-170-42-315 18-160-42-330 12z"/><path fill="#3d765f" d="M195 490q150-45 290 4 180-54 352 6l-32 88q-185 32-347-6-150 48-290-8z"/><path fill="#67a67a" d="M280 575q160-70 350 2 175-76 330-4l-52 94q-130 53-285 0-205 58-380-4z"/></g>
+  <g fill="#fff" opacity=".8"><ellipse cx="170" cy="600" rx="120" ry="24"/><ellipse cx="640" cy="685" rx="155" ry="27"/><ellipse cx="1010" cy="580" rx="125" ry="24"/></g>
+  <g fill="#eaf6ed" opacity=".65"><path d="M0 745q150-65 300 0t300 0q150-65 300 0t300 0v55H0z"/></g>
+</svg>

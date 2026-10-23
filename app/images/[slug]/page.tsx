@@ -1,7 +1,7 @@
 import { structuredData } from "@/lib/structured-data";
 import Link from "next/link";
 import ReportImage from "@/components/ReportImage";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { imagePageData } from "@/lib/server/gallery";
 import { publishedScene } from "@/lib/server/editable-scene";
 import type { Metadata } from "next";
@@ -32,20 +32,20 @@ export async function generateMetadata({
     };
   }
 
-  const encodedSlug = encodeURIComponent(slug);
+  const publicSlug = encodeURIComponent(image.public_slug);
 
   const pageUrl =
-    `${SITE_URL}/images/${encodedSlug}`;
+    `${SITE_URL}/images/${publicSlug}`;
 
   const imageUrl =
-    `${SITE_URL}/api/images/${encodedSlug}/image`;
+    `${SITE_URL}/api/images/${publicSlug}/image`;
 
   const description =
     image.description ||
-    `View and download ${image.title}, a community-created scene made with Freelement Images.`;
+    `Download a free ${image.title} image made with Freelement Images. View the full-size PNG or create your own scene.`;
 
   return {
-    title: image.title,
+    title: `Free ${image.title} Image Download`,
 
     description,
 
@@ -67,7 +67,7 @@ export async function generateMetadata({
     },
 
     openGraph: {
-      title: image.title,
+      title: `Free ${image.title} Image Download`,
       description,
       url: pageUrl,
       siteName: "Freelement Images",
@@ -85,7 +85,7 @@ export async function generateMetadata({
 
     twitter: {
       card: "summary_large_image",
-      title: image.title,
+      title: `Free ${image.title} Image Download`,
       description,
       images: [imageUrl],
     },
@@ -105,43 +105,44 @@ export default async function ImagePage({
     notFound();
   }
 
+  if (slug !== image.public_slug) {
+    permanentRedirect(`/images/${encodeURIComponent(image.public_slug)}`);
+  }
+
   const editable = !!(
-    await publishedScene(slug).catch(() => null)
+    await publishedScene(image.slug).catch(() => null)
   );
 
-  const encodedSlug = encodeURIComponent(slug);
+  const publicSlug = encodeURIComponent(image.public_slug);
 
   const pageUrl =
-    `${SITE_URL}/images/${encodedSlug}`;
+    `${SITE_URL}/images/${publicSlug}`;
 
   const imageUrl =
-    `${SITE_URL}/api/images/${encodedSlug}/image`;
+    `${SITE_URL}/api/images/${publicSlug}/image`;
 
   const description =
     image.description ||
-    `Community-created scene made with Freelement Images.`;
+    `Free ${image.title} image made with Freelement Images. View and download the full-size PNG.`;
 
   const imageSchema = {
     "@context": "https://schema.org",
-    "@type": "ImageObject",
-
-    name: image.title,
-    caption: description,
+    "@type": "WebPage",
+    name: `Free ${image.title} Image Download`,
     description,
-
-    contentUrl: imageUrl,
     url: pageUrl,
-
-    width: image.image_width,
-    height: image.image_height,
-
-    encodingFormat: "image/png",
-
-    isPartOf: {
-      "@type": "WebSite",
-      name: "Freelement Images",
-      url: SITE_URL,
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      name: image.title,
+      caption: description,
+      description,
+      contentUrl: imageUrl,
+      url: imageUrl,
+      width: image.image_width,
+      height: image.image_height,
+      encodingFormat: "image/png",
     },
+    isPartOf: { "@type": "WebSite", name: "Freelement Images", url: SITE_URL },
   };
 
   return (
@@ -155,9 +156,7 @@ export default async function ImagePage({
       />
 
       <nav>
-        <Link href="/gallery">
-          ← Gallery
-        </Link>
+        <Link href="/gallery">← Gallery</Link>
 
         <Link href="/create">
           Create your own
@@ -165,10 +164,13 @@ export default async function ImagePage({
       </nav>
 
       <h1>{image.title}</h1>
+      <p className="imageDescription">
+        Free downloadable {image.category} image: {image.title}
+      </p>
 
       <img
         className="publicOriginal"
-        src={`/api/images/${encodedSlug}/image`}
+        src={`/api/images/${publicSlug}/image`}
         alt={image.title}
         width={image.image_width}
         height={image.image_height}
@@ -186,7 +188,7 @@ export default async function ImagePage({
 
       <a
         className="primary"
-        href={`/api/images/${encodedSlug}/download`}
+        href={`/api/images/${publicSlug}/download`}
         download
       >
         Download PNG
@@ -196,7 +198,7 @@ export default async function ImagePage({
         <p>
           <Link
             className="primary"
-            href={`/create?scene=${encodedSlug}`}
+            href={`/create?scene=${encodeURIComponent(image.slug)}`}
           >
             Edit this image
           </Link>
@@ -214,7 +216,7 @@ export default async function ImagePage({
       </p>
 
       <p><Link href="/scenes">Explore starter landscapes</Link> · <Link href="/guides/your-first-landscape">Learn to make a scene</Link> · <Link href="/image-use">Image permissions</Link></p>
-      <ReportImage slug={slug} />
+      <ReportImage slug={image.slug} />
     </main>
   );
 }
